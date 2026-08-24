@@ -41,7 +41,10 @@ def _percentile(values: list[float], percentile: float) -> float | None:
     if not values:
         return None
     ordered = sorted(values)
-    index = max(0, min(len(ordered) - 1, math.ceil(percentile * len(ordered)) - 1))
+    index = max(
+        0,
+        min(len(ordered) - 1, math.ceil(percentile * len(ordered)) - 1),
+    )
     return ordered[index]
 
 
@@ -54,7 +57,9 @@ def _read_jsonl(path: Path) -> list[dict[str, Any]]:
             try:
                 row = json.loads(line)
             except json.JSONDecodeError as exc:
-                raise ValueError(f"INVALID_PREDICTION_JSONL:line={line_no}") from exc
+                raise ValueError(
+                    f"INVALID_PREDICTION_JSONL:line={line_no}"
+                ) from exc
             if not isinstance(row, dict):
                 raise ValueError(f"INVALID_PREDICTION_RECORD:line={line_no}")
             rows.append(row)
@@ -87,7 +92,10 @@ def _assert_freeze_identity(
     actual_prediction_sha = _sha_file(predictions_path)
     if actual_prediction_sha != freeze.get("prediction_sha256"):
         raise ValueError("PREDICTION_HASH_MISMATCH")
-    if runtime_manifest_id and runtime_manifest_id != freeze.get("runtime_manifest_id"):
+    if (
+        runtime_manifest_id
+        and runtime_manifest_id != freeze.get("runtime_manifest_id")
+    ):
         raise ValueError("RUNTIME_MANIFEST_MISMATCH")
     if corpus_sha256 and corpus_sha256 != freeze.get("corpus_sha256"):
         raise ValueError("CORPUS_HASH_MISMATCH")
@@ -106,11 +114,20 @@ def score(
     fully_loaded_cost_usd: float | None = None,
 ) -> dict[str, Any]:
     predictions_path = Path(predictions_jsonl)
-    freeze = json.loads(Path(prediction_freeze_json).read_text(encoding="utf-8"))
-    _assert_freeze_identity(freeze, predictions_path, runtime_manifest_id, corpus_sha256)
+    freeze = json.loads(
+        Path(prediction_freeze_json).read_text(encoding="utf-8")
+    )
+    _assert_freeze_identity(
+        freeze,
+        predictions_path,
+        runtime_manifest_id,
+        corpus_sha256,
+    )
 
     predictions = _read_jsonl(predictions_path)
-    prediction_by_id = {str(row.get("document_id")): row for row in predictions}
+    prediction_by_id = {
+        str(row.get("document_id")): row for row in predictions
+    }
     if len(prediction_by_id) != len(predictions):
         raise ValueError("DUPLICATE_PREDICTION_DOCUMENT")
 
@@ -120,7 +137,9 @@ def score(
         missing_predictions = len(set(truth_by_id) - set(prediction_by_id))
         missing_truth = len(set(prediction_by_id) - set(truth_by_id))
         raise ValueError(
-            f"PREDICTION_TRUTH_COVERAGE_MISMATCH:missing_predictions={missing_predictions}:missing_truth={missing_truth}"
+            "PREDICTION_TRUTH_COVERAGE_MISMATCH:"
+            f"missing_predictions={missing_predictions}:"
+            f"missing_truth={missing_truth}"
         )
 
     total_fields = 0
@@ -137,7 +156,6 @@ def score(
     routing_total = 0
     routing_correct = 0
     group_fields: dict[str, Counter[str]] = defaultdict(Counter)
-    package_correct: dict[str, bool] = defaultdict(lambda: True)
     package_review: dict[str, bool] = defaultdict(lambda: False)
     wall_seconds: list[float] = []
     cloud_cost = 0.0
@@ -147,7 +165,9 @@ def score(
         group = str(prediction.get("group") or "UNKNOWN")
         if truth.document_type:
             routing_total += 1
-            predicted_type = str(prediction.get("schema") or prediction.get("route") or "")
+            predicted_type = str(
+                prediction.get("schema") or prediction.get("route") or ""
+            )
             if _normalize(predicted_type) == _normalize(truth.document_type):
                 routing_correct += 1
 
@@ -165,17 +185,14 @@ def score(
             correct = _normalize(predicted_value) == _normalize(truth_field.value)
             disposition = _decision_disposition(predicted_field)
             accepted = disposition in _ACCEPTED
-            reviewed = not accepted
 
             if correct:
                 correct_fields += 1
                 group_fields[group]["correct"] += 1
+            elif predicted_value in (None, ""):
+                field_failure_reasons["MISSING_EXTRACTION"] += 1
             else:
-                package_correct[truth.package_id] = False
-                if predicted_value in (None, ""):
-                    field_failure_reasons["MISSING_EXTRACTION"] += 1
-                else:
-                    field_failure_reasons["WRONG_VALUE"] += 1
+                field_failure_reasons["WRONG_VALUE"] += 1
 
             if truth_field.critical:
                 critical_total += 1
@@ -206,10 +223,16 @@ def score(
         cloud_cost += float(prediction.get("cloud_cost_usd") or 0.0)
 
     packages = {truth.package_id for truth in truths}
-    claim_hitl_count = sum(1 for package_id in packages if package_review[package_id])
+    claim_hitl_count = sum(
+        1 for package_id in packages if package_review[package_id]
+    )
     claim_stp_count = len(packages) - claim_hitl_count
     page_count = len(predictions)
-    total_cost = fully_loaded_cost_usd if fully_loaded_cost_usd is not None else cloud_cost
+    total_cost = (
+        fully_loaded_cost_usd
+        if fully_loaded_cost_usd is not None
+        else cloud_cost
+    )
 
     overall_accuracy = correct_fields / total_fields if total_fields else 0.0
     critical_accuracy = critical_correct / critical_total if critical_total else 0.0
@@ -220,6 +243,7 @@ def score(
     field_hitl_rate = reviewed_fields / total_fields if total_fields else 0.0
     claim_hitl_rate = claim_hitl_count / len(packages) if packages else 0.0
     claim_stp_rate = claim_stp_count / len(packages) if packages else 0.0
+    routing_accuracy = routing_correct / routing_total if routing_total else None
     p95 = _percentile(wall_seconds, 0.95) or 0.0
     cost_per_page = total_cost / page_count if page_count else 0.0
 
@@ -233,6 +257,9 @@ def score(
         p95_seconds_per_page=p95,
         cost_usd_per_page=cost_per_page,
         sample_size=page_count,
+        overall_field_accuracy=overall_accuracy,
+        critical_field_accuracy=critical_accuracy,
+        routing_accuracy=routing_accuracy,
     )
     promotion = PromotionGate().evaluate(promotion_metrics)
 
@@ -272,7 +299,7 @@ def score(
             "accepted_precision": accepted_precision,
             "critical_accepted_precision": critical_precision,
             "critical_false_accepts": critical_false_accepts,
-            "routing_accuracy": routing_correct / routing_total if routing_total else None,
+            "routing_accuracy": routing_accuracy,
         },
         "automation": {
             "field_hitl_rate": field_hitl_rate,
@@ -301,5 +328,8 @@ def score(
 
     output_path = Path(output_json)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    output_path.write_text(
+        json.dumps(report, indent=2) + "\n",
+        encoding="utf-8",
+    )
     return report
