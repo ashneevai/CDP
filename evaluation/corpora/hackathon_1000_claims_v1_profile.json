@@ -1,0 +1,29 @@
+{
+  "corpus_id": "hackathon-1000-claims-v1",
+  "pages": 1000,
+  "orientation": {
+    "portrait": 915,
+    "landscape": 85
+  },
+  "most_common_dimensions": [
+    {"width": 1683, "height": 2193, "pages": 151},
+    {"width": 1620, "height": 1500, "pages": 85},
+    {"width": 1696, "height": 2200, "pages": 51},
+    {"width": 1700, "height": 2200, "pages": 26}
+  ],
+  "group_image_statistics": {
+    "Group A": {"pages": 675, "mean_grayscale_stddev": 79.15, "mean_brightness": 227.29, "median_file_kb": 57.1},
+    "Group B": {"pages": 186, "mean_grayscale_stddev": 81.35, "mean_brightness": 224.81, "median_file_kb": 124.6},
+    "Group C": {"pages": 86, "mean_grayscale_stddev": 71.53, "mean_brightness": 232.50, "median_file_kb": 56.2},
+    "Group D": {"pages": 53, "mean_grayscale_stddev": 80.51, "mean_brightness": 225.75, "median_file_kb": 90.0}
+  },
+  "quality_flags": {
+    "very_bright_pages_mean_gt_245": 7,
+    "very_low_contrast_pages_stddev_lt_20": 0
+  },
+  "notes": [
+    "Aggregate image statistics only; no PHI-bearing filenames, OCR text, or pixels are committed.",
+    "Group C has the lowest average grayscale contrast and should be reported separately in routing/extraction evaluation.",
+    "Landscape pages require explicit orientation handling rather than assuming portrait claim forms."
+  ]
+}
