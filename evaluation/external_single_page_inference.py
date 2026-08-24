@@ -2,7 +2,8 @@
 
 This module deliberately reuses ``evaluation.run_production_holdout_v2.infer``
 instead of reimplementing OCR/routing/decision logic. Raw external source images
-and predictions remain outside Git.
+and predictions remain outside Git. Phase-10 specialist analysis is attached in
+shadow mode only and cannot mutate production dispositions.
 """
 from __future__ import annotations
 
@@ -12,6 +13,7 @@ from pathlib import Path
 import shutil
 import tempfile
 
+from evaluation.phase10_specialist_shadow import enrich_prediction
 from evaluation.run_production_holdout_v2 import infer
 
 
@@ -51,6 +53,7 @@ def infer_single_page(*, input_path: str | Path, document_id: str) -> dict:
         prediction = predictions[0]
         if str(prediction.get("document_id")) != document_id:
             raise RuntimeError("PREDICTION_DOCUMENT_ID_MISMATCH")
+        prediction["specialist_shadow"] = enrich_prediction(prediction)
         return prediction
 
 
