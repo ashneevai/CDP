@@ -30,7 +30,9 @@ def test_truth_contract_rejects_duplicate_documents(tmp_path: Path):
         list(iter_truth(truth))
 
 
-def test_promotion_scorer_requires_frozen_prediction_identity(tmp_path: Path):
+def test_promotion_scorer_requires_frozen_prediction_identity(
+    tmp_path: Path,
+):
     predictions = tmp_path / "predictions.jsonl"
     _write_jsonl(
         predictions,
@@ -59,7 +61,10 @@ def test_promotion_scorer_requires_frozen_prediction_identity(tmp_path: Path):
         encoding="utf-8",
     )
     truth = tmp_path / "truth.jsonl"
-    _write_jsonl(truth, [{"document_id": "p1", "package_id": "c1", "fields": {}}])
+    _write_jsonl(
+        truth,
+        [{"document_id": "p1", "package_id": "c1", "fields": {}}],
+    )
 
     with pytest.raises(ValueError, match="PREDICTION_HASH_MISMATCH"):
         score(
@@ -70,7 +75,9 @@ def test_promotion_scorer_requires_frozen_prediction_identity(tmp_path: Path):
         )
 
 
-def test_promotion_scorer_computes_accuracy_hitl_stp_latency_and_cost(tmp_path: Path):
+def test_promotion_scorer_computes_quality_latency_and_cost(
+    tmp_path: Path,
+):
     predictions = tmp_path / "predictions.jsonl"
     _write_jsonl(
         predictions,
@@ -139,7 +146,9 @@ def test_promotion_scorer_computes_accuracy_hitl_stp_latency_and_cost(tmp_path: 
                 "document_id": "p2",
                 "package_id": "c2",
                 "document_type": "UB_04",
-                "fields": {"member_id": {"value": "M-2", "critical": True}},
+                "fields": {
+                    "member_id": {"value": "M-2", "critical": True}
+                },
             },
         ],
     )
