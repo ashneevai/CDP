@@ -6,7 +6,7 @@ the same manifest before promotion claims can be made.
 """
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import MISSING, asdict, dataclass, fields
 import hashlib
 import json
 from typing import Mapping
@@ -41,19 +41,35 @@ class RuntimeManifest:
         payload = json.dumps(self.canonical_payload(), sort_keys=True, separators=(",", ":"))
         return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
-    def assert_compatible(self, other: "RuntimeManifest") -> None:
-        if self.manifest_id == other.manifest_id:
-            return
+    def differences(self, other: "RuntimeManifest") -> dict[str, dict[str, str]]:
         expected = self.canonical_payload()
         actual = other.canonical_payload()
-        differences = {
+        return {
             key: {"expected": expected[key], "actual": actual[key]}
             for key in expected
             if expected[key] != actual[key]
         }
-        raise ValueError(f"RUNTIME_MANIFEST_MISMATCH:{json.dumps(differences, sort_keys=True)}")
+
+    def assert_compatible(self, other: "RuntimeManifest") -> None:
+        differences = self.differences(other)
+        if differences:
+            raise ValueError(
+                f"RUNTIME_MANIFEST_MISMATCH:{json.dumps(differences, sort_keys=True)}"
+            )
 
 
 def manifest_from_mapping(values: Mapping[str, object]) -> RuntimeManifest:
-    """Construct from explicit config; missing required identity fails closed."""
+    """Construct from explicit config; missing or unknown identity fails closed."""
+    required = {
+        field.name
+        for field in fields(RuntimeManifest)
+        if field.default is MISSING and field.default_factory is MISSING
+    }
+    missing = sorted(required - set(values))
+    if missing:
+        raise ValueError(f"RUNTIME_MANIFEST_MISSING:{','.join(missing)}")
+    allowed = {field.name for field in fields(RuntimeManifest)}
+    unknown = sorted(set(values) - allowed)
+    if unknown:
+        raise ValueError(f"RUNTIME_MANIFEST_UNKNOWN:{','.join(unknown)}")
     return RuntimeManifest(**{key: str(value) for key, value in values.items()})
