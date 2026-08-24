@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from packages.candidate_fusion.service import CandidateFusionService, CandidateObservation, FusedCandidate
 from packages.classification_v5.contracts import ClassificationSignal, PageClassificationV5
 from packages.classification_v5.service import ClassificationV5Service
-from packages.independent_evidence.contracts import EvidenceFact
+from packages.independent_evidence.contracts import EvidenceObservation, EvidenceRequest
 from packages.independent_evidence.service import IndependentEvidenceService
 
 
@@ -13,7 +13,10 @@ from packages.independent_evidence.service import IndependentEvidenceService
 class ShadowFieldAssessment:
     field_name: str
     fused_candidates: tuple[FusedCandidate, ...]
-    evidence: tuple[EvidenceFact, ...]
+    evidence: tuple[EvidenceObservation, ...]
+    deterministic_evidence: frozenset[str]
+    cross_field_evidence: frozenset[str]
+    contradictions: frozenset[str]
     decision_authority: str = "NONE_SHADOW_ONLY"
 
 
@@ -35,7 +38,7 @@ class ClaimIntelligenceShadowPipeline:
     ) -> None:
         self.classifier = classifier or ClassificationV5Service()
         self.fusion = fusion or CandidateFusionService()
-        self.evidence = evidence or IndependentEvidenceService.default()
+        self.evidence = evidence or IndependentEvidenceService()
 
     def assess(
         self,
@@ -50,16 +53,22 @@ class ClaimIntelligenceShadowPipeline:
         for field_name, observations in sorted(field_observations.items()):
             fused = self.fusion.fuse(observations)
             candidate_value = fused[0].value if fused else None
-            evidence = self.evidence.collect(
-                field_name=field_name,
-                value=candidate_value,
-                claim_values=claim_values,
+            enrichment = self.evidence.collect(
+                EvidenceRequest(
+                    field_name=field_name,
+                    candidate_value=candidate_value,
+                    document_family=classification.family.value,
+                    claim_context=claim_values,
+                )
             )
             fields.append(
                 ShadowFieldAssessment(
                     field_name=field_name,
                     fused_candidates=tuple(fused),
-                    evidence=tuple(evidence),
+                    evidence=enrichment.observations,
+                    deterministic_evidence=enrichment.deterministic_evidence,
+                    cross_field_evidence=enrichment.cross_field_evidence,
+                    contradictions=enrichment.contradictions,
                 )
             )
         return ShadowPageAssessment(classification=classification, fields=tuple(fields))
