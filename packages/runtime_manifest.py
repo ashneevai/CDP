@@ -42,23 +42,18 @@ class RuntimeManifest:
         return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
     def assert_compatible(self, other: "RuntimeManifest") -> None:
-        if self.manifest_id != other.manifest_id:
-            differences = {
-                key: {"expected": self.canonical_payload()[key], "actual": other.canonical_payload()[key]}
-                for key in self.canonical_payload()
-                if self.canonical_payload()[key] != other.canonical_payload()[key]
-            }
-            raise ValueError(f"RUNTIME_MANIFEST_MISMATCH:{json.dumps(differences, sort_keys=True)}")
+        if self.manifest_id == other.manifest_id:
+            return
+        expected = self.canonical_payload()
+        actual = other.canonical_payload()
+        differences = {
+            key: {"expected": expected[key], "actual": actual[key]}
+            for key in expected
+            if expected[key] != actual[key]
+        }
+        raise ValueError(f"RUNTIME_MANIFEST_MISMATCH:{json.dumps(differences, sort_keys=True)}")
 
 
 def manifest_from_mapping(values: Mapping[str, object]) -> RuntimeManifest:
-    """Construct a manifest from explicit configuration; missing identity fails closed."""
-    required = {
-        field.name
-        for field in RuntimeManifest.__dataclass_fields__.values()
-        if field.default is field.default_factory  # type: ignore[comparison-overlap]
-    }
-    # Dataclass default introspection is intentionally avoided for validation below;
-    # constructor errors remain the authoritative fail-closed behavior.
-    del required
+    """Construct from explicit config; missing required identity fails closed."""
     return RuntimeManifest(**{key: str(value) for key, value in values.items()})
