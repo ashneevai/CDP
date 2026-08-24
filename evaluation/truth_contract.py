@@ -44,7 +44,9 @@ def iter_truth(path: str | Path) -> Iterator[TruthRecord]:
             try:
                 raw = json.loads(line)
             except json.JSONDecodeError as exc:
-                raise ValueError(f"INVALID_TRUTH_JSONL:line={line_no}") from exc
+                raise ValueError(
+                    f"INVALID_TRUTH_JSONL:line={line_no}"
+                ) from exc
             if not isinstance(raw, dict):
                 raise ValueError(f"INVALID_TRUTH_RECORD:line={line_no}")
             document_id = str(raw.get("document_id") or "")
@@ -69,10 +71,11 @@ def iter_truth(path: str | Path) -> Iterator[TruthRecord]:
                     value=None if value is None else str(value),
                     critical=critical,
                 )
+            document_type = raw.get("document_type")
             yield TruthRecord(
                 document_id=document_id,
                 package_id=package_id,
-                document_type=(str(raw["document_type"]) if raw.get("document_type") else None),
+                document_type=(str(document_type) if document_type else None),
                 fields=fields,
             )
 
