@@ -1,0 +1,31 @@
+{
+  "corpus_id": "hackathon-1000-claims-v1",
+  "description": "External frozen regression corpus. Raw TIFF claim images are intentionally not stored in git.",
+  "source_filename": "Hackathon - 1000 Claims.zip",
+  "sha256": "8c09d4ec4de3fef8bf41771ae45bc69b69300221781a9eea9183936cfcbe85f3",
+  "pages": 1000,
+  "packages": 110,
+  "groups": {
+    "Group A": 675,
+    "Group B": 186,
+    "Group C": 86,
+    "Group D": 53
+  },
+  "package_counts": {
+    "Group A": 29,
+    "Group B": 34,
+    "Group C": 26,
+    "Group D": 21
+  },
+  "all_tiff": true,
+  "privacy": {
+    "raw_data_committed": false,
+    "allow_only_manifest_and_aggregate_results": true
+  },
+  "evaluation_rules": {
+    "report_page_metrics": true,
+    "report_package_metrics": true,
+    "report_per_group_metrics": true,
+    "do_not_tune_on_frozen_evaluation_partition": true
+  }
+}
