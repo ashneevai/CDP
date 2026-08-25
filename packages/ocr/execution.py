@@ -29,6 +29,8 @@ class OCRExecutionService:
             engine=str(provider_name), model_version=provider_version,
             preprocessing_version=request.preprocessing_profile or "AUTO",
             configuration={
+                "document_id": request.document_id,
+                "page_number": request.page_number,
                 "field_name": request.field_name, "field_type": request.field_type,
                 "scope": request.scope,
             }, page_hash=request.page_sha256,

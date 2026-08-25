@@ -252,6 +252,7 @@ class StandardFormExtractionService:
             regional_confidence = None
             regional = None
             regional_span = None
+            regional_trigger_reason = None
             primary = decide_local_candidate(text, definition.datatype) if definition else None
             if definition is not None and image is not None:
                 # A second pass through the same RapidOCR family cannot add
@@ -260,6 +261,14 @@ class StandardFormExtractionService:
                 # retain the candidate for safe deterministic rejection.
                 secondary_eligible = definition.datatype != "NPI"
                 if not primary.accepted and secondary_eligible:
+                    regional_trigger_reason = (
+                        "NO_PRIMARY_TOKEN" if not text.strip()
+                        else "DETERMINISTIC_VALIDATION_FAILURE"
+                    )
+                    if hasattr(self._text_extractor, "set_context"):
+                        self._text_extractor.set_context(
+                            field=name, reason=regional_trigger_reason
+                        )
                     regional_text, regional_confidence = _region_text(
                         self._text_extractor, image, resolved.bbox
                     )
@@ -430,6 +439,7 @@ class StandardFormExtractionService:
                 "selected_normalized_value": field.normalized_value,
                 "selected_confidence": field.confidence,
                 "secondary_invoked": secondary_invoked,
+                "regional_ocr_trigger_reason": regional_trigger_reason,
                 "changed_output": bool(
                     secondary_invoked
                     and regional_text is not None

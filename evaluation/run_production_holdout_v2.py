@@ -25,15 +25,21 @@ from packages.extraction_geometry import FormIdentityDecision, FormIdentityStatu
 from packages.field_verification import verify_field
 from packages.layout_intelligence import BundleDLayoutEngine
 from packages.ocr.contracts import OCRCandidate
+from packages.page_observation import PageObservationService
 from packages.templates.registry import DEFAULT_TEMPLATE_DIR, TemplateRegistry
 from workers.cascade.tesseract_adapter import TesseractTextExtractor
+from workers.cascade.isolated_ocr import IsolatedTextExtractor, OCRTimeoutError
 from workers.document_preparation.preprocessing import (
     apply_orientation, denoise, deskew, detect_orientation, detect_skew_angle,
 )
 from workers.page_detection.router import PageRoutingService
-from workers.page_detection.text_extraction import PaddleOCRTextExtractor, RapidOCRTextExtractor
+from workers.page_detection.text_extraction import (
+    RapidOCRFullPageTextExtractor,
+    RapidOCRTextExtractor,
+)
 from workers.standard_form_extraction.consumer import _resolve_geometry
 from workers.standard_form_extraction.extractor import StandardFormExtractionService
+from workers.standard_form_extraction.processing import StandardFormProcessingService
 
 
 ACTUAL_TO_TRUTH = {
@@ -106,11 +112,28 @@ def _runtime_components():
         {"intra_op_num_threads": thread_cap, "inter_op_num_threads": 1}
         if thread_cap > 0 else {}
     )
+    regional = RapidOCRTextExtractor(**rapid_kwargs)
+    observation = PageObservationService(
+        RapidOCRFullPageTextExtractor(**rapid_kwargs),
+        preprocessing_version="phase9b-production-prepared-v1",
+    )
+    standard_processing = StandardFormProcessingService(
+        observation,
+        StandardFormExtractionService(regional),
+    )
     return (
         registry,
         router,
-        StandardFormExtractionService(RapidOCRTextExtractor(**rapid_kwargs)),
-        PaddleOCRTextExtractor(cpu_threads=thread_cap or 2),
+        standard_processing,
+        IsolatedTextExtractor(
+            "workers.page_detection.text_extraction",
+            "PaddleOCRTextExtractor",
+            provider_kwargs={"cpu_threads": thread_cap or 2},
+            timeout_seconds=float(os.environ.get("CDP_OCR_TIMEOUT_SECONDS", "30")),
+            engine_name="paddleocr",
+            model_name="PP-OCRv4",
+            model_version="paddleocr-2.x",
+        ),
         BundleDLayoutEngine(),
         EvidenceDecisionService(route_mode="runtime"),
         CriticalityPolicy.load(DEFAULT_CRITICALITY_PATH),
@@ -136,7 +159,7 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             "truth_used_for_selection": False,
         }, indent=2), "utf-8")
     inputs = inputs[offset:offset + limit if limit else None]
-    registry, router, rapid, paddle, layout, decisions, criticality, claims = (
+    registry, router, standard_processing, paddle, layout, decisions, criticality, claims = (
         _runtime_components()
     )
     predictions = []
@@ -176,12 +199,26 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             alignment_accepted = geometry.authorizes_fixed_roi
             registration_confidence = registration.alignment_confidence if registration else None
             started = time.perf_counter()
-            extracted = (
-                rapid.extract_fields(ready, template, 1)
-                if ready is not None and alignment_accepted else []
+            processing = (
+                standard_processing.process(
+                    ready,
+                    template,
+                    1,
+                    identity,
+                    page_id=item["document_id"],
+                    registered_geometry=geometry,
+                )
+                if ready is not None and alignment_accepted else None
             )
+            extracted = processing.fields if processing is not None else []
             stage["ocr"] = time.perf_counter()-started
-            counters["rapidocr_calls"] += len(extracted)
+            if processing is not None:
+                counters["rapidocr_calls"] += (
+                    processing.diagnostics.full_page_ocr_calls
+                    + processing.diagnostics.regional_ocr_calls
+                )
+                counters["full_page_ocr_calls"] += processing.diagnostics.full_page_ocr_calls
+                counters["regional_ocr_calls"] += processing.diagnostics.regional_ocr_calls
             source_candidates = []
             for field in extracted:
                 canonical = ACTUAL_TO_TRUTH.get(field.field_name, field.field_name)
@@ -195,23 +232,32 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             schema = route
         else:
             counters["paddleocr_calls"] += 1
-            started = time.perf_counter(); tokens = paddle.extract(image); stage["ocr"] = time.perf_counter()-started
-            started = time.perf_counter(); result = layout.extract(
-                tokens, page_number=1, width=image.width, height=image.height,
-                engine=paddle.engine_name); stage["layout"] = time.perf_counter()-started
-            route, schema = result.route.value, result.schema_evidence.schema_family
-            table_payload = result.table.model_dump(mode="json")
-            source_candidates = []
-            for canonical, candidates in result.candidates.items():
-                best = candidates[0]
-                fields[canonical] = {"value": best.value, "raw": best.value,
-                                     "confidence": best.confidence,
-                                     "bbox": best.bbox.model_dump(mode="json"),
-                                     "label": best.original_label,
-                                     "alias": best.matched_alias,
-                                     "relationship": best.relationship_evidence.relationship}
-                source_candidates.append((canonical, best.value, best.confidence, best.bbox,
-                                          best.relationship_evidence.relationship))
+            started = time.perf_counter()
+            try:
+                tokens = paddle.extract(image)
+            except OCRTimeoutError:
+                stage["ocr"] = time.perf_counter()-started
+                counters["ocr_timeouts"] += 1
+                route, schema = "UNKNOWN_UNSTRUCTURED", "UNKNOWN_UNSTRUCTURED"
+                source_candidates = []
+            else:
+                stage["ocr"] = time.perf_counter()-started
+                started = time.perf_counter(); result = layout.extract(
+                    tokens, page_number=1, width=image.width, height=image.height,
+                    engine=paddle.engine_name); stage["layout"] = time.perf_counter()-started
+                route, schema = result.route.value, result.schema_evidence.schema_family
+                table_payload = result.table.model_dump(mode="json")
+                source_candidates = []
+                for canonical, candidates in result.candidates.items():
+                    best = candidates[0]
+                    fields[canonical] = {"value": best.value, "raw": best.value,
+                                         "confidence": best.confidence,
+                                         "bbox": best.bbox.model_dump(mode="json"),
+                                         "label": best.original_label,
+                                         "alias": best.matched_alias,
+                                         "relationship": best.relationship_evidence.relationship}
+                    source_candidates.append((canonical, best.value, best.confidence, best.bbox,
+                                              best.relationship_evidence.relationship))
         started = time.perf_counter()
         for canonical, value, confidence, bbox, structural in source_candidates:
             verification = verify_field(canonical, value)

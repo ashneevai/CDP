@@ -1,17 +1,24 @@
 from __future__ import annotations
 
-from pydantic import Field
+from pydantic import ConfigDict, Field
 
 from packages.domain.common import DomainModel
 
 
 class ObservationToken(DomainModel):
+    model_config = ConfigDict(extra="forbid", frozen=True, str_strip_whitespace=True)
+
     token_id: str
     text: str
     bbox: tuple[float, float, float, float]
     confidence: float = Field(ge=0, le=1)
     line_index: int = Field(ge=0)
     reading_order: int = Field(ge=0)
+    normalized_text: str = ""
+    engine: str = "unknown"
+    model_name: str = "unknown"
+    model_version: str = "unknown"
+    preprocessing_variant: str = "DEFAULT"
 
 
 class StructuralLine(DomainModel):
@@ -36,6 +43,8 @@ class ImageQualityEvidence(DomainModel):
 
 
 class PageObservation(DomainModel):
+    model_config = ConfigDict(extra="forbid", frozen=True, str_strip_whitespace=True)
+
     page_id: str
     page_sha256: str
     width: int = Field(gt=0)
@@ -57,3 +66,12 @@ class PageObservation(DomainModel):
     preprocessing_version: str
     full_page_ocr_calls: int = 1
     observation_version: str = "page-observation-v1"
+    orientation_degrees: float = 0.0
+    skew_degrees: float = 0.0
+    registration_evidence: dict[str, object] = Field(default_factory=dict)
+    route_evidence: dict[str, float] = Field(default_factory=dict)
+    template_evidence: dict[str, float] = Field(default_factory=dict)
+    layout_evidence: dict[str, object] = Field(default_factory=dict)
+    ocr_provenance: dict[str, str] = Field(default_factory=dict)
+    timing_ms: dict[str, float] = Field(default_factory=dict)
+    resource_metrics: dict[str, float | int] = Field(default_factory=dict)
