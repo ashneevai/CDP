@@ -24,6 +24,7 @@ STAGE_NAMES = (
     "orientation_apply", "skew_detection", "deskew", "denoise",
 )
 DEVELOPMENT_ALLOCATION = {"Group A": 15, "Group B": 6, "Group C": 5, "Group D": 4}
+ACCURACY_QUALIFICATION_ALLOCATION = {"Group A": 75, "Group B": 30, "Group C": 25, "Group D": 20}
 
 
 def _canonical_hash(value: Any) -> str:
@@ -206,8 +207,10 @@ def aggregate(rows: list[dict[str, Any]], elapsed: float) -> dict[str, Any]:
 
 def run(*, manifest: Path, output: Path, workers: int, thread_cap: int,
         runtime_manifest_id: str, corpus_fingerprint: str, code_sha: str,
-        seed: int = 20260824, resume: bool = False) -> dict[str, Any]:
-    selected = select(manifest, seed=seed, allocation=DEVELOPMENT_ALLOCATION)
+        seed: int = 20260824, resume: bool = False,
+        allocation: dict[str, int] | None = None) -> dict[str, Any]:
+    effective_allocation = allocation or DEVELOPMENT_ALLOCATION
+    selected = select(manifest, seed=seed, allocation=effective_allocation)
     selection = [{"document_id": row["document_id"], "path": row["path"]} for row in selected]
     fingerprint = {
         "selection_sha256": _canonical_hash(selection),
@@ -265,7 +268,7 @@ def run(*, manifest: Path, output: Path, workers: int, thread_cap: int,
         "workers": workers,
         "thread_cap": thread_cap,
         "selection": {"pages": len(selection), "seed": seed,
-                      "allocation": DEVELOPMENT_ALLOCATION,
+                      "allocation": effective_allocation,
                       "document_ids": [row["document_id"] for row in selection],
                       "truth_used": False, "predictions_used": False},
         "metrics": aggregate(rows, elapsed),
@@ -287,8 +290,17 @@ def main() -> int:
     parser.add_argument("--code-sha", required=True)
     parser.add_argument("--seed", type=int, default=20260824)
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--allocation-json", default=None,
+                        help="Optional group-to-page-count JSON; default is the frozen development allocation")
+    parser.add_argument("--accuracy-qualification-150", action="store_true",
+                        help="Use the frozen Phase 9E 75/30/25/20 allocation")
     args = parser.parse_args()
-    report = run(**vars(args))
+    values = vars(args)
+    raw_allocation = values.pop("allocation_json")
+    qualification = values.pop("accuracy_qualification_150")
+    values["allocation"] = (ACCURACY_QUALIFICATION_ALLOCATION if qualification
+                            else json.loads(raw_allocation) if raw_allocation else None)
+    report = run(**values)
     print(json.dumps(report, indent=2))
     return 0
 
