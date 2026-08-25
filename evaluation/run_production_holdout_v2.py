@@ -5,11 +5,13 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import random
 import re
 import statistics
 import time
 from collections import Counter, defaultdict
+from functools import lru_cache
 from pathlib import Path
 
 from PIL import Image
@@ -17,7 +19,9 @@ from PIL import Image
 from evaluation.audit_production_holdout_v2 import DEFAULT_DATASET, DEFAULT_OUTPUT, audit
 from packages.claim_decision import ClaimDecisionContext, ClaimDecisionService
 from packages.criticality import CriticalityPolicy, DEFAULT_CRITICALITY_PATH
+from packages.document_taxonomy.taxonomy import DocumentClass
 from packages.evidence_decision import DecisionContext, EvidenceDecisionService, FieldDisposition
+from packages.extraction_geometry import FormIdentityDecision, FormIdentityStatus
 from packages.field_verification import verify_field
 from packages.layout_intelligence import BundleDLayoutEngine
 from packages.ocr.contracts import OCRCandidate
@@ -28,7 +32,7 @@ from workers.document_preparation.preprocessing import (
 )
 from workers.page_detection.router import PageRoutingService
 from workers.page_detection.text_extraction import PaddleOCRTextExtractor, RapidOCRTextExtractor
-from workers.standard_form_extraction.consumer import _align_or_rescale
+from workers.standard_form_extraction.consumer import _resolve_geometry
 from workers.standard_form_extraction.extractor import StandardFormExtractionService
 
 
@@ -63,6 +67,57 @@ def _prepare(path: Path) -> Image.Image:
     return denoise(image)
 
 
+def _prepare_profiled(path: Path) -> tuple[Image.Image, dict[str, float]]:
+    stages: dict[str, float] = {}
+    started = time.perf_counter()
+    image = Image.open(path).convert("L")
+    image.load()
+    stages["image_decode"] = time.perf_counter() - started
+    started = time.perf_counter()
+    orientation = detect_orientation(image)
+    stages["orientation_detection"] = time.perf_counter() - started
+    started = time.perf_counter()
+    image = apply_orientation(image, orientation)
+    stages["orientation_apply"] = time.perf_counter() - started
+    started = time.perf_counter()
+    skew = detect_skew_angle(image)
+    stages["skew_detection"] = time.perf_counter() - started
+    started = time.perf_counter()
+    image = deskew(image, skew)
+    stages["deskew"] = time.perf_counter() - started
+    started = time.perf_counter()
+    image = denoise(image)
+    stages["denoise"] = time.perf_counter() - started
+    return image, stages
+
+
+@lru_cache(maxsize=1)
+def _runtime_components():
+    """Load immutable configuration and model-backed services once per process."""
+    registry = TemplateRegistry.load_from_directory(DEFAULT_TEMPLATE_DIR)
+    cms, ub = registry.get("cms1500", "02-12"), registry.get("ub04", "2014")
+    page_ocr = TesseractTextExtractor(psm=11)
+    router = PageRoutingService(
+        cms, ub, page_ocr, registry.load_reference_image(cms),
+        registry.load_reference_image(ub),
+    )
+    thread_cap = int(os.environ.get("CDP_INTERNAL_THREAD_CAP", "0") or 0)
+    rapid_kwargs = (
+        {"intra_op_num_threads": thread_cap, "inter_op_num_threads": 1}
+        if thread_cap > 0 else {}
+    )
+    return (
+        registry,
+        router,
+        StandardFormExtractionService(RapidOCRTextExtractor(**rapid_kwargs)),
+        PaddleOCRTextExtractor(cpu_threads=thread_cap or 2),
+        BundleDLayoutEngine(),
+        EvidenceDecisionService(route_mode="runtime"),
+        CriticalityPolicy.load(DEFAULT_CRITICALITY_PATH),
+        ClaimDecisionService.load(),
+    )
+
+
 def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0,
           sample_size: int | None = None, sample_seed: int = 62026) -> list[dict]:
     metadata = [json.loads(line) for line in (dataset / "metadata/document_metadata.jsonl").read_text("utf-8").splitlines()]
@@ -81,22 +136,17 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             "truth_used_for_selection": False,
         }, indent=2), "utf-8")
     inputs = inputs[offset:offset + limit if limit else None]
-    registry = TemplateRegistry.load_from_directory(DEFAULT_TEMPLATE_DIR)
-    cms, ub = registry.get("cms1500", "02-12"), registry.get("ub04", "2014")
-    page_ocr = TesseractTextExtractor(psm=11)
-    router = PageRoutingService(cms, ub, page_ocr, registry.load_reference_image(cms),
-                                registry.load_reference_image(ub))
-    rapid = StandardFormExtractionService(RapidOCRTextExtractor())
-    paddle = PaddleOCRTextExtractor()
-    layout = BundleDLayoutEngine()
-    decisions = EvidenceDecisionService(route_mode="runtime")
-    criticality = CriticalityPolicy.load(DEFAULT_CRITICALITY_PATH)
-    claims = ClaimDecisionService.load()
+    registry, router, rapid, paddle, layout, decisions, criticality, claims = (
+        _runtime_components()
+    )
     predictions = []
     for position, item in enumerate(inputs, 1):
         stage, counters = {}, Counter()
         wall0, cpu0 = time.perf_counter(), time.process_time()
-        started = time.perf_counter(); image = _prepare(dataset / item["path"]); stage["preparation"] = time.perf_counter()-started
+        started = time.perf_counter()
+        image, preparation_stages = _prepare_profiled(dataset / item["path"])
+        stage.update(preparation_stages)
+        stage["preparation"] = time.perf_counter()-started
         started = time.perf_counter(); routed = router.route_single_page(image); stage["classification"] = time.perf_counter()-started
         fields, field_decisions, route, schema = {}, [], None, None
         alignment_method, alignment_accepted, registration_confidence = None, False, None
@@ -107,12 +157,30 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             resized = image.resize((template.reference_dimensions.width_px,
                                     template.reference_dimensions.height_px))
             started = time.perf_counter()
-            ready, alignment_method, registration = _align_or_rescale(
-                resized, template, registry.load_reference_image(template))
+            identity = FormIdentityDecision(
+                family=(DocumentClass.CMS1500 if template.template_id == "cms1500"
+                        else DocumentClass.UB04),
+                status=FormIdentityStatus.VERIFIED,
+                score=routed.page_scores[1].confidence,
+                template_version=template.version,
+                supporting_evidence=("CANONICAL_RUNTIME_ROUTER",),
+            )
+            ready, geometry = _resolve_geometry(
+                resized, template, registry.load_reference_image(template), identity)
+            registration = geometry.registration
+            alignment_method = (
+                registration.algorithm if registration is not None
+                else geometry.mode.value.lower()
+            )
             stage["registration"] = time.perf_counter()-started
-            alignment_accepted = alignment_method in {"edge_phase_correlation", "sift_flann_ransac_homography"}
+            alignment_accepted = geometry.authorizes_fixed_roi
             registration_confidence = registration.alignment_confidence if registration else None
-            started = time.perf_counter(); extracted = rapid.extract_fields(ready, template, 1); stage["ocr"] = time.perf_counter()-started
+            started = time.perf_counter()
+            extracted = (
+                rapid.extract_fields(ready, template, 1)
+                if ready is not None and alignment_accepted else []
+            )
+            stage["ocr"] = time.perf_counter()-started
             counters["rapidocr_calls"] += len(extracted)
             source_candidates = []
             for field in extracted:

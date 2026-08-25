@@ -36,6 +36,11 @@ def build_template(*, manifest_jsonl: str | Path, output_jsonl: str | Path) -> d
                 "source_path": source_path,
                 "document_type": None,
                 "fields": {},
+                "annotation_contract": {
+                    "critical_fields": "DUAL_ANNOTATION_REQUIRED",
+                    "annotations": {"annotator_a": None, "annotator_b": None},
+                    "disagreement_resolution": "INDEPENDENT_ADJUDICATOR_REQUIRED",
+                },
                 "annotation_status": "UNLABELED",
                 "annotator_id": None,
                 "adjudication_status": "PENDING",

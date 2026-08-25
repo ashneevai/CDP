@@ -13,6 +13,14 @@ from pathlib import Path
 
 
 SUPPORTED_SUFFIXES = {".tif", ".tiff", ".png", ".jpg", ".jpeg", ".bmp"}
+TIFF_MAGIC = {b"II*\x00", b"MM\x00*"}
+
+
+def _is_supported_image(path: Path) -> bool:
+    if path.suffix.lower() in SUPPORTED_SUFFIXES:
+        return True
+    with path.open("rb") as handle:
+        return handle.read(4) in TIFF_MAGIC
 
 
 def _sha_file(path: Path) -> str:
@@ -37,7 +45,7 @@ def build_manifest(*, corpus_root: str | Path, output_jsonl: str | Path) -> dict
         raise ValueError(f"CORPUS_ROOT_MISSING:{root}")
     files = sorted(
         path for path in root.rglob("*")
-        if path.is_file() and path.suffix.lower() in SUPPORTED_SUFFIXES
+        if path.is_file() and _is_supported_image(path)
     )
     if not files:
         raise ValueError("CORPUS_HAS_NO_SUPPORTED_IMAGES")

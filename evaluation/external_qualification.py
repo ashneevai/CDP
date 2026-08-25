@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 import shlex
 import subprocess
@@ -128,21 +129,58 @@ def run_inference(
     corpus_id: str,
     freeze_json: str | Path,
     expected_pages: int = EXPECTED_PAGES,
+    checkpoint_dir: str | Path | None = None,
+    code_sha: str | None = None,
+    resume: bool = False,
 ) -> dict[str, Any]:
     if not command_template.strip():
         raise ValueError("INFERENCE_COMMAND_REQUIRED")
     items = _load_manifest(manifest_jsonl, expected_pages)
     predictions_path = Path(predictions_jsonl)
     freeze_path = Path(freeze_json)
-    if predictions_path.exists() or freeze_path.exists():
+    if freeze_path.exists() or (predictions_path.exists() and not checkpoint_dir):
         raise ValueError("QUALIFICATION_OUTPUT_ALREADY_EXISTS")
     predictions_path.parent.mkdir(parents=True, exist_ok=True)
     freeze_path.parent.mkdir(parents=True, exist_ok=True)
 
+    corpus_sha = _corpus_sha(items)
+    checkpoints = Path(checkpoint_dir) if checkpoint_dir else None
+    execution_fingerprint = {
+        "corpus_sha256": corpus_sha,
+        "runtime_manifest_id": runtime_manifest_id,
+        "code_sha": code_sha,
+        "command_sha256": sha256(command_template.encode("utf-8")).hexdigest(),
+        "expected_pages": expected_pages,
+    }
+    if checkpoints is not None:
+        checkpoints.mkdir(parents=True, exist_ok=True)
+        fingerprint_path = checkpoints / "execution_fingerprint.json"
+        if fingerprint_path.exists():
+            if json.loads(fingerprint_path.read_text("utf-8")) != execution_fingerprint:
+                raise ValueError("RESUME_FINGERPRINT_MISMATCH")
+            if not resume:
+                raise ValueError("CHECKPOINTS_EXIST_USE_RESUME")
+        else:
+            temporary = fingerprint_path.with_suffix(".tmp")
+            temporary.write_text(json.dumps(execution_fingerprint, sort_keys=True), "utf-8")
+            os.replace(temporary, fingerprint_path)
+
     with tempfile.TemporaryDirectory(prefix="cdp-qualification-") as tmp:
         tmp_path = Path(tmp)
-        with predictions_path.open("x", encoding="utf-8") as output:
-            for index, item in enumerate(items, 1):
+        ordered_predictions = []
+        seen: set[str] = set()
+        for index, item in enumerate(items, 1):
+                checkpoint = (
+                    checkpoints / f"{index:04d}-{item.document_id}.json"
+                    if checkpoints is not None else None
+                )
+                if checkpoint is not None and checkpoint.exists():
+                    prediction = _read_prediction(checkpoint, item.document_id)
+                    if item.document_id in seen:
+                        raise ValueError(f"DUPLICATE_CHECKPOINT_DOCUMENT:{item.document_id}")
+                    seen.add(item.document_id)
+                    ordered_predictions.append(prediction)
+                    continue
                 page_output = tmp_path / f"{index:04d}.json"
                 substitutions = {
                     "input": str(item.path),
@@ -172,11 +210,26 @@ def run_inference(
                 prediction["wall_seconds"] = wall_seconds
                 if item.group is not None:
                     prediction.setdefault("group", item.group)
+                if checkpoint is not None:
+                    temporary = checkpoint.with_suffix(".tmp")
+                    temporary.write_text(
+                        json.dumps(prediction, separators=(",", ":")) + "\n", "utf-8"
+                    )
+                    os.replace(temporary, checkpoint)
+                if item.document_id in seen:
+                    raise ValueError(f"DUPLICATE_PREDICTION_DOCUMENT:{item.document_id}")
+                seen.add(item.document_id)
+                ordered_predictions.append(prediction)
+
+        if len(ordered_predictions) != len(items):
+            raise ValueError("INCOMPLETE_PREDICTION_COVERAGE")
+        temporary_predictions = predictions_path.with_suffix(".tmp")
+        with temporary_predictions.open("x", encoding="utf-8") as output:
+            for prediction in ordered_predictions:
                 output.write(json.dumps(prediction, separators=(",", ":")) + "\n")
-                output.flush()
+        os.replace(temporary_predictions, predictions_path)
 
     prediction_sha = _sha_file(predictions_path)
-    corpus_sha = _corpus_sha(items)
     freeze = {
         "freeze_version": 1,
         "frozen_at": datetime.now(timezone.utc).isoformat(),
@@ -238,6 +291,9 @@ def _parser() -> argparse.ArgumentParser:
     run.add_argument("--corpus-id", required=True)
     run.add_argument("--inference-command", required=True)
     run.add_argument("--expected-pages", type=int, default=EXPECTED_PAGES)
+    run.add_argument("--checkpoint-dir")
+    run.add_argument("--code-sha")
+    run.add_argument("--resume", action="store_true")
 
     verify = sub.add_parser("verify", help="Verify frozen predictions are unchanged.")
     verify.add_argument("--predictions", required=True)
@@ -263,6 +319,9 @@ def main() -> int:
             corpus_id=args.corpus_id,
             freeze_json=args.freeze,
             expected_pages=args.expected_pages,
+            checkpoint_dir=args.checkpoint_dir,
+            code_sha=args.code_sha,
+            resume=args.resume,
         )
         print(json.dumps(freeze, indent=2))
     elif args.command == "verify":
