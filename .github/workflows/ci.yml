@@ -65,7 +65,7 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e ".[dev]"
       - run: >-
-          pytest -q -p no:cacheprovider --basetemp=.test-tmp/core
+          pytest -q -p no:cacheprovider --basetemp=.test-tmp-core
           tests/unit/cases/test_phase8_2_convergence.py
           tests/unit/cases/test_standard_form_extraction.py
           tests/unit/cases/test_evidence_decision_service.py
@@ -83,7 +83,7 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e ".[dev]"
       - run: >-
-          pytest -q -p no:cacheprovider --basetemp=.test-tmp/phase9
+          pytest -q -p no:cacheprovider --basetemp=.test-tmp-phase9
           tests/test_external_qualification.py
           tests/unit/cases/test_phase9_remaining_foundations.py
           tests/unit/cases/test_phase9_performance_harness.py
@@ -102,8 +102,8 @@ jobs:
           cache: pip
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e ".[dev]"
-      - run: pytest tests/architecture -q -p no:cacheprovider --basetemp=.test-tmp/safety
-      - run: pytest tests/unit/cases/test_table_baseline_protection.py -q -p no:cacheprovider --basetemp=.test-tmp/freeze
+      - run: pytest tests/architecture -q -p no:cacheprovider --basetemp=.test-tmp-safety
+      - run: pytest tests/unit/cases/test_table_baseline_protection.py -q -p no:cacheprovider --basetemp=.test-tmp-freeze
 
   evaluation-ui:
     runs-on: ubuntu-latest

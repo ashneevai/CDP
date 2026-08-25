@@ -2,13 +2,13 @@ from pathlib import Path
 
 from PIL import Image
 
-from packages.document_taxonomy.taxonomy import DocumentClass
 from packages.deterministic_evidence import DeterministicEvidenceService
+from packages.document_taxonomy.taxonomy import DocumentClass
 from packages.evidence_decision import FieldDecision, FieldDisposition, NextAction
 from packages.extraction_geometry import FormIdentityDecision, FormIdentityStatus
 from packages.hitl_optimization import CanonicalHITLAuthority
-from packages.page_observation import PageObservationService, line_clustered_reading_order
 from packages.local_evidence_cascade import decide_local_candidate
+from packages.page_observation import PageObservationService, line_clustered_reading_order
 from packages.templates import TemplateRegistry
 from workers.page_detection.text_extraction import TextLine
 from workers.standard_form_extraction import (
@@ -16,7 +16,6 @@ from workers.standard_form_extraction import (
     StandardFormProcessingService,
 )
 from workers.validation.consumer import extraction_geometry_evidence
-
 
 ROOT = Path(__file__).resolve().parents[3]
 
@@ -148,7 +147,9 @@ def test_npi_does_not_repeat_same_engine_secondary_ocr():
 def test_ub_semantic_headers_supply_skew_resilient_structure_confidence():
     from packages.forms.ub04.structural_map import UB04StructuralMapDetector
     from packages.page_observation import (
-        ImageQualityEvidence, ObservationToken, PageObservation,
+        ImageQualityEvidence,
+        ObservationToken,
+        PageObservation,
     )
 
     tokens = [
