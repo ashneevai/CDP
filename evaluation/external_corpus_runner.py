@@ -44,7 +44,10 @@ def build_truth_blind_dataset(corpus_zip: Path, dataset_root: Path) -> dict[str,
     lineage: dict[str, dict[str, str]] = {}
     metadata_rows: list[dict[str, str]] = []
     with zipfile.ZipFile(corpus_zip) as archive:
-        members = sorted(member for member in archive.infolist() if not member.is_dir())
+        members = sorted(
+            (member for member in archive.infolist() if not member.is_dir()),
+            key=lambda member: member.filename,
+        )
         for ordinal, member in enumerate(members, start=1):
             parts = Path(member.filename).parts
             group = parts[0] if len(parts) > 1 else "UNGROUPED"

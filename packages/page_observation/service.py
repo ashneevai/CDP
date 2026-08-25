@@ -58,7 +58,7 @@ class PageObservationService:
         rgb = image.convert("RGB")
         digest = page_sha256 or hashlib.sha256(rgb.tobytes()).hexdigest()
         model_version = getattr(self._extractor, "model_version", "unknown")
-        key = self._cache.key(digest, model_version, self._preprocessing_version)
+        key = self._cache.key(digest, model_version, self._preprocessing_version, page_id)
         if cached := self._cache.get(key):
             return cached
         lines = self._extractor.extract(rgb)
@@ -67,6 +67,11 @@ class PageObservationService:
                 token_id=f"ocr-{index}", text=line.text.strip(),
                 bbox=(line.x0, line.y0, line.x1, line.y1), confidence=line.confidence,
                 line_index=index, reading_order=index,
+                normalized_text=re.sub(r"\s+", " ", line.text).strip().casefold(),
+                engine=getattr(self._extractor, "engine_name", "unknown"),
+                model_name=getattr(self._extractor, "model_name", "unknown"),
+                model_version=model_version,
+                preprocessing_variant=self._preprocessing_version,
             )
             for index, line in enumerate(line_clustered_reading_order(lines))
             if line.text.strip()
@@ -120,6 +125,11 @@ class PageObservationService:
             checkbox_candidates=checkboxes, table_regions=table_regions,
             anchor_candidates=anchors, structural_regions=table_regions,
             ocr_model_version=model_version, preprocessing_version=self._preprocessing_version,
+            ocr_provenance={
+                "engine": getattr(self._extractor, "engine_name", "unknown"),
+                "model_name": getattr(self._extractor, "model_name", "unknown"),
+                "model_version": model_version,
+            },
         )
         self._cache.put(key, observation)
         return observation

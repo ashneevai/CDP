@@ -15,8 +15,11 @@ class PageObservationCache:
         self._lock = RLock()
 
     @staticmethod
-    def key(page_sha256: str, ocr_model_version: str, preprocessing_version: str) -> str:
-        return f"{page_sha256}:{ocr_model_version}:{preprocessing_version}"
+    def key(page_sha256: str, ocr_model_version: str, preprocessing_version: str,
+            page_id: str | None = None) -> str:
+        # A content-identical page owned by another document is still distinct
+        # evidence.  The identity prefix prevents cross-document provenance reuse.
+        return f"{page_id or 'UNSCOPED'}:{page_sha256}:{ocr_model_version}:{preprocessing_version}"
 
     def get(self, key: str) -> PageObservation | None:
         with self._lock:

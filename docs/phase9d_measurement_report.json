@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "benchmark": {
+    "name": "PHASE9A_RECOVERED_30_PAGE_TRUTH_BLIND",
+    "pages": 30,
+    "seed": 20260824,
+    "selection_sha256": "e29d5956c84fe51d9d50612b9b679a4906b984f94833c0f9d397b305d894b4f6",
+    "ordered_document_id_sha256": "145c138eea8a4ded67892ce8178c43583628335c75c2182986b226e4b2cce42d",
+    "corpus_sha256": "8c09d4ec4de3fef8bf41771ae45bc69b69300221781a9eea9183936cfcbe85f3",
+    "workers": 1,
+    "thread_cap": 0
+  },
+  "phase9b": {
+    "runtime_seconds": 1051.1788032,
+    "mean_seconds": 34.74544568,
+    "p50_seconds": 10.8497429,
+    "p95_seconds": 92.097724,
+    "p99_seconds": 131.3825486,
+    "cpu_seconds_per_page": 60.14739583,
+    "pages_per_second": 0.0285393883,
+    "ocr_seconds_per_page": 23.10596938,
+    "full_page_ocr_calls": 9,
+    "regional_ocr_calls": 25,
+    "paddle_calls": 19,
+    "tesseract_calls": 30,
+    "mean_memory_bytes": 180095658.67,
+    "p95_memory_bytes": 244977664
+  },
+  "phase9d": {
+    "runtime_seconds": 1040.9990873,
+    "mean_seconds": 34.54752002,
+    "p50_seconds": 21.641585,
+    "p95_seconds": 105.2569282,
+    "p99_seconds": 115.8114182,
+    "cpu_seconds_per_page": 53.525,
+    "pages_per_second": 0.0288184691,
+    "ocr_seconds_per_page": 22.52619317,
+    "full_page_ocr_calls": 9,
+    "regional_ocr_calls": 0,
+    "paddle_calls": 13,
+    "tesseract_calls": 30,
+    "mean_memory_bytes": 204437913.6,
+    "p95_memory_bytes": 227147776,
+    "routing_seconds_per_page": 10.11348108,
+    "canonical_observation_seconds_per_page": 16.97614082,
+    "paddle_observed_latency_count": 12,
+    "paddle_mean_seconds": 8.84843287,
+    "paddle_p95_seconds": 24.2909283,
+    "paddle_max_seconds": 24.2909283,
+    "paddle_timeout_count": 1,
+    "route_distribution": {
+      "CMS1500": 11,
+      "UNKNOWN_STRUCTURED": 1,
+      "UNKNOWN_UNSTRUCTURED": 18
+    }
+  },
+  "regional_ocr_effectiveness": {
+    "measured_phase9b_calls": 25,
+    "useful": 0,
+    "wasted": 25,
+    "worse": 0,
+    "useful_percent": 0,
+    "phase9d_calls_after_policy": 0
+  },
+  "routing": {
+    "tesseract_calls": 30,
+    "duplicate_paddle_calls_avoided": 6,
+    "canonical_observation_routing_calls": 0,
+    "route_semantic_changes_vs_phase9b": 0
+  },
+  "decisions": {
+    "performance_gate": "REJECT",
+    "semantic_gate": "NEEDS_MORE_DATA",
+    "accuracy_gate": "NEEDS_MORE_DATA",
+    "phase9_full_run": "NOT_READY"
+  },
+  "rejected_experiment": {
+    "name": "TESSERACT_LAYOUT_PREFLIGHT",
+    "reason": "CUSTOM_STRUCTURED_ROUTE_LOSS_AND_PADDLE_TIMEOUT_OUTLIER",
+    "promoted": false
+  },
+  "contains_phi_values": false
+}

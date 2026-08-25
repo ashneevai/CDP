@@ -26,6 +26,10 @@ from packages.roi_resolution import ROIResolutionMode, ROIResolutionResult
 from packages.templates.models import FieldRegion, Template
 from workers.page_detection.text_extraction import TextExtractor
 from workers.standard_form_extraction.field_processors import normalize
+from workers.standard_form_extraction.spatial_assignment import (
+    TokenOwnership,
+    assign_tokens,
+)
 from workers.table_extraction import UB04ServiceLineExtractor
 
 REGION_PADDING_PX = 4
@@ -181,6 +185,26 @@ class StandardFormExtractionService:
         selective secondary-evidence policy.
         """
         region_by_name = {region.field_name: region for region in template.field_regions}
+        resolved_boxes = {
+            name: resolved.bbox
+            for name, resolved in roi_results.items()
+            if resolved.bbox is not None and resolved.mode != ROIResolutionMode.UNRESOLVED
+        }
+        labels_by_field = {
+            name: {
+                name.replace("_", " "),
+                *((field_definitions or {}).get(name).aliases
+                  if (field_definitions or {}).get(name) is not None else ()),
+                *((field_definitions or {}).get(name).negative_labels
+                  if (field_definitions or {}).get(name) is not None else ()),
+            }
+            for name in resolved_boxes
+        }
+        assignments = assign_tokens(
+            observation.ocr_tokens,
+            resolved_boxes,
+            labels_by_field=labels_by_field,
+        )
         fields: list[ExtractedField] = []
         traces: dict[str, dict] = {}
         for name, resolved in roi_results.items():
@@ -191,11 +215,10 @@ class StandardFormExtractionService:
             if region is None and definition is None:
                 continue
             x0, y0, x1, y1 = resolved.bbox
+            field_assignments = [item for item in assignments if item.field_name == name]
             tokens = [
-                token
-                for token in observation.ocr_tokens
-                if x0 <= (token.bbox[0] + token.bbox[2]) / 2 <= x1
-                and y0 <= (token.bbox[1] + token.bbox[3]) / 2 <= y1
+                item.token for item in field_assignments
+                if item.ownership == TokenOwnership.VALUE
             ]
             ordered = line_clustered_reading_order(tokens)
             text = " ".join(token.text for token in ordered)
@@ -252,14 +275,29 @@ class StandardFormExtractionService:
             regional_confidence = None
             regional = None
             regional_span = None
+            regional_trigger_reason = None
             primary = decide_local_candidate(text, definition.datatype) if definition else None
             if definition is not None and image is not None:
                 # A second pass through the same RapidOCR family cannot add
                 # independent evidence for an NPI checksum failure. Golden
                 # evaluation showed zero resolutions across 90 such calls;
                 # retain the candidate for safe deterministic rejection.
-                secondary_eligible = definition.datatype != "NPI"
+                # Phase 9D's frozen 30-page benchmark measured 25/25
+                # same-engine regional retries as NO_CHANGE. Retrying the
+                # same OCR family is therefore disabled on this canonical
+                # path; unresolved/invalid critical fields remain reviewable
+                # and specialist recovery can be introduced only with
+                # independent evidence of benefit.
+                secondary_eligible = False
                 if not primary.accepted and secondary_eligible:
+                    regional_trigger_reason = (
+                        "NO_PRIMARY_TOKEN" if not text.strip()
+                        else "DETERMINISTIC_VALIDATION_FAILURE"
+                    )
+                    if hasattr(self._text_extractor, "set_context"):
+                        self._text_extractor.set_context(
+                            field=name, reason=regional_trigger_reason
+                        )
                     regional_text, regional_confidence = _region_text(
                         self._text_extractor, image, resolved.bbox
                     )
@@ -290,7 +328,11 @@ class StandardFormExtractionService:
                 page_number,
                 observation.width,
                 observation.height,
-                ExtractionMethod.REGIONAL_RAPIDOCR,
+                (
+                    ExtractionMethod.REGIONAL_RAPIDOCR
+                    if regional is not None and regional.accepted
+                    else ExtractionMethod.SPATIAL_TOKEN_MAPPING
+                ),
                 postprocessor,
             )
             field.validation_reasons.extend(resolved.reason_codes)
@@ -303,7 +345,7 @@ class StandardFormExtractionService:
                 primary_id = f"{localization_id}:page-observation"
                 field.candidates.append(
                     FieldEvidence(
-                        source=ExtractionMethod.REGIONAL_RAPIDOCR,
+                        source=ExtractionMethod.PAGE_OBSERVATION,
                         raw_text=primary_raw,
                         confidence=confidence
                         if not secondary_invoked
@@ -430,6 +472,7 @@ class StandardFormExtractionService:
                 "selected_normalized_value": field.normalized_value,
                 "selected_confidence": field.confidence,
                 "secondary_invoked": secondary_invoked,
+                "regional_ocr_trigger_reason": regional_trigger_reason,
                 "changed_output": bool(
                     secondary_invoked
                     and regional_text is not None
@@ -437,6 +480,26 @@ class StandardFormExtractionService:
                 ),
                 "validation_status": field.validation_status.value,
                 "reason_codes": list(field.validation_reasons),
+                "token_ownership": {
+                    "value": sum(
+                        item.ownership == TokenOwnership.VALUE
+                        for item in field_assignments
+                    ),
+                    "label": sum(
+                        item.ownership == TokenOwnership.LABEL
+                        for item in field_assignments
+                    ),
+                    "ambiguous_competitors": sum(
+                        name in item.competing_fields
+                        for item in assignments
+                        if item.ownership == TokenOwnership.AMBIGUOUS
+                    ),
+                },
+                "assignment_scores": [
+                    round(item.features.score, 6)
+                    for item in field_assignments
+                    if item.features is not None
+                ],
             }
             fields.append(field)
         self.last_candidate_trace = traces

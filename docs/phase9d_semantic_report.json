@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "changed_fields": 248,
+  "potential_regressions": 205,
+  "classification": {
+    "AMBIGUOUS": 229,
+    "PROVENANCE_ONLY": 19
+  },
+  "root_causes": {
+    "FIELD_DEFINITION_CHANGE": 187,
+    "FIELD_SPAN_SELECTION": 38,
+    "PRIMARY_OCR_MISS": 23
+  },
+  "potential_regression_root_causes": {
+    "FIELD_DEFINITION_CHANGE": 168,
+    "FIELD_SPAN_SELECTION": 37
+  },
+  "fields": {
+    "account_no": 9,
+    "amount_paid": 9,
+    "diagnosis": 9,
+    "dob": 9,
+    "federal_tax_no": 9,
+    "insured_addr1": 9,
+    "insured_address": 9,
+    "insured_city": 9,
+    "insured_name": 9,
+    "insured_policy_group": 9,
+    "insured_state": 9,
+    "insured_zip": 9,
+    "member_id": 9,
+    "patient_addr1": 9,
+    "patient_address": 9,
+    "patient_city": 9,
+    "patient_first": 9,
+    "patient_last": 9,
+    "patient_name": 9,
+    "patient_state": 9,
+    "patient_zip": 9,
+    "provider_name": 9,
+    "relationship": 9,
+    "service_date": 9,
+    "sex": 9,
+    "total_charge": 9,
+    "cpt_hcpcs": 8,
+    "provider_npi": 6
+  },
+  "families": {
+    "CMS1500": 248
+  },
+  "criticality_breakdown": "UNAVAILABLE_IN_HISTORICAL_RESULTS",
+  "business_impact_ranking": [
+    {
+      "root_cause": "FIELD_DEFINITION_CHANGE",
+      "changed_fields": 187
+    },
+    {
+      "root_cause": "FIELD_SPAN_SELECTION",
+      "changed_fields": 38
+    },
+    {
+      "root_cause": "PRIMARY_OCR_MISS",
+      "changed_fields": 23
+    }
+  ],
+  "independent_truth_used": false,
+  "contains_phi_values": false,
+  "private_detail_committed": false
+}

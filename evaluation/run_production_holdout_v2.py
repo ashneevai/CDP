@@ -5,32 +5,46 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import os
 import random
 import re
 import statistics
 import time
 from collections import Counter, defaultdict
+from functools import lru_cache
 from pathlib import Path
 
 from PIL import Image
 
 from evaluation.audit_production_holdout_v2 import DEFAULT_DATASET, DEFAULT_OUTPUT, audit
 from packages.claim_decision import ClaimDecisionContext, ClaimDecisionService
-from packages.criticality import CriticalityPolicy, DEFAULT_CRITICALITY_PATH
-from packages.evidence_decision import DecisionContext, EvidenceDecisionService, FieldDisposition
+from packages.criticality import DEFAULT_CRITICALITY_PATH, CriticalityPolicy
+from packages.document_taxonomy.taxonomy import DocumentClass
+from packages.domain.enums import BundleType
+from packages.evidence_decision import DecisionContext, EvidenceDecisionService
+from packages.extraction_geometry import FormIdentityDecision, FormIdentityStatus
 from packages.field_verification import verify_field
 from packages.layout_intelligence import BundleDLayoutEngine
 from packages.ocr.contracts import OCRCandidate
+from packages.page_observation import PageObservationService
 from packages.templates.registry import DEFAULT_TEMPLATE_DIR, TemplateRegistry
+from workers.cascade.isolated_ocr import IsolatedTextExtractor, OCRTimeoutError
 from workers.cascade.tesseract_adapter import TesseractTextExtractor
 from workers.document_preparation.preprocessing import (
-    apply_orientation, denoise, deskew, detect_orientation, detect_skew_angle,
+    apply_orientation,
+    denoise,
+    deskew,
+    detect_orientation,
+    detect_skew_angle,
 )
 from workers.page_detection.router import PageRoutingService
-from workers.page_detection.text_extraction import PaddleOCRTextExtractor, RapidOCRTextExtractor
-from workers.standard_form_extraction.consumer import _align_or_rescale
+from workers.page_detection.text_extraction import (
+    RapidOCRFullPageTextExtractor,
+    RapidOCRTextExtractor,
+)
+from workers.standard_form_extraction.consumer import _resolve_geometry
 from workers.standard_form_extraction.extractor import StandardFormExtractionService
-
+from workers.standard_form_extraction.processing import StandardFormProcessingService
 
 ACTUAL_TO_TRUTH = {
     "patient_dob": "dob", "insured_id_number": "member_id",
@@ -63,6 +77,74 @@ def _prepare(path: Path) -> Image.Image:
     return denoise(image)
 
 
+def _prepare_profiled(path: Path) -> tuple[Image.Image, dict[str, float]]:
+    stages: dict[str, float] = {}
+    started = time.perf_counter()
+    image = Image.open(path).convert("L")
+    image.load()
+    stages["image_decode"] = time.perf_counter() - started
+    started = time.perf_counter()
+    orientation = detect_orientation(image)
+    stages["orientation_detection"] = time.perf_counter() - started
+    started = time.perf_counter()
+    image = apply_orientation(image, orientation)
+    stages["orientation_apply"] = time.perf_counter() - started
+    started = time.perf_counter()
+    skew = detect_skew_angle(image)
+    stages["skew_detection"] = time.perf_counter() - started
+    started = time.perf_counter()
+    image = deskew(image, skew)
+    stages["deskew"] = time.perf_counter() - started
+    started = time.perf_counter()
+    image = denoise(image)
+    stages["denoise"] = time.perf_counter() - started
+    return image, stages
+
+
+@lru_cache(maxsize=1)
+def _runtime_components():
+    """Load immutable configuration and model-backed services once per process."""
+    registry = TemplateRegistry.load_from_directory(DEFAULT_TEMPLATE_DIR)
+    cms, ub = registry.get("cms1500", "02-12"), registry.get("ub04", "2014")
+    page_ocr = TesseractTextExtractor(psm=11)
+    router = PageRoutingService(
+        cms, ub, page_ocr, registry.load_reference_image(cms),
+        registry.load_reference_image(ub),
+    )
+    thread_cap = int(os.environ.get("CDP_INTERNAL_THREAD_CAP", "0") or 0)
+    rapid_kwargs = (
+        {"intra_op_num_threads": thread_cap, "inter_op_num_threads": 1}
+        if thread_cap > 0 else {}
+    )
+    regional = RapidOCRTextExtractor(**rapid_kwargs)
+    observation = PageObservationService(
+        RapidOCRFullPageTextExtractor(**rapid_kwargs),
+        preprocessing_version="phase9b-production-prepared-v1",
+    )
+    standard_processing = StandardFormProcessingService(
+        observation,
+        StandardFormExtractionService(regional),
+    )
+    return (
+        registry,
+        router,
+        standard_processing,
+        IsolatedTextExtractor(
+            "workers.page_detection.text_extraction",
+            "PaddleOCRTextExtractor",
+            provider_kwargs={"cpu_threads": thread_cap or 2},
+            timeout_seconds=float(os.environ.get("CDP_OCR_TIMEOUT_SECONDS", "30")),
+            engine_name="paddleocr",
+            model_name="PP-OCRv4",
+            model_version="paddleocr-2.x",
+        ),
+        BundleDLayoutEngine(),
+        EvidenceDecisionService(route_mode="runtime"),
+        CriticalityPolicy.load(DEFAULT_CRITICALITY_PATH),
+        ClaimDecisionService.load(),
+    )
+
+
 def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0,
           sample_size: int | None = None, sample_seed: int = 62026) -> list[dict]:
     metadata = [json.loads(line) for line in (dataset / "metadata/document_metadata.jsonl").read_text("utf-8").splitlines()]
@@ -81,24 +163,20 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             "truth_used_for_selection": False,
         }, indent=2), "utf-8")
     inputs = inputs[offset:offset + limit if limit else None]
-    registry = TemplateRegistry.load_from_directory(DEFAULT_TEMPLATE_DIR)
-    cms, ub = registry.get("cms1500", "02-12"), registry.get("ub04", "2014")
-    page_ocr = TesseractTextExtractor(psm=11)
-    router = PageRoutingService(cms, ub, page_ocr, registry.load_reference_image(cms),
-                                registry.load_reference_image(ub))
-    rapid = StandardFormExtractionService(RapidOCRTextExtractor())
-    paddle = PaddleOCRTextExtractor()
-    layout = BundleDLayoutEngine()
-    decisions = EvidenceDecisionService(route_mode="runtime")
-    criticality = CriticalityPolicy.load(DEFAULT_CRITICALITY_PATH)
-    claims = ClaimDecisionService.load()
+    registry, router, standard_processing, paddle, layout, decisions, criticality, claims = (
+        _runtime_components()
+    )
     predictions = []
     for position, item in enumerate(inputs, 1):
         stage, counters = {}, Counter()
         wall0, cpu0 = time.perf_counter(), time.process_time()
-        started = time.perf_counter(); image = _prepare(dataset / item["path"]); stage["preparation"] = time.perf_counter()-started
+        started = time.perf_counter()
+        image, preparation_stages = _prepare_profiled(dataset / item["path"])
+        stage.update(preparation_stages)
+        stage["preparation"] = time.perf_counter()-started
         started = time.perf_counter(); routed = router.route_single_page(image); stage["classification"] = time.perf_counter()-started
         fields, field_decisions, route, schema = {}, [], None, None
+        ocr_diagnostics = None
         alignment_method, alignment_accepted, registration_confidence = None, False, None
         table_payload = None
         if routed.template is not None:
@@ -107,43 +185,114 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             resized = image.resize((template.reference_dimensions.width_px,
                                     template.reference_dimensions.height_px))
             started = time.perf_counter()
-            ready, alignment_method, registration = _align_or_rescale(
-                resized, template, registry.load_reference_image(template))
+            identity = FormIdentityDecision(
+                family=(DocumentClass.CMS1500 if template.template_id == "cms1500"
+                        else DocumentClass.UB04),
+                status=FormIdentityStatus.VERIFIED,
+                score=routed.page_scores[1].confidence,
+                template_version=template.version,
+                supporting_evidence=("CANONICAL_RUNTIME_ROUTER",),
+            )
+            ready, geometry = _resolve_geometry(
+                resized, template, registry.load_reference_image(template), identity)
+            registration = geometry.registration
+            alignment_method = (
+                registration.algorithm if registration is not None
+                else geometry.mode.value.lower()
+            )
             stage["registration"] = time.perf_counter()-started
-            alignment_accepted = alignment_method in {"edge_phase_correlation", "sift_flann_ransac_homography"}
+            alignment_accepted = geometry.authorizes_fixed_roi
             registration_confidence = registration.alignment_confidence if registration else None
-            started = time.perf_counter(); extracted = rapid.extract_fields(ready, template, 1); stage["ocr"] = time.perf_counter()-started
-            counters["rapidocr_calls"] += len(extracted)
+            started = time.perf_counter()
+            processing = (
+                standard_processing.process(
+                    ready,
+                    template,
+                    1,
+                    identity,
+                    page_id=item["document_id"],
+                    registered_geometry=geometry,
+                )
+                if ready is not None and alignment_accepted else None
+            )
+            extracted = processing.fields if processing is not None else []
+            stage["ocr"] = time.perf_counter()-started
+            if processing is not None:
+                ocr_diagnostics = processing.diagnostics.model_dump(mode="json")
+                counters["rapidocr_calls"] += (
+                    processing.diagnostics.full_page_ocr_calls
+                    + processing.diagnostics.regional_ocr_calls
+                )
+                counters["full_page_ocr_calls"] += processing.diagnostics.full_page_ocr_calls
+                counters["regional_ocr_calls"] += processing.diagnostics.regional_ocr_calls
             source_candidates = []
             for field in extracted:
                 canonical = ACTUAL_TO_TRUTH.get(field.field_name, field.field_name)
                 value = field.normalized_value or field.raw_value
+                evidence_reference = (
+                    "template:regional-fallback"
+                    if field.extraction_method.value == "REGIONAL_RAPIDOCR"
+                    else "page-observation:spatial-token-mapping"
+                )
                 if canonical not in fields or field.confidence > fields[canonical]["confidence"]:
                     fields[canonical] = {"value": value, "raw": field.raw_value,
                                          "confidence": field.confidence,
                                          "bbox": field.bounding_box.model_dump(mode="json"),
-                                         "source_field": field.field_name}
-                source_candidates.append((canonical, value, field.confidence, field.bounding_box, None))
+                                         "source_field": field.field_name,
+                                         "extraction_method": field.extraction_method.value}
+                source_candidates.append((canonical, value, field.confidence,
+                                          field.bounding_box, evidence_reference))
             schema = route
         else:
-            counters["paddleocr_calls"] += 1
-            started = time.perf_counter(); tokens = paddle.extract(image); stage["ocr"] = time.perf_counter()-started
-            started = time.perf_counter(); result = layout.extract(
-                tokens, page_number=1, width=image.width, height=image.height,
-                engine=paddle.engine_name); stage["layout"] = time.perf_counter()-started
-            route, schema = result.route.value, result.schema_evidence.schema_family
-            table_payload = result.table.model_dump(mode="json")
-            source_candidates = []
-            for canonical, candidates in result.candidates.items():
-                best = candidates[0]
-                fields[canonical] = {"value": best.value, "raw": best.value,
-                                     "confidence": best.confidence,
-                                     "bbox": best.bbox.model_dump(mode="json"),
-                                     "label": best.original_label,
-                                     "alias": best.matched_alias,
-                                     "relationship": best.relationship_evidence.relationship}
-                source_candidates.append((canonical, best.value, best.confidence, best.bbox,
-                                          best.relationship_evidence.relationship))
+            cheap_terminal_routes = {
+                BundleType.UNKNOWN_UNSTRUCTURED: "UNKNOWN_UNSTRUCTURED",
+                BundleType.NON_CLAIM: "NON_CLAIM",
+            }
+            if routed.bundle_type in cheap_terminal_routes:
+                # The canonical Tesseract-backed router already has sufficient
+                # evidence for terminal, fieldless routes. Paddle cannot alter
+                # a field decision here and is therefore not justified.
+                route = cheap_terminal_routes[routed.bundle_type]
+                schema = route
+                source_candidates = []
+                counters["duplicate_ocr_avoided"] += 1
+                counters["paddle_escalation_not_required"] += 1
+            else:
+                counters["paddleocr_calls"] += 1
+                escalation_reason = (
+                    "CUSTOM_STRUCTURED"
+                    if routed.bundle_type == BundleType.UNKNOWN_STRUCTURED
+                    else "GENERIC_LAYOUT_REQUIRED"
+                )
+                counters[f"paddle_escalation:{escalation_reason}"] += 1
+                started = time.perf_counter()
+                try:
+                    tokens = paddle.extract(image)
+                except OCRTimeoutError:
+                    stage["ocr"] = time.perf_counter()-started
+                    counters["ocr_timeouts"] += 1
+                    route, schema = "UNKNOWN_UNSTRUCTURED", "UNKNOWN_UNSTRUCTURED"
+                    source_candidates = []
+                else:
+                    stage["ocr"] = time.perf_counter()-started
+                    stage["paddle"] = stage["ocr"]
+                    started = time.perf_counter(); result = layout.extract(
+                        tokens, page_number=1, width=image.width, height=image.height,
+                        engine=paddle.engine_name); stage["layout"] = time.perf_counter()-started
+                    route, schema = result.route.value, result.schema_evidence.schema_family
+                    table_payload = result.table.model_dump(mode="json")
+                    source_candidates = []
+                    for canonical, candidates in result.candidates.items():
+                        best = candidates[0]
+                        fields[canonical] = {"value": best.value, "raw": best.value,
+                                             "confidence": best.confidence,
+                                             "bbox": best.bbox.model_dump(mode="json"),
+                                             "label": best.original_label,
+                                             "alias": best.matched_alias,
+                                             "relationship": best.relationship_evidence.relationship,
+                                             "extraction_method": "PADDLE_LAYOUT"}
+                        source_candidates.append((canonical, best.value, best.confidence, best.bbox,
+                                                  best.relationship_evidence.relationship))
         started = time.perf_counter()
         for canonical, value, confidence, bbox, structural in source_candidates:
             verification = verify_field(canonical, value)
@@ -154,7 +303,11 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
                 preprocessing_variant="production_prepared", raw_confidence=confidence,
                 calibrated_confidence=None, bounding_box=bbox, latency_ms=0,
                 validation_results=(verification.reason_code,),
-                evidence_reference=f"layout:{structural}" if structural else "template:regional",
+                evidence_reference=(
+                    f"layout:{structural}"
+                    if structural and not structural.startswith(("page-observation:", "template:"))
+                    else structural or "template:regional"
+                ),
                 registration_confidence=registration_confidence,
             )
             decision = decisions.decide(DecisionContext(
@@ -183,6 +336,7 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             "registration_confidence": registration_confidence,
             "fields": fields, "claim_decision": claim.model_dump(mode="json") if claim else None,
             "table": table_payload, "stage_seconds": stage,
+            "ocr_diagnostics": ocr_diagnostics,
             "wall_seconds": time.perf_counter()-wall0, "cpu_seconds": time.process_time()-cpu0,
             "counters": dict(counters), "cloud_cost_usd": 0,
         })

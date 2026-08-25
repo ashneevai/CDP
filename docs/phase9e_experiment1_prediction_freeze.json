@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "experiment": "PHASE9E_EXPERIMENT_1_CURRENT_ARCHITECTURE_ACCURACY_BASELINE",
+  "dataset_id": "CDP_ACCURACY_QUALIFICATION_V1",
+  "baseline_git_sha": "92eb506467aa3f3119f7b025b766b7baeec32d6e",
+  "selection": {
+    "pages": 150,
+    "seed": 20260825,
+    "allocation": {"Group A": 75, "Group B": 30, "Group C": 25, "Group D": 20},
+    "selection_manifest_sha256": "ec69768bd640de7664eb4050e5924e90e326a76d5c351914963b7687171c3ebe",
+    "ordered_document_ids_sha256": "35d9945ca7ed7a16240b3812788f9991efaf522c4ba392c47de4ed3e5364514a"
+  },
+  "prediction_freeze": {
+    "predictions_sha256": "eeb19e7c74fe157594d9ede20b94eead5b7e07602c6b59e08b951b2444d99b14",
+    "runtime_manifest_sha256": "4b1e35b4cea951e23c3f3a9102aa6916f7973ee7861c90a1ea3f37a33e16e875",
+    "configuration_sha256": "1c4ed9b4c859cc70e4458ee5c233675ec54ad87a2ef64aab385894d03b1777c5",
+    "truth_present": false,
+    "scoring_allowed": false,
+    "private_artifacts_committed": false
+  },
+  "execution": {
+    "pages_requested": 150,
+    "pages_succeeded": 150,
+    "failure_count": 0,
+    "elapsed_seconds": 5075.363739100008,
+    "mean_seconds_per_page": 33.79061832866651,
+    "p50_seconds": 16.945297099999152,
+    "p95_seconds": 89.67711530000088,
+    "p99_seconds": 118.1868950999924,
+    "cpu_seconds_per_page": 50.123020833333335,
+    "pages_per_second": 0.029554531992341267,
+    "mean_memory_bytes": 165547294.72,
+    "p95_memory_bytes": 225972224,
+    "rapidocr_calls": 44,
+    "paddleocr_calls": 61,
+    "ocr_timeouts": 2,
+    "routes": {"CMS1500": 55, "UB04": 1, "UNKNOWN_STRUCTURED": 2, "UNKNOWN_UNSTRUCTURED": 92}
+  },
+  "accuracy": {
+    "status": "NEEDS_INDEPENDENT_TRUTH",
+    "routing_accuracy": null,
+    "overall_field_accuracy": null,
+    "critical_field_accuracy": null,
+    "accepted_precision": null,
+    "critical_false_accepts": null,
+    "true_claim_stp": null
+  },
+  "gates": {
+    "performance_gate": "REJECT",
+    "semantic_gate": "NEEDS_MORE_DATA",
+    "accuracy_gate": "NEEDS_MORE_DATA",
+    "phase9_full_run": "NOT_READY"
+  },
+  "next_action": "COMPLETE_BLIND_DUAL_ANNOTATION_AND_ADJUDICATION_BEFORE_SCORING"
+}

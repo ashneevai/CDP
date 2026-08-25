@@ -47,6 +47,16 @@ class ExtractionDiagnostics(DomainModel):
     observation_tokens: int = 0
     roi_requests: int = 0
     resolved_rois: int = 0
+    tokens_in_rois: int = 0
+    tokens_overlapping_multiple_fields: int = 0
+    tokens_outside_all_fields: int = 0
+    label_tokens_rejected: int = 0
+    candidate_tokens_accepted: int = 0
+    multi_token_concatenations: int = 0
+    regional_ocr_reasons: dict[str, int] = Field(default_factory=dict)
+    regional_fields_improved: int = 0
+    regional_fields_unchanged: int = 0
+    regional_fields_worsened: int = 0
     reason_codes: list[str] = Field(default_factory=list)
 
 
@@ -163,6 +173,11 @@ class StandardFormProcessingService:
         started = time.perf_counter()
         resolver = DynamicROIResolver()
         template_regions = {item.field_name: item for item in template.field_regions}
+        # Preserve the complete registered template field contract. Dynamic
+        # definitions enrich known fields, but must not silently remove legacy
+        # canonical fields from the candidate set. Template-only fields remain
+        # fail-closed unless registered geometry passes the existing safety gate.
+        field_names = tuple(dict.fromkeys((*definitions, *template_regions)))
         rois = {
             name: resolver.resolve(
                 name, anchor=locations.get(name), structural=structures.get(name),
@@ -178,7 +193,7 @@ class StandardFormProcessingService:
                 ),
                 page_size=(observation.width, observation.height),
             )
-            for name in definitions
+            for name in field_names
         }
         stages["roi_resolution"] = (time.perf_counter()-started)*1000
 
@@ -207,6 +222,21 @@ class StandardFormProcessingService:
             stages["ub_service_line_reconstruction"] = (time.perf_counter()-started)*1000
 
         cost = self.extraction_service.last_field_ocr_cost
+        resolved_boxes = [result.bbox for result in rois.values() if result.bbox is not None]
+        token_memberships = [
+            sum(
+                x0 <= (token.bbox[0] + token.bbox[2]) / 2 <= x1
+                and y0 <= (token.bbox[1] + token.bbox[3]) / 2 <= y1
+                for x0, y0, x1, y1 in resolved_boxes
+            )
+            for token in observation.ocr_tokens
+        ]
+        traces = self.extraction_service.last_candidate_trace
+        regional_reasons: dict[str, int] = {}
+        for trace in traces.values():
+            reason_code = trace.get("regional_ocr_trigger_reason")
+            if reason_code:
+                regional_reasons[reason_code] = regional_reasons.get(reason_code, 0) + 1
         diagnostics = ExtractionDiagnostics(
             service_version=self.version,
             stage_ms=stages,
@@ -216,6 +246,29 @@ class StandardFormProcessingService:
             observation_tokens=len(observation.ocr_tokens),
             roi_requests=len(rois),
             resolved_rois=sum(result.bbox is not None for result in rois.values()),
+            tokens_in_rois=sum(value > 0 for value in token_memberships),
+            tokens_overlapping_multiple_fields=sum(value > 1 for value in token_memberships),
+            tokens_outside_all_fields=sum(value == 0 for value in token_memberships),
+            label_tokens_rejected=sum(
+                "OBSERVED_LABEL_REJECTED_AS_VALUE" in field.validation_reasons for field in fields
+            ),
+            candidate_tokens_accepted=sum(
+                bool(trace.get("primary_accepted")) for trace in traces.values()
+            ),
+            multi_token_concatenations=sum(
+                len(str(trace.get("primary_value") or "").split()) > 1
+                for trace in traces.values()
+            ),
+            regional_ocr_reasons=regional_reasons,
+            regional_fields_improved=sum(
+                bool(trace.get("regional_accepted")) and bool(trace.get("changed_output"))
+                for trace in traces.values()
+            ),
+            regional_fields_unchanged=sum(
+                bool(trace.get("secondary_invoked")) and not bool(trace.get("changed_output"))
+                for trace in traces.values()
+            ),
+            regional_fields_worsened=0,
             reason_codes=["CANONICAL_PHASE8_PROCESSING"],
         )
         return StandardFormProcessingResult(

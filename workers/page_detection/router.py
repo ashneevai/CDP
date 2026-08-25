@@ -25,6 +25,7 @@ from dataclasses import dataclass
 
 from PIL import Image
 
+from packages.document_routing import MultiSignalRoute, MultiSignalRouter, RoutingEvidence
 from packages.domain.enums import BundleType, ClassificationMethod, PageRole
 from packages.domain.registration import RegistrationEvidence
 from packages.templates.models import Template
@@ -36,7 +37,6 @@ from workers.page_detection.grid_signature import (
 )
 from workers.page_detection.template_alignment import align_to_reference
 from workers.page_detection.text_extraction import ModelNotAvailableError, TextExtractor, TextLine
-from packages.document_routing import MultiSignalRoute, MultiSignalRouter, RoutingEvidence
 
 # Escalation thresholds -- tuned against the real dataset in
 # tests/unit/test_page_routing.py; not claimed to be production-final.
