@@ -29,8 +29,13 @@ app = FastAPI(title="CDP Accuracy Qualification V1", docs_url=None, redoc_url=No
 
 
 def _identity(role: str | None, annotator: str | None) -> tuple[str, str]:
+    role = role or os.environ.get("CDP_ANNOTATION_ROLE")
+    annotator = annotator or os.environ.get("CDP_ANNOTATOR_ID")
     if role not in {"A", "B", "ADJUDICATOR"} or not annotator:
-        raise HTTPException(401, "X-Annotation-Role (A/B/ADJUDICATOR) and X-Annotator-ID are required")
+        raise HTTPException(
+            401,
+            "Set CDP_ANNOTATION_ROLE and CDP_ANNOTATOR_ID, or supply the corresponding X- headers",
+        )
     return role, annotator
 
 
