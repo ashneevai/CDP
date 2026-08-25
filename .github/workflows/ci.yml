@@ -2,7 +2,7 @@ name: quality
 
 on:
   push:
-    branches: [main, phase9-external-1000-execution]
+    branches: [main, phase9-external-1000-execution, phase9d-semantic-recovery]
   pull_request:
 
 permissions:
@@ -39,13 +39,15 @@ jobs:
       - run: python -m pip install -e ".[dev]"
       - run: python scripts/check_architecture.py
       # The repository has a pre-existing legacy Ruff backlog. Keep this gate
-      # deterministic and enforce the Phase 9C production surface explicitly.
+      # deterministic and enforce the Phase 9C/9D production surface explicitly.
       - run: >-
           ruff check
           evaluation/run_production_holdout_v2.py
           packages/domain/enums.py
           packages/release_freeze.py
+          packages/spatial_token_assignment.py
           tests/unit/cases/test_phase9b_single_pass.py
+          tests/unit/cases/test_phase9d_spatial_token_assignment.py
           workers/standard_form_extraction/extractor.py
           workers/standard_form_extraction/processing.py
 
@@ -85,6 +87,7 @@ jobs:
           tests/unit/cases/test_phase9_performance_harness.py
           tests/unit/cases/test_phase9_external_integration_repairs.py
           tests/unit/cases/test_phase9b_single_pass.py
+          tests/unit/cases/test_phase9d_spatial_token_assignment.py
           tests/unit/cases/test_ground_truth_workstream.py
 
   evaluation-safety:
