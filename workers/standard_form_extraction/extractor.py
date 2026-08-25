@@ -299,7 +299,11 @@ class StandardFormExtractionService:
                 page_number,
                 observation.width,
                 observation.height,
-                ExtractionMethod.REGIONAL_RAPIDOCR,
+                (
+                    ExtractionMethod.REGIONAL_RAPIDOCR
+                    if regional is not None and regional.accepted
+                    else ExtractionMethod.PAGE_OBSERVATION
+                ),
                 postprocessor,
             )
             field.validation_reasons.extend(resolved.reason_codes)
@@ -312,7 +316,7 @@ class StandardFormExtractionService:
                 primary_id = f"{localization_id}:page-observation"
                 field.candidates.append(
                     FieldEvidence(
-                        source=ExtractionMethod.REGIONAL_RAPIDOCR,
+                        source=ExtractionMethod.PAGE_OBSERVATION,
                         raw_text=primary_raw,
                         confidence=confidence
                         if not secondary_invoked

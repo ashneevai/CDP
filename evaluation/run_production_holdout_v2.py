@@ -18,19 +18,23 @@ from PIL import Image
 
 from evaluation.audit_production_holdout_v2 import DEFAULT_DATASET, DEFAULT_OUTPUT, audit
 from packages.claim_decision import ClaimDecisionContext, ClaimDecisionService
-from packages.criticality import CriticalityPolicy, DEFAULT_CRITICALITY_PATH
+from packages.criticality import DEFAULT_CRITICALITY_PATH, CriticalityPolicy
 from packages.document_taxonomy.taxonomy import DocumentClass
-from packages.evidence_decision import DecisionContext, EvidenceDecisionService, FieldDisposition
+from packages.evidence_decision import DecisionContext, EvidenceDecisionService
 from packages.extraction_geometry import FormIdentityDecision, FormIdentityStatus
 from packages.field_verification import verify_field
 from packages.layout_intelligence import BundleDLayoutEngine
 from packages.ocr.contracts import OCRCandidate
 from packages.page_observation import PageObservationService
 from packages.templates.registry import DEFAULT_TEMPLATE_DIR, TemplateRegistry
-from workers.cascade.tesseract_adapter import TesseractTextExtractor
 from workers.cascade.isolated_ocr import IsolatedTextExtractor, OCRTimeoutError
+from workers.cascade.tesseract_adapter import TesseractTextExtractor
 from workers.document_preparation.preprocessing import (
-    apply_orientation, denoise, deskew, detect_orientation, detect_skew_angle,
+    apply_orientation,
+    denoise,
+    deskew,
+    detect_orientation,
+    detect_skew_angle,
 )
 from workers.page_detection.router import PageRoutingService
 from workers.page_detection.text_extraction import (
@@ -40,7 +44,6 @@ from workers.page_detection.text_extraction import (
 from workers.standard_form_extraction.consumer import _resolve_geometry
 from workers.standard_form_extraction.extractor import StandardFormExtractionService
 from workers.standard_form_extraction.processing import StandardFormProcessingService
-
 
 ACTUAL_TO_TRUTH = {
     "patient_dob": "dob", "insured_id_number": "member_id",
@@ -172,6 +175,7 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
         stage["preparation"] = time.perf_counter()-started
         started = time.perf_counter(); routed = router.route_single_page(image); stage["classification"] = time.perf_counter()-started
         fields, field_decisions, route, schema = {}, [], None, None
+        ocr_diagnostics = None
         alignment_method, alignment_accepted, registration_confidence = None, False, None
         table_payload = None
         if routed.template is not None:
@@ -213,6 +217,7 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             extracted = processing.fields if processing is not None else []
             stage["ocr"] = time.perf_counter()-started
             if processing is not None:
+                ocr_diagnostics = processing.diagnostics.model_dump(mode="json")
                 counters["rapidocr_calls"] += (
                     processing.diagnostics.full_page_ocr_calls
                     + processing.diagnostics.regional_ocr_calls
@@ -223,12 +228,19 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             for field in extracted:
                 canonical = ACTUAL_TO_TRUTH.get(field.field_name, field.field_name)
                 value = field.normalized_value or field.raw_value
+                evidence_reference = (
+                    "template:regional-fallback"
+                    if field.extraction_method.value == "REGIONAL_RAPIDOCR"
+                    else "page-observation:spatial-token-mapping"
+                )
                 if canonical not in fields or field.confidence > fields[canonical]["confidence"]:
                     fields[canonical] = {"value": value, "raw": field.raw_value,
                                          "confidence": field.confidence,
                                          "bbox": field.bounding_box.model_dump(mode="json"),
-                                         "source_field": field.field_name}
-                source_candidates.append((canonical, value, field.confidence, field.bounding_box, None))
+                                         "source_field": field.field_name,
+                                         "extraction_method": field.extraction_method.value}
+                source_candidates.append((canonical, value, field.confidence,
+                                          field.bounding_box, evidence_reference))
             schema = route
         else:
             counters["paddleocr_calls"] += 1
@@ -268,7 +280,11 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
                 preprocessing_variant="production_prepared", raw_confidence=confidence,
                 calibrated_confidence=None, bounding_box=bbox, latency_ms=0,
                 validation_results=(verification.reason_code,),
-                evidence_reference=f"layout:{structural}" if structural else "template:regional",
+                evidence_reference=(
+                    f"layout:{structural}"
+                    if structural and not structural.startswith(("page-observation:", "template:"))
+                    else structural or "template:regional"
+                ),
                 registration_confidence=registration_confidence,
             )
             decision = decisions.decide(DecisionContext(
@@ -297,6 +313,7 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             "registration_confidence": registration_confidence,
             "fields": fields, "claim_decision": claim.model_dump(mode="json") if claim else None,
             "table": table_payload, "stage_seconds": stage,
+            "ocr_diagnostics": ocr_diagnostics,
             "wall_seconds": time.perf_counter()-wall0, "cpu_seconds": time.process_time()-cpu0,
             "counters": dict(counters), "cloud_cost_usd": 0,
         })

@@ -9,7 +9,13 @@ import yaml
 
 
 def sha256_file(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+    payload = path.read_bytes()
+    # Git stores these governed text configurations with LF. A Windows
+    # checkout may materialize CRLF without changing repository content.
+    # Verify the canonical repository bytes so the freeze is cross-platform.
+    if path.suffix.casefold() in {".yaml", ".yml", ".json", ".toml"}:
+        payload = payload.replace(b"\r\n", b"\n")
+    return hashlib.sha256(payload).hexdigest()
 
 
 def verify_release_manifest(path: Path) -> None:

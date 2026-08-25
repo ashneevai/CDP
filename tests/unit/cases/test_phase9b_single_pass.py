@@ -4,7 +4,9 @@ from pathlib import Path
 
 import pytest
 from PIL import Image
+from pydantic import ValidationError
 
+from packages.domain.enums import ExtractionMethod
 from packages.page_observation import PageObservationCache, PageObservationService
 from workers.cascade.isolated_ocr import IsolatedTextExtractor, OCRTimeoutError
 
@@ -41,7 +43,7 @@ def test_observation_is_immutable_and_records_vendor_neutral_provenance():
     observation = service.observe("document-a", Image.new("RGB", (32, 32), "white"))
 
     assert observation.ocr_provenance["engine"] == "fixture"
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         observation.width = 99
 
 
@@ -69,3 +71,7 @@ def test_phase9_runner_uses_canonical_processing_not_per_field_default():
     source = Path("evaluation/run_production_holdout_v2.py").read_text("utf-8")
     assert "standard_processing.process(" in source
     assert "rapid.extract_fields(" not in source
+
+
+def test_page_observation_has_distinct_extraction_method():
+    assert ExtractionMethod.PAGE_OBSERVATION.value == "PAGE_OBSERVATION"
