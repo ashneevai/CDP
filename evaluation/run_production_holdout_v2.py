@@ -20,6 +20,7 @@ from evaluation.audit_production_holdout_v2 import DEFAULT_DATASET, DEFAULT_OUTP
 from packages.claim_decision import ClaimDecisionContext, ClaimDecisionService
 from packages.criticality import DEFAULT_CRITICALITY_PATH, CriticalityPolicy
 from packages.document_taxonomy.taxonomy import DocumentClass
+from packages.domain.enums import BundleType
 from packages.evidence_decision import DecisionContext, EvidenceDecisionService
 from packages.extraction_geometry import FormIdentityDecision, FormIdentityStatus
 from packages.field_verification import verify_field
@@ -243,33 +244,55 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
                                           field.bounding_box, evidence_reference))
             schema = route
         else:
-            counters["paddleocr_calls"] += 1
-            started = time.perf_counter()
-            try:
-                tokens = paddle.extract(image)
-            except OCRTimeoutError:
-                stage["ocr"] = time.perf_counter()-started
-                counters["ocr_timeouts"] += 1
-                route, schema = "UNKNOWN_UNSTRUCTURED", "UNKNOWN_UNSTRUCTURED"
+            cheap_terminal_routes = {
+                BundleType.UNKNOWN_UNSTRUCTURED: "UNKNOWN_UNSTRUCTURED",
+                BundleType.NON_CLAIM: "NON_CLAIM",
+            }
+            if routed.bundle_type in cheap_terminal_routes:
+                # The canonical Tesseract-backed router already has sufficient
+                # evidence for terminal, fieldless routes. Paddle cannot alter
+                # a field decision here and is therefore not justified.
+                route = cheap_terminal_routes[routed.bundle_type]
+                schema = route
                 source_candidates = []
+                counters["duplicate_ocr_avoided"] += 1
+                counters["paddle_escalation_not_required"] += 1
             else:
-                stage["ocr"] = time.perf_counter()-started
-                started = time.perf_counter(); result = layout.extract(
-                    tokens, page_number=1, width=image.width, height=image.height,
-                    engine=paddle.engine_name); stage["layout"] = time.perf_counter()-started
-                route, schema = result.route.value, result.schema_evidence.schema_family
-                table_payload = result.table.model_dump(mode="json")
-                source_candidates = []
-                for canonical, candidates in result.candidates.items():
-                    best = candidates[0]
-                    fields[canonical] = {"value": best.value, "raw": best.value,
-                                         "confidence": best.confidence,
-                                         "bbox": best.bbox.model_dump(mode="json"),
-                                         "label": best.original_label,
-                                         "alias": best.matched_alias,
-                                         "relationship": best.relationship_evidence.relationship}
-                    source_candidates.append((canonical, best.value, best.confidence, best.bbox,
-                                              best.relationship_evidence.relationship))
+                counters["paddleocr_calls"] += 1
+                escalation_reason = (
+                    "CUSTOM_STRUCTURED"
+                    if routed.bundle_type == BundleType.UNKNOWN_STRUCTURED
+                    else "GENERIC_LAYOUT_REQUIRED"
+                )
+                counters[f"paddle_escalation:{escalation_reason}"] += 1
+                started = time.perf_counter()
+                try:
+                    tokens = paddle.extract(image)
+                except OCRTimeoutError:
+                    stage["ocr"] = time.perf_counter()-started
+                    counters["ocr_timeouts"] += 1
+                    route, schema = "UNKNOWN_UNSTRUCTURED", "UNKNOWN_UNSTRUCTURED"
+                    source_candidates = []
+                else:
+                    stage["ocr"] = time.perf_counter()-started
+                    stage["paddle"] = stage["ocr"]
+                    started = time.perf_counter(); result = layout.extract(
+                        tokens, page_number=1, width=image.width, height=image.height,
+                        engine=paddle.engine_name); stage["layout"] = time.perf_counter()-started
+                    route, schema = result.route.value, result.schema_evidence.schema_family
+                    table_payload = result.table.model_dump(mode="json")
+                    source_candidates = []
+                    for canonical, candidates in result.candidates.items():
+                        best = candidates[0]
+                        fields[canonical] = {"value": best.value, "raw": best.value,
+                                             "confidence": best.confidence,
+                                             "bbox": best.bbox.model_dump(mode="json"),
+                                             "label": best.original_label,
+                                             "alias": best.matched_alias,
+                                             "relationship": best.relationship_evidence.relationship,
+                                             "extraction_method": "PADDLE_LAYOUT"}
+                        source_candidates.append((canonical, best.value, best.confidence, best.bbox,
+                                                  best.relationship_evidence.relationship))
         started = time.perf_counter()
         for canonical, value, confidence, bbox, structural in source_candidates:
             verification = verify_field(canonical, value)

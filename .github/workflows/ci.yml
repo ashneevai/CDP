@@ -43,11 +43,15 @@ jobs:
       - run: >-
           ruff check
           evaluation/run_production_holdout_v2.py
+          evaluation/phase9d_semantic_report.py
           packages/domain/enums.py
           packages/release_freeze.py
           tests/unit/cases/test_phase9b_single_pass.py
+          tests/unit/cases/test_phase8_2_convergence.py
           workers/standard_form_extraction/extractor.py
           workers/standard_form_extraction/processing.py
+          workers/standard_form_extraction/spatial_assignment.py
+          workers/page_detection/router.py
 
   unit-core:
     runs-on: ubuntu-latest

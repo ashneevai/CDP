@@ -141,7 +141,8 @@ def test_merged_provider_tokens_require_secondary_evidence():
 
 def test_npi_does_not_repeat_same_engine_secondary_ocr():
     source = (ROOT / "workers/standard_form_extraction/extractor.py").read_text("utf-8")
-    assert 'secondary_eligible = definition.datatype != "NPI"' in source
+    assert "secondary_eligible = False" in source
+    assert "same-engine regional retries as NO_CHANGE" in source
 
 
 def test_ub_semantic_headers_supply_skew_resilient_structure_confidence():
