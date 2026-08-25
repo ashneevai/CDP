@@ -17,33 +17,24 @@ def test_center_inside_preserves_phase9b_membership():
     assert result.reason == "TOKEN_CENTER_IN_ROI"
 
 
-def test_strong_overlap_recovers_boundary_clipped_token():
-    # Token centre x=20 lies outside ROI x<=19, but 90% of token width is
-    # covered by the ROI. This is the Phase 9D semantic-recovery case.
-    result = classify_token_roi_membership((10, 10, 30, 20), (0, 0, 28, 40))
-
-    assert result.accepted is True
-    assert result.center_inside is True
-    assert result.token_overlap_ratio == pytest.approx(0.90)
-
-
-def test_strong_overlap_without_center_containment_is_accepted():
-    # Centre x=20 is outside ROI x<=19, while 90% of the token area remains
-    # inside the resolved region.
+def test_boundary_overlap_without_center_containment_is_recovered():
+    # Centre x=20 lies outside ROI x<=19, but 45% of token area still belongs
+    # to the resolved field region. Phase 9B's centre-only rule drops it.
     result = classify_token_roi_membership((10, 10, 30, 20), (0, 0, 19, 40))
 
-    assert result.accepted is False
+    assert result.accepted is True
     assert result.center_inside is False
     assert result.token_overlap_ratio == pytest.approx(0.45)
+    assert result.reason == "TOKEN_BOUNDARY_OVERLAP"
 
 
-def test_vertical_boundary_overlap_can_recover_token():
-    # Centre y=20 lies outside ROI y<=19, but 90% of token height overlaps.
-    result = classify_token_roi_membership((10, 10, 20, 30), (0, 0, 40, 28))
+def test_vertical_boundary_overlap_without_center_is_recovered():
+    # Centre y=20 lies outside ROI y<=19 with 45% token overlap.
+    result = classify_token_roi_membership((10, 10, 20, 30), (0, 0, 40, 19))
 
     assert result.accepted is True
-    assert result.center_inside is True
-    assert result.token_overlap_ratio == pytest.approx(0.90)
+    assert result.center_inside is False
+    assert result.token_overlap_ratio == pytest.approx(0.45)
 
 
 def test_partial_touch_does_not_pull_neighboring_label_into_field():
@@ -56,10 +47,19 @@ def test_partial_touch_does_not_pull_neighboring_label_into_field():
 
 
 def test_overlap_threshold_is_inclusive():
+    # Centre x=5 lies outside ROI x<=4, while exactly 40% overlaps.
     assert token_belongs_to_roi(
         (0, 0, 10, 10),
-        (0, 0, 6, 10),
-        min_token_overlap=0.60,
+        (0, 0, 4, 10),
+        min_token_overlap=0.40,
+    )
+
+
+def test_overlap_below_threshold_fails_closed():
+    assert not token_belongs_to_roi(
+        (0, 0, 10, 10),
+        (0, 0, 3, 10),
+        min_token_overlap=0.40,
     )
 
 
