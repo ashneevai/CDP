@@ -1,0 +1,857 @@
+{
+  "experiment_9A_1": {
+    "acceptances": [
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-001",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-001:provider_npi:dynamic-roi-resolver-v1:642,430,847,476:page-observation"
+        ],
+        "quality_band": "degraded",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-002",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-002:provider_npi:dynamic-roi-resolver-v1:640,429,846,475:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-003",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-003:provider_npi:dynamic-roi-resolver-v1:654,427,860,473:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-004",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-004:provider_npi:dynamic-roi-resolver-v1:650,429,854,475:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-005",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-005:provider_npi:dynamic-roi-resolver-v1:640,430,846,476:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-006",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-006:provider_npi:dynamic-roi-resolver-v1:642,430,848,476:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-007",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-007:provider_npi:dynamic-roi-resolver-v1:642,430,847,476:page-observation"
+        ],
+        "quality_band": "degraded",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-008",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-008:provider_npi:dynamic-roi-resolver-v1:639,430,844,476:page-observation"
+        ],
+        "quality_band": "degraded",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-009",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-009:provider_npi:dynamic-roi-resolver-v1:641,429,847,475:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-CMS-010",
+        "criticality": "C1",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "CMS1500",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-CMS-010:provider_npi:dynamic-roi-resolver-v1:654,427,861,473:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-001",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-001:provider_npi:dynamic-roi-resolver-v1:800,180,1006,226:page-observation"
+        ],
+        "quality_band": "degraded",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-001",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-001:federal_tax_no:dynamic-roi-resolver-v1:880,407,1052,459:page-observation"
+        ],
+        "quality_band": "degraded",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-002",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-002:provider_npi:dynamic-roi-resolver-v1:800,180,1006,226:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-002",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-002:federal_tax_no:dynamic-roi-resolver-v1:886,411,1040,453:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-003",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-003:provider_npi:dynamic-roi-resolver-v1:818,181,1042,233:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-003",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-003:federal_tax_no:dynamic-roi-resolver-v1:886,411,1040,453:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-004",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-004:provider_npi:dynamic-roi-resolver-v1:786,186,992,232:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-004",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-004:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-005",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-005:provider_npi:dynamic-roi-resolver-v1:800,180,1005,226:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-005",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-005:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-006",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-006:provider_npi:dynamic-roi-resolver-v1:800,180,1006,226:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-006",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-006:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-007",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-007:provider_npi:dynamic-roi-resolver-v1:800,179,1010,227:page-observation"
+        ],
+        "quality_band": "degraded",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-007",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-007:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+        ],
+        "quality_band": "degraded",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-008",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-008:provider_npi:dynamic-roi-resolver-v1:801,180,1007,226:page-observation"
+        ],
+        "quality_band": "degraded",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-008",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-008:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+        ],
+        "quality_band": "degraded",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-009",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-009:provider_npi:dynamic-roi-resolver-v1:800,180,1007,226:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-009",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-009:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "NPI_SAFE_CHECKSUM_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-010",
+        "criticality": "C3",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_PROVIDER_SECTION_NPI_CHECKSUM"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "provider_npi",
+        "field_type": "NPI",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-010:provider_npi:dynamic-roi-resolver-v1:769,167,992,219:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      },
+      {
+        "acceptance_reason": "TAX_ID_SAFE_SECTION_POLICY",
+        "accepted_correct": true,
+        "after_correct": true,
+        "baseline_correct": true,
+        "claim_id": "SB-UB-010",
+        "criticality": "C2",
+        "crop_safety_outcome": "CROP_SAFE",
+        "evidence_used": [
+          "E1_PRIMARY_OCR",
+          "E3_FORMAT_VALIDATION",
+          "E5_SAFE_LOCALIZATION",
+          "E6_BILLING_PROVIDER_TAX_SYNTAX"
+        ],
+        "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+        "field_name": "federal_tax_no",
+        "field_type": "TAX_IDENTIFIER",
+        "form_type": "UB04",
+        "hitl_after": false,
+        "hitl_before": true,
+        "new_auto_accept": true,
+        "policy_version": "field-evidence-policy-phase9a-v1",
+        "provenance_references": [
+          "SB-UB-010:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+        ],
+        "quality_band": "clean",
+        "regression_class": "CORRECT_HITL_TO_CORRECT_ACCEPT"
+      }
+    ],
+    "blockers_removed": 30,
+    "claims_unlocked": 0,
+    "cohort_size": 30,
+    "correct_after": 30,
+    "correct_before": 30,
+    "correct_new_auto_accepts": 30,
+    "hitl_after": 0,
+    "hitl_before": 30,
+    "incorrect_new_auto_accepts": 0,
+    "new_auto_accepts": 30,
+    "precision": 1.0
+  }
+}

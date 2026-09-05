@@ -1,0 +1,1262 @@
+{
+  "claims": [
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-001",
+      "current_distance": 6,
+      "estimated_distance_after_authoritative_data": 2,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "insured_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "service_date",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "total_charge",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-002",
+      "current_distance": 6,
+      "estimated_distance_after_authoritative_data": 2,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "insured_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "service_date",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "total_charge",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "C_ACCEPTANCE_AUTHORITY_GAP",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "A_EXTRACTION_DEFECT",
+        "A_EXTRACTION_DEFECT",
+        "A_EXTRACTION_DEFECT"
+      ],
+      "blockers": [
+        "patient_dob",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "diagnosis",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-003",
+      "current_distance": 7,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 3,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "FIELD_SPECIFIC_ACCEPTANCE_AUTHORITY"
+          ],
+          "field": "patient_dob",
+          "owner": "CDP ACCEPTANCE POLICY"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "insured_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "service_date",
+          "owner": "CDP EXTRACTION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "diagnosis",
+          "owner": "CDP EXTRACTION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "total_charge",
+          "owner": "CDP EXTRACTION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "A_EXTRACTION_DEFECT",
+        "E_SOURCE_EVIDENCE_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-004",
+      "current_distance": 5,
+      "estimated_distance_after_authoritative_data": 2,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 4,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "provider_name",
+          "owner": "CDP EXTRACTION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "service_date",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "total_charge",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED"
+      ],
+      "blockers": [
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-005",
+      "current_distance": 5,
+      "estimated_distance_after_authoritative_data": 2,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 5,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "insured_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "service_date",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "total_charge",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-006",
+      "current_distance": 6,
+      "estimated_distance_after_authoritative_data": 2,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "insured_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "service_date",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "total_charge",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-007",
+      "current_distance": 5,
+      "estimated_distance_after_authoritative_data": 2,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 5,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "service_date",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "total_charge",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-008",
+      "current_distance": 6,
+      "estimated_distance_after_authoritative_data": 2,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "insured_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "service_date",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "total_charge",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED",
+        "E_SOURCE_EVIDENCE_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-009",
+      "current_distance": 6,
+      "estimated_distance_after_authoritative_data": 2,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "insured_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "service_date",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "total_charge",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "C_ACCEPTANCE_AUTHORITY_GAP",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "A_EXTRACTION_DEFECT",
+        "E_SOURCE_EVIDENCE_REQUIRED"
+      ],
+      "blockers": [
+        "patient_dob",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "claim_id": "SB-CMS-010",
+      "current_distance": 6,
+      "estimated_distance_after_authoritative_data": 1,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 4,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "FIELD_SPECIFIC_ACCEPTANCE_AUTHORITY"
+          ],
+          "field": "patient_dob",
+          "owner": "CDP ACCEPTANCE POLICY"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "insured_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "service_date",
+          "owner": "CDP EXTRACTION"
+        },
+        {
+          "action": [
+            "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+          ],
+          "field": "total_charge",
+          "owner": "SOURCE DOCUMENT ACQUISITION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "claim_id": "SB-UB-001",
+      "current_distance": 3,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 3,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "claim_id": "SB-UB-002",
+      "current_distance": 3,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 3,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "C_ACCEPTANCE_AUTHORITY_GAP",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "A_EXTRACTION_DEFECT",
+        "A_EXTRACTION_DEFECT",
+        "B_VALIDATION_GAP"
+      ],
+      "blockers": [
+        "patient_name",
+        "patient_dob",
+        "provider_name",
+        "type_of_bill",
+        "principal_diagnosis",
+        "total_charge"
+      ],
+      "claim_id": "SB-UB-003",
+      "current_distance": 6,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 2,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "FIELD_SPECIFIC_ACCEPTANCE_AUTHORITY"
+          ],
+          "field": "patient_dob",
+          "owner": "CDP ACCEPTANCE POLICY"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "type_of_bill",
+          "owner": "CDP EXTRACTION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "principal_diagnosis",
+          "owner": "CDP EXTRACTION"
+        },
+        {
+          "action": [
+            "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+          ],
+          "field": "total_charge",
+          "owner": "CDP VALIDATION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "A_EXTRACTION_DEFECT",
+        "B_VALIDATION_GAP",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "A_EXTRACTION_DEFECT",
+        "B_VALIDATION_GAP",
+        "A_EXTRACTION_DEFECT"
+      ],
+      "blockers": [
+        "patient_name",
+        "patient_dob",
+        "member_id",
+        "provider_name",
+        "principal_diagnosis",
+        "total_charge"
+      ],
+      "claim_id": "SB-UB-004",
+      "current_distance": 6,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 1,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "patient_name",
+          "owner": "CDP EXTRACTION"
+        },
+        {
+          "action": [
+            "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+          ],
+          "field": "patient_dob",
+          "owner": "CDP VALIDATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "provider_name",
+          "owner": "CDP EXTRACTION"
+        },
+        {
+          "action": [
+            "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+          ],
+          "field": "principal_diagnosis",
+          "owner": "CDP VALIDATION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "total_charge",
+          "owner": "CDP EXTRACTION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "claim_id": "SB-UB-005",
+      "current_distance": 3,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 3,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "claim_id": "SB-UB-006",
+      "current_distance": 3,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 3,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "claim_id": "SB-UB-007",
+      "current_distance": 3,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 3,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "claim_id": "SB-UB-008",
+      "current_distance": 3,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 3,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "D_AUTHORITATIVE_DATA_REQUIRED"
+      ],
+      "blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "claim_id": "SB-UB-009",
+      "current_distance": 3,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 3,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "member_id",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        }
+      ]
+    },
+    {
+      "blocker_classifications": [
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "B_VALIDATION_GAP",
+        "A_EXTRACTION_DEFECT",
+        "D_AUTHORITATIVE_DATA_REQUIRED",
+        "A_EXTRACTION_DEFECT"
+      ],
+      "blockers": [
+        "patient_name",
+        "patient_dob",
+        "member_id",
+        "provider_name",
+        "principal_diagnosis"
+      ],
+      "claim_id": "SB-UB-010",
+      "current_distance": 5,
+      "estimated_distance_after_authoritative_data": 0,
+      "estimated_distance_after_full_source": 0,
+      "estimated_distance_after_software_fix": 2,
+      "final_disposition": "HITL_AUTHORITATIVE_DATA_REQUIRED",
+      "minimum_safe_remediation_set": [
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "patient_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+          ],
+          "field": "patient_dob",
+          "owner": "CDP VALIDATION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "member_id",
+          "owner": "CDP EXTRACTION"
+        },
+        {
+          "action": [
+            "E7_AUTHORITATIVE_REFERENCE"
+          ],
+          "field": "provider_name",
+          "owner": "AUTHORITATIVE DATA INTEGRATION"
+        },
+        {
+          "action": [
+            "CORRECT_E1_PRIMARY_OCR",
+            "E5_SAFE_LOCALIZATION"
+          ],
+          "field": "principal_diagnosis",
+          "owner": "CDP EXTRACTION"
+        }
+      ]
+    }
+  ],
+  "top_10_remediations": [
+    {
+      "category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "claim_unlock_leverage": 19.092857,
+      "claims_affected": 18,
+      "claims_potentially_unlocked": 1,
+      "distance_reduction": 4.242857,
+      "field": "member_id",
+      "implementation_complexity": 4,
+      "owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "claim_unlock_leverage": 19.092857,
+      "claims_affected": 18,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 4.242857,
+      "field": "provider_name",
+      "implementation_complexity": 4,
+      "owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "claim_unlock_leverage": 15.733333,
+      "claims_affected": 16,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 3.933333,
+      "field": "patient_name",
+      "implementation_complexity": 4,
+      "owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "claim_unlock_leverage": 2.88,
+      "claims_affected": 9,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 1.6,
+      "field": "total_charge",
+      "implementation_complexity": 5,
+      "owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "claim_unlock_leverage": 2.685714,
+      "claims_affected": 8,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 1.342857,
+      "field": "insured_name",
+      "implementation_complexity": 4,
+      "owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "claim_unlock_leverage": 2.293333,
+      "claims_affected": 8,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 1.433333,
+      "field": "service_date",
+      "implementation_complexity": 5,
+      "owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "category": "B_VALIDATION_GAP",
+      "claim_unlock_leverage": 0.733333,
+      "claims_affected": 2,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 0.366667,
+      "field": "patient_dob",
+      "implementation_complexity": 1,
+      "owner": "CDP VALIDATION"
+    },
+    {
+      "category": "C_ACCEPTANCE_AUTHORITY_GAP",
+      "claim_unlock_leverage": 0.714286,
+      "claims_affected": 3,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 0.47619,
+      "field": "patient_dob",
+      "implementation_complexity": 2,
+      "owner": "CDP ACCEPTANCE POLICY"
+    },
+    {
+      "category": "A_EXTRACTION_DEFECT",
+      "claim_unlock_leverage": 0.366667,
+      "claims_affected": 2,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 0.366667,
+      "field": "principal_diagnosis",
+      "implementation_complexity": 2,
+      "owner": "CDP EXTRACTION"
+    },
+    {
+      "category": "A_EXTRACTION_DEFECT",
+      "claim_unlock_leverage": 0.366667,
+      "claims_affected": 2,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 0.366667,
+      "field": "provider_name",
+      "implementation_complexity": 2,
+      "owner": "CDP EXTRACTION"
+    }
+  ]
+}

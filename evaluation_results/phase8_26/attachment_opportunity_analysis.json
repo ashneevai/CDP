@@ -1,0 +1,14 @@
+{
+  "attachments_available": 0,
+  "categories_checked": [
+    "patient_subscriber_identity",
+    "provider_identity_npi",
+    "service_dates",
+    "member_subscriber_identifiers",
+    "authorization_reference_identifiers"
+  ],
+  "claims_with_attachment_inventory": 0,
+  "no_attachment_counted_without_semantic_relevance": true,
+  "semantically_relevant_attachment_opportunities": 0,
+  "status": "SOURCE_B_ATTACHMENT_INVENTORY_UNAVAILABLE"
+}

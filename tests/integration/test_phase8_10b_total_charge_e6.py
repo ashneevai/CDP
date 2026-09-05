@@ -1,9 +1,27 @@
+import hashlib
+import json
+from pathlib import Path
+
 from evaluation.phase8_10b_total_charge_e6 import run
 from packages.claim_evidence import ClaimEvidenceBuilder
+
+ROOT = Path(__file__).resolve().parents[2]
+INPUT = ROOT / "evaluation/baselines/phase8_12/inputs"
+SERVICE_LINES = ROOT / "evaluation/baselines/phase8_10b/total_charge_service_lines.json"
+SERVICE_LINES_SHA256 = "37a9dc1c3bd7176818a7430b9abab136c135c25cf7239cfff84285015db92dd5"
 
 
 def _types(items):
     return {item.evidence_type for item in items}
+
+
+def frozen_inputs():
+    payload = SERVICE_LINES.read_bytes()
+    assert hashlib.sha256(payload).hexdigest() == SERVICE_LINES_SHA256
+    return {
+        "input_root": INPUT,
+        "service_lines_by_source": json.loads(payload),
+    }
 
 
 def test_claim_total_builder_emits_the_policy_eligible_e6_name_only_on_reconciliation():
@@ -28,7 +46,7 @@ def test_claim_total_builder_emits_the_policy_eligible_e6_name_only_on_reconcili
 
 
 def test_frozen_replay_does_not_bypass_calibration_with_total_charge_e6():
-    result = run(write_outputs=False)
+    result = run(write_outputs=False, **frozen_inputs())
     assert result["decision"] == "REVERT"
     assert result["correct_but_reviewed_reduction"] == 0
     assert result["treatment"]["total_charge"]["accepted_correct"] == 0

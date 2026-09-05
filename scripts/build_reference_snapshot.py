@@ -8,11 +8,16 @@ import json
 from datetime import UTC, datetime
 from pathlib import Path
 
+from packages.reference_data.snapshot import SnapshotManifest
 from packages.reference_enrichment.lineage import FORBIDDEN_ORIGINS
 
 REQUIRED_KEYS = {
-    "identity_key", "source_record_id", "source_lineage", "reference_attributes",
-    "field_values", "record_status",
+    "identity_key",
+    "source_record_id",
+    "source_lineage",
+    "reference_attributes",
+    "field_values",
+    "record_status",
 }
 
 
@@ -27,6 +32,13 @@ def build_snapshot(
     approved_by: str | None = None,
     independent_truth: bool = False,
     non_circular_lineage: bool = False,
+    supported_fields: list[str] | None = None,
+    source_url: str | None = None,
+    source_artifact_sha256: str | None = None,
+    source_published_at: datetime | None = None,
+    effective_from: datetime | None = None,
+    effective_through: datetime | None = None,
+    expires_at: datetime | None = None,
 ) -> dict:
     if destination.exists():
         raise ValueError("snapshot destination already exists")
@@ -55,8 +67,6 @@ def build_snapshot(
     if authorized and not (independent_truth and non_circular_lineage):
         raise ValueError("authorization requires independent, non-circular truth assertions")
     encoded = json.dumps(prepared, sort_keys=True, separators=(",", ":")).encode()
-    destination.mkdir(parents=True)
-    (destination / "records.json").write_bytes(encoded)
     manifest = {
         "source_name": source_name,
         "reference_domain": reference_domain.upper(),
@@ -70,9 +80,23 @@ def build_snapshot(
         "source_contract_id": source_contract_id,
         "approved_by": approved_by,
         "approved_at": datetime.now(UTC).isoformat() if authorized else None,
+        "supported_fields": sorted(set(supported_fields or [])),
+        "source_url": source_url,
+        "source_artifact_sha256": source_artifact_sha256,
+        "source_published_at": source_published_at.isoformat() if source_published_at else None,
+        "effective_from": effective_from.isoformat() if effective_from else None,
+        "effective_through": effective_through.isoformat() if effective_through else None,
+        "expires_at": expires_at.isoformat() if expires_at else None,
     }
-    (destination / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", "utf-8")
-    return {"records": len(prepared), "authorized": authorized, "records_sha256": manifest["records_sha256"]}
+    validated = SnapshotManifest.model_validate(manifest)
+    destination.mkdir(parents=True)
+    (destination / "records.json").write_bytes(encoded)
+    (destination / "manifest.json").write_text(validated.model_dump_json(indent=2) + "\n", "utf-8")
+    return {
+        "records": len(prepared),
+        "authorized": authorized,
+        "records_sha256": manifest["records_sha256"],
+    }
 
 
 def main() -> int:
@@ -86,13 +110,31 @@ def main() -> int:
     parser.add_argument("--approved-by")
     parser.add_argument("--independent-truth", action="store_true")
     parser.add_argument("--non-circular-lineage", action="store_true")
+    parser.add_argument("--supported-field", action="append", default=[])
+    parser.add_argument("--source-url")
+    parser.add_argument("--source-artifact-sha256")
+    parser.add_argument("--source-published-at", type=datetime.fromisoformat)
+    parser.add_argument("--effective-from", type=datetime.fromisoformat)
+    parser.add_argument("--effective-through", type=datetime.fromisoformat)
+    parser.add_argument("--expires-at", type=datetime.fromisoformat)
     args = parser.parse_args()
     report = build_snapshot(
-        args.source, args.destination, source_name=args.source_name,
-        reference_domain=args.reference_domain, version=args.version,
-        source_contract_id=args.source_contract_id, approved_by=args.approved_by,
+        args.source,
+        args.destination,
+        source_name=args.source_name,
+        reference_domain=args.reference_domain,
+        version=args.version,
+        source_contract_id=args.source_contract_id,
+        approved_by=args.approved_by,
         independent_truth=args.independent_truth,
         non_circular_lineage=args.non_circular_lineage,
+        supported_fields=args.supported_field,
+        source_url=args.source_url,
+        source_artifact_sha256=args.source_artifact_sha256,
+        source_published_at=args.source_published_at,
+        effective_from=args.effective_from,
+        effective_through=args.effective_through,
+        expires_at=args.expires_at,
     )
     print(json.dumps(report, indent=2))
     return 0

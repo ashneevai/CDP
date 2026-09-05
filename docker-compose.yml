@@ -260,7 +260,9 @@ services:
         condition: service_healthy
 
   retry-worker:
-    build: *app-build
+    build:
+      context: .
+      dockerfile: deploy/docker/ppocr-v5.Dockerfile
     <<: *app-env
     command: ["python", "-m", "workers.retry.consumer"]
     restart: unless-stopped

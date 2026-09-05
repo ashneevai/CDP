@@ -10,10 +10,33 @@ providers:
     source_kind: AUTHORIZED_PROVIDER
     authorized: false
     enabled: false
-  - name: versioned-code-reference
+  - name: cms-nppes-provider-directory
     type: local_snapshot
-    path: reference_snapshots/codes
+    path: reference_snapshots/nppes
+    source_kind: AUTHORIZED_PROVIDER
+    authorized: false
+    enabled: false
+  - name: cdc-icd10cm
+    type: local_snapshot
+    path: reference_snapshots/icd10cm
     source_kind: CODE_SET
+    authorized: false
+    enabled: false
+  - name: cms-hcpcs-level-ii
+    type: local_snapshot
+    path: reference_snapshots/hcpcs-level-ii
+    source_kind: CODE_SET
+    authorized: false
+    enabled: false
+  - name: cms-place-of-service
+    type: local_snapshot
+    path: reference_snapshots/place-of-service
+    source_kind: CODE_SET
+    authorized: false
+    enabled: false
+  - name: licensed-cpt
+    type: disabled
+    source_kind: LICENSED_CODE_SET
     authorized: false
     enabled: false
   - name: finalized-downstream-claims
@@ -30,3 +53,5 @@ security:
   persist_raw_phi_in_logs: false
   require_authorized_provider: true
   secrets_from_environment_only: true
+  require_pinned_source_sha256: true
+  reject_expired_snapshots: true

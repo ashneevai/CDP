@@ -1,0 +1,9 @@
+{
+  "E6": {
+    "required": 19,
+    "satisfied": 10
+  },
+  "rules": [
+    "SELF_PATIENT_SUBSCRIBER_IDENTITY"
+  ]
+}

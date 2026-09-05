@@ -1,0 +1,462 @@
+{
+  "claims": [
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-001",
+      "claim_unlock_distance": 6,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "current_blocker_count": 6,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "field_HITL_count": 6,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-002",
+      "claim_unlock_distance": 6,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "current_blocker_count": 6,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "field_HITL_count": 6,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-003",
+      "claim_unlock_distance": 7,
+      "critical_blockers": [
+        "patient_dob",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "diagnosis",
+        "total_charge"
+      ],
+      "current_blocker_count": 7,
+      "current_blockers": [
+        "patient_dob",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "diagnosis",
+        "total_charge"
+      ],
+      "field_HITL_count": 7,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-004",
+      "claim_unlock_distance": 5,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "current_blocker_count": 5,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "field_HITL_count": 5,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-005",
+      "claim_unlock_distance": 5,
+      "critical_blockers": [
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "current_blocker_count": 5,
+      "current_blockers": [
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "field_HITL_count": 5,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-006",
+      "claim_unlock_distance": 6,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "current_blocker_count": 6,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "field_HITL_count": 6,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-007",
+      "claim_unlock_distance": 5,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "current_blocker_count": 5,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "field_HITL_count": 5,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-008",
+      "claim_unlock_distance": 6,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "current_blocker_count": 6,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "field_HITL_count": 6,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-009",
+      "claim_unlock_distance": 6,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "current_blocker_count": 6,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "field_HITL_count": 6,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-CMS-010",
+      "claim_unlock_distance": 6,
+      "critical_blockers": [
+        "patient_dob",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "current_blocker_count": 6,
+      "current_blockers": [
+        "patient_dob",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "field_HITL_count": 6,
+      "form_type": "CMS1500"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-001",
+      "claim_unlock_distance": 4,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "current_blocker_count": 4,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "field_HITL_count": 4,
+      "form_type": "UB04"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-002",
+      "claim_unlock_distance": 4,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "current_blocker_count": 4,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "field_HITL_count": 4,
+      "form_type": "UB04"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-003",
+      "claim_unlock_distance": 6,
+      "critical_blockers": [
+        "patient_name",
+        "patient_dob",
+        "provider_name",
+        "type_of_bill",
+        "principal_diagnosis",
+        "total_charge"
+      ],
+      "current_blocker_count": 6,
+      "current_blockers": [
+        "patient_name",
+        "patient_dob",
+        "provider_name",
+        "type_of_bill",
+        "principal_diagnosis",
+        "total_charge"
+      ],
+      "field_HITL_count": 6,
+      "form_type": "UB04"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-004",
+      "claim_unlock_distance": 6,
+      "critical_blockers": [
+        "patient_name",
+        "patient_dob",
+        "member_id",
+        "provider_name",
+        "principal_diagnosis",
+        "total_charge"
+      ],
+      "current_blocker_count": 6,
+      "current_blockers": [
+        "patient_name",
+        "patient_dob",
+        "member_id",
+        "provider_name",
+        "principal_diagnosis",
+        "total_charge"
+      ],
+      "field_HITL_count": 6,
+      "form_type": "UB04"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-005",
+      "claim_unlock_distance": 4,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "current_blocker_count": 4,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "field_HITL_count": 4,
+      "form_type": "UB04"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-006",
+      "claim_unlock_distance": 4,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "current_blocker_count": 4,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "field_HITL_count": 4,
+      "form_type": "UB04"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-007",
+      "claim_unlock_distance": 4,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "current_blocker_count": 4,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "field_HITL_count": 4,
+      "form_type": "UB04"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-008",
+      "claim_unlock_distance": 4,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "current_blocker_count": 4,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "field_HITL_count": 4,
+      "form_type": "UB04"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-009",
+      "claim_unlock_distance": 4,
+      "critical_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "current_blocker_count": 4,
+      "current_blockers": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "total_charge"
+      ],
+      "field_HITL_count": 4,
+      "form_type": "UB04"
+    },
+    {
+      "claim_HITL": true,
+      "claim_id": "SB-UB-010",
+      "claim_unlock_distance": 5,
+      "critical_blockers": [
+        "patient_name",
+        "patient_dob",
+        "member_id",
+        "provider_name",
+        "principal_diagnosis"
+      ],
+      "current_blocker_count": 5,
+      "current_blockers": [
+        "patient_name",
+        "patient_dob",
+        "member_id",
+        "provider_name",
+        "principal_diagnosis"
+      ],
+      "field_HITL_count": 5,
+      "form_type": "UB04"
+    }
+  ],
+  "distance_distribution": {
+    "distance_0_claims": 0,
+    "distance_1_claims": 0,
+    "distance_2_claims": 0,
+    "distance_3_claims": 0,
+    "distance_4_claims": 7,
+    "distance_5_plus_claims": 13,
+    "mean_claim_unlock_distance": 5.15,
+    "median_claim_unlock_distance": 5.0
+  },
+  "phase9b_commit": "12327d307a6e29a3549a1dceaa56d44dbe4c9f81",
+  "target_distance_verified": true
+}

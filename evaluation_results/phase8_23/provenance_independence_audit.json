@@ -1,0 +1,6233 @@
+{
+  "fields": [
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:patient_name:dynamic-roi-resolver-v1:63,184,320,230:page-observation",
+            "SB-CMS-001:patient_name:dynamic-roi-resolver-v1:63,184,320,230:regional"
+          ],
+          "source_crop_sha256s": [
+            "2e1084f02f117a5d8f2cff62e70266ad8144be7d6adff47ae451b9fdb8fcdd76"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-001:patient_name:dynamic-roi-resolver-v1:63,184,320,230:page-observation",
+            "SB-CMS-001:insured_name:dynamic-roi-resolver-v1:63,293,320,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2e1084f02f117a5d8f2cff62e70266ad8144be7d6adff47ae451b9fdb8fcdd76",
+            "f3fa9f120e14a9cbba726022152e67514c86e468ea4c0f1e0df34e23c2688eb1"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:patient_dob:dynamic-roi-resolver-v1:642,184,809,232:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "7e94737fa28e1420bb4b8abdf3e36b844e9f363114a9b21fa04d981329aa79d4"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:member_id:dynamic-roi-resolver-v1:963,184,1188,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "f26376ae815cd0cd5cd63a8f2612cf570740535fcd0e37d34220266e32d9d639"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:insured_name:dynamic-roi-resolver-v1:63,293,320,339:page-observation",
+            "SB-CMS-001:insured_name:dynamic-roi-resolver-v1:63,293,320,339:regional"
+          ],
+          "source_crop_sha256s": [
+            "f3fa9f120e14a9cbba726022152e67514c86e468ea4c0f1e0df34e23c2688eb1"
+          ],
+          "supported_fields": [
+            "insured_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-001:patient_name:dynamic-roi-resolver-v1:63,184,320,230:page-observation",
+            "SB-CMS-001:insured_name:dynamic-roi-resolver-v1:63,293,320,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2e1084f02f117a5d8f2cff62e70266ad8144be7d6adff47ae451b9fdb8fcdd76",
+            "f3fa9f120e14a9cbba726022152e67514c86e468ea4c0f1e0df34e23c2688eb1"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "insured_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:relationship:dynamic-roi-resolver-v1:639,292,760,342:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "dec5aebe969028624bf06bcc9da409df832d3c235ce67aee137564ee427e8137"
+          ],
+          "supported_fields": [
+            "relationship"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-001:patient_name:dynamic-roi-resolver-v1:63,184,320,230:page-observation",
+            "SB-CMS-001:insured_name:dynamic-roi-resolver-v1:63,293,320,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2e1084f02f117a5d8f2cff62e70266ad8144be7d6adff47ae451b9fdb8fcdd76",
+            "f3fa9f120e14a9cbba726022152e67514c86e468ea4c0f1e0df34e23c2688eb1"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "relationship",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:provider_name:dynamic-roi-resolver-v1:68,435,473,467:page-observation",
+            "SB-CMS-001:provider_name:dynamic-roi-resolver-v1:68,435,473,467:regional"
+          ],
+          "source_crop_sha256s": [
+            "e2e0c9ea4105a068334e4e820dcbf16230a29c80afee9fd032798f73cd584f74"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:provider_npi:dynamic-roi-resolver-v1:642,430,847,476:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "c1a0a661c30446eb7847ace1ddc5fa1aa39eaf0b437ab563a61a3ea5b5ebeddb"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-001",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:cpt_hcpcs:dynamic-roi-resolver-v1:380,632,508,682:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "1caf15a1fbd040e75a1dd5d8c2323dd5a68ea973cc4497de286d4139ad027310"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:diagnosis:dynamic-roi-resolver-v1:962,435,1078,479:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "d1a8480edccc4a49b27f33f3e370935423801f452a4e3cb69ebb65a27bc4d612"
+          ],
+          "supported_fields": [
+            "diagnosis"
+          ]
+        }
+      ],
+      "field_name": "diagnosis",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-001:total_charge:dynamic-roi-resolver-v1:953,936,1073,978:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "4e10d427ab816019fbcfc546c7e97f8564ed86f97ca5fa12b426d03e575ba17a"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:patient_name:dynamic-roi-resolver-v1:69,188,318,222:page-observation",
+            "SB-CMS-002:patient_name:dynamic-roi-resolver-v1:69,188,318,222:regional"
+          ],
+          "source_crop_sha256s": [
+            "e81a3c59db489b7b227f4f77d01acad7d090dd83dbd8e552ffdceebf9d0589ae"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-002:patient_name:dynamic-roi-resolver-v1:69,188,318,222:page-observation",
+            "SB-CMS-002:insured_name:dynamic-roi-resolver-v1:62,292,355,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "e81a3c59db489b7b227f4f77d01acad7d090dd83dbd8e552ffdceebf9d0589ae",
+            "2338aff61acdfa21a844b4bbd0a92f2d64398289c7e6d2154676a082c487d76d"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:patient_dob:dynamic-roi-resolver-v1:642,184,807,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "4c7762e988842aac8fe73b9988fb947e38e87da6c0426c8bf3e66b4901f26353"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:member_id:dynamic-roi-resolver-v1:962,184,1191,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "0676054baaa1601688d93e3a345622a2ed14a599e370f5bf2b992c67303db621"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:insured_name:dynamic-roi-resolver-v1:62,292,355,338:page-observation",
+            "SB-CMS-002:insured_name:dynamic-roi-resolver-v1:62,292,355,338:regional"
+          ],
+          "source_crop_sha256s": [
+            "2338aff61acdfa21a844b4bbd0a92f2d64398289c7e6d2154676a082c487d76d"
+          ],
+          "supported_fields": [
+            "insured_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-002:patient_name:dynamic-roi-resolver-v1:69,188,318,222:page-observation",
+            "SB-CMS-002:insured_name:dynamic-roi-resolver-v1:62,292,355,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "e81a3c59db489b7b227f4f77d01acad7d090dd83dbd8e552ffdceebf9d0589ae",
+            "2338aff61acdfa21a844b4bbd0a92f2d64398289c7e6d2154676a082c487d76d"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "insured_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:relationship:dynamic-roi-resolver-v1:642,294,752,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "f0434e9111134e30856257e03a925cd57b6c312a7596ab4cafec42f084bef891"
+          ],
+          "supported_fields": [
+            "relationship"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-002:patient_name:dynamic-roi-resolver-v1:69,188,318,222:page-observation",
+            "SB-CMS-002:insured_name:dynamic-roi-resolver-v1:62,292,355,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "e81a3c59db489b7b227f4f77d01acad7d090dd83dbd8e552ffdceebf9d0589ae",
+            "2338aff61acdfa21a844b4bbd0a92f2d64398289c7e6d2154676a082c487d76d"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "relationship",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:provider_name:dynamic-roi-resolver-v1:66,434,428,466:page-observation",
+            "SB-CMS-002:provider_name:dynamic-roi-resolver-v1:66,434,428,466:regional"
+          ],
+          "source_crop_sha256s": [
+            "f44ea1ccf1716fb7a067bff955964b3f39a7220f3717c12ac9f34685a8d56fe3"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:provider_npi:dynamic-roi-resolver-v1:640,429,846,475:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "ab0056884c308e126381656ef39134c5af38268d7ac15b627e6fba7590d9319b"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-002",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:cpt_hcpcs:dynamic-roi-resolver-v1:380,633,510,683:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "57b82f52328c0fe92c1dcdffc78faa0527b1960bc1030db07b76527222127dc5"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:diagnosis:dynamic-roi-resolver-v1:962,436,1076,478:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "60d6fe8e69cd8ae20153082ac818a8223ca4e8eb0f60cc086fb36b83a51e9798"
+          ],
+          "supported_fields": [
+            "diagnosis"
+          ]
+        }
+      ],
+      "field_name": "diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-002:total_charge:dynamic-roi-resolver-v1:951,933,1080,981:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "eb82d84c601a09fd9bf7ac6babdd148b1edd416ad6529850630952cd2100f9ea"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-003:patient_dob:dynamic-roi-resolver-v1:642,184,808,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "9894d7d162b7ea3675079dcb70baed728fc01d4ce579fb0a34d6e68ffe1d2378"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-003:member_id:dynamic-roi-resolver-v1:966,187,1187,227:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8cacfc5c3cf61b6d2a6602fefb39830c381388932b270dcb836af47a1e903393"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [],
+      "field_name": "insured_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [],
+      "field_name": "relationship",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-003:provider_npi:dynamic-roi-resolver-v1:654,427,860,473:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "cb22a8f2d7c38570479cfa73a7b4b204803fc6cf148777f2dfc63552cd4c24fb"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-003:cpt_hcpcs:dynamic-roi-resolver-v1:383,636,500,678:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "811fca9ecedcd153ced7c52698db98b8029cccbb3789fae4bd4410ca95931e66"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [],
+      "field_name": "diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-003",
+      "evidence": [],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-004:patient_name:dynamic-roi-resolver-v1:61,182,338,230:page-observation",
+            "SB-CMS-004:patient_name:dynamic-roi-resolver-v1:61,182,338,230:regional"
+          ],
+          "source_crop_sha256s": [
+            "c3240def8973af94c2599d42634eda9b374616e1e6672d8a5b1a3588165c74c9"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-004:patient_name:dynamic-roi-resolver-v1:61,182,338,230:page-observation",
+            "SB-CMS-004:insured_name:dynamic-roi-resolver-v1:62,293,334,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "c3240def8973af94c2599d42634eda9b374616e1e6672d8a5b1a3588165c74c9",
+            "c787b17107f56c3f30ac3914a2aa181fbced30382f0e3c6169cd4a133106893e"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-004:patient_dob:dynamic-roi-resolver-v1:638,182,814,234:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8d2967f6913209370adcfc7fe4fa71288d9a85990d9480394b38cafd91bdd35f"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-004:member_id:dynamic-roi-resolver-v1:961,184,1191,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "d340a6454c42e886e151d92daf4eeb2bc7c1c87baf82de26972854e6e4c84b69"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-004:insured_name:dynamic-roi-resolver-v1:62,293,334,339:page-observation",
+            "SB-CMS-004:insured_name:dynamic-roi-resolver-v1:62,293,334,339:regional"
+          ],
+          "source_crop_sha256s": [
+            "c787b17107f56c3f30ac3914a2aa181fbced30382f0e3c6169cd4a133106893e"
+          ],
+          "supported_fields": [
+            "insured_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-004:patient_name:dynamic-roi-resolver-v1:61,182,338,230:page-observation",
+            "SB-CMS-004:insured_name:dynamic-roi-resolver-v1:62,293,334,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "c3240def8973af94c2599d42634eda9b374616e1e6672d8a5b1a3588165c74c9",
+            "c787b17107f56c3f30ac3914a2aa181fbced30382f0e3c6169cd4a133106893e"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "insured_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-004:relationship:dynamic-roi-resolver-v1:643,295,751,337:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "7ade31d59ffb74d681ebea24f5f6683da15acf286271348cb86bee5975a1141a"
+          ],
+          "supported_fields": [
+            "relationship"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-004:patient_name:dynamic-roi-resolver-v1:61,182,338,230:page-observation",
+            "SB-CMS-004:insured_name:dynamic-roi-resolver-v1:62,293,334,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "c3240def8973af94c2599d42634eda9b374616e1e6672d8a5b1a3588165c74c9",
+            "c787b17107f56c3f30ac3914a2aa181fbced30382f0e3c6169cd4a133106893e"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "relationship",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-004",
+      "evidence": [],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-004:provider_npi:dynamic-roi-resolver-v1:650,429,854,475:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "f7b4f6afc369f5568aaf0675f5b55920e5826a680e5dd2c3a4103fd3213df72d"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-004",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-004:cpt_hcpcs:dynamic-roi-resolver-v1:373,627,555,689:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "78596f0e3cb2f9bc221f0a06f4b53ae05480ef8e9917cc5336f18e0e2841b54d"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-004:diagnosis:dynamic-roi-resolver-v1:951,426,1122,492:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "a704d93cffd96534582e5c326cc94cf91922e25ec336715af262866c33d79a25"
+          ],
+          "supported_fields": [
+            "diagnosis"
+          ]
+        }
+      ],
+      "field_name": "diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-004:total_charge:dynamic-roi-resolver-v1:944,927,1116,991:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "294a733ff33fccb6d6653c75fe88bca65658321affe8a4b9732e10acd4c8a904"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:patient_name:dynamic-roi-resolver-v1:60,183,348,233:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "01de1c61e6e96ec063625fdd8b96690ea0d480fc0b420eb64eef651c896592ca"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-005:patient_name:dynamic-roi-resolver-v1:60,183,348,233:page-observation",
+            "SB-CMS-005:insured_name:dynamic-roi-resolver-v1:66,296,327,336:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "01de1c61e6e96ec063625fdd8b96690ea0d480fc0b420eb64eef651c896592ca",
+            "9a20401c315968dc8920c3ad66926335b0b9cd8aba0ee220a95231ce40b26eae"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:patient_dob:dynamic-roi-resolver-v1:641,184,809,232:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "205b38d08599ce26766fc1f9da9f65c8d6808f83e2a8c5a5f103ff1a2b2b57cd"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:member_id:dynamic-roi-resolver-v1:963,184,1188,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "32609e47ce9b4e97e96a51b3569b26d8ad3055a649525d4f4ca01c0c5a8ff07a"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:insured_name:dynamic-roi-resolver-v1:66,296,327,336:page-observation",
+            "SB-CMS-005:insured_name:dynamic-roi-resolver-v1:66,296,327,336:regional"
+          ],
+          "source_crop_sha256s": [
+            "9a20401c315968dc8920c3ad66926335b0b9cd8aba0ee220a95231ce40b26eae"
+          ],
+          "supported_fields": [
+            "insured_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-005:patient_name:dynamic-roi-resolver-v1:60,183,348,233:page-observation",
+            "SB-CMS-005:insured_name:dynamic-roi-resolver-v1:66,296,327,336:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "01de1c61e6e96ec063625fdd8b96690ea0d480fc0b420eb64eef651c896592ca",
+            "9a20401c315968dc8920c3ad66926335b0b9cd8aba0ee220a95231ce40b26eae"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "insured_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:relationship:dynamic-roi-resolver-v1:639,292,760,342:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "0acb1e00eebf23e88effeb03a0734067cfada93df1a66d9d968ed919aa19985e"
+          ],
+          "supported_fields": [
+            "relationship"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-005:patient_name:dynamic-roi-resolver-v1:60,183,348,233:page-observation",
+            "SB-CMS-005:insured_name:dynamic-roi-resolver-v1:66,296,327,336:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "01de1c61e6e96ec063625fdd8b96690ea0d480fc0b420eb64eef651c896592ca",
+            "9a20401c315968dc8920c3ad66926335b0b9cd8aba0ee220a95231ce40b26eae"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "relationship",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:provider_name:dynamic-roi-resolver-v1:66,435,477,469:page-observation",
+            "SB-CMS-005:provider_name:dynamic-roi-resolver-v1:66,435,477,469:regional"
+          ],
+          "source_crop_sha256s": [
+            "0314d43010ea1ba6bada32546e1d28483f697caa23f53fae7365e1f154fe94b5"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:provider_npi:dynamic-roi-resolver-v1:640,430,846,476:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "5167e4bc1b193b2369ea7b266e6dc40f83b498fb5838bfdb439cf36ade2a82d7"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-005",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:cpt_hcpcs:dynamic-roi-resolver-v1:380,633,509,683:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "5bf2e885c61b61219410b57a6fb1a34696fa52c0bd7e2866e4ca244ffd82a588"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:diagnosis:dynamic-roi-resolver-v1:961,435,1076,479:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2f2e44d6f31d6a1cdca36df9e5dae9081dd0b10c291a413a531b3faea00726f5"
+          ],
+          "supported_fields": [
+            "diagnosis"
+          ]
+        }
+      ],
+      "field_name": "diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-005:total_charge:dynamic-roi-resolver-v1:953,936,1074,978:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "42a50354a7e7c50013a60b1114507c151d3799c093d75ed60210531291fc08cd"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:patient_name:dynamic-roi-resolver-v1:66,187,346,227:page-observation",
+            "SB-CMS-006:patient_name:dynamic-roi-resolver-v1:66,187,346,227:regional"
+          ],
+          "source_crop_sha256s": [
+            "8da65943986aa53a9a83ca90adc026067a82a4becd13d554900339ab5f2c73be"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-006:patient_name:dynamic-roi-resolver-v1:66,187,346,227:page-observation",
+            "SB-CMS-006:insured_name:dynamic-roi-resolver-v1:66,296,348,336:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8da65943986aa53a9a83ca90adc026067a82a4becd13d554900339ab5f2c73be",
+            "708ac7664d7f2b98fe6bb63fb0ced6282fd7b607a908c108bf724e922bb84da8"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:patient_dob:dynamic-roi-resolver-v1:641,184,810,232:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "3bf973e3ebe1528bab7eacdd3eb9f8b65da4b3d1902936ec540f04d7aca662bc"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:member_id:dynamic-roi-resolver-v1:963,184,1188,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "f49cb00b652dbb4bc9aa10c1b3a242329db8ee56399fbabea717ca0d22b994f6"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:insured_name:dynamic-roi-resolver-v1:66,296,348,336:page-observation",
+            "SB-CMS-006:insured_name:dynamic-roi-resolver-v1:66,296,348,336:regional"
+          ],
+          "source_crop_sha256s": [
+            "708ac7664d7f2b98fe6bb63fb0ced6282fd7b607a908c108bf724e922bb84da8"
+          ],
+          "supported_fields": [
+            "insured_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-006:patient_name:dynamic-roi-resolver-v1:66,187,346,227:page-observation",
+            "SB-CMS-006:insured_name:dynamic-roi-resolver-v1:66,296,348,336:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8da65943986aa53a9a83ca90adc026067a82a4becd13d554900339ab5f2c73be",
+            "708ac7664d7f2b98fe6bb63fb0ced6282fd7b607a908c108bf724e922bb84da8"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "insured_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:relationship:dynamic-roi-resolver-v1:639,292,760,342:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "0acb1e00eebf23e88effeb03a0734067cfada93df1a66d9d968ed919aa19985e"
+          ],
+          "supported_fields": [
+            "relationship"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-006:patient_name:dynamic-roi-resolver-v1:66,187,346,227:page-observation",
+            "SB-CMS-006:insured_name:dynamic-roi-resolver-v1:66,296,348,336:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8da65943986aa53a9a83ca90adc026067a82a4becd13d554900339ab5f2c73be",
+            "708ac7664d7f2b98fe6bb63fb0ced6282fd7b607a908c108bf724e922bb84da8"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "relationship",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:provider_name:dynamic-roi-resolver-v1:67,437,493,471:page-observation",
+            "SB-CMS-006:provider_name:dynamic-roi-resolver-v1:67,437,493,471:regional"
+          ],
+          "source_crop_sha256s": [
+            "61510bb47eae8bfa20553d238866c88c6375c3a6703df6d906d398694b19b1f1"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:provider_npi:dynamic-roi-resolver-v1:642,430,848,476:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "def1306af7682b1ba15b8c13812fe020b584fd049c4d6fa2bb318268ea155c09"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-006",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:cpt_hcpcs:dynamic-roi-resolver-v1:380,633,509,683:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8b9c1b845618f0d6d3359077659f78b227f6c75b8d58f32f1ef54d3f0b4aaf70"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:diagnosis:dynamic-roi-resolver-v1:962,436,1078,480:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "9d6fd6f432707f1f978d57fe5b3f9acb22349959c7a24c3b12a7b3b30be39fea"
+          ],
+          "supported_fields": [
+            "diagnosis"
+          ]
+        }
+      ],
+      "field_name": "diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-006:total_charge:dynamic-roi-resolver-v1:953,936,1074,978:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "d1896af5f46935bfb1b2400800b7ddfb71ec87945ca547fc58ee7ee221b9b301"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:patient_name:dynamic-roi-resolver-v1:66,186,306,226:page-observation",
+            "SB-CMS-007:patient_name:dynamic-roi-resolver-v1:66,186,306,226:regional"
+          ],
+          "source_crop_sha256s": [
+            "52472abb4e1e9e71cacaace4607fc5e95b81f6a527c42ba2a48d9c4c608e192e"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-007:patient_name:dynamic-roi-resolver-v1:66,186,306,226:page-observation",
+            "SB-CMS-007:insured_name:dynamic-roi-resolver-v1:62,292,328,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "52472abb4e1e9e71cacaace4607fc5e95b81f6a527c42ba2a48d9c4c608e192e",
+            "54456383341ce9f70aec66d3a8e0e04e372fc7dfef93c3313da02635d28bf18a"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:patient_dob:dynamic-roi-resolver-v1:642,184,807,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "869522d4253cbfaaa6e3e2e9fa406947f64c9703018068cea6ea3e256ed905e1"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:member_id:dynamic-roi-resolver-v1:963,183,1188,229:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "eb2a07b51c19f0457dbb8a182f9bb9b8cf78a149cf5a6cc47a3a589b864b7d16"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:insured_name:dynamic-roi-resolver-v1:62,292,328,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "54456383341ce9f70aec66d3a8e0e04e372fc7dfef93c3313da02635d28bf18a"
+          ],
+          "supported_fields": [
+            "insured_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-007:patient_name:dynamic-roi-resolver-v1:66,186,306,226:page-observation",
+            "SB-CMS-007:insured_name:dynamic-roi-resolver-v1:62,292,328,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "52472abb4e1e9e71cacaace4607fc5e95b81f6a527c42ba2a48d9c4c608e192e",
+            "54456383341ce9f70aec66d3a8e0e04e372fc7dfef93c3313da02635d28bf18a"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "insured_name",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:relationship:dynamic-roi-resolver-v1:639,292,760,342:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "17b74e8b894be142cab6db0d76652f1e703d34c558ebd3eccd1c0453abb6f3b6"
+          ],
+          "supported_fields": [
+            "relationship"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-007:patient_name:dynamic-roi-resolver-v1:66,186,306,226:page-observation",
+            "SB-CMS-007:insured_name:dynamic-roi-resolver-v1:62,292,328,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "52472abb4e1e9e71cacaace4607fc5e95b81f6a527c42ba2a48d9c4c608e192e",
+            "54456383341ce9f70aec66d3a8e0e04e372fc7dfef93c3313da02635d28bf18a"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "relationship",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:provider_name:dynamic-roi-resolver-v1:68,434,431,468:page-observation",
+            "SB-CMS-007:provider_name:dynamic-roi-resolver-v1:68,434,431,468:regional"
+          ],
+          "source_crop_sha256s": [
+            "5a2ce91f49497b3394d17915bfa2613d608981fc0df096cb807be02170a19593"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:provider_npi:dynamic-roi-resolver-v1:642,430,847,476:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "f33505ab070b1095727b619926afbbe644648dfb9f0ad82fbe1763a0c9374116"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-007",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:cpt_hcpcs:dynamic-roi-resolver-v1:380,633,509,683:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "f2f11ba55cf90534656e8eae4030839faf39cf355ed1a53c5aa9e7b21608972d"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:diagnosis:dynamic-roi-resolver-v1:962,435,1078,479:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "234777fbbc451404281eb60d8563cee863880969ea5af0c863a6c3b936b2323e"
+          ],
+          "supported_fields": [
+            "diagnosis"
+          ]
+        }
+      ],
+      "field_name": "diagnosis",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-007:total_charge:dynamic-roi-resolver-v1:951,933,1079,981:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "704d94c0a52e2947b843198693211d74a3784aed65faaab23a2fe4dd1b3f79fa"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:patient_name:dynamic-roi-resolver-v1:59,184,316,230:page-observation",
+            "SB-CMS-008:patient_name:dynamic-roi-resolver-v1:59,184,316,230:regional"
+          ],
+          "source_crop_sha256s": [
+            "e003771285f13cdb91751276af596444decbbff496ccd6224fe063ef7485f099"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-008:patient_name:dynamic-roi-resolver-v1:59,184,316,230:page-observation",
+            "SB-CMS-008:insured_name:dynamic-roi-resolver-v1:60,293,316,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "e003771285f13cdb91751276af596444decbbff496ccd6224fe063ef7485f099",
+            "43e797bf8c7c00103a3bcb97bc308e0ed10aeb980728b31db972b06df2c0c457"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:patient_dob:dynamic-roi-resolver-v1:641,184,810,232:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2118ea63b5654f267e71ca2c820ff839039ef77a586e492665237888a9364971"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:member_id:dynamic-roi-resolver-v1:963,184,1188,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "7e1e414752524a64cd7d897914a472adbbe3c2f11f7a06c0388b9ed7b698b5fa"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:insured_name:dynamic-roi-resolver-v1:60,293,316,339:page-observation",
+            "SB-CMS-008:insured_name:dynamic-roi-resolver-v1:60,293,316,339:regional"
+          ],
+          "source_crop_sha256s": [
+            "43e797bf8c7c00103a3bcb97bc308e0ed10aeb980728b31db972b06df2c0c457"
+          ],
+          "supported_fields": [
+            "insured_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-008:patient_name:dynamic-roi-resolver-v1:59,184,316,230:page-observation",
+            "SB-CMS-008:insured_name:dynamic-roi-resolver-v1:60,293,316,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "e003771285f13cdb91751276af596444decbbff496ccd6224fe063ef7485f099",
+            "43e797bf8c7c00103a3bcb97bc308e0ed10aeb980728b31db972b06df2c0c457"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "insured_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:relationship:dynamic-roi-resolver-v1:639,292,760,342:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "dec5aebe969028624bf06bcc9da409df832d3c235ce67aee137564ee427e8137"
+          ],
+          "supported_fields": [
+            "relationship"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-008:patient_name:dynamic-roi-resolver-v1:59,184,316,230:page-observation",
+            "SB-CMS-008:insured_name:dynamic-roi-resolver-v1:60,293,316,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "e003771285f13cdb91751276af596444decbbff496ccd6224fe063ef7485f099",
+            "43e797bf8c7c00103a3bcb97bc308e0ed10aeb980728b31db972b06df2c0c457"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "relationship",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:provider_name:dynamic-roi-resolver-v1:67,433,372,465:page-observation",
+            "SB-CMS-008:provider_name:dynamic-roi-resolver-v1:67,433,372,465:regional"
+          ],
+          "source_crop_sha256s": [
+            "129d85f8a931d02a117c3fcdc2911f3337be3c662063276d704b838fc3cd71a6"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:provider_npi:dynamic-roi-resolver-v1:639,430,844,476:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "ad5866d148feaed049f95c2841373b5f9f0cf89a2771b3a5a986be7adc5bdedb"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-008",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:cpt_hcpcs:dynamic-roi-resolver-v1:380,633,509,683:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "46108144236e033303b365e6c25eeac734f4c635ddfcd05459c5cfb10f21d25e"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:diagnosis:dynamic-roi-resolver-v1:962,436,1080,480:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8e141daee47a71458256d7ddaa92fc47989f4ec8960650443da26c2a73b6ecd1"
+          ],
+          "supported_fields": [
+            "diagnosis"
+          ]
+        }
+      ],
+      "field_name": "diagnosis",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-008:total_charge:dynamic-roi-resolver-v1:953,936,1074,978:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "a9594743c728877ebfce0bf5b9c7635f6333c229b6e008c597391979a3b77406"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:patient_name:dynamic-roi-resolver-v1:62,184,334,230:page-observation",
+            "SB-CMS-009:patient_name:dynamic-roi-resolver-v1:62,184,334,230:regional"
+          ],
+          "source_crop_sha256s": [
+            "6179b8f11ba929ba5c594a793b26978617783600986ca1b6b91d2c8052b7622b"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-009:patient_name:dynamic-roi-resolver-v1:62,184,334,230:page-observation",
+            "SB-CMS-009:insured_name:dynamic-roi-resolver-v1:63,293,334,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "6179b8f11ba929ba5c594a793b26978617783600986ca1b6b91d2c8052b7622b",
+            "907fb293add59d98115e208dcf30268458ce5004fb0d90bc90c212541ea5708f"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:patient_dob:dynamic-roi-resolver-v1:641,184,807,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8076cb7430e3539901e0f61ccd8585b83cfcfa496cf2ed112fe0647079a2a43e"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:member_id:dynamic-roi-resolver-v1:963,184,1188,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "e8035891a53983696be85b8642650760bba3387ed1118d772b7a363da4ad5a28"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:insured_name:dynamic-roi-resolver-v1:63,293,334,339:page-observation",
+            "SB-CMS-009:insured_name:dynamic-roi-resolver-v1:63,293,334,339:regional"
+          ],
+          "source_crop_sha256s": [
+            "907fb293add59d98115e208dcf30268458ce5004fb0d90bc90c212541ea5708f"
+          ],
+          "supported_fields": [
+            "insured_name"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-009:patient_name:dynamic-roi-resolver-v1:62,184,334,230:page-observation",
+            "SB-CMS-009:insured_name:dynamic-roi-resolver-v1:63,293,334,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "6179b8f11ba929ba5c594a793b26978617783600986ca1b6b91d2c8052b7622b",
+            "907fb293add59d98115e208dcf30268458ce5004fb0d90bc90c212541ea5708f"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "insured_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:relationship:dynamic-roi-resolver-v1:642,294,754,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "eb92b89e83a780f000f402d39c8c5a037f1ddc2a9db1dd6e42cdeead8d53ce31"
+          ],
+          "supported_fields": [
+            "relationship"
+          ]
+        },
+        {
+          "evidence_class": "E6",
+          "rule_id": "SELF_PATIENT_SUBSCRIBER_IDENTITY",
+          "source_candidate_ids": [
+            "SB-CMS-009:patient_name:dynamic-roi-resolver-v1:62,184,334,230:page-observation",
+            "SB-CMS-009:insured_name:dynamic-roi-resolver-v1:63,293,334,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "6179b8f11ba929ba5c594a793b26978617783600986ca1b6b91d2c8052b7622b",
+            "907fb293add59d98115e208dcf30268458ce5004fb0d90bc90c212541ea5708f"
+          ],
+          "supported_fields": [
+            "patient_name",
+            "insured_name",
+            "relationship"
+          ]
+        }
+      ],
+      "field_name": "relationship",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4",
+        "E6"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:provider_name:dynamic-roi-resolver-v1:67,434,428,466:page-observation",
+            "SB-CMS-009:provider_name:dynamic-roi-resolver-v1:67,434,428,466:regional"
+          ],
+          "source_crop_sha256s": [
+            "45461f3a992ff5f4274d6540df439614b13be673d8cd3b707dca6bccc20e3467"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:provider_npi:dynamic-roi-resolver-v1:641,429,847,475:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "f9081f3411c80dfc32c37eacd89104aef122c8ad3e8b0723da8e26d10905d678"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-009",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:cpt_hcpcs:dynamic-roi-resolver-v1:380,633,510,683:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "575f62cfee74dd22feba0511e5e6886390df6c61058a7395ded726923a628c48"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:diagnosis:dynamic-roi-resolver-v1:961,436,1076,478:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "860537d610f7be04591b502c2ca305db80b98219724713f3ad9fb27b1cd612e4"
+          ],
+          "supported_fields": [
+            "diagnosis"
+          ]
+        }
+      ],
+      "field_name": "diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-009:total_charge:dynamic-roi-resolver-v1:951,933,1079,981:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "7fe40baa32de82e57c7a7d5aafc20a3979d40b47fde11a6e2c2d30b0b9287202"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-010:patient_dob:dynamic-roi-resolver-v1:641,184,808,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "41c50b4aebf51cdae8acd633eb3183de6bdd8dc4775a979bc53a092a04a09249"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-010:member_id:dynamic-roi-resolver-v1:965,186,1188,226:page-observation",
+            "SB-CMS-010:member_id:dynamic-roi-resolver-v1:965,186,1188,226:regional"
+          ],
+          "source_crop_sha256s": [
+            "48f67c1168bf504c04de815cd15201e1e14265d55eaa0440628c8455c60474be"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [],
+      "field_name": "insured_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [],
+      "field_name": "relationship",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-010:provider_npi:dynamic-roi-resolver-v1:654,427,861,473:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "e1bf2cbca7dc895830de63f4129ef7ecff83e28fb4f904906b874eef7b2b7e04"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [],
+      "field_name": "service_date",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-010:cpt_hcpcs:dynamic-roi-resolver-v1:383,636,501,678:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "f45dc98dff548bcd9ead07f110e3494f5d842c866252d131507657271f5b461d"
+          ],
+          "supported_fields": [
+            "cpt_hcpcs"
+          ]
+        }
+      ],
+      "field_name": "cpt_hcpcs",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-010:diagnosis:dynamic-roi-resolver-v1:963,436,1079,478:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "ea5f350f90fb0f815bb2b9340d894efbca080b3033fad0a0a6fd7fefb0e7852c"
+          ],
+          "supported_fields": [
+            "diagnosis"
+          ]
+        }
+      ],
+      "field_name": "diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-CMS-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-CMS-010:total_charge:dynamic-roi-resolver-v1:953,936,1075,978:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "b68250c56fa34eda5ec93798c35ec45f7c43cb3cf2caaa9436f6d11e47d95ad3"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E6"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-001:patient_name:dynamic-roi-resolver-v1:67,295,320,329:page-observation",
+            "SB-UB-001:patient_name:dynamic-roi-resolver-v1:67,295,320,329:regional"
+          ],
+          "source_crop_sha256s": [
+            "477b3013222ad327395b7212e1eac37ff9d4d02da575a38bc361f8ed10d7e372"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-001:patient_dob:dynamic-roi-resolver-v1:591,293,759,341:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "80e4b0dcea12e54d085d21b8d026cbe674f7e7125cdb9b1289d813c6e8a462a3"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-001:member_id:dynamic-roi-resolver-v1:891,293,1118,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "c30f20bb80b5d113d674245895fe69d706eed51b26bc493782148898c2b6faf5"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-001:provider_name:dynamic-roi-resolver-v1:65,186,601,226:page-observation",
+            "SB-UB-001:provider_name:dynamic-roi-resolver-v1:65,186,601,226:regional"
+          ],
+          "source_crop_sha256s": [
+            "46528eb8e42091cb28da5a9b4681daecc30c4d9ebe3cef5b556d4ac353217397"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-001:provider_npi:dynamic-roi-resolver-v1:800,180,1006,226:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "836e1fb820aad8b1ca85454d6dc7a01742d90908362278b7750b1f58035b0bde"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-001:type_of_bill:dynamic-roi-resolver-v1:1071,183,1158,231:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2c37f79b9e9833889b61dd9ba53985216e8039b998ea926ed9b2f72e43e295cb"
+          ],
+          "supported_fields": [
+            "type_of_bill"
+          ]
+        }
+      ],
+      "field_name": "type_of_bill",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-001:principal_diagnosis:dynamic-roi-resolver-v1:62,405,174,449:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "bcb22fc9e2752562218c4a4ad3d8deef8469c2590b3e661e43ea63da88a6b3c9"
+          ],
+          "supported_fields": [
+            "principal_diagnosis"
+          ]
+        }
+      ],
+      "field_name": "principal_diagnosis",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-001:total_charge:dynamic-roi-resolver-v1:960,1183,1090,1231:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "79943a29b78ea11accf099b8e5d2a10b07ab73ea2b62980c50e65961cf4a7cbe"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-001",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-001:federal_tax_no:dynamic-roi-resolver-v1:880,407,1052,459:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "61bd3e6ba6827bdf26634491c2bd0b44062270ca9a96dd8b15ffff6ab7386b93"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-002:patient_name:dynamic-roi-resolver-v1:61,293,340,339:page-observation",
+            "SB-UB-002:patient_name:dynamic-roi-resolver-v1:61,293,340,339:regional"
+          ],
+          "source_crop_sha256s": [
+            "57cab7e191fbeedaf09cee16f5e5ff3309d2166eeef3d8ace4a1129981933200"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-002:patient_dob:dynamic-roi-resolver-v1:592,293,760,341:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8cadb2625e22cbb37b19ac77f0c2e25dc07301ee3774264c7292ce5a0bea4a77"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-002:member_id:dynamic-roi-resolver-v1:892,292,1119,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "440f5a458628b9d64adf254ad55c29be67be29187f454c425803f40202540f12"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-002:provider_name:dynamic-roi-resolver-v1:67,186,615,226:page-observation",
+            "SB-UB-002:provider_name:dynamic-roi-resolver-v1:67,186,615,226:regional"
+          ],
+          "source_crop_sha256s": [
+            "a39fa9d18d2372ca79c2bc01e9354f9481723c4e0926f053e3fe1656b3217a19"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-002:provider_npi:dynamic-roi-resolver-v1:800,180,1006,226:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "4bada580ddcc032501ea1649ebc1326df22bee8c18aa603389af5faa8699a4fe"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-002:type_of_bill:dynamic-roi-resolver-v1:1071,184,1158,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "b97f05f6c73032a9044db73f207d631a18dfee5aed9f43e665776ad23f4d6c2c"
+          ],
+          "supported_fields": [
+            "type_of_bill"
+          ]
+        }
+      ],
+      "field_name": "type_of_bill",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-002:principal_diagnosis:dynamic-roi-resolver-v1:61,405,176,449:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "1754d99873d12f372752fb78f09914a363492328d905345798e50e43c39eab96"
+          ],
+          "supported_fields": [
+            "principal_diagnosis"
+          ]
+        }
+      ],
+      "field_name": "principal_diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-002:total_charge:dynamic-roi-resolver-v1:960,1183,1090,1231:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "fc81141be07f0bf35e70edeef0d1bae87d3c40300c5b22ae06c0cf6edff67a6e"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-002",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-002:federal_tax_no:dynamic-roi-resolver-v1:886,411,1040,453:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "3253b32be9772c060dd2415679389daa9ef821074d679c3b1aec287c1f181c08"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-003",
+      "evidence": [],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-003",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-003:patient_dob:dynamic-roi-resolver-v1:592,293,760,341:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "7fb8e047f62d9318e848991edbed9819b21ad3b5586955b9d7d790488daf31af"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-003",
+      "evidence": [],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-003",
+      "evidence": [],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-003",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-003:provider_npi:dynamic-roi-resolver-v1:818,181,1042,233:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "6df0829235c1b766241b4a820b11a7a93a5e63c5cbc2e2b630bddcafbfecf6a3"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-003",
+      "evidence": [],
+      "field_name": "type_of_bill",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-003",
+      "evidence": [],
+      "field_name": "principal_diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-003",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-003:total_charge:dynamic-roi-resolver-v1:955,1185,1083,1227:page-observation",
+            "SB-UB-003:total_charge:dynamic-roi-resolver-v1:955,1185,1083,1227:regional"
+          ],
+          "source_crop_sha256s": [
+            "67f25715edfae3c46ca2793677bb7aa806e6dad2ea62cd7cfc376050cfa93876"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-003",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-003:federal_tax_no:dynamic-roi-resolver-v1:886,411,1040,453:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "ad4c6a06332cf687f357e690bb41f6f27fc246493b89e6b9095858a1ef7ed73c"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-004:patient_name:dynamic-roi-resolver-v1:48,294,310,342:page-observation",
+            "SB-UB-004:patient_name:dynamic-roi-resolver-v1:48,294,310,342:regional"
+          ],
+          "source_crop_sha256s": [
+            "01c4b0fc674a10c48daf85eb42b57edbc7a790764d7f42c8e2529eee254b8a9f"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-004:patient_dob:dynamic-roi-resolver-v1:571,290,774,350:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "48cb871eb913a424b11d711b71cc38ae4260f0ae0863fd23a58f5a0d75d544ee"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-004:member_id:dynamic-roi-resolver-v1:874,292,1134,346:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2ca63476a0dea6d02f3a1275fd3f8ee4bb338527ddbeb3544bfcd65e6d76d43c"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-004:provider_name:dynamic-roi-resolver-v1:49,185,624,231:page-observation",
+            "SB-UB-004:provider_name:dynamic-roi-resolver-v1:49,185,624,231:regional"
+          ],
+          "source_crop_sha256s": [
+            "e2afc5dadbb23cd7d13ac33f663aee4da2c753e5bcc1c07d7457071289ddfbe5"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-004:provider_npi:dynamic-roi-resolver-v1:786,186,992,232:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "7a125a49be9d6c5b9225004813f6cba0b341d725f8875ed8e63d31f6b75af426"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-004",
+      "evidence": [],
+      "field_name": "type_of_bill",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-004:principal_diagnosis:dynamic-roi-resolver-v1:39,398,202,462:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "a37a1d97b36e03604ca6aac3491c502c9981526977cad7c9c155981680e5ecca"
+          ],
+          "supported_fields": [
+            "principal_diagnosis"
+          ]
+        }
+      ],
+      "field_name": "principal_diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-004:total_charge:dynamic-roi-resolver-v1:944,1183,1098,1237:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "7aa7c3b3e40a1adac1f01b4e8d3546e7b85e3988d020518ab4b78a897371de1a"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-004",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-004:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "59f4514d3455d98b5240e897d4c77c4bef096c8144616953fce2f16936a8b67d"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-005:patient_name:dynamic-roi-resolver-v1:62,292,324,338:page-observation",
+            "SB-UB-005:patient_name:dynamic-roi-resolver-v1:62,292,324,338:regional"
+          ],
+          "source_crop_sha256s": [
+            "90afce8d06b61eff3fe825dfb963a4f196622bac12772ffc0d5b727d7ff09733"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-005:patient_dob:dynamic-roi-resolver-v1:592,293,760,341:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "33b7658b1d3a306ddcec5414d832d3353dd15a5372004fe4ab52e166f217b5e8"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-005:member_id:dynamic-roi-resolver-v1:891,293,1120,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "d63262afcd452b275105a29f7bcd1ae248172e3ed7e9adac78fbefc427948f23"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-005:provider_name:dynamic-roi-resolver-v1:66,186,585,226:page-observation",
+            "SB-UB-005:provider_name:dynamic-roi-resolver-v1:66,186,585,226:regional"
+          ],
+          "source_crop_sha256s": [
+            "a88559b9f3f99322673d1a6864baebd590093b942f37323763f1530837ef31e0"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-005:provider_npi:dynamic-roi-resolver-v1:800,180,1005,226:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2766fa0d079aba3002e603f3e6ae863f4702cbdcc50cb9b155bd105ee9e3a183"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-005:type_of_bill:dynamic-roi-resolver-v1:1071,184,1156,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "cb85930da241af133f8320453d13db8d1927c4913165056d2bf9a734854a628e"
+          ],
+          "supported_fields": [
+            "type_of_bill"
+          ]
+        }
+      ],
+      "field_name": "type_of_bill",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-005:principal_diagnosis:dynamic-roi-resolver-v1:63,405,176,449:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "5c657e1e2c270cfa670d78b5ab7ebf497ab67dc0951130dd0490c387ff7b0fec"
+          ],
+          "supported_fields": [
+            "principal_diagnosis"
+          ]
+        }
+      ],
+      "field_name": "principal_diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-005:total_charge:dynamic-roi-resolver-v1:961,1183,1090,1231:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "6da7199b7d0db4fad4ae05eac2727799e1890d2bb3441fc57e9e12976c35bb4b"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-005",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-005:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "402fb6017954e2c3779412ad97399dee17196977be35647225b42a593fd66e29"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-006:patient_name:dynamic-roi-resolver-v1:64,295,303,335:page-observation",
+            "SB-UB-006:patient_name:dynamic-roi-resolver-v1:64,295,303,335:regional"
+          ],
+          "source_crop_sha256s": [
+            "32733025ec1d9060d1f5b9abd098b170a47836635706d78a6d9aaa9492b2e8ef"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-006:patient_dob:dynamic-roi-resolver-v1:591,292,759,340:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2c22b6f86d70692d278608cb73069e1da756386d3bd0b99315a3c710a2f8584a"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-006:member_id:dynamic-roi-resolver-v1:891,293,1120,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2a38d7827d036ec01a60652665cf18ba5292b63422efd1a8b03c34babc84b418"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-006:provider_name:dynamic-roi-resolver-v1:66,186,635,226:page-observation",
+            "SB-UB-006:provider_name:dynamic-roi-resolver-v1:66,186,635,226:regional"
+          ],
+          "source_crop_sha256s": [
+            "a1ee4e1f0538500bff7e4902dae6168b5b6b1fcdc9c8fb77cc28372c124170ac"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-006:provider_npi:dynamic-roi-resolver-v1:800,180,1006,226:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "f22aa35208eece1ade79740ac014eef0766b5b12cdc43a99be7d97de262c3e2f"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-006:type_of_bill:dynamic-roi-resolver-v1:1071,184,1158,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "9967893834f398016c95bdfa926d885fa76d9f4b732f5c2aa866d7fdf75e150f"
+          ],
+          "supported_fields": [
+            "type_of_bill"
+          ]
+        }
+      ],
+      "field_name": "type_of_bill",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-006:principal_diagnosis:dynamic-roi-resolver-v1:63,405,178,449:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "d98f994e5e7dd3fb2c4e2c4d853bdeea8223f2779abdb94517a6512827f3eb5a"
+          ],
+          "supported_fields": [
+            "principal_diagnosis"
+          ]
+        }
+      ],
+      "field_name": "principal_diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-006:total_charge:dynamic-roi-resolver-v1:960,1183,1090,1231:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "98c3cf839dfe2afbb455275475198b729c6ac0343d4180c5720962e207b05cd0"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-006",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-006:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "d515ce99c384de110338c5d8871953a34e2292eb685c8cf050d3cd2558cb8414"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-007:patient_name:dynamic-roi-resolver-v1:63,293,320,339:page-observation",
+            "SB-UB-007:patient_name:dynamic-roi-resolver-v1:63,293,320,339:regional"
+          ],
+          "source_crop_sha256s": [
+            "15cdc639c9cd7662bc8c31f5d9baefd8298648c7d1b32d699426623f438b3fb5"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-007:patient_dob:dynamic-roi-resolver-v1:592,293,759,341:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "e757c90089194ba9a0c5f217c8851ead925a2c886ca1bdd41abbe4bc73353c13"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-007:member_id:dynamic-roi-resolver-v1:891,292,1120,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "b64dc9c9943ea6d41434ee70060eaf662320f34888eff567ce86ee36573d6730"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-007:provider_name:dynamic-roi-resolver-v1:66,186,614,226:page-observation",
+            "SB-UB-007:provider_name:dynamic-roi-resolver-v1:66,186,614,226:regional"
+          ],
+          "source_crop_sha256s": [
+            "fee99162ad4764a38493e836f684ded2b5162b68a0761bea839715e62660d825"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-007:provider_npi:dynamic-roi-resolver-v1:800,179,1010,227:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "4f1f9834bf3b5121d4caa8fc273cda6e1b20b076cb0a517a7a9dc99b6c06c242"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-007:type_of_bill:dynamic-roi-resolver-v1:1071,184,1156,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "17d7240c205ae8b76be24c955b8650cf10a315f98a9cd60b9c1cfdb50ce5be7a"
+          ],
+          "supported_fields": [
+            "type_of_bill"
+          ]
+        }
+      ],
+      "field_name": "type_of_bill",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-007:principal_diagnosis:dynamic-roi-resolver-v1:63,405,178,449:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "a96233d6cabdc832d0ad12ccd6c88f60522756e35107c15d4fe253c3133161bc"
+          ],
+          "supported_fields": [
+            "principal_diagnosis"
+          ]
+        }
+      ],
+      "field_name": "principal_diagnosis",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-007:total_charge:dynamic-roi-resolver-v1:960,1183,1090,1231:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "04417ba35c7805c1ae2991bb0045ff3c29fbcd9076e68f780a78132e42b55705"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-007",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-007:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "1a39f9860c5caef259ee6f2ed5a88de2f056e5c3ae960eb7d9b26b7f3fdb4b43"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-008:patient_name:dynamic-roi-resolver-v1:65,295,324,335:page-observation",
+            "SB-UB-008:patient_name:dynamic-roi-resolver-v1:65,295,324,335:regional"
+          ],
+          "source_crop_sha256s": [
+            "2473a4ff2c598a63b08a0368d0d885c524345c84e9b333ca8217cbdcdba41a53"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-008:patient_dob:dynamic-roi-resolver-v1:591,293,760,341:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "4e0f84980d0c4e361dcea2bc53bc1a8d4a427d1dec89ea1700773ce71ef3b0a0"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-008:member_id:dynamic-roi-resolver-v1:891,293,1121,339:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "c709e8df34d9d675fa82bae2deb143af93feb674880266481287c8c6ed798bdf"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-008:provider_name:dynamic-roi-resolver-v1:65,186,562,226:page-observation",
+            "SB-UB-008:provider_name:dynamic-roi-resolver-v1:65,186,562,226:regional"
+          ],
+          "source_crop_sha256s": [
+            "57884bdf48f129a80a9327cbc26ea97d8f96d08604c3108b4c5ef8703c2e95bc"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "degraded",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-008:provider_npi:dynamic-roi-resolver-v1:801,180,1007,226:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "370285be6fca0a60e3c159087c5fb869d599635f3a3d57a570d0cd85c76ccd8a"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-008:type_of_bill:dynamic-roi-resolver-v1:1071,184,1158,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "8fd774487ae71db33868e7896b4ab0b457900361184ae325d1d0fbbc8791f6e3"
+          ],
+          "supported_fields": [
+            "type_of_bill"
+          ]
+        }
+      ],
+      "field_name": "type_of_bill",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-008:principal_diagnosis:dynamic-roi-resolver-v1:63,405,176,449:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "2346a054c348fb2cfa9e51f24f8b6c8c887c53eaf8b08e70dba62e02c3c2a4d4"
+          ],
+          "supported_fields": [
+            "principal_diagnosis"
+          ]
+        }
+      ],
+      "field_name": "principal_diagnosis",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-008:total_charge:dynamic-roi-resolver-v1:960,1183,1090,1231:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "c0e33dad87ab26bc9f84c17fc2bd2e843c415a577bfb80c7276e625e62f64d5f"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-008",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-008:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "c599bbe906e25514049f33c7df92ad60694d4f4c6f49f1dd16c8ff5eb910a1c0"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "degraded",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-009:patient_name:dynamic-roi-resolver-v1:62,293,344,339:page-observation",
+            "SB-UB-009:patient_name:dynamic-roi-resolver-v1:62,293,344,339:regional"
+          ],
+          "source_crop_sha256s": [
+            "a76dacf28b4808ac74e4c02ffb3e86bd2d11fe92f48f9fe26f2c7f47acdd2148"
+          ],
+          "supported_fields": [
+            "patient_name"
+          ]
+        }
+      ],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-009:patient_dob:dynamic-roi-resolver-v1:591,293,759,341:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "7bb7b2677ca5dbe09c0e075ce1e5082d29abae518227b8805872d01d4ad60c07"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-009:member_id:dynamic-roi-resolver-v1:892,292,1121,338:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "4833f83fcb65f3041e5da21f155fbd312b35433479f416c3e857dcc446510748"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-009:provider_name:dynamic-roi-resolver-v1:62,183,597,231:page-observation",
+            "SB-UB-009:provider_name:dynamic-roi-resolver-v1:62,183,597,231:regional"
+          ],
+          "source_crop_sha256s": [
+            "ede436fafb01e8c548693dc94b3542d7c8de0ebf64cfbd2d981d686a1471119b"
+          ],
+          "supported_fields": [
+            "provider_name"
+          ]
+        }
+      ],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-009:provider_npi:dynamic-roi-resolver-v1:800,180,1007,226:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "1bc70ee4d8685c86225fc1e7d30c0245045d95ebb26593d9a5f4b398a225c53b"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-009:type_of_bill:dynamic-roi-resolver-v1:1072,184,1156,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "191058c12a2ce360a4b1ed3beb16dfac0fc7ba7c8310af2ced7703ad2bac36e9"
+          ],
+          "supported_fields": [
+            "type_of_bill"
+          ]
+        }
+      ],
+      "field_name": "type_of_bill",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-009:principal_diagnosis:dynamic-roi-resolver-v1:62,405,178,449:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "57f9a4167253a1f0355b37326eda82a7c07967a808d6caa379dd7d184d3d53b0"
+          ],
+          "supported_fields": [
+            "principal_diagnosis"
+          ]
+        }
+      ],
+      "field_name": "principal_diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-009:total_charge:dynamic-roi-resolver-v1:960,1183,1090,1231:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "54a7af1e45a9132a50ab542aae6fb74269c462e69b1180b58585d65fddef13cd"
+          ],
+          "supported_fields": [
+            "total_charge"
+          ]
+        }
+      ],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-009",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-009:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "6703b4d1a7d4a856c8bcd1d9612ed9fa27f1afee9769c4d790a121368b1c4b3b"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-010",
+      "evidence": [],
+      "field_name": "patient_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-010:patient_dob:dynamic-roi-resolver-v1:572,293,759,341:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "7c9656d9c8f5524254ecb1287b5a3790ba6dbf524abe872b61d0a4642f5bbb99"
+          ],
+          "supported_fields": [
+            "patient_dob"
+          ]
+        }
+      ],
+      "field_name": "patient_dob",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-010:member_id:dynamic-roi-resolver-v1:948,278,1135,316:page-observation",
+            "SB-UB-010:member_id:dynamic-roi-resolver-v1:948,278,1135,316:regional"
+          ],
+          "source_crop_sha256s": [
+            "cac0e592d8411a36729de12d340536ec1261bb7882b4089a20134bf6fcb5eea2"
+          ],
+          "supported_fields": [
+            "member_id"
+          ]
+        }
+      ],
+      "field_name": "member_id",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-010",
+      "evidence": [],
+      "field_name": "provider_name",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-010:provider_npi:dynamic-roi-resolver-v1:769,167,992,219:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "0e735155b6f60457ccf789e2e69502a477754f325777fc3d2c83be6a89741f35"
+          ],
+          "supported_fields": [
+            "provider_npi"
+          ]
+        }
+      ],
+      "field_name": "provider_npi",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": true,
+      "blocker_removed": true,
+      "claim_id": "SB-UB-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-010:type_of_bill:dynamic-roi-resolver-v1:1072,186,1155,230:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "988211a7f08bf9b02d7b3455bea1a6b3b3c776b9e9d76466af1cd0771ebffc32"
+          ],
+          "supported_fields": [
+            "type_of_bill"
+          ]
+        }
+      ],
+      "field_name": "type_of_bill",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": false,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-010",
+      "evidence": [],
+      "field_name": "principal_diagnosis",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": false,
+      "blocker_before": false,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-010",
+      "evidence": [],
+      "field_name": "total_charge",
+      "quality_band": "clean",
+      "required_evidence": [],
+      "satisfied_evidence": [],
+      "targeted": false,
+      "value_changed": false
+    },
+    {
+      "accepted_value_correct": true,
+      "blocker_after": true,
+      "blocker_before": true,
+      "blocker_removed": false,
+      "claim_id": "SB-UB-010",
+      "evidence": [
+        {
+          "evidence_class": "E4",
+          "rule_id": "FROZEN_DETERMINISTIC_VALIDATION",
+          "source_candidate_ids": [
+            "SB-UB-010:federal_tax_no:dynamic-roi-resolver-v1:883,409,1046,455:page-observation"
+          ],
+          "source_crop_sha256s": [
+            "eb1d5e796a28aca32cccffd4f5ccc104cc9d9b9bd41811b8ff0cd92a22ecaf28"
+          ],
+          "supported_fields": [
+            "federal_tax_no"
+          ]
+        }
+      ],
+      "field_name": "federal_tax_no",
+      "quality_band": "clean",
+      "required_evidence": [
+        "E2",
+        "E4"
+      ],
+      "satisfied_evidence": [
+        "E4"
+      ],
+      "targeted": true,
+      "value_changed": false
+    }
+  ],
+  "frozen_inputs": {
+    "evaluation\\baselines\\phase8_12\\inputs\\source_b\\policy_replay_input.jsonl": "0ebf3aaca4a2ec311c315048cb1dccce914fd2891be3fe17e409691a36076761",
+    "evaluation_results\\phase8_20_rerun\\claim_blocker_matrix.json": "8d5227a5c3f0966741a9c30f77574e622fe4da6e677a9c76a5f6f93cbe835046",
+    "evaluation_results\\phase8_22\\blocker_cohort_analysis.json": "3ef195caf2e0ed43a9db57372811cba11236070352c7d1778d432f4179b7f39e"
+  },
+  "version": "phase8.23-independent-evidence-v1"
+}

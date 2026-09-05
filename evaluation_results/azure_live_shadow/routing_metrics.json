@@ -1,0 +1,10 @@
+{
+  "cache_hits": 0,
+  "cache_misses": 0,
+  "calls_per_page": null,
+  "calls_per_routed_page": null,
+  "pages_evaluated": 0,
+  "pages_with_azure_calls": 0,
+  "routing_rate": null,
+  "tier1_calls": 0
+}

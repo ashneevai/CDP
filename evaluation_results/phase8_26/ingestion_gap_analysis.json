@@ -1,0 +1,17 @@
+{
+  "candidate_generation_missing": 0,
+  "field_candidate_records_available": 61,
+  "ingested_document_inventory_claims_available": 0,
+  "ingestion_missing": 0,
+  "localization_missing": 0,
+  "normalized_page_claims_available": 20,
+  "ocr_observation_claims_available": 20,
+  "parsing_missing": 0,
+  "raw_bundle_claims_available": 0,
+  "reason_codes": [
+    "RAW_SOURCE_BUNDLE_NOT_PRESENT_IN_EVALUATION_LINEAGE",
+    "CANNOT_DISTINGUISH_SOURCE_ABSENCE_FROM_UPSTREAM_CAPTURE_WITHOUT_RAW_BUNDLE"
+  ],
+  "source_missing": 0,
+  "unknown_pending_raw_source_audit": 61
+}

@@ -1,0 +1,76 @@
+{
+  "acceptance_gates": {
+    "accepted_precision_not_degraded": true,
+    "challenger_budget_at_most_30_percent": true,
+    "critical_false_accepts_zero": true,
+    "hitl_decreased": false,
+    "latency_cost_satisfied": false,
+    "production_behavior_unchanged": true,
+    "replay_complete": true,
+    "source_b_accuracy_improved": false
+  },
+  "after": {
+    "accepted_precision": 1.0,
+    "claim_hitl": 1.0,
+    "claim_stp": 0.0,
+    "cost_per_page_usd": 0.3875955522505952,
+    "critical_false_accepts": 0,
+    "critical_raw_accuracy": 0.9166666666666666,
+    "field_hitl": 0.9133333333333333,
+    "p95_latency_seconds": 9.221308400010457,
+    "raw_accuracy": 0.8904761904761904,
+    "source_b_field_accuracy": 0.855,
+    "source_b_field_hitl": 0.905,
+    "wrong_crop_recall": 0.45098039215686275
+  },
+  "authority": "FROZEN_SOURCE_B_REVIEW_ONLY_SHADOW",
+  "before": {
+    "accepted_precision": 1.0,
+    "claim_hitl": 1.0,
+    "claim_stp": 0.0,
+    "cost_per_page_usd": 0.3875955522505952,
+    "critical_false_accepts": 0,
+    "critical_raw_accuracy": 0.9166666666666666,
+    "field_hitl": 0.9133333333333333,
+    "p95_latency_seconds": 9.221308400010457,
+    "raw_accuracy": 0.8904761904761904,
+    "source_b_field_accuracy": 0.855,
+    "source_b_field_hitl": 0.905,
+    "wrong_crop_recall": 0.45098039215686275
+  },
+  "challenger_metrics": {
+    "candidate_authority": "REVIEW_ONLY",
+    "challenger_blockers_removed": 0,
+    "challenger_claims_unlocked": 0,
+    "critical_false_accepts": 0,
+    "latency_by_engine": {
+      "ppocr-v5": {
+        "calls": 11,
+        "total_ms": 27295.309597000596
+      },
+      "rapidocr": {
+        "calls": 200,
+        "total_ms": 0.0
+      }
+    },
+    "matched_challenger_observations": 11,
+    "ocr_calls_per_claim": 10.55,
+    "ppocr_agreement_rate": 1.0,
+    "ppocr_challenge_rate": 0.2894736842105263,
+    "ppocr_disagreement_rate": 0.0,
+    "ppocr_mean_latency_ms": 2481.391781545509,
+    "ppocr_p95_latency_ms": 23140.715915000328,
+    "ppocr_win_rate": 0.0,
+    "production_values_overwritten": 0,
+    "unmatched_challenger_observations": 0
+  },
+  "ground_truth_changed": false,
+  "phase": "8.21A",
+  "production_behavior_changed": false,
+  "remaining_blockers": [
+    "No meaningful blocker-removal and claim-unlock benefit was demonstrated by the frozen shadow replay."
+  ],
+  "routing_changed": false,
+  "thresholds_changed": false,
+  "verdict": "REJECT"
+}

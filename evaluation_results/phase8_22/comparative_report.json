@@ -1,0 +1,242 @@
+{
+  "acceptance_gates": {
+    "accepted_precision_not_regressed": true,
+    "blockers_removed": true,
+    "claim_unlock_or_impossibility_proven": true,
+    "critical_false_accepts_zero": true,
+    "high_leverage_cohort_improved": true,
+    "latency_cost_not_materially_regressed": true,
+    "no_new_ocr_llm_or_cloud": true,
+    "review_only_challenger_not_expanded": true,
+    "unsafe_localization_failed_closed": true
+  },
+  "breakdowns": {
+    "crop_safety_outcome": {
+      "CROP_SAFE": {
+        "after_correct": 167,
+        "before_correct": 167,
+        "blockers_after": 154,
+        "blockers_before": 154,
+        "fields": 173
+      },
+      "LOCALIZATION_UNCERTAIN": {
+        "after_correct": 0,
+        "before_correct": 0,
+        "blockers_after": 1,
+        "blockers_before": 1,
+        "fields": 1
+      },
+      "WRONG_CROP_SUSPECTED": {
+        "after_correct": 11,
+        "before_correct": 4,
+        "blockers_after": 19,
+        "blockers_before": 26,
+        "fields": 26
+      }
+    },
+    "failure_reason": {
+      "MISSING_CROP": {
+        "after_correct": 0,
+        "before_correct": 0,
+        "blockers_after": 7,
+        "blockers_before": 7,
+        "fields": 7
+      },
+      "MISSING_INDEPENDENT_EVIDENCE": {
+        "after_correct": 110,
+        "before_correct": 110,
+        "blockers_after": 110,
+        "blockers_before": 110,
+        "fields": 110
+      },
+      "NOT_BLOCKING": {
+        "after_correct": 19,
+        "before_correct": 19,
+        "blockers_after": 0,
+        "blockers_before": 0,
+        "fields": 19
+      },
+      "OCR_CHARACTER_ERROR": {
+        "after_correct": 38,
+        "before_correct": 38,
+        "blockers_after": 38,
+        "blockers_before": 38,
+        "fields": 38
+      },
+      "WRONG_CROP": {
+        "after_correct": 11,
+        "before_correct": 4,
+        "blockers_after": 19,
+        "blockers_before": 26,
+        "fields": 26
+      }
+    },
+    "field_name": {
+      "cpt_hcpcs": {
+        "after_correct": 10,
+        "before_correct": 10,
+        "blockers_after": 0,
+        "blockers_before": 0,
+        "fields": 10
+      },
+      "diagnosis": {
+        "after_correct": 9,
+        "before_correct": 9,
+        "blockers_after": 1,
+        "blockers_before": 1,
+        "fields": 10
+      },
+      "federal_tax_no": {
+        "after_correct": 10,
+        "before_correct": 10,
+        "blockers_after": 10,
+        "blockers_before": 10,
+        "fields": 10
+      },
+      "insured_name": {
+        "after_correct": 7,
+        "before_correct": 7,
+        "blockers_after": 10,
+        "blockers_before": 10,
+        "fields": 10
+      },
+      "member_id": {
+        "after_correct": 19,
+        "before_correct": 18,
+        "blockers_after": 19,
+        "blockers_before": 20,
+        "fields": 20
+      },
+      "patient_dob": {
+        "after_correct": 20,
+        "before_correct": 20,
+        "blockers_after": 20,
+        "blockers_before": 20,
+        "fields": 20
+      },
+      "patient_name": {
+        "after_correct": 16,
+        "before_correct": 14,
+        "blockers_after": 18,
+        "blockers_before": 20,
+        "fields": 20
+      },
+      "principal_diagnosis": {
+        "after_correct": 8,
+        "before_correct": 8,
+        "blockers_after": 10,
+        "blockers_before": 10,
+        "fields": 10
+      },
+      "provider_name": {
+        "after_correct": 14,
+        "before_correct": 14,
+        "blockers_after": 20,
+        "blockers_before": 20,
+        "fields": 20
+      },
+      "provider_npi": {
+        "after_correct": 20,
+        "before_correct": 20,
+        "blockers_after": 20,
+        "blockers_before": 20,
+        "fields": 20
+      },
+      "relationship": {
+        "after_correct": 10,
+        "before_correct": 8,
+        "blockers_after": 8,
+        "blockers_before": 10,
+        "fields": 10
+      },
+      "service_date": {
+        "after_correct": 8,
+        "before_correct": 8,
+        "blockers_after": 10,
+        "blockers_before": 10,
+        "fields": 10
+      },
+      "total_charge": {
+        "after_correct": 18,
+        "before_correct": 17,
+        "blockers_after": 19,
+        "blockers_before": 20,
+        "fields": 20
+      },
+      "type_of_bill": {
+        "after_correct": 9,
+        "before_correct": 8,
+        "blockers_after": 9,
+        "blockers_before": 10,
+        "fields": 10
+      }
+    },
+    "quality_band": {
+      "clean": {
+        "after_correct": 119,
+        "before_correct": 112,
+        "blockers_after": 120,
+        "blockers_before": 127,
+        "fields": 140
+      },
+      "degraded": {
+        "after_correct": 59,
+        "before_correct": 59,
+        "blockers_after": 54,
+        "blockers_before": 54,
+        "fields": 60
+      }
+    }
+  },
+  "llm_acceptance_authority": false,
+  "metrics": {
+    "accepted_precision": {
+      "after": 1.0,
+      "before": 1.0
+    },
+    "blockers_removed": 7,
+    "claim_hitl": {
+      "after": 1.0,
+      "before": 1.0
+    },
+    "claims_unlocked": 0,
+    "cost_usd": 0.0,
+    "critical_false_accepts": 0,
+    "critical_raw_accuracy": {
+      "after": 0.92,
+      "before": 0.89
+    },
+    "empty_crop_rate": {
+      "after": 0.07,
+      "before": 0.1
+    },
+    "field_hitl": {
+      "after": 0.87,
+      "before": 0.905
+    },
+    "independent_evidence_resolution_rate": 0.0,
+    "latency_ms": 174.81790500005445,
+    "localization_success": {
+      "after": 0.9,
+      "before": 0.865
+    },
+    "name_field_accuracy": {
+      "after": 0.74,
+      "before": 0.7
+    },
+    "raw_accuracy": {
+      "after": 0.89,
+      "before": 0.855
+    },
+    "wrong_crop_rate": {
+      "after": 0.095,
+      "before": 0.13
+    }
+  },
+  "new_ocr_engines": 0,
+  "phase": "8.22",
+  "ppocr_authority": "REVIEW_ONLY",
+  "production_candidate_overwrites": 0,
+  "thresholds_changed_after_replay": false,
+  "verdict": "PASS"
+}

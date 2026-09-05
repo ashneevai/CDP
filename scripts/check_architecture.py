@@ -37,6 +37,23 @@ ALLOWED_GOVERNED_RESULT_PREFIXES = {
     "evaluation_results/phase8_6/",
     "evaluation_results/phase8_7/",
     "evaluation_results/phase8_8/",
+    "evaluation_results/phase8_21a/",
+    "evaluation_results/phase8_22/",
+    "evaluation_results/phase8_23/",
+    "evaluation_results/phase8_24/",
+    "evaluation_results/phase8_25/",
+    "evaluation_results/phase8_26/",
+    "evaluation_results/phase8_27/",
+    "evaluation_results/phase9a/",
+    "evaluation_results/phase9b/",
+    "evaluation_results/phase9c/",
+    "evaluation_results/phase9d/",
+    "evaluation_results/phase9e/",
+    "evaluation_results/closure1000/",
+    "evaluation_results/closure/",
+    "evaluation_results/real_eval/",
+    "evaluation_results/azure_llm_shadow/",
+    "evaluation_results/azure_live_shadow/",
 }
 
 
@@ -79,7 +96,10 @@ def tracked_artifact_errors() -> list[str]:
         parts = set(Path(tracked).parts)
         if parts & FORBIDDEN_TRACKED_PARTS:
             errors.append(f"tracked runtime/private artifact: {tracked}")
-        if any(part.startswith(".env") for part in Path(tracked).parts) and tracked != ".env.example":
+        if (
+            any(part.startswith(".env") for part in Path(tracked).parts)
+            and tracked != ".env.example"
+        ):
             errors.append(f"tracked environment file: {tracked}")
     return errors
 

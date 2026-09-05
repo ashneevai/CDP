@@ -1,0 +1,16 @@
+{
+  "claim_scope_available": false,
+  "requirements": [
+    "source system",
+    "dataset and schema version",
+    "export timestamp",
+    "effective dates",
+    "record and file hashes"
+  ],
+  "scope": [
+    "member eligibility for bound evaluation claims",
+    "provider master keyed by NPI",
+    "versioned ICD/CPT/HCPCS references"
+  ],
+  "status": "REQUESTED"
+}

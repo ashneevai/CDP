@@ -2,7 +2,11 @@ from PIL import Image, ImageDraw
 
 from packages.domain.registration import RegistrationEvidence
 from packages.templates.models import FieldRegion
-from workers.page_detection.crop_safety import expanded_crop_boxes, validate_field_crop
+from workers.page_detection.crop_safety import (
+    CropSafetyOutcome,
+    expanded_crop_boxes,
+    validate_field_crop,
+)
 
 
 def _structured_page() -> Image.Image:
@@ -43,6 +47,7 @@ def test_matching_critical_crop_passes_geometry_checks() -> None:
     result = validate_field_crop(page, page.copy(), _region(), _registration(), critical=True)
     assert result.accepted
     assert result.local_alignment_accepted
+    assert result.outcome is CropSafetyOutcome.CROP_SAFE
 
 
 def test_critical_crop_fails_closed_without_registration() -> None:
@@ -58,3 +63,6 @@ def test_critical_crop_rejects_neighbor_structure_mismatch() -> None:
     result = validate_field_crop(candidate, reference, _region(), _registration(), critical=True)
     assert not result.accepted
     assert "WRONG_CROP_SUSPECTED" in result.reason_codes
+    assert result.outcome in {
+        CropSafetyOutcome.WRONG_CROP_SUSPECTED, CropSafetyOutcome.EMPTY_CROP,
+    }

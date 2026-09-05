@@ -1,0 +1,104 @@
+{
+  "experiments": [
+    {
+      "cohort": "member_id",
+      "experiment_id": "9E-1",
+      "status": "NOT_RETAINED_NO_SNAPSHOT"
+    },
+    {
+      "cohort": "patient/subscriber identity",
+      "experiment_id": "9E-2",
+      "status": "NOT_RETAINED_NO_SNAPSHOT"
+    },
+    {
+      "cohort": "provider/NPI master",
+      "experiment_id": "9E-3",
+      "status": "NOT_RETAINED_NO_SNAPSHOT"
+    },
+    {
+      "cohort": "code references",
+      "experiment_id": "9E-4",
+      "status": "NOT_APPLICABLE_NO_PHASE9D_D_BLOCKERS"
+    }
+  ],
+  "historical_artifacts_modified": false,
+  "metrics": {
+    "CONFLICT": 0,
+    "E7_backed_fields_accepted": 0,
+    "MATCH": 0,
+    "NOT_AVAILABLE": 60,
+    "NO_MATCH": 0,
+    "accepted_precision": 1.0,
+    "authoritative_blockers_after": 60,
+    "authoritative_blockers_before": 60,
+    "authoritative_snapshots_loaded": 0,
+    "blockers_removed": 0,
+    "claim_hitl_after": 1.0,
+    "claim_hitl_before": 1.0,
+    "claim_stp_after": 0.0,
+    "claim_stp_before": 0.0,
+    "claims_advanced": 0,
+    "claims_unlocked": 0,
+    "code_validations": 0,
+    "cost_per_page": 0.0,
+    "critical_accuracy_after": 0.95,
+    "critical_accuracy_before": 0.95,
+    "critical_false_accepts": 0,
+    "distance_after": {
+      "distance_0": 0,
+      "distance_1": 0,
+      "distance_2": 0,
+      "distance_3": 7,
+      "distance_4": 0,
+      "distance_5_plus": 13,
+      "mean_unlock_distance": 4.8,
+      "median_unlock_distance": 5.0
+    },
+    "distance_before": {
+      "distance_0": 0,
+      "distance_1": 0,
+      "distance_2": 0,
+      "distance_3": 7,
+      "distance_4": 0,
+      "distance_5_plus": 13,
+      "mean_unlock_distance": 4.8,
+      "median_unlock_distance": 5.0
+    },
+    "field_hitl_after": 0.48,
+    "field_hitl_before": 0.48,
+    "field_hitl_fields_after": 96,
+    "mean_latency_ms": 0.0,
+    "member_lookups": 42,
+    "member_records_loaded": 0,
+    "p95_latency_ms": 0.0,
+    "phase9d_authoritative_data_ceiling": 0.55,
+    "provider_lookups": 18,
+    "provider_records_loaded": 0,
+    "raw_accuracy_after": 0.94,
+    "raw_accuracy_before": 0.94,
+    "records_rejected": 0,
+    "reference_datasets_loaded": 0,
+    "regressions": 0
+  },
+  "phase": "9E",
+  "recommended_phase9f": "PROVISION_VERSIONED_MEMBER_AND_PROVIDER_SNAPSHOTS_THEN_RERUN_PHASE9E",
+  "remaining_blocker_categories": {
+    "A_EXTRACTION_DEFECT": 12,
+    "B_VALIDATION_GAP": 4,
+    "C_ACCEPTANCE_AUTHORITY_GAP": 3,
+    "D_AUTHORITATIVE_DATA_REQUIRED": 60,
+    "E_SOURCE_EVIDENCE_REQUIRED": 17
+  },
+  "safety_gates": {
+    "accepted_precision_gte_995": true,
+    "conflict_fails_closed": true,
+    "critical_false_accepts_zero": true,
+    "integration_contract_complete": true,
+    "match_requires_provenance": true,
+    "no_fabricated_records": true,
+    "no_match_fails_closed": true,
+    "not_available_preserves_hitl": true
+  },
+  "verdict": "NEEDS_MORE_DATA",
+  "verdict_reason": "No real versioned authoritative snapshots are available; all lookups fail closed as NOT_AVAILABLE"
+}

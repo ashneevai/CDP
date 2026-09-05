@@ -1,0 +1,18 @@
+{
+  "assets_inventoried": 1000,
+  "claim_processing_executed": false,
+  "cloud_cost": 0.0,
+  "cold_start_included": false,
+  "cost_per_page": 0.0,
+  "mean_processing_latency_ms": null,
+  "memory_mb": null,
+  "ocr_calls_per_claim": null,
+  "ocr_calls_per_page": 0.0,
+  "ocr_latency_ms": null,
+  "p50_latency_ms": null,
+  "p95_latency_ms": null,
+  "p99_latency_ms": null,
+  "pages_inventoried": 2173,
+  "reason": "NO_TRUSTED_LABELS_OR_CLAIM_BINDING",
+  "throughput_pages_per_second": null
+}

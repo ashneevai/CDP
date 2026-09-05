@@ -1,6 +1,14 @@
+import json
+import sys
+
 import pytest
 
-from packages.shadow_evaluation import ClaimShadowObservation, qualify_shadow_claims
+from evaluation.phase8_15_shadow_qualification import main
+from packages.shadow_evaluation import (
+    AppendOnlyShadowClaimSink,
+    ClaimShadowObservation,
+    qualify_shadow_claims,
+)
 
 
 def observation(index: int, **changes) -> ClaimShadowObservation:
@@ -66,6 +74,33 @@ def test_critical_raw_accuracy_is_independent_of_accepted_precision():
     ])
     assert report.critical_accuracy == .75
     assert report.critical_accepted_precision == 1.0
+    assert not report.gates["critical_raw_accuracy"]
+
+
+def test_raw_accuracy_and_accepted_precision_use_independent_denominators():
+    report = qualify_shadow_claims([
+        observation(
+            1,
+            evaluated_field_decisions=10,
+            correct_field_decisions=8,
+            accepted_field_decisions=5,
+            correct_accepted_field_decisions=5,
+        )
+    ])
+    assert report.overall_raw_accuracy == .8
+    assert report.accepted_precision == 1.0
+    assert not report.gates["overall_raw_accuracy"]
+    assert report.gates["accepted_precision"]
+
+
+def test_inconsistent_false_accept_counts_are_rejected():
+    with pytest.raises(ValueError, match="do not reconcile"):
+        observation(
+            1,
+            accepted_field_decisions=10,
+            correct_accepted_field_decisions=9,
+            false_accepts=0,
+        )
 
 
 def test_training_source_overlap_is_rejected():
@@ -83,3 +118,41 @@ def test_shadow_record_cannot_claim_serving_authority():
 def test_impossible_adjudication_counts_are_rejected():
     with pytest.raises(ValueError, match="wrong crops detected"):
         observation(1, wrong_crops=0, wrong_crops_detected=1)
+
+
+def test_cli_rejects_correction_overlap_for_deidentified_ledger(
+    tmp_path, monkeypatch
+):
+    ledger = tmp_path / "shadow.jsonl"
+    AppendOnlyShadowClaimSink(ledger, identity_key=b"secret").append(observation(1))
+    corrections = tmp_path / "corrections"
+    corrections.mkdir()
+    (corrections / "train.jsonl").write_text(
+        json.dumps({"source_group_id": "source-1"}) + "\n", encoding="utf-8"
+    )
+    monkeypatch.setenv("SHADOW_IDENTITY_KEY", "secret")
+    monkeypatch.setattr(sys, "argv", [
+        "phase8_15_shadow_qualification.py",
+        str(ledger),
+        "--correction-dataset",
+        str(corrections),
+    ])
+    with pytest.raises(ValueError, match="overlaps"):
+        main()
+
+
+def test_cli_requires_identity_key_for_ledger_overlap_check(tmp_path, monkeypatch):
+    ledger = tmp_path / "shadow.jsonl"
+    AppendOnlyShadowClaimSink(ledger, identity_key=b"secret").append(observation(1))
+    corrections = tmp_path / "corrections"
+    corrections.mkdir()
+    monkeypatch.delenv("SHADOW_IDENTITY_KEY", raising=False)
+    monkeypatch.setattr(sys, "argv", [
+        "phase8_15_shadow_qualification.py",
+        str(ledger),
+        "--correction-dataset",
+        str(corrections),
+    ])
+    with pytest.raises(SystemExit) as exc:
+        main()
+    assert exc.value.code == 2

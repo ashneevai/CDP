@@ -1,0 +1,599 @@
+{
+  "by_category": {
+    "A_EXTRACTION_DEFECT": 12,
+    "B_VALIDATION_GAP": 4,
+    "C_ACCEPTANCE_AUTHORITY_GAP": 3,
+    "D_AUTHORITATIVE_DATA_REQUIRED": 60,
+    "E_SOURCE_EVIDENCE_REQUIRED": 17
+  },
+  "by_outcome_case": {
+    "CORRECT_BUT_HITL": 84,
+    "INCORRECT_AND_HITL": 12
+  },
+  "by_owner": {
+    "AUTHORITATIVE DATA INTEGRATION": 60,
+    "CDP ACCEPTANCE POLICY": 3,
+    "CDP EXTRACTION": 12,
+    "CDP VALIDATION": 4,
+    "SOURCE DOCUMENT ACQUISITION": 17
+  },
+  "rows": [
+    {
+      "claim_id": "SB-CMS-001",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "field_name": "insured_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "field_name": "service_date",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "field_name": "total_charge",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "field_name": "insured_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "field_name": "service_date",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "field_name": "total_charge",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "field_name": "patient_dob",
+      "primary_category": "C_ACCEPTANCE_AUTHORITY_GAP",
+      "remediation_owner": "CDP ACCEPTANCE POLICY"
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "field_name": "insured_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "field_name": "service_date",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "field_name": "diagnosis",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "field_name": "total_charge",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "field_name": "provider_name",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "field_name": "service_date",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "field_name": "total_charge",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "field_name": "insured_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "field_name": "service_date",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "field_name": "total_charge",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "field_name": "insured_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "field_name": "service_date",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "field_name": "total_charge",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "field_name": "service_date",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "field_name": "total_charge",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "field_name": "insured_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "field_name": "service_date",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "field_name": "total_charge",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "field_name": "insured_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "field_name": "service_date",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "field_name": "total_charge",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "field_name": "patient_dob",
+      "primary_category": "C_ACCEPTANCE_AUTHORITY_GAP",
+      "remediation_owner": "CDP ACCEPTANCE POLICY"
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "field_name": "insured_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "field_name": "service_date",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "field_name": "total_charge",
+      "primary_category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "remediation_owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "claim_id": "SB-UB-001",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-001",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-001",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-002",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-002",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-002",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "field_name": "patient_dob",
+      "primary_category": "C_ACCEPTANCE_AUTHORITY_GAP",
+      "remediation_owner": "CDP ACCEPTANCE POLICY"
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "field_name": "type_of_bill",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "field_name": "principal_diagnosis",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "field_name": "total_charge",
+      "primary_category": "B_VALIDATION_GAP",
+      "remediation_owner": "CDP VALIDATION"
+    },
+    {
+      "claim_id": "SB-UB-004",
+      "field_name": "patient_name",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-UB-004",
+      "field_name": "patient_dob",
+      "primary_category": "B_VALIDATION_GAP",
+      "remediation_owner": "CDP VALIDATION"
+    },
+    {
+      "claim_id": "SB-UB-004",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-004",
+      "field_name": "provider_name",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-UB-004",
+      "field_name": "principal_diagnosis",
+      "primary_category": "B_VALIDATION_GAP",
+      "remediation_owner": "CDP VALIDATION"
+    },
+    {
+      "claim_id": "SB-UB-004",
+      "field_name": "total_charge",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-UB-005",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-005",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-005",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-006",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-006",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-006",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-007",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-007",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-007",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-008",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-008",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-008",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-009",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-009",
+      "field_name": "member_id",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-009",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-010",
+      "field_name": "patient_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-010",
+      "field_name": "patient_dob",
+      "primary_category": "B_VALIDATION_GAP",
+      "remediation_owner": "CDP VALIDATION"
+    },
+    {
+      "claim_id": "SB-UB-010",
+      "field_name": "member_id",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    },
+    {
+      "claim_id": "SB-UB-010",
+      "field_name": "provider_name",
+      "primary_category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "remediation_owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "claim_id": "SB-UB-010",
+      "field_name": "principal_diagnosis",
+      "primary_category": "A_EXTRACTION_DEFECT",
+      "remediation_owner": "CDP EXTRACTION"
+    }
+  ],
+  "total": 96
+}

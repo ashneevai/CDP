@@ -1,0 +1,7 @@
+{
+  "duplicate_rejections": 42,
+  "independent_conflicts": 0,
+  "semantic_rejections": 0,
+  "shared_source_observations_never_counted_twice": true,
+  "valid_independent_pairs": 0
+}

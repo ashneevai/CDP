@@ -1,0 +1,11 @@
+{
+  "canonical_decisions_changed": 0,
+  "local_only": {
+    "unresolved_fields": 0
+  },
+  "local_plus_azure_shadow": {
+    "candidate_selection_precision": null,
+    "critical_false_accept_potential": null,
+    "safely_resolvable_fields": 0
+  }
+}

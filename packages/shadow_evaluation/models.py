@@ -81,6 +81,7 @@ class ClaimShadowObservation(DomainModel):
     cost_usd: float = Field(ge=0)
     runtime_decision_parity: bool
     route_governance_passed: bool
+    llm_escalated: bool = False
     locked_holdout: bool = True
     shadow_only: bool = True
 
@@ -109,4 +110,15 @@ class ClaimShadowObservation(DomainModel):
             raise ValueError("critical false accepts exceed accepted critical decisions")
         if self.wrong_crops_detected > self.wrong_crops:
             raise ValueError("wrong crops detected exceeds wrong crops")
+        if self.false_accepts != (
+            self.accepted_field_decisions - self.correct_accepted_field_decisions
+        ):
+            raise ValueError("false accepts do not reconcile with accepted decisions")
+        if self.critical_false_accepts != (
+            self.accepted_critical_field_decisions
+            - self.correct_accepted_critical_field_decisions
+        ):
+            raise ValueError(
+                "critical false accepts do not reconcile with accepted critical decisions"
+            )
         return self

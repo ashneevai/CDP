@@ -1,0 +1,7 @@
+{
+  "resolution_rate": 0.0,
+  "shared_observation_never_counted_twice": true,
+  "status_counts": {
+    "MISSING_OR_SHARED_OBSERVATION": 200
+  }
+}

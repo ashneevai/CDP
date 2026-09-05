@@ -1,0 +1,32 @@
+policy_version: reference-enrichment-v1
+providers:
+  - name: authorized-member-reference
+    type: disabled
+    source_kind: AUTHORIZED_MEMBER
+    authorized: false
+    enabled: false
+  - name: authorized-provider-reference
+    type: disabled
+    source_kind: AUTHORIZED_PROVIDER
+    authorized: false
+    enabled: false
+  - name: versioned-code-reference
+    type: local_snapshot
+    path: reference_snapshots/codes
+    source_kind: CODE_SET
+    authorized: false
+    enabled: false
+  - name: finalized-downstream-claims
+    type: disabled
+    source_kind: FINALIZED_CLAIMS
+    authorized: false
+    enabled: false
+  - name: approved-correction-events
+    type: disabled
+    source_kind: APPROVED_CORRECTION
+    authorized: false
+    enabled: false
+security:
+  persist_raw_phi_in_logs: false
+  require_authorized_provider: true
+  secrets_from_environment_only: true

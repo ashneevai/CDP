@@ -1,0 +1,19 @@
+{
+    "experiments":  [
+                        {
+                            "id":  "9A-1",
+                            "policy_sha256":  "45d65883fbf1ecab33c72920589e811299e5f10926a7ac41ab26c40b5c8bfb23",
+                            "policy_version":  "field-evidence-policy-phase9a-v1",
+                            "affected_fields":  [
+                                                    "provider_npi",
+                                                    "federal_tax_no"
+                                                ],
+                            "rules":  [
+                                          "provider_npi: E1 primary OCR + E3 checksum + E5 safe localization + E6 provider-section semantics",
+                                          "federal_tax_no: E1 primary OCR + E3 syntax + E5 safe localization + E6 billing-provider semantics"
+                                      ],
+                            "expected_cohort":  "remaining Source-B MISSING_INDEPENDENT_EVIDENCE blockers for provider_npi and federal_tax_no",
+                            "frozen_before_replay":  true
+                        }
+                    ]
+}

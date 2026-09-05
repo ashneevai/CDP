@@ -1,0 +1,24 @@
+version: production-evidence-requirements-v1
+artifacts:
+  - {id: evaluation-contract-v3, path: evaluation_data/contracts/evaluation_contract_v3.json, gate: independent_holdout, expected_sha256: null}
+  - {id: independent-ground-truth, path: evaluation_data/ground_truth.json, gate: independent_holdout, expected_sha256: null}
+  - {id: source-b-generalization-manifest, path: evaluation_data/phase8_8_generalization/SOURCE_B/manifest.json, gate: frozen_replay, expected_sha256: null}
+  - {id: router-v3-benchmark, path: evaluation_results/ROUTING_DEV_V3/benchmark.json, gate: frozen_replay, expected_sha256: null}
+  - {id: claim-stp-blockers, path: evaluation_results/claim_stp_recovery/baseline/blocker_metrics.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: claim-stp-claims, path: evaluation_results/claim_stp_recovery/baseline/claim_dispositions.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: claim-stp-fields, path: evaluation_results/claim_stp_recovery/baseline/field_dispositions.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: claim-stp-manifest, path: evaluation_results/claim_stp_recovery/baseline/manifest.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: claim-stp-metrics, path: evaluation_results/claim_stp_recovery/baseline/metrics.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: evidence-optimization-dispositions, path: evaluation_results/evidence_optimization/optimized/dispositions.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: phase8-2-metrics, path: evaluation_results/phase8_2/final/metrics.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: phase8-10-summary, path: evaluation_results/phase8_10/summary.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: phase8-11-service-lines, path: evaluation_results/phase8_11/candidate/source_b/v3_extraction/service_line_records.jsonl, gate: frozen_replay, expected_sha256: null}
+  - {id: phase8-20-claim-blockers, path: evaluation_results/phase8_20_rerun/claim_blocker_matrix.json, gate: frozen_replay, expected_sha256: null}
+  - {id: phase8-8c-source-b-observation, path: evaluation_results/phase8_8c/source_b/observations/SB-CMS-003.json, gate: frozen_replay, expected_sha256: null}
+  - {id: prediction-manifest-v3, path: evaluation_results/predictions_v3/inference_manifest.json, gate: prediction_integrity, expected_sha256: null}
+  - {id: production-frontier-v2, path: evaluation_results/production_readiness/evidence_frontier_v2/manifest.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: reporting-v3-acceptance, path: evaluation_results/reporting_v3/acceptance_gate.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: reporting-v3-quality, path: evaluation_results/reporting_v3/data_quality.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: reporting-v3-details, path: evaluation_results/reporting_v3/details.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: reporting-v3-metrics, path: evaluation_results/reporting_v3/metrics.json, gate: full_regression_suite, expected_sha256: null}
+  - {id: vnext-predictions, path: evaluation_results/vnext_accuracy_improvement/predictions_with_unstructured.json, gate: prediction_integrity, expected_sha256: null}

@@ -1,0 +1,231 @@
+{
+  "claims": {
+    "achieved_stp": null,
+    "claim_hitl": null,
+    "claims_unlocked": 0,
+    "frozen_phase9_blockers_by_owner": {
+      "AUTHORITATIVE DATA INTEGRATION": 60,
+      "CDP ACCEPTANCE POLICY": 3,
+      "CDP EXTRACTION": 12,
+      "CDP VALIDATION": 4,
+      "SOURCE DOCUMENT ACQUISITION": 17
+    },
+    "identified": 0
+  },
+  "dataset": {
+    "assets": 1000,
+    "classifications": {
+      "CMS1500": 1,
+      "NON_CLAIM": 7,
+      "UB04": 1,
+      "UNKNOWN": 2164
+    },
+    "development_size": 0,
+    "holdout_size": 0,
+    "packages": 110,
+    "pages": 2173,
+    "split_leakage": 0,
+    "trusted_labels": 0
+  },
+  "evidence": {
+    "e7_snapshots": 0,
+    "phase9_authoritative_blockers": 60,
+    "phase9_source_blockers": 17,
+    "real_e2_opportunities": 0
+  },
+  "frozen_phase9_baseline": {
+    "dataset": "SYNTHETIC_FROZEN_SOURCE_B",
+    "metrics": {
+      "CURRENT_EVIDENCE_STP_CEILING": 0.0,
+      "FULL_SOURCE_STP_CEILING": 1.0,
+      "POTENTIAL_STP_IF_AUTHORITATIVE_DATA_AVAILABLE": 0.55,
+      "acceptance_authority_gap_blockers": 3,
+      "accepted_precision": 1.0,
+      "authoritative_data_required_blockers": 60,
+      "claims_requiring_mandatory_HITL": 0,
+      "claims_requiring_source_acquisition": 9,
+      "claims_unlockable_by_authoritative_data": 11,
+      "claims_unlockable_by_software": 0,
+      "conflicting_evidence_blockers": 0,
+      "correct_but_hitl_fields": 84,
+      "critical_false_accepts": 0,
+      "current_STP_claims": 0,
+      "current_STP_rate": 0.0,
+      "current_claim_HITL": 1.0,
+      "distance_0": 0,
+      "distance_1": 0,
+      "distance_2": 0,
+      "distance_3": 7,
+      "distance_4": 0,
+      "distance_5_plus": 13,
+      "extraction_defect_blockers": 12,
+      "incorrect_and_hitl_fields": 12,
+      "incorrect_but_accepted_fields": 0,
+      "mandatory_hitl_blockers": 0,
+      "mean_unlock_distance": 4.8,
+      "median_unlock_distance": 5.0,
+      "remaining_blockers": 96,
+      "source_evidence_required_blockers": 17,
+      "total_claims": 20,
+      "unreadable_source_blockers": 0,
+      "validation_gap_blockers": 4
+    },
+    "phase9e_metrics": {
+      "CONFLICT": 0,
+      "E7_backed_fields_accepted": 0,
+      "MATCH": 0,
+      "NOT_AVAILABLE": 60,
+      "NO_MATCH": 0,
+      "accepted_precision": 1.0,
+      "authoritative_blockers_after": 60,
+      "authoritative_blockers_before": 60,
+      "authoritative_snapshots_loaded": 0,
+      "blockers_removed": 0,
+      "claim_hitl_after": 1.0,
+      "claim_hitl_before": 1.0,
+      "claim_stp_after": 0.0,
+      "claim_stp_before": 0.0,
+      "claims_advanced": 0,
+      "claims_unlocked": 0,
+      "code_validations": 0,
+      "cost_per_page": 0.0,
+      "critical_accuracy_after": 0.95,
+      "critical_accuracy_before": 0.95,
+      "critical_false_accepts": 0,
+      "distance_after": {
+        "distance_0": 0,
+        "distance_1": 0,
+        "distance_2": 0,
+        "distance_3": 7,
+        "distance_4": 0,
+        "distance_5_plus": 13,
+        "mean_unlock_distance": 4.8,
+        "median_unlock_distance": 5.0
+      },
+      "distance_before": {
+        "distance_0": 0,
+        "distance_1": 0,
+        "distance_2": 0,
+        "distance_3": 7,
+        "distance_4": 0,
+        "distance_5_plus": 13,
+        "mean_unlock_distance": 4.8,
+        "median_unlock_distance": 5.0
+      },
+      "field_hitl_after": 0.48,
+      "field_hitl_before": 0.48,
+      "field_hitl_fields_after": 96,
+      "mean_latency_ms": 0.0,
+      "member_lookups": 42,
+      "member_records_loaded": 0,
+      "p95_latency_ms": 0.0,
+      "phase9d_authoritative_data_ceiling": 0.55,
+      "provider_lookups": 18,
+      "provider_records_loaded": 0,
+      "raw_accuracy_after": 0.94,
+      "raw_accuracy_before": 0.94,
+      "records_rejected": 0,
+      "reference_datasets_loaded": 0,
+      "regressions": 0
+    },
+    "production_authority": false,
+    "use": "REGRESSION_BASELINE_ONLY_NOT_REAL_DATA_EVALUATION"
+  },
+  "lineage": {
+    "source_internal_coverage": 1.0,
+    "source_to_cdp_coverage": 0.0
+  },
+  "performance": {
+    "assets_inventoried": 1000,
+    "claim_processing_executed": false,
+    "cloud_cost": 0.0,
+    "cold_start_included": false,
+    "cost_per_page": 0.0,
+    "inventory_only": true,
+    "mean_processing_latency_ms": null,
+    "memory_mb": null,
+    "ocr_calls_per_claim": null,
+    "ocr_calls_per_page": 0.0,
+    "ocr_latency_ms": null,
+    "p50_latency_ms": null,
+    "p95_latency_ms": null,
+    "p99_latency_ms": null,
+    "pages_inventoried": 2173,
+    "reason": "NO_END_TO_END_ARCHIVE_PROCESSING_RUN",
+    "status": "NOT_MEASURED",
+    "throughput_pages_per_second": null
+  },
+  "real_accuracy": {
+    "accepted_precision": null,
+    "claim_hitl": null,
+    "claim_stp": null,
+    "critical_accuracy": null,
+    "critical_false_accepts": null,
+    "document_classification_accuracy": null,
+    "field_hitl": null,
+    "page_classification_accuracy": null,
+    "raw_field_accuracy": null,
+    "reason": "NO_TRUSTED_REAL_LABELS"
+  },
+  "reason": "TRUSTED_REAL_LABELS_CLAIM_IDENTITY_DOCUMENT_BOUNDARIES_AND_CDP_BINDING_UNAVAILABLE",
+  "safety": {
+    "labels_fabricated": false,
+    "new_acceptance_decisions": 0,
+    "ocr_executed": false,
+    "phi_written": false
+  },
+  "source_audit_verdict": "NEEDS_MORE_DATA",
+  "status": "NOT_EVALUATION_READY",
+  "top_10_remaining_actions": [
+    {
+      "action": "Establish package-to-claim identity mapping",
+      "owner": "SOURCE_DOCUMENT_OWNER",
+      "rank": 1
+    },
+    {
+      "action": "Confirm document boundaries across all packages",
+      "owner": "SOURCE_DOCUMENT_OWNER",
+      "rank": 2
+    },
+    {
+      "action": "Classify all pages with governed evidence",
+      "owner": "MANDATORY_HUMAN_REVIEW",
+      "rank": 3
+    },
+    {
+      "action": "Classify attachment semantics",
+      "owner": "MANDATORY_HUMAN_REVIEW",
+      "rank": 4
+    },
+    {
+      "action": "Bind source pages to normalized CDP pages",
+      "owner": "CDP_EXTRACTION",
+      "rank": 5
+    },
+    {
+      "action": "Dual-annotate critical fields",
+      "owner": "MANDATORY_HUMAN_REVIEW",
+      "rank": 6
+    },
+    {
+      "action": "Adjudicate annotation disagreements",
+      "owner": "MANDATORY_HUMAN_REVIEW",
+      "rank": 7
+    },
+    {
+      "action": "Freeze package-level development and holdout splits",
+      "owner": "CDP_ACCEPTANCE_POLICY",
+      "rank": 8
+    },
+    {
+      "action": "Provision versioned member/provider snapshots",
+      "owner": "MEMBER_DATA_OWNER",
+      "rank": 9
+    },
+    {
+      "action": "Run untuned real holdout and operational gates",
+      "owner": "CDP_VALIDATION",
+      "rank": 10
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+﻿{
+  "records": [
+    {
+      "package_id": "REQUIRED_HASH_ID",
+      "source_asset_id": "REQUIRED_HASH_ID",
+      "source_page_id": "REQUIRED_HASH_ID",
+      "cdp_page_id": "REQUIRED_HASH_ID",
+      "field_id": "REQUIRED_HASH_ID",
+      "form_type": "CMS1500_OR_UB04",
+      "reviewed_page_class": "CMS1500_OR_UB04",
+      "field_name": "TARGET_FIELD",
+      "field_type": "TYPE",
+      "criticality": "CRITICAL_OR_NON_CRITICAL",
+      "ground_truth": "RUNTIME_ONLY_DO_NOT_COMMIT_PHI",
+      "ground_truth_state": "VALUE_OR_NOT_PRESENT_OR_UNREADABLE_OR_NOT_APPLICABLE",
+      "ground_truth_authority": "HUMAN_ADJUDICATED_OR_SOURCE_SYSTEM_GROUND_TRUTH",
+      "critical_dual_reviewed": false,
+      "annotation_disagreed": false,
+      "adjudication_complete": false,
+      "local_candidates": [],
+      "local_decision": "HUMAN_REVIEW_REQUIRED",
+      "local_hitl": true,
+      "local_hitl_reason": "REASON_CODE",
+      "claim_blocking": true,
+      "crop_safe": true,
+      "localization_confidence": 0.0,
+      "authoritative_conflict": false,
+      "claim_distance": 1,
+      "binding": {
+        "exact": true,
+        "rendered_page_sha256": "REQUIRED",
+        "source_representation_id": "REQUIRED",
+        "pipeline_execution_id": "REQUIRED",
+        "page_observation_id": "REQUIRED"
+      }
+    }
+  ]
+}

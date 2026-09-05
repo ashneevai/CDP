@@ -10,7 +10,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    # Versioning — part of the idempotency key
+    # Versioning â€” part of the idempotency key
     pipeline_version: str = "0.1.0"
     schema_version: str = "1.0"
 
@@ -34,7 +34,7 @@ class Settings(BaseSettings):
     # Ingestion limits
     max_upload_size_bytes: int = 50 * 1024 * 1024  # 50 MB
 
-    # VLM — disabled by default; pipeline must run fully without it
+    # VLM â€” disabled by default; pipeline must run fully without it
     vlm_enabled: bool = False
     vlm_endpoint: str = "http://localhost:8001/v1"
     vlm_model_name: str = "qwen2.5-vl-3b-instruct"
@@ -47,6 +47,23 @@ class Settings(BaseSettings):
     azure_ai_evaluation_deployment: str | None = None
     azure_openai_api_version: str = "2024-10-21"
     azure_openai_review_only: bool = True
+
+    # Cost-capped closed-world LLM adjudication. Local-only by default.
+    llm_enabled: bool = False
+    llm_mode: str = "SHADOW_ONLY"
+    llm_provider: str = "azure_openai"
+    llm_target_avg_cost_per_page_usd: float = 0.0005
+    llm_max_avg_cost_per_page_usd: float = 0.001
+    llm_max_cost_per_claim_usd: float = 0.005
+    llm_max_tier1_calls_per_page: int = 1
+    llm_max_tier2_calls_per_page: int = 1
+    llm_tier1_max_input_tokens: int = 500
+    llm_tier1_max_output_tokens: int = 40
+    llm_timeout_seconds: float = 15.0
+    llm_max_retries: int = 1
+    azure_openai_input_cost_per_million_tokens: float | None = None
+    azure_openai_output_cost_per_million_tokens: float | None = None
+    azure_openai_cached_input_cost_per_million_tokens: float | None = None
 
     # Central external-AI gateway. Disabled and budget-zero by default.
     ai_gateway_enabled: bool = False

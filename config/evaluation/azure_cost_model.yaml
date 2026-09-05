@@ -1,8 +1,9 @@
-cost_model_version: azure-gpt4o-estimate-v1
+﻿cost_model_version: azure-openai-explicit-pricing-v2
 currency: USD
-estimate_only: true
+cost_status: PRICING_NOT_CONFIGURED
 deployment_sku: UNKNOWN
-input_usd_per_1m_tokens: 5.00
-output_usd_per_1m_tokens: 15.00
-assumption: Conservative configurable estimate; replace with the actual Azure SKU and agreement rates.
+input_cost_per_million_tokens: null
+output_cost_per_million_tokens: null
+cached_input_cost_per_million_tokens: null
+assumption: No public OpenAI price is applied to an Azure deployment. Configure actual contracted Azure rates before authority promotion.
 pricing_reference: https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/

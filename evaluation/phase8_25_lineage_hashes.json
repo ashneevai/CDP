@@ -1,0 +1,16 @@
+{
+  "phase8_23": {
+    "claim_unlock_analysis.json": "2220e2c15d135e12decf5c8ae85119be096d0985e41a161a2056d7e6f23df027",
+    "comparative_report.json": "f05cf878911e226b862702a8e94fbab576909a8ac1a7168467afdeb7046d3c94",
+    "cross_field_evidence_metrics.json": "514261eae84cebc85fda0a61d9aa0000d71fdc41ccc6840df94bd207e4c7cb37",
+    "deterministic_evidence_metrics.json": "c15aa206e63572aad5cad994b977cb1f297e5a81678518e399034dc2e6c20950",
+    "independent_ocr_evidence_metrics.json": "8d7deb5085de0ec03d475eac6f3145827d8fa946aa7197f5954ffa17a6949ef1",
+    "provenance_independence_audit.json": "26bf0de5be81b60f5bf0d313f48f4c2a9c67517620401d041de2b573869c9f0e"
+  },
+  "phase8_24": {
+    "comparative_report.json": "342f1e720e279e64b3b940c0f876ae37691490f85038d04ddcadcca327a43f47",
+    "e2_coverage_metrics.json": "5e2e30dfb32f42816f4170ec88b5f823d38df0ba59c7df62f3454e6875a12e03",
+    "frozen_phase8_23_integrity.json": "9627d41450f05e0eaa174f6dac99f0356423bdbfb67b0b1cd69a575eda31e663",
+    "pair_annotations.jsonl": "d23826e3027c351054e46b48903c6c70bbac98dd0c7d64d8c9d5a8c20f048c13"
+  }
+}

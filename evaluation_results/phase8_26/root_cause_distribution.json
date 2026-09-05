@@ -1,0 +1,13 @@
+{
+  "blockers": 61,
+  "by_remediation_owner": {
+    "SOURCE_SYSTEM_INTEGRATION": 61
+  },
+  "by_root_cause": {
+    "UNKNOWN_REQUIRES_SOURCE_AUDIT": 61
+  },
+  "ingestion_fixable_blockers": 0,
+  "process_capture_gap_blockers": 0,
+  "software_fixable_blockers": 0,
+  "source_system_integration_blockers": 61
+}

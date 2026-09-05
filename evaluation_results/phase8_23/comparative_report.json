@@ -1,0 +1,56 @@
+{
+  "acceptance_gates": {
+    "accepted_precision_not_regressed": true,
+    "critical_false_accepts_zero": true,
+    "distinct_e2_observations_available": false,
+    "frozen_inputs_unchanged": true,
+    "missing_independent_evidence_reduced": true,
+    "no_new_ocr_or_llm_authority": true,
+    "shared_crop_never_counted_twice": true,
+    "thresholds_unchanged": true
+  },
+  "claims_unlocked": [],
+  "evidence_class_metrics": {
+    "E2": {
+      "required": 61,
+      "satisfied": 0
+    },
+    "E4": {
+      "required": 57,
+      "satisfied": 49
+    },
+    "E6": {
+      "required": 19,
+      "satisfied": 10
+    }
+  },
+  "metrics": {
+    "accepted_precision": {
+      "after": 1.0,
+      "before": 1.0
+    },
+    "blockers_remaining": 134,
+    "blockers_removed": 40,
+    "claims_unlocked": 0,
+    "cost_usd": 0.0,
+    "critical_false_accepts": 0,
+    "field_hitl": {
+      "after": 0.67,
+      "before": 0.87
+    },
+    "independent_evidence_resolution_rate": 0.36363636363636365,
+    "latency_ms": 9.7747999971034,
+    "target_blockers": 110
+  },
+  "phase": "8.23",
+  "remaining_target_blockers_by_field": {
+    "federal_tax_no": 10,
+    "member_id": 16,
+    "provider_npi": 20,
+    "service_date": 8,
+    "total_charge": 16
+  },
+  "thresholds_changed_after_replay": false,
+  "verdict": "NEEDS_MORE_DATA",
+  "version": "phase8.23-independent-evidence-v1"
+}

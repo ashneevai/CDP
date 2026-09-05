@@ -1,0 +1,7 @@
+{
+  "local_only_field_latency_ms": null,
+  "local_plus_shadow_latency_ms": null,
+  "p50_azure_latency_ms": null,
+  "p95_azure_latency_ms": null,
+  "p99_azure_latency_ms": null
+}

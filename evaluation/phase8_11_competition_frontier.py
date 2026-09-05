@@ -133,6 +133,7 @@ def _field_rows() -> list[dict]:
                 "criticality": row["criticality"], "critical": bool(item["critical"]),
                 "exact": exact, "disposition": disposition, "accepted": accepted,
                 "category": category, "missing_evidence": missing,
+                "reason_codes": list(decision.get("reason_codes") or ()),
                 "next_action": decision.get("next_action"),
                 "failure_layer": item.get("failure_layer"),
                 "reviewed": not accepted,

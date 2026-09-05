@@ -1,0 +1,11 @@
+{
+  "byte_size": 87244410,
+  "compressed_size": 87055796,
+  "extraction_location": "evaluation_data/source_b_1000_claims",
+  "file_count": 1000,
+  "original_modified": false,
+  "raw_data_committed": false,
+  "sha256": "8c09d4ec4de3fef8bf41771ae45bc69b69300221781a9eea9183936cfcbe85f3",
+  "uncompressed_size": 97627280,
+  "zip_filename": "Hackathon - 1000 Claims.zip"
+}

@@ -1,0 +1,123 @@
+{
+  "acceptance_decisions_created": 0,
+  "acceptance_gates": {
+    "all_e2_blockers_classified_once": true,
+    "frozen_lineage_unchanged": true,
+    "no_acceptance_decisions": true,
+    "no_new_ocr_or_llm": true,
+    "no_synthetic_or_duplicate_evidence": true,
+    "phase8_23_adjudicator_unchanged": true,
+    "raw_source_bundles_available_for_definitive_audit": false,
+    "software_vs_upstream_ownership_assigned": true,
+    "thresholds_unchanged": true
+  },
+  "actual_lineage_hashes": {
+    "phase8_23": {
+      "claim_unlock_analysis.json": "2220e2c15d135e12decf5c8ae85119be096d0985e41a161a2056d7e6f23df027",
+      "comparative_report.json": "f05cf878911e226b862702a8e94fbab576909a8ac1a7168467afdeb7046d3c94",
+      "cross_field_evidence_metrics.json": "514261eae84cebc85fda0a61d9aa0000d71fdc41ccc6840df94bd207e4c7cb37",
+      "deterministic_evidence_metrics.json": "c15aa206e63572aad5cad994b977cb1f297e5a81678518e399034dc2e6c20950",
+      "independent_ocr_evidence_metrics.json": "8d7deb5085de0ec03d475eac6f3145827d8fa946aa7197f5954ffa17a6949ef1",
+      "provenance_independence_audit.json": "26bf0de5be81b60f5bf0d313f48f4c2a9c67517620401d041de2b573869c9f0e"
+    },
+    "phase8_24": {
+      "comparative_report.json": "342f1e720e279e64b3b940c0f876ae37691490f85038d04ddcadcca327a43f47",
+      "e2_coverage_metrics.json": "5e2e30dfb32f42816f4170ec88b5f823d38df0ba59c7df62f3454e6875a12e03",
+      "frozen_phase8_23_integrity.json": "9627d41450f05e0eaa174f6dac99f0356423bdbfb67b0b1cd69a575eda31e663",
+      "pair_annotations.jsonl": "d23826e3027c351054e46b48903c6c70bbac98dd0c7d64d8c9d5a8c20f048c13"
+    },
+    "phase8_25": {
+      "blocker_inventory.json": "3fad11a838a2b4c1140045ad2ecaf53bb327981c6752d023de9ad4b094301879",
+      "claim_unlock_analysis.json": "670ee67ca9e9ad7613a7fc1ce17e162f3e9f6cac8b31f2e04eefc20c5f043969",
+      "comparative_report.json": "b6ec780247a91bee568d0e390fa0a70a0794ba29070bf9b558b20d89103842b6",
+      "evidence_discovery_replay.jsonl": "43f394fd54f62443bc34b01ce625e45ea4a93ff55e9387ba078f9651091de134",
+      "evidence_opportunity_analysis.json": "95a3f8eaa075f638ba72b4cf343d3eabdd13d1a0c7795c90ee03d464c9126122",
+      "independence_metrics.json": "24f9a1f224cfb1f5fda2a286ce5a58e9e1d4e4276e9973dd390e05b06cc65b4b"
+    }
+  },
+  "claim_impact": {
+    "claims_affected": 20,
+    "claims_potentially_unlockable_if_e2_available": 0,
+    "claims_requiring_upstream_process_change": [],
+    "claims_requiring_upstream_source_audit": [
+      "SB-CMS-001",
+      "SB-CMS-002",
+      "SB-CMS-003",
+      "SB-CMS-004",
+      "SB-CMS-005",
+      "SB-CMS-006",
+      "SB-CMS-007",
+      "SB-CMS-008",
+      "SB-CMS-009",
+      "SB-CMS-010",
+      "SB-UB-001",
+      "SB-UB-002",
+      "SB-UB-003",
+      "SB-UB-004",
+      "SB-UB-005",
+      "SB-UB-006",
+      "SB-UB-007",
+      "SB-UB-008",
+      "SB-UB-009",
+      "SB-UB-010"
+    ],
+    "claims_with_no_safe_stp_path_under_current_evidence": [
+      "SB-CMS-001",
+      "SB-CMS-002",
+      "SB-CMS-003",
+      "SB-CMS-004",
+      "SB-CMS-005",
+      "SB-CMS-006",
+      "SB-CMS-007",
+      "SB-CMS-008",
+      "SB-CMS-009",
+      "SB-CMS-010",
+      "SB-UB-001",
+      "SB-UB-002",
+      "SB-UB-003",
+      "SB-UB-004",
+      "SB-UB-005",
+      "SB-UB-006",
+      "SB-UB-007",
+      "SB-UB-008",
+      "SB-UB-009",
+      "SB-UB-010"
+    ],
+    "reason": "Every claim retains non-E2 blockers or lacks admissible E2; raw bundles are unavailable."
+  },
+  "expected_lineage_hashes": {
+    "phase8_23": {
+      "claim_unlock_analysis.json": "2220e2c15d135e12decf5c8ae85119be096d0985e41a161a2056d7e6f23df027",
+      "comparative_report.json": "f05cf878911e226b862702a8e94fbab576909a8ac1a7168467afdeb7046d3c94",
+      "cross_field_evidence_metrics.json": "514261eae84cebc85fda0a61d9aa0000d71fdc41ccc6840df94bd207e4c7cb37",
+      "deterministic_evidence_metrics.json": "c15aa206e63572aad5cad994b977cb1f297e5a81678518e399034dc2e6c20950",
+      "independent_ocr_evidence_metrics.json": "8d7deb5085de0ec03d475eac6f3145827d8fa946aa7197f5954ffa17a6949ef1",
+      "provenance_independence_audit.json": "26bf0de5be81b60f5bf0d313f48f4c2a9c67517620401d041de2b573869c9f0e"
+    },
+    "phase8_24": {
+      "comparative_report.json": "342f1e720e279e64b3b940c0f876ae37691490f85038d04ddcadcca327a43f47",
+      "e2_coverage_metrics.json": "5e2e30dfb32f42816f4170ec88b5f823d38df0ba59c7df62f3454e6875a12e03",
+      "frozen_phase8_23_integrity.json": "9627d41450f05e0eaa174f6dac99f0356423bdbfb67b0b1cd69a575eda31e663",
+      "pair_annotations.jsonl": "d23826e3027c351054e46b48903c6c70bbac98dd0c7d64d8c9d5a8c20f048c13"
+    },
+    "phase8_25": {
+      "blocker_inventory.json": "3fad11a838a2b4c1140045ad2ecaf53bb327981c6752d023de9ad4b094301879",
+      "claim_unlock_analysis.json": "670ee67ca9e9ad7613a7fc1ce17e162f3e9f6cac8b31f2e04eefc20c5f043969",
+      "comparative_report.json": "b6ec780247a91bee568d0e390fa0a70a0794ba29070bf9b558b20d89103842b6",
+      "evidence_discovery_replay.jsonl": "43f394fd54f62443bc34b01ce625e45ea4a93ff55e9387ba078f9651091de134",
+      "evidence_opportunity_analysis.json": "95a3f8eaa075f638ba72b4cf343d3eabdd13d1a0c7795c90ee03d464c9126122",
+      "independence_metrics.json": "24f9a1f224cfb1f5fda2a286ce5a58e9e1d4e4276e9973dd390e05b06cc65b4b"
+    }
+  },
+  "phase": "8.26",
+  "remaining_e2_blockers": 61,
+  "remediation_ownership_distribution": {
+    "SOURCE_SYSTEM_INTEGRATION": 61
+  },
+  "root_cause_distribution": {
+    "UNKNOWN_REQUIRES_SOURCE_AUDIT": 61
+  },
+  "thresholds_changed": false,
+  "verdict": "NEEDS_MORE_DATA",
+  "version": "phase8.26-evidence-availability-v1"
+}

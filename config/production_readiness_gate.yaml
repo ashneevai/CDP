@@ -1,4 +1,4 @@
-version: production-readiness-gate-v2
+version: production-readiness-gate-v3
 requirements:
   minimum_documents: 1000
   minimum_fields: 3000
@@ -8,17 +8,23 @@ requirements:
   maximum_total_false_accept_rate: 0.001
   maximum_critical_false_accept_count: 0
   minimum_safe_field_coverage: 0.75
+  minimum_accepted_precision: 0.995
   minimum_critical_accepted_precision: 0.995
   minimum_claim_stp: 0.92
   maximum_claim_hitl: 0.08
   maximum_claim_hitl_upper_95: 0.10
+  minimum_ocr_only_processing_rate: 0.99
+  maximum_llm_escalation_rate: 0.01
   minimum_wrong_crop_recall: 0.95
   maximum_segment_claim_hitl: 0.15
-  maximum_p95_latency_ms: 30000
+  maximum_p95_latency_ms: 5000
   require_measured_cost: true
+  maximum_cost_per_document_usd: 0.03
   require_runtime_parity: true
   require_route_governance: true
   require_security: true
   require_database_and_events: true
   require_load_and_keda: true
   require_shadow_for_production: true
+  required_approval_roles: [OPERATIONS, SECURITY, COMPLIANCE, DATA_GOVERNANCE, RELEASE]
+  require_distinct_approvers: true

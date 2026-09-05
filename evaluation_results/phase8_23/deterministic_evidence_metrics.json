@@ -1,0 +1,9 @@
+{
+  "E4": {
+    "required": 57,
+    "satisfied": 49
+  },
+  "rules": [
+    "FROZEN_DETERMINISTIC_VALIDATION"
+  ]
+}

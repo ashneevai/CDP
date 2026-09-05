@@ -1,0 +1,23 @@
+{
+  "claim_count": null,
+  "claim_count_reason": "PACKAGE_TO_CLAIM_SEMANTICS_NOT_PROVEN",
+  "document_classes": {
+    "CMS1500": 1,
+    "NON_CLAIM": 2,
+    "UB04": 1,
+    "UNKNOWN": 996
+  },
+  "operational_failure_cohorts": {
+    "classification_unknown": 996,
+    "ingestion_failure_confirmed": 0,
+    "missing_evidence_unassessable": 110
+  },
+  "packages_discovered": 110,
+  "quality_bands": {
+    "UNKNOWN": 1000
+  },
+  "rendered_pages": 2173,
+  "source_assets": 1000,
+  "trusted_labeled_claims": 0,
+  "unlabeled_packages": 110
+}

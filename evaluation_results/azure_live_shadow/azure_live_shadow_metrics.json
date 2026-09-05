@@ -1,0 +1,15 @@
+{
+  "azure_calls": 0,
+  "benchmark_pages": 0,
+  "candidate_selection_precision": null,
+  "claims_potentially_advanced": 0,
+  "claims_potentially_unlocked": 0,
+  "critical_false_accept_potential": null,
+  "decisions": {},
+  "fields_routed_to_azure": 0,
+  "fields_unresolved_locally": 0,
+  "form_counts": {},
+  "potential_blockers_removed": 0,
+  "potential_field_hitl_reduction": 0,
+  "status": "NEEDS_MORE_TRUSTED_LABELS"
+}

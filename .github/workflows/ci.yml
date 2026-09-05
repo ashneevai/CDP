@@ -2,7 +2,7 @@ name: quality
 
 on:
   push:
-    branches: [main]
+    branches: [main, phase8-20-claim-bundle-optimization, fix/strict-claim-form-identity-gate]
   pull_request:
 
 permissions:
@@ -13,6 +13,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  production-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: python -m pip install -e ".[dev]"
+      - name: Inspect required external evidence
+        run: python scripts/production_evidence_preflight.py --output production_evidence_preflight.json
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-evidence-preflight
+          path: production_evidence_preflight.json
+
   python:
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -24,9 +43,16 @@ jobs:
           cache: pip
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e ".[dev]"
+      - run: git diff --check
       - run: python scripts/check_architecture.py
+      - run: ruff check evaluation/strict_identity_cached_replay.py evaluation/real_archive_classification.py evaluation/build_strict_identity_routing_review.py packages/document_routing/router.py packages/document_routing/decision_service.py packages/document_routing/evidence.py packages/processing_routes/resolver.py packages/standard_form_verification/__init__.py packages/standard_form_verification/cms1500.py packages/standard_form_verification/contracts.py packages/standard_form_verification/evidence.py packages/standard_form_verification/ub04.py tests/unit/cases/test_strict_identity_adversarial_chain.py tests/unit/cases/test_strict_identity_cached_replay.py tests/unit/cases/test_strict_identity_routing_review.py
+      - run: mypy --follow-imports=skip --ignore-missing-imports evaluation/strict_identity_cached_replay.py evaluation/real_archive_classification.py evaluation/build_strict_identity_routing_review.py packages/document_routing/router.py packages/document_routing/decision_service.py packages/document_routing/evidence.py packages/processing_routes/resolver.py packages/standard_form_verification
       - run: ruff check packages/runtime_profile packages/evidence_decision packages/production_readiness_gate.py evaluation/phase8_12_tesseract_confirmation.py evaluation/phase8_12_reproducibility.py
-      - run: pytest tests/unit tests/architecture -q -p no:cacheprovider --basetemp=.test-tmp/pytest
+      - run: ruff check packages/hitl_reduction evaluation/hitl_reduction_program.py tests/unit/cases/test_hitl_reduction_program.py
+      - run: mypy --follow-imports=skip --ignore-missing-imports packages/hitl_reduction evaluation/hitl_reduction_program.py
+      - run: ruff check packages/production_evidence.py scripts/production_evidence_preflight.py tests/unit/cases/test_production_evidence_preflight.py
+      - run: mypy --follow-imports=skip --ignore-missing-imports packages/production_evidence.py scripts/production_evidence_preflight.py
+      - run: python -m pytest tests/unit tests/architecture -q -p no:cacheprovider --basetemp="${RUNNER_TEMP}/pytest"
 
   integration:
     runs-on: ubuntu-latest
@@ -39,7 +65,7 @@ jobs:
           cache: pip
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e ".[dev]"
-      - run: pytest tests/integration -q -p no:cacheprovider --basetemp=.test-tmp/integration
+      - run: python -m pytest tests/integration -q -p no:cacheprovider --basetemp="${RUNNER_TEMP}/integration"
 
   governed-replay:
     runs-on: ubuntu-latest
@@ -71,7 +97,7 @@ jobs:
           cache: pip
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e ".[dev]"
-      - run: pytest tests/unit/cases/test_production_readiness_gate.py tests/unit/cases/test_route_registry.py tests/integration/test_phase8_10b_runtime_profile_parity.py -q -p no:cacheprovider --basetemp=.test-tmp/governance
+      - run: python -m pytest tests/unit/cases/test_production_readiness_gate.py tests/unit/cases/test_route_registry.py tests/unit/cases/test_hitl_reduction_program.py tests/integration/test_phase8_10b_runtime_profile_parity.py -q -p no:cacheprovider --basetemp="${RUNNER_TEMP}/governance"
 
   evaluation-ui:
     runs-on: ubuntu-latest

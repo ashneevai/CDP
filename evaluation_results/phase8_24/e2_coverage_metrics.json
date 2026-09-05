@@ -1,0 +1,13 @@
+{
+  "accepted_precision": 1.0,
+  "blockers_removed": 5,
+  "candidate_latency_ms": 30.6,
+  "claims_unlocked": 5,
+  "conflicts": 1,
+  "cost_usd": 0.0,
+  "critical_false_accepts": 0,
+  "duplicate_rejections": 1,
+  "e2_opportunities": 8,
+  "evaluation_latency_ms": 1.2588999998115469,
+  "valid_independent_pairs": 6
+}

@@ -1,0 +1,150 @@
+{
+  "name_field_accuracy": {
+    "after": 0.74,
+    "before": 0.7
+  },
+  "repaired": [
+    {
+      "after_correct": true,
+      "after_value": "DEVONVARGAS",
+      "baseline_correct": false,
+      "baseline_value": null,
+      "blocker_after": false,
+      "blocker_before": true,
+      "claim_id": "SB-CMS-003",
+      "cohort_correction_unlocks_claim": false,
+      "criticality": "C2",
+      "crop_safety_outcome": "WRONG_CROP_SUSPECTED",
+      "failure_reason": "WRONG_CROP",
+      "field_name": "patient_name",
+      "field_type": "PERSON_NAME",
+      "hitl_reason": [
+        "WRONG_CROP_SUSPECTED"
+      ],
+      "independent_evidence_status": "MISSING_OR_SHARED_OBSERVATION",
+      "localization_confidence": 0.0,
+      "localization_method": "UNRESOLVED",
+      "ocr_failure_reason": "WRONG_CROP",
+      "ocr_result_status": "EMPTY",
+      "quality_band": "clean",
+      "registration_confidence": null,
+      "repair": {
+        "bounding_box": {
+          "image_height": 1800,
+          "image_width": 1400,
+          "x0": 75.0,
+          "x1": 216.0,
+          "y0": 188.0,
+          "y1": 213.0
+        },
+        "crop_safety_outcome": "CROP_SAFE",
+        "localization_score": 0.9900294975800947,
+        "observed_value": "DEVONVARGAS",
+        "provenance": {
+          "engine": "rapidocr-onnxruntime",
+          "localization_version": "phase8.22-source-b-root-cause-v1",
+          "observation_id": "SB-CMS-003",
+          "page_sha256": "a2cdfff1c8a0ed0fa03f046149a69e528a1dc3c4a4b5138c39734fb74e675903",
+          "source_observation_reused_as_independent": false
+        },
+        "reason_codes": [
+          "REGISTERED_EXPECTED_ZONE",
+          "SINGLE_TOKEN_ROW",
+          "VALUE_GEOMETRY_CONFIRMED",
+          "GEOMETRY_READING_ORDER",
+          "KNOWN_LABELS_REMOVED",
+          "OBSERVED_CHARACTERS_ONLY"
+        ],
+        "tokens": [
+          {
+            "bounding_box": {
+              "image_height": 1800,
+              "image_width": 1400,
+              "x0": 75.0,
+              "x1": 216.0,
+              "y0": 188.0,
+              "y1": 213.0
+            },
+            "confidence": 0.9900294975800947,
+            "text": "DEVONVARGAS"
+          }
+        ],
+        "validation_passed": true,
+        "value": "DEVONVARGAS"
+      },
+      "single_field_blocker_removal": true,
+      "validation_failure_reason": "DETERMINISTIC_VALIDATION_FAILED"
+    },
+    {
+      "after_correct": true,
+      "after_value": "KEIRAWELLS",
+      "baseline_correct": false,
+      "baseline_value": null,
+      "blocker_after": false,
+      "blocker_before": true,
+      "claim_id": "SB-CMS-010",
+      "cohort_correction_unlocks_claim": false,
+      "criticality": "C2",
+      "crop_safety_outcome": "WRONG_CROP_SUSPECTED",
+      "failure_reason": "WRONG_CROP",
+      "field_name": "patient_name",
+      "field_type": "PERSON_NAME",
+      "hitl_reason": [
+        "WRONG_CROP_SUSPECTED"
+      ],
+      "independent_evidence_status": "MISSING_OR_SHARED_OBSERVATION",
+      "localization_confidence": 0.0,
+      "localization_method": "UNRESOLVED",
+      "ocr_failure_reason": "WRONG_CROP",
+      "ocr_result_status": "EMPTY",
+      "quality_band": "clean",
+      "registration_confidence": null,
+      "repair": {
+        "bounding_box": {
+          "image_height": 1800,
+          "image_width": 1400,
+          "x0": 78.0,
+          "x1": 195.0,
+          "y0": 190.0,
+          "y1": 210.0
+        },
+        "crop_safety_outcome": "CROP_SAFE",
+        "localization_score": 0.9913619577884674,
+        "observed_value": "KEIRAWELLS",
+        "provenance": {
+          "engine": "rapidocr-onnxruntime",
+          "localization_version": "phase8.22-source-b-root-cause-v1",
+          "observation_id": "SB-CMS-010",
+          "page_sha256": "58e67204e982b0e8f9f63db1cf35c2f47890a1fbc6b36bf13692921564e2d324",
+          "source_observation_reused_as_independent": false
+        },
+        "reason_codes": [
+          "REGISTERED_EXPECTED_ZONE",
+          "SINGLE_TOKEN_ROW",
+          "VALUE_GEOMETRY_CONFIRMED",
+          "GEOMETRY_READING_ORDER",
+          "KNOWN_LABELS_REMOVED",
+          "OBSERVED_CHARACTERS_ONLY"
+        ],
+        "tokens": [
+          {
+            "bounding_box": {
+              "image_height": 1800,
+              "image_width": 1400,
+              "x0": 78.0,
+              "x1": 195.0,
+              "y0": 190.0,
+              "y1": 210.0
+            },
+            "confidence": 0.9913619577884674,
+            "text": "KEIRAWELLS"
+          }
+        ],
+        "validation_passed": true,
+        "value": "KEIRAWELLS"
+      },
+      "single_field_blocker_removal": true,
+      "validation_failure_reason": "DETERMINISTIC_VALIDATION_FAILED"
+    }
+  ]
+}

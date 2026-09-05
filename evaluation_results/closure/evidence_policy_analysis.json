@@ -1,0 +1,15 @@
+{
+  "e2_audit": {
+    "conflicts": 0,
+    "duplicate_same_crop_rejections": 0,
+    "opportunities": 0,
+    "phase8_23_adjudicator_changed": false,
+    "reason": "NO_EXACT_CLAIM_BINDING; E2 SEARCH WOULD RISK CROSS_CLAIM_EVIDENCE",
+    "semantic_incompatibilities": 0,
+    "valid_independent_pairs": 0
+  },
+  "llm_evidence_allowed": false,
+  "real_e2_opportunities": 0,
+  "same_crop_multi_engine_is_independent": false,
+  "status": "UNCHANGED"
+}

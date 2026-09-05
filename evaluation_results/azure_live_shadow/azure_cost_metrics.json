@@ -1,0 +1,9 @@
+{
+  "cost_per_potential_blocker_removed": null,
+  "cost_per_potential_claim_unlocked": null,
+  "invocations": 0,
+  "mean_cost_per_invocation": null,
+  "mean_paid_cost_per_page": null,
+  "p95_page_cost": null,
+  "pricing_status": "PRICING_NOT_CONFIGURED"
+}

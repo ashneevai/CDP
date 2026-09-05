@@ -1,0 +1,8 @@
+{
+  "development_package_ids": [],
+  "frozen_holdout_package_ids": [],
+  "package_leakage_count": 0,
+  "reason": "SPLIT_REQUIRES_GOVERNED_SELECTED_AND_LABELED_CORPUS",
+  "split_unit": "PACKAGE",
+  "status": "BLOCKED"
+}

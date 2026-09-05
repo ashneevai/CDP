@@ -1,0 +1,385 @@
+{
+  "records": [
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        420.0,
+        342.0
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9928120483051647
+      },
+      "claim_id": "SB-CMS-003",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "insured_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "DEVON VARGAS",
+      "page_id": "SB-CMS-003",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "DEVONVARGAS",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            78.0,
+            300.0,
+            216.0,
+            320.0
+          ],
+          "confidence": 0.9928120483051647,
+          "line_index": 13,
+          "reading_order": 13,
+          "text": "DEVONVARGAS",
+          "token_id": "ocr-13"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        420.0,
+        342.0
+      ],
+      "after_hitl": false,
+      "before_correctness": false,
+      "before_crop": [
+        62.0,
+        293.0,
+        334.0,
+        339.0
+      ],
+      "before_hitl": true,
+      "before_tokens": [
+        "ELARADUBOIS",
+        "ELARADUBOIS"
+      ],
+      "blocker_removed": true,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.990973022851077
+      },
+      "claim_id": "SB-CMS-004",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "insured_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "ELARA DUBOIS",
+      "page_id": "SB-CMS-004",
+      "phase9a_candidate": "ELARADUBOIS",
+      "phase9b_candidate": "ELARADUBOIS",
+      "registration_confidence": 0.847462265232335,
+      "root_cause": "MULTILINE_ASSEMBLY_ERROR",
+      "selected_tokens": [
+        {
+          "bbox": [
+            76.0,
+            298.0,
+            207.0,
+            321.0
+          ],
+          "confidence": 0.990973022851077,
+          "line_index": 10,
+          "reading_order": 10,
+          "text": "ELARADUBOIS",
+          "token_id": "ocr-10"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        420.0,
+        342.0
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9890369355678559
+      },
+      "claim_id": "SB-CMS-010",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "insured_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "KEIRA WELLS",
+      "page_id": "SB-CMS-010",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "KEIRAWELLS",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            75.0,
+            297.0,
+            196.0,
+            323.0
+          ],
+          "confidence": 0.9890369355678559,
+          "line_index": 14,
+          "reading_order": 14,
+          "text": "KEIRAWELLS",
+          "token_id": "ocr-14"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        448.0,
+        349.2
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9747625788052877
+      },
+      "claim_id": "SB-UB-003",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "patient_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "NOLAN CORTEZ",
+      "page_id": "SB-UB-003",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "NOLAN CORTEZ",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            75.0,
+            297.0,
+            215.0,
+            323.0
+          ],
+          "confidence": 0.9747625788052877,
+          "line_index": 14,
+          "reading_order": 14,
+          "text": "NOLAN CORTEZ",
+          "token_id": "ocr-14"
+        }
+      ]
+    },
+    {
+      "after_correctness": false,
+      "after_crop": [
+        56.0,
+        288.0,
+        448.0,
+        349.2
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": [
+        48.0,
+        294.0,
+        310.0,
+        342.0
+      ],
+      "before_hitl": true,
+      "before_tokens": [
+        "AORLASATO",
+        "AORLA SATO"
+      ],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9892590045928955
+      },
+      "claim_id": "SB-UB-004",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "patient_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "ORLA SATO",
+      "page_id": "SB-UB-004",
+      "phase9a_candidate": "AORLA SATO",
+      "phase9b_candidate": "AORLASATO",
+      "registration_confidence": 0.8977847417254669,
+      "root_cause": "OCR_CHARACTER_ERROR",
+      "selected_tokens": [
+        {
+          "bbox": [
+            62.0,
+            299.0,
+            178.0,
+            323.0
+          ],
+          "confidence": 0.9892590045928955,
+          "line_index": 11,
+          "reading_order": 11,
+          "text": "AORLASATO",
+          "token_id": "ocr-11"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        448.0,
+        349.2
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": [
+        65.0,
+        295.0,
+        324.0,
+        335.0
+      ],
+      "before_hitl": true,
+      "before_tokens": [
+        "CELINEFARRELL",
+        "CELINEFARRELL"
+      ],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9862751227158767
+      },
+      "claim_id": "SB-UB-008",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "patient_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "CELINE FARRELL",
+      "page_id": "SB-UB-008",
+      "phase9a_candidate": "CELINEFARRELL",
+      "phase9b_candidate": "CELINEFARRELL",
+      "registration_confidence": 0.8858688750862663,
+      "root_cause": "MULTILINE_ASSEMBLY_ERROR",
+      "selected_tokens": [
+        {
+          "bbox": [
+            77.0,
+            299.0,
+            207.0,
+            319.0
+          ],
+          "confidence": 0.9862751227158767,
+          "line_index": 11,
+          "reading_order": 11,
+          "text": "CELINEFARRELL",
+          "token_id": "ocr-11"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        448.0,
+        349.2
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9929201873865995
+      },
+      "claim_id": "SB-UB-010",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "patient_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "ELARA DUBOIS",
+      "page_id": "SB-UB-010",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "ELARADUBOIS",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            75.0,
+            298.0,
+            207.0,
+            321.0
+          ],
+          "confidence": 0.9929201873865995,
+          "line_index": 14,
+          "reading_order": 14,
+          "text": "ELARADUBOIS",
+          "token_id": "ocr-14"
+        }
+      ]
+    }
+  ]
+}

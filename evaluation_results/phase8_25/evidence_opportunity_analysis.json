@@ -1,0 +1,58 @@
+{
+  "breakdowns": {
+    "claim_unlock_contribution": {
+      "claim_unlock": 0,
+      "field_only": 0
+    },
+    "field_name": {
+      "diagnosis": 1,
+      "federal_tax_no": 10,
+      "insured_name": 9,
+      "member_id": 19,
+      "patient_dob": 5,
+      "patient_name": 17,
+      "principal_diagnosis": 3,
+      "provider_name": 20,
+      "provider_npi": 20,
+      "service_date": 10,
+      "total_charge": 19,
+      "type_of_bill": 1
+    },
+    "form_type": {
+      "CMS1500": 69,
+      "UB04": 65
+    },
+    "opportunity_class": {
+      "NO_OPPORTUNITY": 92,
+      "POSSIBLE_SAME_SOURCE": 42
+    },
+    "quality_band": {
+      "clean": 96,
+      "degraded": 38
+    },
+    "semantic_section": {
+      "billing_provider": 10,
+      "claim_total": 19,
+      "diagnosis": 1,
+      "patient": 17,
+      "patient_dob": 5,
+      "principal_diagnosis": 3,
+      "rendering_provider": 40,
+      "service_header": 10,
+      "subscriber": 28,
+      "type_of_bill": 1
+    },
+    "source": {
+      "SOURCE_B": 134
+    }
+  },
+  "counts": {
+    "CONFLICTING_INDEPENDENT_EVIDENCE": 0,
+    "NO_OPPORTUNITY": 92,
+    "POSSIBLE_DISTINCT_DOCUMENT": 0,
+    "POSSIBLE_DISTINCT_PAGE": 0,
+    "POSSIBLE_DISTINCT_SECTION": 0,
+    "POSSIBLE_SAME_SOURCE": 42,
+    "VALID_INDEPENDENT_EVIDENCE": 0
+  }
+}

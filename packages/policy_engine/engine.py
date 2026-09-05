@@ -1,11 +1,21 @@
 """Config-driven selection of the cheapest useful next evidence source."""
 from __future__ import annotations
+
 from pathlib import Path
+
 import yaml
+
 from packages.policy_engine.contracts import DecisionContext, PolicyAction, PolicyDecision
 
 DEFAULT_POLICY_PATH=Path(__file__).resolve().parents[2]/"config"/"adaptive_routing.yaml"
 _CLOUD={PolicyAction.TEXTRACT,PolicyAction.GEMINI_CHEAP,PolicyAction.GEMINI_STANDARD,PolicyAction.GEMINI_ADVANCED}
+_LOCAL_OCR={
+    PolicyAction.RETRY_PREPROCESSING,
+    PolicyAction.RAPIDOCR,
+    PolicyAction.PADDLEOCR,
+    PolicyAction.TESSERACT,
+    PolicyAction.DOCLING,
+}
 
 class AdaptivePolicyEngine:
     def __init__(self, config: dict): self.config=config
@@ -29,15 +39,26 @@ class AdaptivePolicyEngine:
         if c.image_quality<float(quality["image_quality_retry_below"]) and PolicyAction.RAPIDOCR in c.previous_attempts and PolicyAction.RETRY_PREPROCESSING not in c.previous_attempts:
             return self._decision(PolicyAction.RETRY_PREPROCESSING,"image_quality",["low_image_quality"])
         route=self._route(c); skipped=[]
-        for name in self.config["routes"][route]:
-            action=PolicyAction(name)
+        configured_route = [PolicyAction(name) for name in self.config["routes"][route]]
+        for index, action in enumerate(configured_route):
             if action in c.previous_attempts: continue
             if action is PolicyAction.REFERENCE_LOOKUP and not c.reference_available: skipped.append("reference_unavailable"); continue
+            if action in _CLOUD:
+                required_local = {
+                    candidate for candidate in configured_route[:index]
+                    if candidate in _LOCAL_OCR
+                }
+                if not required_local.issubset(c.previous_attempts):
+                    skipped.append("local_ocr_not_exhausted")
+                    continue
             if action in _CLOUD and not c.cloud_processing_allowed: skipped.append("cloud_processing_disallowed"); continue
             p=self.config["actions"][action.value]
             if p["cost_usd"]>c.remaining_budget: skipped.append("budget_exceeded"); continue
             if p["latency_seconds"]>c.remaining_sla: skipped.append("sla_exceeded"); continue
-            return self._decision(action,route,["needs_more_evidence",*sorted(set(skipped))])
+            reasons = ["needs_more_evidence", *sorted(set(skipped))]
+            if action in _CLOUD:
+                reasons.append("local_ocr_exhausted")
+            return self._decision(action,route,reasons)
         fallback=PolicyAction.HITL if PolicyAction.HITL not in c.previous_attempts else PolicyAction.ABSTAIN
         return self._decision(fallback,route,["automated_routes_exhausted",*sorted(set(skipped))])
     def _route(self,c):

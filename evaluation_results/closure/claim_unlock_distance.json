@@ -1,0 +1,15 @@
+{
+  "distance_distribution": null,
+  "frozen_phase9": {
+    "distance_0": 0,
+    "distance_1": 0,
+    "distance_2": 0,
+    "distance_3": 7,
+    "distance_4": 0,
+    "distance_5_plus": 13,
+    "mean_unlock_distance": 4.8,
+    "median_unlock_distance": 5.0
+  },
+  "real_claims": 0,
+  "status": "UNAVAILABLE_FOR_REAL_ARCHIVE"
+}

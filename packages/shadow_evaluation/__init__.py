@@ -8,6 +8,7 @@ from packages.shadow_evaluation.models import (
     ShadowObservation,
     ShadowResult,
 )
+from packages.shadow_evaluation.overlap import fingerprinted_source_groups
 from packages.shadow_evaluation.reporting import (
     ShadowQualificationPolicy,
     ShadowQualificationReport,
@@ -30,6 +31,7 @@ __all__ = [
     "ShadowQualificationPolicy",
     "ShadowQualificationReport",
     "ShadowResult",
+    "fingerprinted_source_groups",
     "identity_fingerprint",
     "qualify_shadow_claims",
 ]

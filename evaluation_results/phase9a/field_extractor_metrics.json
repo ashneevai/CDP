@@ -1,0 +1,14 @@
+{
+  "critical_accuracy_after": 0.92,
+  "critical_accuracy_before": 0.89,
+  "date_accuracy_after": 0.9333333333,
+  "date_accuracy_before": 0.9333333333,
+  "identifier_accuracy_after": 0.95,
+  "identifier_accuracy_before": 0.9,
+  "name_accuracy_after": 0.74,
+  "name_accuracy_before": 0.7,
+  "npi_accuracy_after": 1.0,
+  "npi_accuracy_before": 1.0,
+  "raw_accuracy_after": 0.89,
+  "raw_accuracy_before": 0.855
+}

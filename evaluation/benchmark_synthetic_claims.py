@@ -22,10 +22,15 @@ from workers.page_detection.template_alignment import align_to_reference
 from workers.page_detection.text_extraction import PaddleOCRTextExtractor, RapidOCRTextExtractor
 from workers.retry.alternate_preprocessing import aggressive_contrast, upscale
 
-
 REFERENCE_CONDITION_PRIORITY = {
-    "clean_scan": 0, "fax": 1, "low_contrast": 2, "handwriting": 3,
-    "poor_dpi": 4, "skew": 5, "rotation": 6, "cropped_edges": 7,
+    "clean_scan": 0,
+    "fax": 1,
+    "low_contrast": 2,
+    "handwriting": 3,
+    "poor_dpi": 4,
+    "skew": 5,
+    "rotation": 6,
+    "cropped_edges": 7,
 }
 
 
@@ -52,22 +57,32 @@ def _should_register(skew_degrees: float) -> bool:
 
 
 def _retry_variant(field_type: str, image: Image.Image) -> Image.Image:
-    if field_type in {"npi", "date", "currency", "code", "tax_id"}:
+    if field_type == "code":
+        return upscale(image, 3)
+    if field_type in {"npi", "date", "currency", "tax_id"}:
         return aggressive_contrast(upscale(image, 2))
     return aggressive_contrast(image)
 
 
-def _candidate_score(value: str | None, confidence: float, field_name: str) -> tuple[int, float, int]:
+def _candidate_score(
+    value: str | None, confidence: float, field_name: str
+) -> tuple[int, float, int]:
     evidence = verify_field(field_name, value)
-    strength = {"NONE": 0, "PRESENCE": 1, "SYNTAX": 2, "SEMANTIC": 2, "CHECKSUM": 3}[evidence.strength]
+    strength = {"NONE": 0, "PRESENCE": 1, "SYNTAX": 2, "SEMANTIC": 2, "CHECKSUM": 3}[
+        evidence.strength
+    ]
     return (strength if evidence.valid else 0, confidence, len(normalize_field_value(value)))
 
 
 def _should_retry_field(field_type: str, confidence: float) -> bool:
-    # Current holdout evidence showed no accuracy gain from alternate reads
-    # for other structured fields. NPI retains the second independent read
-    # because checksum-backed consensus can safely remove review work.
-    return field_type == "npi"
+    # NPI retains an independent read for checksum-backed consensus. Code
+    # crops receive one bounded retry only when the first read is weak; this
+    # recovers thin/italic leading glyphs without expanding full-page OCR.
+    return (
+        field_type == "npi"
+        or (field_type == "code" and confidence < 0.85)
+        or (field_type == "date" and confidence < 0.70)
+    )
 
 
 def _extract_crop(extractor, crop: Image.Image):
@@ -83,14 +98,19 @@ def _norm(value: str | None) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", type=Path, default=Path("evaluation_data/synthetic_public_v1"))
-    parser.add_argument("--output", type=Path, default=Path("evaluation_results/synthetic_public_v1"))
+    parser.add_argument(
+        "--output", type=Path, default=Path("evaluation_results/synthetic_public_v1")
+    )
     parser.add_argument("--page-registration", action="store_true")
     parser.add_argument("--field-routing", action="store_true")
     parser.add_argument(
-        "--member-id-engine", choices=("tesseract", "rapidocr", "paddleocr"),
-        default="tesseract", help="isolated insured_id_number engine experiment",
+        "--member-id-engine",
+        choices=("tesseract", "rapidocr", "paddleocr"),
+        default="tesseract",
+        help="isolated insured_id_number engine experiment",
     )
-    args = parser.parse_args(); args.output.mkdir(parents=True, exist_ok=True)
+    args = parser.parse_args()
+    args.output.mkdir(parents=True, exist_ok=True)
     truth = json.loads((args.dataset / "ground_truth.json").read_text("utf-8"))["documents"]
     manifest = json.loads((args.dataset / "document_manifest.json").read_text("utf-8"))
     reference_ids = _select_reference_ids(manifest)
@@ -98,15 +118,26 @@ def main() -> int:
         family: Image.open(args.dataset / manifest[document_id]["file_name"]).convert("RGB")
         for family, document_id in reference_ids.items()
     }
-    predictions, counters, latencies = [], defaultdict(lambda: [0, 0]), []
-    registration = defaultdict(int)
-    verification = defaultdict(int)
+    predictions = []
+    counters: defaultdict[str, list[int]] = defaultdict(lambda: [0, 0])
+    latencies = []
+    registration: defaultdict[str, int] = defaultdict(int)
+    verification: defaultdict[str, int] = defaultdict(int)
     optional_extractors = {
-        "rapidocr": RapidOCRTextExtractor(), "paddleocr": PaddleOCRTextExtractor(),
+        "rapidocr": RapidOCRTextExtractor(),
+        "paddleocr": PaddleOCRTextExtractor(),
     }
-    type_map = {"patient_dob": "date", "provider_npi": "npi", "total_charge": "currency",
-                "total_charges": "currency", "type_of_bill": "code", "principal_diagnosis": "code",
-                "federal_tax_no": "tax_id", "insured_id_number": "code", "patient_name": "text"}
+    type_map = {
+        "patient_dob": "date",
+        "provider_npi": "npi",
+        "total_charge": "currency",
+        "total_charges": "currency",
+        "type_of_bill": "code",
+        "principal_diagnosis": "code",
+        "federal_tax_no": "tax_id",
+        "insured_id_number": "code",
+        "patient_name": "text",
+    }
     for document in truth:
         document_id = document["document_id"]
         document_meta = manifest[document_id]
@@ -135,9 +166,17 @@ def main() -> int:
             crop = localized_page.crop(crop_box)
             field_type = type_map.get(name, "text")
             selected_engine = args.member_id_engine if name == "insured_id_number" else "tesseract"
-            extractor = optional_extractors[selected_engine] if selected_engine != "tesseract" else for_field_type(field_type)
+            extractor = (
+                optional_extractors[selected_engine]
+                if selected_engine != "tesseract"
+                else for_field_type(field_type)
+            )
             attempts = [_extract_crop(extractor, crop)]
-            original_confidence = sum(word.confidence for word in attempts[0]) / len(attempts[0]) if attempts[0] else 0.0
+            original_confidence = (
+                sum(word.confidence for word in attempts[0]) / len(attempts[0])
+                if attempts[0]
+                else 0.0
+            )
             if args.field_routing and _should_retry_field(field_type, original_confidence):
                 attempts.append(_extract_crop(extractor, _retry_variant(field_type, crop)))
             latencies.append((monotonic() - started) * 1000)
@@ -145,47 +184,107 @@ def main() -> int:
             for words in attempts:
                 candidate_value = " ".join(word.text for word in words).strip() or None
                 if field_type == "npi":
-                    candidate_value = repair_npi_missing_leading_digit(candidate_value) or candidate_value
+                    candidate_value = (
+                        repair_npi_missing_leading_digit(candidate_value) or candidate_value
+                    )
                 confidence = sum(word.confidence for word in words) / len(words) if words else 0.0
                 candidates.append((candidate_value, confidence))
-            value, confidence = max(candidates, key=lambda item: _candidate_score(item[0], item[1], name))
-            agreement = sum(normalize_field_value(candidate[0]) == normalize_field_value(value) for candidate in candidates)
+            value, confidence = max(
+                candidates, key=lambda item: _candidate_score(item[0], item[1], name)
+            )
+            agreement = sum(
+                normalize_field_value(candidate[0]) == normalize_field_value(value)
+                for candidate in candidates
+            )
             evidence = verify_field(name, value, independent_agreement=agreement)
             correct = _norm(value) == _norm(field["expected_raw"])
             accepted = evidence.auto_verifiable
             verification["accepted"] += int(accepted)
             verification["false_accepts"] += int(accepted and not correct)
             verification["retried"] += int(len(attempts) > 1)
-            for key in ("overall", f"family:{document['form_type']}",
-                        f"condition:{manifest[document_id]['condition']}", f"field:{name}"):
-                counters[key][1] += 1; counters[key][0] += int(correct)
-            predicted_fields.append({"field_name": name, "raw_value": value,
-                                     "expected": field["expected_raw"], "correct": correct,
-                                     "accepted": accepted, "engine": selected_engine,
-                                     "confidence": confidence, "attempts": len(attempts),
-                                     "verification_strength": evidence.strength,
-                                     "verification_reason": evidence.reason_code})
-        predictions.append({"document_id": document_id, "fields": predicted_fields,
-                            "skew_degrees": skew_degrees,
-                            "registration_method": registration_method})
-    metrics = {key: {"correct": value[0], "total": value[1],
-                     "accuracy": value[0] / value[1] if value[1] else 0}
-               for key, value in sorted(counters.items())}
+            for key in (
+                "overall",
+                f"family:{document['form_type']}",
+                f"condition:{manifest[document_id]['condition']}",
+                f"field:{name}",
+            ):
+                counters[key][1] += 1
+                counters[key][0] += int(correct)
+            predicted_fields.append(
+                {
+                    "field_name": name,
+                    "raw_value": value,
+                    "expected": field["expected_raw"],
+                    "correct": correct,
+                    "accepted": accepted,
+                    "engine": selected_engine,
+                    "confidence": confidence,
+                    "attempts": len(attempts),
+                    "verification_strength": evidence.strength,
+                    "verification_reason": evidence.reason_code,
+                }
+            )
+        predictions.append(
+            {
+                "document_id": document_id,
+                "fields": predicted_fields,
+                "skew_degrees": skew_degrees,
+                "registration_method": registration_method,
+            }
+        )
+    metrics: dict[str, object] = {
+        key: {
+            "correct": value[0],
+            "total": value[1],
+            "accuracy": value[0] / value[1] if value[1] else 0,
+        }
+        for key, value in sorted(counters.items())
+    }
     sorted_latency = sorted(latencies)
-    metrics["runtime"] = {"calls": len(latencies), "p95_latency_ms": sorted_latency[int(.95 * (len(sorted_latency)-1))],
-                          "mean_latency_ms": sum(latencies) / len(latencies)}
-    metrics["qualification"] = {"synthetic_only": True, "production_holdout": False,
-                                "false_accepts": verification["false_accepts"],
-                                "note": "Only independently agreeing checksum-valid values may be accepted"}
+    metrics["runtime"] = {
+        "calls": len(latencies),
+        "p95_latency_ms": sorted_latency[int(0.95 * (len(sorted_latency) - 1))],
+        "mean_latency_ms": sum(latencies) / len(latencies),
+    }
+    metrics["qualification"] = {
+        "synthetic_only": True,
+        "production_holdout": False,
+        "production_qualified": False,
+        "false_accepts": verification["false_accepts"],
+        "note": "Synthetic accuracy cannot qualify production behavior",
+    }
     metrics["registration"] = {
         "enabled": args.page_registration,
         "reference_document_ids": reference_ids,
         **registration,
     }
-    metrics["field_routing"] = {"enabled": args.field_routing, **verification}
-    (args.output / "predictions.json").write_text(json.dumps({"documents": predictions}, indent=2), "utf-8")
+    accepted = verification["accepted"]
+    false_accepts = verification["false_accepts"]
+    field_calls = len(latencies)
+    metrics["field_routing"] = {
+        "enabled": args.field_routing,
+        **verification,
+        "safe_field_coverage": accepted / field_calls if field_calls else 0.0,
+        "field_hitl_proxy": 1 - accepted / field_calls if field_calls else 0.0,
+        "accepted_precision": ((accepted - false_accepts) / accepted if accepted else None),
+        "acceptance_policy": (
+            "Only independently agreeing checksum-valid values may be auto-accepted"
+        ),
+    }
+    (args.output / "predictions.json").write_text(
+        json.dumps({"documents": predictions}, indent=2), "utf-8"
+    )
     (args.output / "metrics.json").write_text(json.dumps(metrics, indent=2), "utf-8")
-    print(json.dumps({"overall": metrics["overall"], "runtime": metrics["runtime"]}))
+    print(
+        json.dumps(
+            {
+                "overall": metrics["overall"],
+                "runtime": metrics["runtime"],
+                "field_routing": metrics["field_routing"],
+                "qualification": metrics["qualification"],
+            }
+        )
+    )
     return 0
 
 

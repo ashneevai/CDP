@@ -1,0 +1,161 @@
+{
+  "acceptance_gates": {
+    "accepted_precision_gte_995": true,
+    "all_blockers_classified": true,
+    "ceilings_are_structural_not_achieved": true,
+    "closure_matrix_complete": true,
+    "critical_false_accepts_zero": true,
+    "phase8_27_source_limits_respected": true
+  },
+  "experiments_retained": [],
+  "experiments_reverted": [],
+  "historical_artifacts_modified": false,
+  "metrics": {
+    "CURRENT_EVIDENCE_STP_CEILING": 0.0,
+    "FULL_SOURCE_STP_CEILING": 1.0,
+    "POTENTIAL_STP_IF_AUTHORITATIVE_DATA_AVAILABLE": 0.55,
+    "acceptance_authority_gap_blockers": 3,
+    "accepted_precision": 1.0,
+    "authoritative_data_required_blockers": 60,
+    "claims_requiring_mandatory_HITL": 0,
+    "claims_requiring_source_acquisition": 9,
+    "claims_unlockable_by_authoritative_data": 11,
+    "claims_unlockable_by_software": 0,
+    "conflicting_evidence_blockers": 0,
+    "correct_but_hitl_fields": 84,
+    "critical_false_accepts": 0,
+    "current_STP_claims": 0,
+    "current_STP_rate": 0.0,
+    "current_claim_HITL": 1.0,
+    "distance_0": 0,
+    "distance_1": 0,
+    "distance_2": 0,
+    "distance_3": 7,
+    "distance_4": 0,
+    "distance_5_plus": 13,
+    "extraction_defect_blockers": 12,
+    "incorrect_and_hitl_fields": 12,
+    "incorrect_but_accepted_fields": 0,
+    "mandatory_hitl_blockers": 0,
+    "mean_unlock_distance": 4.8,
+    "median_unlock_distance": 5.0,
+    "remaining_blockers": 96,
+    "source_evidence_required_blockers": 17,
+    "total_claims": 20,
+    "unreadable_source_blockers": 0,
+    "validation_gap_blockers": 4
+  },
+  "phase": "9D",
+  "phase9e_numerical_opportunity": {
+    "additional_claims_potentially_STP": 11,
+    "not_achieved_STP": true,
+    "potential_STP_rate": 0.55
+  },
+  "quick_win_experiments": [],
+  "recommended_phase9e_strategy": "OPTION_B_AUTHORITATIVE_EVIDENCE_INTEGRATION",
+  "thresholds_changed": false,
+  "top_10_remediations_by_claim_unlock_leverage": [
+    {
+      "category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "claim_unlock_leverage": 19.092857,
+      "claims_affected": 18,
+      "claims_potentially_unlocked": 1,
+      "distance_reduction": 4.242857,
+      "field": "member_id",
+      "implementation_complexity": 4,
+      "owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "claim_unlock_leverage": 19.092857,
+      "claims_affected": 18,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 4.242857,
+      "field": "provider_name",
+      "implementation_complexity": 4,
+      "owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "claim_unlock_leverage": 15.733333,
+      "claims_affected": 16,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 3.933333,
+      "field": "patient_name",
+      "implementation_complexity": 4,
+      "owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "claim_unlock_leverage": 2.88,
+      "claims_affected": 9,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 1.6,
+      "field": "total_charge",
+      "implementation_complexity": 5,
+      "owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "category": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "claim_unlock_leverage": 2.685714,
+      "claims_affected": 8,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 1.342857,
+      "field": "insured_name",
+      "implementation_complexity": 4,
+      "owner": "AUTHORITATIVE DATA INTEGRATION"
+    },
+    {
+      "category": "E_SOURCE_EVIDENCE_REQUIRED",
+      "claim_unlock_leverage": 2.293333,
+      "claims_affected": 8,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 1.433333,
+      "field": "service_date",
+      "implementation_complexity": 5,
+      "owner": "SOURCE DOCUMENT ACQUISITION"
+    },
+    {
+      "category": "B_VALIDATION_GAP",
+      "claim_unlock_leverage": 0.733333,
+      "claims_affected": 2,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 0.366667,
+      "field": "patient_dob",
+      "implementation_complexity": 1,
+      "owner": "CDP VALIDATION"
+    },
+    {
+      "category": "C_ACCEPTANCE_AUTHORITY_GAP",
+      "claim_unlock_leverage": 0.714286,
+      "claims_affected": 3,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 0.47619,
+      "field": "patient_dob",
+      "implementation_complexity": 2,
+      "owner": "CDP ACCEPTANCE POLICY"
+    },
+    {
+      "category": "A_EXTRACTION_DEFECT",
+      "claim_unlock_leverage": 0.366667,
+      "claims_affected": 2,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 0.366667,
+      "field": "principal_diagnosis",
+      "implementation_complexity": 2,
+      "owner": "CDP EXTRACTION"
+    },
+    {
+      "category": "A_EXTRACTION_DEFECT",
+      "claim_unlock_leverage": 0.366667,
+      "claims_affected": 2,
+      "claims_potentially_unlocked": 0,
+      "distance_reduction": 0.366667,
+      "field": "provider_name",
+      "implementation_complexity": 2,
+      "owner": "CDP EXTRACTION"
+    }
+  ],
+  "verdict": "PASS",
+  "verdict_reason": "All post-9C blockers have deterministic categories, owners, and non-fabricated scenario ceilings"
+}

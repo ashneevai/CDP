@@ -20,8 +20,13 @@ class ShadowQualificationPolicy(DomainModel):
     maximum_segment_claim_hitl: float = 0.15
     maximum_false_accept_rate: float = 0.001
     maximum_critical_false_accepts: int = 0
+    minimum_overall_raw_accuracy: float = 0.95
+    minimum_critical_raw_accuracy: float = 0.98
+    minimum_accepted_precision: float = 0.995
     minimum_critical_accepted_precision: float = 0.995
     minimum_wrong_crop_recall: float = 0.95
+    minimum_ocr_only_processing_rate: float = 0.99
+    maximum_llm_escalation_rate: float = 0.01
 
 
 class ShadowQualificationReport(DomainModel):
@@ -41,12 +46,15 @@ class ShadowQualificationReport(DomainModel):
     safe_field_coverage: float | None
     accepted_field_decisions: int
     accepted_critical_field_decisions: int
+    accepted_precision: float | None
     false_accept_rate: float | None
     critical_false_accepts: int
     critical_accepted_precision: float | None
     wrong_crop_recall: float | None
     p95_latency_ms: float | None
     cost_per_document_usd: float | None
+    ocr_only_processing_rate: float | None
+    llm_escalation_rate: float | None
     gates: dict[str, bool]
     blocking_reasons: list[str]
 
@@ -109,6 +117,10 @@ def qualify_shadow_claims(
     wrong_crops_detected = sum(row.wrong_crops_detected for row in observations)
     upper = _wilson_upper(hitl_count, claims)
     false_accept_rate = false_accepts / accepted if accepted else None
+    accepted_precision = (
+        sum(row.correct_accepted_field_decisions for row in observations) / accepted
+        if accepted else None
+    )
     critical_precision = (
         correct_accepted_critical / accepted_critical if accepted_critical else None
     )
@@ -118,12 +130,27 @@ def qualify_shadow_claims(
     cost_per_document = (
         sum(row.cost_usd for row in observations) / claims if claims else None
     )
+    llm_count = sum(row.llm_escalated for row in observations)
+    llm_escalation_rate = llm_count / claims if claims else None
+    ocr_only_processing_rate = (claims - llm_count) / claims if claims else None
     gates = {
         "locked_holdout": bool(observations) and all(row.locked_holdout for row in observations),
         "source_disjoint": not overlap,
         "minimum_claims": claims >= policy.minimum_claims,
         "minimum_accepted_critical_fields": (
             accepted_critical >= policy.minimum_accepted_critical_field_decisions
+        ),
+        "overall_raw_accuracy": (
+            evaluated > 0 and correct / evaluated >= policy.minimum_overall_raw_accuracy
+        ),
+        "critical_raw_accuracy": (
+            evaluated_critical > 0
+            and correct_evaluated_critical / evaluated_critical
+            >= policy.minimum_critical_raw_accuracy
+        ),
+        "accepted_precision": (
+            accepted_precision is not None
+            and accepted_precision >= policy.minimum_accepted_precision
         ),
         "claim_hitl": claim_hitl is not None and claim_hitl <= policy.maximum_claim_hitl,
         "claim_hitl_upper_95": upper is not None and upper < policy.maximum_claim_hitl_upper_95,
@@ -150,6 +177,14 @@ def qualify_shadow_claims(
         "route_governance": bool(observations) and all(
             row.route_governance_passed for row in observations
         ),
+        "ocr_only_processing": (
+            ocr_only_processing_rate is not None
+            and ocr_only_processing_rate >= policy.minimum_ocr_only_processing_rate
+        ),
+        "llm_escalation": (
+            llm_escalation_rate is not None
+            and llm_escalation_rate <= policy.maximum_llm_escalation_rate
+        ),
         "shadow_only": all(row.shadow_only for row in observations),
     }
     blockers = [name.upper() for name, passed in gates.items() if not passed]
@@ -171,12 +206,15 @@ def qualify_shadow_claims(
         safe_field_coverage=accepted / evaluated if evaluated else None,
         accepted_field_decisions=accepted,
         accepted_critical_field_decisions=accepted_critical,
+        accepted_precision=accepted_precision,
         false_accept_rate=false_accept_rate,
         critical_false_accepts=critical_false_accepts,
         critical_accepted_precision=critical_precision,
         wrong_crop_recall=wrong_crop_recall,
         p95_latency_ms=p95_latency,
         cost_per_document_usd=cost_per_document,
+        ocr_only_processing_rate=ocr_only_processing_rate,
+        llm_escalation_rate=llm_escalation_rate,
         gates=gates,
         blocking_reasons=blockers,
     )

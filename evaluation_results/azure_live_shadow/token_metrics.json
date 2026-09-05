@@ -1,0 +1,14 @@
+{
+  "caps": {
+    "input": 500,
+    "output": 40
+  },
+  "max_input_tokens": null,
+  "max_output_tokens": null,
+  "mean_input_tokens": null,
+  "mean_output_tokens": null,
+  "p50_input_tokens": null,
+  "p50_output_tokens": null,
+  "p95_input_tokens": null,
+  "p95_output_tokens": null
+}

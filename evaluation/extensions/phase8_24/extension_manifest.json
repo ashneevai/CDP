@@ -1,0 +1,8 @@
+{
+  "adjudication": "GROUND_TRUTH_EMBEDDED_PER_FIELD",
+  "dataset_sha256": "caeebffb39da51f874e127a7e4fb68b1ff64632da25fccf4a022969d5ddc3f38",
+  "dataset_version": "phase8.24-independent-evidence-extension-v1",
+  "records": 8,
+  "scope": "CONTROLLED_E2_COVERAGE_EXTENSION",
+  "thresholds_frozen_before_replay": true
+}

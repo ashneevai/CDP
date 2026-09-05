@@ -1,0 +1,47 @@
+﻿policy_version: azure-closed-world-v1
+enabled: false
+mode: SHADOW_ONLY
+provider: azure_openai
+azure:
+  endpoint_env: AZURE_OPENAI_ENDPOINT
+  deployment_env: AZURE_AI_EVALUATION_DEPLOYMENT
+  api_version_env: AZURE_OPENAI_API_VERSION
+  default_endpoint: https://truesdlc-test.openai.azure.com
+  default_deployment: gpt-4o
+  default_api_version: "2024-10-21"
+authentication:
+  preferred: AZURE_MANAGED_IDENTITY
+  fallback: AZURE_OPENAI_API_KEY_ENVIRONMENT
+routing:
+  tier1_preferred_max_rate: 0.10
+  tier1_absolute_max_rate: 0.15
+  tier2_preferred_max_rate: 0.01
+  tier2_absolute_max_rate: 0.03
+  priority: [CLAIM_DISTANCE, CRITICALITY, SAFE_RESOLUTION_PROBABILITY, CLAIM_UNLOCK_IMPACT, ESTIMATED_COST]
+  full_page_transcript_allowed: false
+  full_page_image_allowed: false
+  field_crop_only_tier2: true
+limits:
+  target_avg_cost_per_page_usd: 0.0005
+  max_avg_cost_per_page_usd: 0.001
+  max_cost_per_claim_usd: 0.005
+  max_tier1_calls_per_page: 1
+  max_tier2_calls_per_page: 1
+  tier1_max_input_tokens: 500
+  tier1_max_output_tokens: 40
+  timeout_seconds: 15
+  max_retries: 1
+pricing:
+  status: PRICING_NOT_CONFIGURED
+  input_cost_per_million_tokens: null
+  output_cost_per_million_tokens: null
+  cached_input_cost_per_million_tokens: null
+closed_world:
+  novel_values_allowed: false
+  decisions: [SELECT_CANDIDATE, HITL, CONFLICT, INSUFFICIENT_EVIDENCE]
+promotion:
+  trusted_evaluation_required: true
+  llm_candidate_selection_precision_min: 0.995
+  overall_accepted_precision_min: 0.995
+  critical_false_accepts_max: 0
+  mean_paid_ai_cost_per_page_usd_max: 0.001

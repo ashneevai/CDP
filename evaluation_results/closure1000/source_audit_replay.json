@@ -1,0 +1,10 @@
+{
+  "classification_failures_confirmed": 0,
+  "historical_rules_changed": false,
+  "ingestion_failures_confirmed": 0,
+  "page_lineage_failures_confirmed": 0,
+  "previous_source_evidence_required_blockers": 17,
+  "reason": "FROZEN_20_ARE_SYNTHETIC_AND_HAVE_NO_EXACT_BINDING_TO_REAL_PACKAGES",
+  "reclassified_blockers": 0,
+  "remaining_status": "UNKNOWN_REQUIRES_SOURCE_BINDING"
+}

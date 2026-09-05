@@ -29,6 +29,8 @@ class FieldEvidence(DomainModel):
     model_name: str | None = None
     model_version: str | None = None
     provenance: EvidenceProvenance | None = None
+    tokens: tuple[dict[str, object], ...] = ()
+    adjudication_metadata: dict[str, object] | None = None
     produced_at: datetime = Field(default_factory=utcnow)
 
 

@@ -1,0 +1,713 @@
+{
+  "frozen_size": 13,
+  "records": [
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        420.0,
+        342.0
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9928120483051647
+      },
+      "claim_id": "SB-CMS-003",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "insured_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "DEVON VARGAS",
+      "page_id": "SB-CMS-003",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "DEVONVARGAS",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            78.0,
+            300.0,
+            216.0,
+            320.0
+          ],
+          "confidence": 0.9928120483051647,
+          "line_index": 13,
+          "reading_order": 13,
+          "text": "DEVONVARGAS",
+          "token_id": "ocr-13"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        428.4,
+        504.0,
+        486.00000000000006
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9916927299716256
+      },
+      "claim_id": "SB-CMS-003",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "provider_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "SUMMIT MEDICAL GROUP 2003",
+      "page_id": "SB-CMS-003",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "SUMMITMEDICALGROUP2003",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            78.0,
+            438.0,
+            264.0,
+            454.0
+          ],
+          "confidence": 0.9916927299716256,
+          "line_index": 20,
+          "reading_order": 20,
+          "text": "SUMMITMEDICALGROUP2003",
+          "token_id": "ocr-20"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        420.0,
+        342.0
+      ],
+      "after_hitl": false,
+      "before_correctness": false,
+      "before_crop": [
+        62.0,
+        293.0,
+        334.0,
+        339.0
+      ],
+      "before_hitl": true,
+      "before_tokens": [
+        "ELARADUBOIS",
+        "ELARADUBOIS"
+      ],
+      "blocker_removed": true,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.990973022851077
+      },
+      "claim_id": "SB-CMS-004",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "insured_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "ELARA DUBOIS",
+      "page_id": "SB-CMS-004",
+      "phase9a_candidate": "ELARADUBOIS",
+      "phase9b_candidate": "ELARADUBOIS",
+      "registration_confidence": 0.847462265232335,
+      "root_cause": "MULTILINE_ASSEMBLY_ERROR",
+      "selected_tokens": [
+        {
+          "bbox": [
+            76.0,
+            298.0,
+            207.0,
+            321.0
+          ],
+          "confidence": 0.990973022851077,
+          "line_index": 10,
+          "reading_order": 10,
+          "text": "ELARADUBOIS",
+          "token_id": "ocr-10"
+        }
+      ]
+    },
+    {
+      "after_correctness": false,
+      "after_crop": [
+        56.0,
+        428.4,
+        504.0,
+        486.00000000000006
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": [
+        73.0,
+        435.0,
+        471.0,
+        467.0
+      ],
+      "before_hitl": true,
+      "before_tokens": [
+        "NORTHSTARMEDICALGROUP20O",
+        "NORTHSTAR MEDICALGROUP200"
+      ],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9503722464044889
+      },
+      "claim_id": "SB-CMS-004",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "provider_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "NORTHSTAR MEDICAL GROUP 2004",
+      "page_id": "SB-CMS-004",
+      "phase9a_candidate": "NORTHSTARMEDICALGROUP20O",
+      "phase9b_candidate": "NORTHSTARMEDICALGROUP20O",
+      "registration_confidence": 0.8604227553095136,
+      "root_cause": "OCR_CHARACTER_ERROR",
+      "selected_tokens": [
+        {
+          "bbox": [
+            83.0,
+            438.0,
+            287.0,
+            454.0
+          ],
+          "confidence": 0.9503722464044889,
+          "line_index": 15,
+          "reading_order": 15,
+          "text": "NORTHSTARMEDICALGROUP20O",
+          "token_id": "ocr-15"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        420.0,
+        342.0
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9890369355678559
+      },
+      "claim_id": "SB-CMS-010",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "insured_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "KEIRA WELLS",
+      "page_id": "SB-CMS-010",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "KEIRAWELLS",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            75.0,
+            297.0,
+            196.0,
+            323.0
+          ],
+          "confidence": 0.9890369355678559,
+          "line_index": 14,
+          "reading_order": 14,
+          "text": "KEIRAWELLS",
+          "token_id": "ocr-14"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        428.4,
+        504.0,
+        486.00000000000006
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9909996856813845
+      },
+      "claim_id": "SB-CMS-010",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "provider_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "LANTERN MEDICAL GROUP 2010",
+      "page_id": "SB-CMS-010",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "LANTERNMEDICALGROUP2010",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            79.0,
+            439.0,
+            284.0,
+            455.0
+          ],
+          "confidence": 0.9909996856813845,
+          "line_index": 21,
+          "reading_order": 21,
+          "text": "LANTERNMEDICALGROUP2010",
+          "token_id": "ocr-21"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        448.0,
+        349.2
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9747625788052877
+      },
+      "claim_id": "SB-UB-003",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "patient_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "NOLAN CORTEZ",
+      "page_id": "SB-UB-003",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "NOLAN CORTEZ",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            75.0,
+            297.0,
+            215.0,
+            323.0
+          ],
+          "confidence": 0.9747625788052877,
+          "line_index": 14,
+          "reading_order": 14,
+          "text": "NOLAN CORTEZ",
+          "token_id": "ocr-14"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        176.4,
+        630.0,
+        237.60000000000002
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9924623991052309
+      },
+      "claim_id": "SB-UB-003",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "provider_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "PINNACLE MEDICAL GROUP 2013",
+      "page_id": "SB-UB-003",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "PINNACLEMEDICALGROUP2013",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            79.0,
+            191.0,
+            359.0,
+            208.0
+          ],
+          "confidence": 0.9924623991052309,
+          "line_index": 6,
+          "reading_order": 6,
+          "text": "PINNACLEMEDICALGROUP2013",
+          "token_id": "ocr-6"
+        }
+      ]
+    },
+    {
+      "after_correctness": false,
+      "after_crop": [
+        56.0,
+        288.0,
+        448.0,
+        349.2
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": [
+        48.0,
+        294.0,
+        310.0,
+        342.0
+      ],
+      "before_hitl": true,
+      "before_tokens": [
+        "AORLASATO",
+        "AORLA SATO"
+      ],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9892590045928955
+      },
+      "claim_id": "SB-UB-004",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "patient_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "ORLA SATO",
+      "page_id": "SB-UB-004",
+      "phase9a_candidate": "AORLA SATO",
+      "phase9b_candidate": "AORLASATO",
+      "registration_confidence": 0.8977847417254669,
+      "root_cause": "OCR_CHARACTER_ERROR",
+      "selected_tokens": [
+        {
+          "bbox": [
+            62.0,
+            299.0,
+            178.0,
+            323.0
+          ],
+          "confidence": 0.9892590045928955,
+          "line_index": 11,
+          "reading_order": 11,
+          "text": "AORLASATO",
+          "token_id": "ocr-11"
+        }
+      ]
+    },
+    {
+      "after_correctness": false,
+      "after_crop": [
+        56.0,
+        176.4,
+        630.0,
+        237.60000000000002
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": [
+        49.0,
+        185.0,
+        624.0,
+        231.0
+      ],
+      "before_hitl": true,
+      "before_tokens": [
+        "RREDWOODMEDICALGROUP2014",
+        "RREDWOOD MEDICAL GROUP 2014"
+      ],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9692355667551359
+      },
+      "claim_id": "SB-UB-004",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "provider_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "REDWOOD MEDICAL GROUP 2014",
+      "page_id": "SB-UB-004",
+      "phase9a_candidate": "RREDWOOD MEDICAL GROUP 2014",
+      "phase9b_candidate": "RREDWOODMEDICALGROUP2014",
+      "registration_confidence": 0.8761897860593512,
+      "root_cause": "OCR_CHARACTER_ERROR",
+      "selected_tokens": [
+        {
+          "bbox": [
+            63.0,
+            190.0,
+            358.0,
+            213.0
+          ],
+          "confidence": 0.9692355667551359,
+          "line_index": 5,
+          "reading_order": 5,
+          "text": "RREDWOODMEDICALGROUP2014",
+          "token_id": "ocr-5"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        448.0,
+        349.2
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": [
+        65.0,
+        295.0,
+        324.0,
+        335.0
+      ],
+      "before_hitl": true,
+      "before_tokens": [
+        "CELINEFARRELL",
+        "CELINEFARRELL"
+      ],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9862751227158767
+      },
+      "claim_id": "SB-UB-008",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "patient_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "CELINE FARRELL",
+      "page_id": "SB-UB-008",
+      "phase9a_candidate": "CELINEFARRELL",
+      "phase9b_candidate": "CELINEFARRELL",
+      "registration_confidence": 0.8858688750862663,
+      "root_cause": "MULTILINE_ASSEMBLY_ERROR",
+      "selected_tokens": [
+        {
+          "bbox": [
+            77.0,
+            299.0,
+            207.0,
+            319.0
+          ],
+          "confidence": 0.9862751227158767,
+          "line_index": 11,
+          "reading_order": 11,
+          "text": "CELINEFARRELL",
+          "token_id": "ocr-11"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        288.0,
+        448.0,
+        349.2
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9929201873865995
+      },
+      "claim_id": "SB-UB-010",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "patient_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "ELARA DUBOIS",
+      "page_id": "SB-UB-010",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "ELARADUBOIS",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            75.0,
+            298.0,
+            207.0,
+            321.0
+          ],
+          "confidence": 0.9929201873865995,
+          "line_index": 14,
+          "reading_order": 14,
+          "text": "ELARADUBOIS",
+          "token_id": "ocr-14"
+        }
+      ]
+    },
+    {
+      "after_correctness": true,
+      "after_crop": [
+        56.0,
+        176.4,
+        630.0,
+        237.60000000000002
+      ],
+      "after_hitl": true,
+      "before_correctness": false,
+      "before_crop": null,
+      "before_hitl": true,
+      "before_tokens": [],
+      "blocker_removed": false,
+      "candidate_score_components": {
+        "geometry": 1.0,
+        "label_exclusion": 1.0,
+        "neighbor_exclusion": 1.0,
+        "token_confidence": 0.9849395155906677
+      },
+      "claim_id": "SB-UB-010",
+      "claim_unlocked": false,
+      "crop_safety": "CROP_SAFE",
+      "field_name": "provider_name",
+      "fix_applied": [
+        "STANDARD_ZONE_TOKEN_GEOMETRY",
+        "LABEL_ZONE_EXCLUDED",
+        "NEIGHBOR_TYPES_EXCLUDED"
+      ],
+      "ground_truth": "JUNIPER MEDICAL GROUP 2020",
+      "page_id": "SB-UB-010",
+      "phase9a_candidate": null,
+      "phase9b_candidate": "JUNIPERMEDICALGROUP2020",
+      "registration_confidence": 0.0,
+      "root_cause": "WRONG_CROP",
+      "selected_tokens": [
+        {
+          "bbox": [
+            78.0,
+            191.0,
+            348.0,
+            208.0
+          ],
+          "confidence": 0.9849395155906677,
+          "line_index": 7,
+          "reading_order": 7,
+          "text": "JUNIPERMEDICALGROUP2020",
+          "token_id": "ocr-7"
+        }
+      ]
+    }
+  ],
+  "root_causes_before_repair": {
+    "MULTILINE_ASSEMBLY_ERROR": 2,
+    "OCR_CHARACTER_ERROR": 3,
+    "WRONG_CROP": 8
+  }
+}

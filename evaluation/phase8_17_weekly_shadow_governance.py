@@ -12,7 +12,7 @@ from pathlib import Path
 from packages.production_readiness_gate import ProductionReadinessGate, ReadinessEvidence
 from packages.shadow_evaluation import (
     AppendOnlyShadowClaimSink,
-    identity_fingerprint,
+    fingerprinted_source_groups,
     qualify_shadow_claims,
 )
 
@@ -25,22 +25,6 @@ class WeeklyGovernanceResult:
 
 def _sha256(path: Path) -> str:
     return sha256(path.read_bytes()).hexdigest()
-
-
-def _source_groups(path: Path, splits: set[str], *, identity_key: bytes) -> set[str]:
-    groups: set[str] = set()
-    if not path.is_dir():
-        return groups
-    for split in splits:
-        target = path / f"{split}.jsonl"
-        if not target.is_file():
-            continue
-        for line in target.read_text(encoding="utf-8").splitlines():
-            if line.strip():
-                groups.add(identity_fingerprint(
-                    str(json.loads(line)["source_group_id"]), identity_key
-                ))
-    return groups
 
 
 def generate_weekly_governance(
@@ -66,9 +50,12 @@ def generate_weekly_governance(
         "total_false_accept_rate": shadow.false_accept_rate,
         "critical_false_accept_count": shadow.critical_false_accepts,
         "safe_field_coverage": shadow.safe_field_coverage,
+        "accepted_precision": shadow.accepted_precision,
         "claim_stp": shadow.claim_stp,
         "claim_hitl": shadow.claim_hitl,
         "claim_hitl_count": sum(row.shadow_requires_review for row in observations),
+        "ocr_only_processing_rate": shadow.ocr_only_processing_rate,
+        "llm_escalation_rate": shadow.llm_escalation_rate,
         "accepted_critical_field_decisions": shadow.accepted_critical_field_decisions,
         "critical_accepted_precision": shadow.critical_accepted_precision,
         "wrong_crop_recall": shadow.wrong_crop_recall,
@@ -137,7 +124,7 @@ def main() -> int:
         as_of_week=args.as_of_week,
         base_evidence=base,
         prohibited_source_groups=(
-            _source_groups(
+            fingerprinted_source_groups(
                 args.correction_dataset,
                 {"train", "calibration"},
                 identity_key=identity_key,

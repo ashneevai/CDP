@@ -3,12 +3,22 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from enum import StrEnum
 
 from PIL import Image
 
 from packages.domain.registration import RegistrationEvidence
 from packages.templates.models import FieldRegion
 from workers.page_detection.local_crop_alignment import align_field_crop
+
+
+class CropSafetyOutcome(StrEnum):
+    CROP_SAFE = "CROP_SAFE"
+    CROP_CLIPPED = "CROP_CLIPPED"
+    WRONG_CROP_SUSPECTED = "WRONG_CROP_SUSPECTED"
+    LABEL_CONTAMINATED = "LABEL_CONTAMINATED"
+    EMPTY_CROP = "EMPTY_CROP"
+    LOCALIZATION_UNCERTAIN = "LOCALIZATION_UNCERTAIN"
 
 
 @dataclass(frozen=True)
@@ -19,6 +29,7 @@ class CropSafetyEvidence:
     local_alignment_accepted: bool
     crop_box: tuple[int, int, int, int]
     variant_boxes: tuple[tuple[int, int, int, int], ...]
+    outcome: CropSafetyOutcome
 
 
 def expanded_crop_boxes(
@@ -58,7 +69,7 @@ def validate_field_crop(
         0 <= region.x0 < region.x1 <= width and 0 <= region.y0 < region.y1 <= height
     )
     if not geometry_valid:
-        reasons.append("FIELD_GEOMETRY_INVALID")
+        reasons.extend(("FIELD_GEOMETRY_INVALID", "CROP_CLIPPED"))
     confidence = registration.alignment_confidence if registration is not None else 0.0
     if registration is None or not registration.accepted or confidence < 0.60:
         reasons.append("LOW_REGISTRATION_CONFIDENCE")
@@ -70,7 +81,21 @@ def validate_field_crop(
         reasons.append("EXPECTED_LABEL_OR_NEIGHBOR_ANCHOR_MISMATCH")
     if critical and (local is None or local.match_score < 0.35):
         reasons.append("WRONG_CROP_SUSPECTED")
+    empty = False
+    if geometry_valid:
+        crop = aligned_page.crop((region.x0, region.y0, region.x1, region.y1)).convert("L")
+        extrema = crop.getextrema()
+        empty = extrema is None or extrema[1] - extrema[0] < 8
+        if empty:
+            reasons.append("EMPTY_CROP")
     variants = expanded_crop_boxes(region, aligned_page.size, confidence)
+    outcome = (
+        CropSafetyOutcome.CROP_CLIPPED if not geometry_valid
+        else CropSafetyOutcome.EMPTY_CROP if empty
+        else CropSafetyOutcome.WRONG_CROP_SUSPECTED if "WRONG_CROP_SUSPECTED" in reasons
+        else CropSafetyOutcome.LOCALIZATION_UNCERTAIN if reasons
+        else CropSafetyOutcome.CROP_SAFE
+    )
     return CropSafetyEvidence(
         accepted=not reasons,
         reason_codes=tuple(reasons),
@@ -78,4 +103,5 @@ def validate_field_crop(
         local_alignment_accepted=local.accepted if local is not None else False,
         crop_box=local.box if local is not None else variants[0],
         variant_boxes=variants,
+        outcome=outcome,
     )

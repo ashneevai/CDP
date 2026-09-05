@@ -1,0 +1,1437 @@
+{
+  "claim_identity_proven": false,
+  "package_count": 110,
+  "packages": [
+    {
+      "asset_count": 15,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJJFA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 15,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 50,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJJMA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 50,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJJRC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 2,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 11,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJJZB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 42,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJK5D",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 16,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 7,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJKAB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 14,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 50,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJKHA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 50,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 24,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJKNA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 24,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 14,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJKQC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 31,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048DJKYC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 8,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 36,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048EJG7A",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 36,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048EJGBD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 11,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 47,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048EJGEA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 47,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048EJGKD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 11,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048EJH2D",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 6,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048EJH6A",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 50,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048EJI2A",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 50,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048EJIAD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048FJASD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 6,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048FJCOD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 30,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 24,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJBIA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 24,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 6,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJCRA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 21,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJCXA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 21,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJDBD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 12,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 50,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJDFA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 50,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 27,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJE5A",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 27,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJHBC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 12,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJHIC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 4,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 5,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJHKB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 17,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 50,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJHOA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 50,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJHZC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 30,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJI6A",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 30,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 5,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJI8B",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 34,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJIAD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048HJICD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 21,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJB7C",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 2,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJBAC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 9,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJBFB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 12,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJBIB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 7,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJBPD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 29,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJCBB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 7,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJCPB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJCSB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 9,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJCUC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 176,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJD1A",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 4,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 6,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJD5B",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 20,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 6,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJDFD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 45,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 11,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJDPA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 11,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJDTB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJDXC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 8,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJIBB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 28,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJIED",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 17,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJJHA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 17,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJJNC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 1,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 5,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJJTA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 5,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJJXC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 14,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 24,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJKKB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 118,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJKUC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 12,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJL1C",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 51,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 18,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJL7C",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 18,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJLAB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 7,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJLCB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 8,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 5,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJLHC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 5,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 5,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJLKB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 15,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 5,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJLQB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 56,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 13,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJM0B",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 34,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 5,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJMDB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 15,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJMFD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 10,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 8,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJMJB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 34,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 16,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJMPA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 16,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 49,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJN2A",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 49,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJNDB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 4,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJOQA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJP0C",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 5,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 13,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048IJPDA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 13,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJBKB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJBPC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 2,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJBRB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 17,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJBZC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 69,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJC3B",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 10,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJC7D",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 4,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJCCB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 35,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJCLA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJCUC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJD1D",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 18,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJDAB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 9,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJDCA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 1,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJDEC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJDJB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJDLC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJGGA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 2,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJGJC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 4,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJGMB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 20,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJGOD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 9,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJGQB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJGUB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 10,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 50,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJH1A",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 50,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 6,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJH3C",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJH5B",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 26,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJH7C",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJH9D",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 3,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJHEB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 9,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJHGD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 13,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 2,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJHOB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 6,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJIOC",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 1,
+      "sequence_contiguous": true,
+      "source_group": "Group C"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJJ1A",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 1,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJJ3D",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 3,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    },
+    {
+      "asset_count": 14,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJJGA",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 14,
+      "sequence_contiguous": true,
+      "source_group": "Group A"
+    },
+    {
+      "asset_count": 29,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJJMB",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 142,
+      "sequence_contiguous": true,
+      "source_group": "Group B"
+    },
+    {
+      "asset_count": 1,
+      "boundary_evidence": [
+        "TIFF_TAG_45016",
+        "FILENAME_STEM",
+        "CONTIGUOUS_SEQUENCE"
+      ],
+      "bundle_id": "2048JJJOD",
+      "claim_identity_status": "UNPROVEN_PACKAGE_BOUNDARY",
+      "rendered_page_count": 2,
+      "sequence_contiguous": true,
+      "source_group": "Group D"
+    }
+  ],
+  "structure": "GROUP/BUNDLE_STEM.SEQUENCE with TIFF tags 45000/45016"
+}

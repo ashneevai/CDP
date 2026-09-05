@@ -1,0 +1,23 @@
+﻿{
+    "api_version":  "2024-10-21",
+    "blockers_potentially_removed":  null,
+    "calls":  0,
+    "claims_potentially_unlocked":  null,
+    "cost_per_page_usd":  null,
+    "cost_status":  "PRICING_NOT_CONFIGURED",
+    "critical_false_accept_potential":  null,
+    "deployment":  "gpt-4o",
+    "input_tokens":  0,
+    "latency_ms":  null,
+    "llm_candidate_selection_precision":  null,
+    "mode":  "SHADOW_ONLY",
+    "output_tokens":  0,
+    "provider":  "AZURE_OPENAI",
+    "reason":  "NO_TRUSTED_LABELS_AND_NO_SOURCE_TO_CDP_EXECUTION_COHORT; LIVE_API_NOT_INVOKED",
+    "routing_rate":  null,
+    "status":  "NEEDS_TRUSTED_LABELS",
+    "runtime_integration":  "workers.retry.consumer: unresolved canonical field decisions",
+    "production_authority_changed":  false,
+    "tier1_shadow_wired":  true,
+    "tier2_shadow_wired":  false
+}

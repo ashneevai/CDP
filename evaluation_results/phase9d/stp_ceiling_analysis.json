@@ -1,0 +1,58 @@
+{
+  "ACHIEVED_STP": {
+    "claims": [],
+    "count": 0,
+    "rate": 0.0
+  },
+  "CURRENT_EVIDENCE_STP_CEILING": {
+    "claims": [],
+    "count": 0,
+    "label": "STRUCTURAL_CEILING_NOT_ACHIEVED_STP",
+    "rate": 0.0
+  },
+  "FULL_SOURCE_STP_CEILING": {
+    "claims": [
+      "SB-CMS-001",
+      "SB-CMS-002",
+      "SB-CMS-003",
+      "SB-CMS-004",
+      "SB-CMS-005",
+      "SB-CMS-006",
+      "SB-CMS-007",
+      "SB-CMS-008",
+      "SB-CMS-009",
+      "SB-CMS-010",
+      "SB-UB-001",
+      "SB-UB-002",
+      "SB-UB-003",
+      "SB-UB-004",
+      "SB-UB-005",
+      "SB-UB-006",
+      "SB-UB-007",
+      "SB-UB-008",
+      "SB-UB-009",
+      "SB-UB-010"
+    ],
+    "count": 20,
+    "label": "THEORETICAL_STRUCTURAL_CEILING_NOT_ACHIEVED_STP",
+    "rate": 1.0
+  },
+  "POTENTIAL_STP_IF_AUTHORITATIVE_DATA_AVAILABLE": {
+    "claims": [
+      "SB-CMS-003",
+      "SB-UB-001",
+      "SB-UB-002",
+      "SB-UB-003",
+      "SB-UB-004",
+      "SB-UB-005",
+      "SB-UB-006",
+      "SB-UB-007",
+      "SB-UB-008",
+      "SB-UB-009",
+      "SB-UB-010"
+    ],
+    "count": 11,
+    "label": "OPPORTUNITY_CEILING_NOT_MEASURED_MATCHES",
+    "rate": 0.55
+  }
+}

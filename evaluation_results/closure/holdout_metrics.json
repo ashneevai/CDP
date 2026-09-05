@@ -1,0 +1,14 @@
+{
+  "accepted_precision": null,
+  "claim_hitl": null,
+  "claim_stp": null,
+  "critical_accuracy": null,
+  "critical_false_accepts": null,
+  "document_classification_accuracy": null,
+  "field_hitl": null,
+  "page_classification_accuracy": null,
+  "raw_field_accuracy": null,
+  "reason": "NO_TRUSTED_REAL_LABELS",
+  "status": "NOT_EVALUATION_READY",
+  "tuning_performed": false
+}

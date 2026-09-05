@@ -5,11 +5,11 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
+import httpx
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, StreamingResponse
+from fastapi.responses import FileResponse, HTMLResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
-import httpx
 
 DIST_DIR = Path(__file__).resolve().parent / "dist"
 TRANSFORMATION_DIR = Path(__file__).resolve().parent.parent / "transformation_ui"
@@ -154,7 +154,24 @@ def get_evaluation_report():
 
 @app.get("/")
 def read_root():
-    return FileResponse(DIST_DIR / "index.html")
+    index = DIST_DIR / "index.html"
+    if index.is_file():
+        return FileResponse(index)
+    return HTMLResponse(
+        """<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><title>IDP Claims Evaluation UI</title></head>
+  <body>
+    <main>
+      <h1>IDP Claims Evaluation UI</h1>
+      <p>Frontend assets are not built. Run <code>npm run build</code> in
+      <code>apps/evaluation_ui</code>.</p>
+    </main>
+  </body>
+</html>
+""",
+        status_code=200,
+    )
 
 
 @app.get("/health")
@@ -165,4 +182,3 @@ def health_check():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8180)
-

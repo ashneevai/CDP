@@ -1,0 +1,17 @@
+{
+  "drops": {},
+  "records": [],
+  "stages": [
+    "SOURCE_PRESENT",
+    "DISCOVERED",
+    "INGESTED",
+    "CLASSIFIED",
+    "PAGE_CREATED",
+    "OBSERVED",
+    "LOCALIZED",
+    "OCR_EXECUTED",
+    "CANDIDATE_GENERATED",
+    "VALIDATED",
+    "HITL_OR_ACCEPTED"
+  ]
+}

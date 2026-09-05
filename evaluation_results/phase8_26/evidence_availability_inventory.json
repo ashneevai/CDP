@@ -1,0 +1,1835 @@
+{
+  "fields": [
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-001",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-001",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-001",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-001",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "separate encounter record or semantically compatible service-date section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-001",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-001",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "service_date",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "service_header"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-002",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-002",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-002",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-002",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "separate encounter record or semantically compatible service-date section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-002",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-002",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "service_date",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "service_header"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-003",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-003",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-003",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-003",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-004",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-004",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-004",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-004",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "separate encounter record or semantically compatible service-date section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-004",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-004",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "service_date",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "service_header"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-005",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-005",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-005",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-005",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "separate encounter record or semantically compatible service-date section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-005",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-005",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "service_date",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "service_header"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-006",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-006",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-006",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-006",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "separate encounter record or semantically compatible service-date section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-006",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-006",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "service_date",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "service_header"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-007",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-007",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-007",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-007",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "separate encounter record or semantically compatible service-date section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-007",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-007",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "service_date",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "service_header"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-008",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-008",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-008",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-008",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "separate encounter record or semantically compatible service-date section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-008",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-008",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "service_date",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "service_header"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-009",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-009",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-009",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-009",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "separate encounter record or semantically compatible service-date section",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-009",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-009",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "service_date",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "service_header"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-CMS-010",
+      "candidate_observations": 1,
+      "claim_id": "SB-CMS-010",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "CMS1500",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-001",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-001",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-001",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-001",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "independent remittance, itemized statement, or adjudicated financial document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-001",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-001",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "total_charge",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "claim_total"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-001",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-001",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-002",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-002",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-002",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-002",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "independent remittance, itemized statement, or adjudicated financial document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-002",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-002",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "total_charge",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "claim_total"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-002",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-002",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-003",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-003",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-003",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-003",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-004",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-004",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-004",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-004",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-005",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-005",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-005",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-005",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "independent remittance, itemized statement, or adjudicated financial document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-005",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-005",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "total_charge",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "claim_total"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-005",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-005",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-006",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-006",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-006",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-006",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "independent remittance, itemized statement, or adjudicated financial document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-006",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-006",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "total_charge",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "claim_total"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-006",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-006",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-007",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-007",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-007",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-007",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "independent remittance, itemized statement, or adjudicated financial document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-007",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-007",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "total_charge",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "claim_total"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-007",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-007",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-008",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-008",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-008",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-008",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "independent remittance, itemized statement, or adjudicated financial document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-008",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-008",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "total_charge",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "claim_total"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-008",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-008",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "member card, eligibility record, or distinct subscriber section",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-009",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-009",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "member_id",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "subscriber"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-009",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-009",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "independent remittance, itemized statement, or adjudicated financial document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-009",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-009",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "total_charge",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "claim_total"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-009",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-009",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider supporting form or service-line provider section with matching role",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-010",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-010",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "provider_npi",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "rendering_provider"
+      ],
+      "source": "SOURCE_B"
+    },
+    {
+      "additional_source_evidence_required": "provider tax form or separate billing-provider supporting document",
+      "attachments_available": 0,
+      "bundle_id": "SB-UB-010",
+      "candidate_observations": 1,
+      "claim_id": "SB-UB-010",
+      "distinct_crop_count": 1,
+      "distinct_document_count": 1,
+      "distinct_localization_region_count": 1,
+      "distinct_page_count": 1,
+      "documents_available": 1,
+      "field_candidate_inventory_available": true,
+      "field_name": "federal_tax_no",
+      "form_type": "UB04",
+      "ingested_document_inventory_available": false,
+      "normalized_page_inventory_available": true,
+      "ocr_page_observation_available": true,
+      "pages_available": 1,
+      "primary_root_cause": "UNKNOWN_REQUIRES_SOURCE_AUDIT",
+      "raw_source_bundle_available": false,
+      "remediation_ownership": "SOURCE_SYSTEM_INTEGRATION",
+      "root_cause_reason_codes": [
+        "RAW_SOURCE_BUNDLE_UNAVAILABLE",
+        "SECOND_OBSERVATION_PRESENCE_CANNOT_BE_VERIFIED"
+      ],
+      "semantic_sections_present": [
+        "billing_provider"
+      ],
+      "source": "SOURCE_B"
+    }
+  ],
+  "version": "phase8.26-evidence-availability-v1"
+}

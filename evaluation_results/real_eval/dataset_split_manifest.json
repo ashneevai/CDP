@@ -1,0 +1,7 @@
+{
+  "development_package_ids": [],
+  "holdout_package_ids": [],
+  "immutable_manifest_sha256": null,
+  "package_leakage_count": 0,
+  "split_unit": "PACKAGE"
+}

@@ -1,0 +1,34 @@
+{
+  "blockers": 181,
+  "challenged_fields": 11,
+  "claims": 20,
+  "dataset_id": "SOURCE_B",
+  "eligible_by_failure_reason": {
+    "OCR_CHARACTER_ERROR": 38
+  },
+  "eligible_by_field": {
+    "insured_name": 6,
+    "member_id": 2,
+    "patient_dob": 3,
+    "patient_name": 13,
+    "provider_name": 14
+  },
+  "eligible_by_quality_band": {
+    "clean": 25,
+    "degraded": 13
+  },
+  "eligible_fields": 38,
+  "fields": 200,
+  "ineligible_by_reason": {
+    "FAILURE_REASON_NOT_ELIGIBLE": 116,
+    "INVOCATION_BUDGET_EXHAUSTED": 27,
+    "NO_CLAIM_UNLOCK_IMPACT": 19,
+    "UNSAFE_CROP": 27
+  },
+  "input_hashes": {
+    "evaluation/baselines/phase8_12/inputs/source_b/policy_replay_input.jsonl": "0ebf3aaca4a2ec311c315048cb1dccce914fd2891be3fe17e409691a36076761",
+    "evaluation/baselines/phase8_12/manifest.json": "24284eee4b8cec9bad3f759b7e8607836900bad4b1883cff5235e811c955b228",
+    "evaluation_results/phase8_20_rerun/claim_blocker_matrix.json": "8d5227a5c3f0966741a9c30f77574e622fe4da6e677a9c76a5f6f93cbe835046"
+  },
+  "phase": "8.21A"
+}

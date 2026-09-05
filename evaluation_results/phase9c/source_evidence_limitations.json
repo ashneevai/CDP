@@ -1,0 +1,222 @@
+{
+  "blockers": [
+    {
+      "claim_id": "SB-CMS-001",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "service_date"
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "total_charge"
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "service_date"
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "total_charge"
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "service_date"
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "total_charge"
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "service_date"
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "total_charge"
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "service_date"
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "total_charge"
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "service_date"
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "total_charge"
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "service_date"
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "total_charge"
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "service_date"
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "total_charge"
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "total_charge"
+    },
+    {
+      "claim_id": "SB-UB-001",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-UB-002",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-UB-005",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-UB-006",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-UB-007",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-UB-008",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    },
+    {
+      "claim_id": "SB-UB-009",
+      "classification": "SOURCE_EVIDENCE_REQUIRED",
+      "failure_reason": "MISSING_INDEPENDENT_EVIDENCE",
+      "field_name": "member_id"
+    }
+  ],
+  "claim_count": 17,
+  "claims": [
+    "SB-CMS-001",
+    "SB-CMS-002",
+    "SB-CMS-003",
+    "SB-CMS-004",
+    "SB-CMS-005",
+    "SB-CMS-006",
+    "SB-CMS-007",
+    "SB-CMS-008",
+    "SB-CMS-009",
+    "SB-CMS-010",
+    "SB-UB-001",
+    "SB-UB-002",
+    "SB-UB-005",
+    "SB-UB-006",
+    "SB-UB-007",
+    "SB-UB-008",
+    "SB-UB-009"
+  ]
+}

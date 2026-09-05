@@ -1,0 +1,10 @@
+{
+  "empty_crop_after": 0.07,
+  "empty_crop_before": 0.1,
+  "label_contamination_after": 0.0,
+  "label_contamination_before": 0.0,
+  "localization_safe_rate_after": 0.9,
+  "localization_safe_rate_before": 0.865,
+  "wrong_crop_after": 0.095,
+  "wrong_crop_before": 0.13
+}

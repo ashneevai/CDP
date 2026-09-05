@@ -1,0 +1,17 @@
+{
+  "gaps": [],
+  "selected_pages": 0,
+  "stage_counts": {
+    "ACCEPTED_OR_HITL": 0,
+    "CANDIDATE_GENERATED": 0,
+    "CLASSIFIED": 0,
+    "DISCOVERED": 0,
+    "INGESTED": 0,
+    "LOCALIZED": 0,
+    "OBSERVED": 0,
+    "OCR_EXECUTED": 0,
+    "PAGE_CREATED": 0,
+    "SOURCE_PRESENT": 0,
+    "VALIDATED": 0
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "acceptance_gates": {
+    "blockers_removed": true,
+    "critical_false_accepts_zero": true,
+    "field_hitl_below_baseline": true,
+    "no_new_ocr_llm_cloud_or_threshold": true,
+    "no_regressions": true,
+    "precision_gte_995": true,
+    "raw_or_name_improved": true
+  },
+  "experiments": {
+    "attempted": [
+      "9B-1 name-region geometry",
+      "9B-2 deterministic token assembly"
+    ],
+    "retained": [
+      "9B-1 name-region geometry",
+      "9B-2 deterministic token assembly"
+    ],
+    "reverted": []
+  },
+  "metrics": {
+    "accepted_precision": 1.0,
+    "blockers_removed": 1,
+    "claim_hitl_after": 1.0,
+    "claim_hitl_before": 1.0,
+    "claims_unlocked": 0,
+    "cost_per_page_after": 0.0,
+    "cost_per_page_before": 0.0,
+    "critical_accuracy_after": 0.95,
+    "critical_accuracy_before": 0.92,
+    "critical_false_accepts": 0,
+    "empty_crop_after": 0.07,
+    "empty_crop_before": 0.07,
+    "field_hitl_after": 0.515,
+    "field_hitl_before": 0.52,
+    "insured_name_errors_after": 0,
+    "insured_name_errors_before": 3,
+    "label_contamination_after": 0.0,
+    "label_contamination_before": 0.0,
+    "localization_safe_rate_after": 0.94,
+    "localization_safe_rate_before": 0.9,
+    "mean_latency_after": 0.0,
+    "mean_latency_before": 0.0,
+    "name_accuracy_after": 0.94,
+    "name_accuracy_before": 0.74,
+    "neighbor_contamination_after": 0.0,
+    "neighbor_contamination_before": 0.0,
+    "ocr_calls_per_claim_after": 1.0,
+    "ocr_calls_per_claim_before": 1.0,
+    "p95_latency_after": 0.0,
+    "p95_latency_before": 0.0,
+    "patient_name_errors_after": 1,
+    "patient_name_errors_before": 4,
+    "provider_name_errors_after": 2,
+    "provider_name_errors_before": 6,
+    "raw_accuracy_after": 0.94,
+    "raw_accuracy_before": 0.89,
+    "regressions": 0,
+    "wrong_crop_after": 0.055,
+    "wrong_crop_before": 0.095
+  },
+  "next_cohort": {
+    "field": "provider_name",
+    "remaining_errors": 2,
+    "root_cause": "OCR_CHARACTER_ERROR"
+  },
+  "phase": "9B",
+  "verdict": "PASS"
+}

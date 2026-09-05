@@ -1,0 +1,222 @@
+{
+  "accuracy_by_source_quality_band": {
+    "clean": {
+      "baseline_correct": 112,
+      "baseline_hitl": 127,
+      "challenged": 8,
+      "fields": 140,
+      "simulated_correct": 112,
+      "simulated_hitl": 127
+    },
+    "degraded": {
+      "baseline_correct": 59,
+      "baseline_hitl": 54,
+      "challenged": 3,
+      "fields": 60,
+      "simulated_correct": 59,
+      "simulated_hitl": 54
+    }
+  },
+  "by_failure_reason": {
+    "MISSING_CROP": {
+      "baseline_correct": 0,
+      "baseline_hitl": 7,
+      "challenged": 0,
+      "fields": 7,
+      "simulated_correct": 0,
+      "simulated_hitl": 7
+    },
+    "MISSING_INDEPENDENT_EVIDENCE": {
+      "baseline_correct": 110,
+      "baseline_hitl": 110,
+      "challenged": 0,
+      "fields": 110,
+      "simulated_correct": 110,
+      "simulated_hitl": 110
+    },
+    "NOT_A_BLOCKER": {
+      "baseline_correct": 19,
+      "baseline_hitl": 0,
+      "challenged": 0,
+      "fields": 19,
+      "simulated_correct": 19,
+      "simulated_hitl": 0
+    },
+    "OCR_CHARACTER_ERROR": {
+      "baseline_correct": 38,
+      "baseline_hitl": 38,
+      "challenged": 11,
+      "fields": 38,
+      "simulated_correct": 38,
+      "simulated_hitl": 38
+    },
+    "WRONG_CROP": {
+      "baseline_correct": 4,
+      "baseline_hitl": 26,
+      "challenged": 0,
+      "fields": 26,
+      "simulated_correct": 4,
+      "simulated_hitl": 26
+    }
+  },
+  "by_field": {
+    "cpt_hcpcs": {
+      "baseline_correct": 10,
+      "baseline_hitl": 0,
+      "challenged": 0,
+      "fields": 10,
+      "simulated_correct": 10,
+      "simulated_hitl": 0
+    },
+    "diagnosis": {
+      "baseline_correct": 9,
+      "baseline_hitl": 1,
+      "challenged": 0,
+      "fields": 10,
+      "simulated_correct": 9,
+      "simulated_hitl": 1
+    },
+    "federal_tax_no": {
+      "baseline_correct": 10,
+      "baseline_hitl": 10,
+      "challenged": 0,
+      "fields": 10,
+      "simulated_correct": 10,
+      "simulated_hitl": 10
+    },
+    "insured_name": {
+      "baseline_correct": 7,
+      "baseline_hitl": 10,
+      "challenged": 4,
+      "fields": 10,
+      "simulated_correct": 7,
+      "simulated_hitl": 10
+    },
+    "member_id": {
+      "baseline_correct": 18,
+      "baseline_hitl": 20,
+      "challenged": 0,
+      "fields": 20,
+      "simulated_correct": 18,
+      "simulated_hitl": 20
+    },
+    "patient_dob": {
+      "baseline_correct": 20,
+      "baseline_hitl": 20,
+      "challenged": 1,
+      "fields": 20,
+      "simulated_correct": 20,
+      "simulated_hitl": 20
+    },
+    "patient_name": {
+      "baseline_correct": 14,
+      "baseline_hitl": 20,
+      "challenged": 3,
+      "fields": 20,
+      "simulated_correct": 14,
+      "simulated_hitl": 20
+    },
+    "principal_diagnosis": {
+      "baseline_correct": 8,
+      "baseline_hitl": 10,
+      "challenged": 0,
+      "fields": 10,
+      "simulated_correct": 8,
+      "simulated_hitl": 10
+    },
+    "provider_name": {
+      "baseline_correct": 14,
+      "baseline_hitl": 20,
+      "challenged": 3,
+      "fields": 20,
+      "simulated_correct": 14,
+      "simulated_hitl": 20
+    },
+    "provider_npi": {
+      "baseline_correct": 20,
+      "baseline_hitl": 20,
+      "challenged": 0,
+      "fields": 20,
+      "simulated_correct": 20,
+      "simulated_hitl": 20
+    },
+    "relationship": {
+      "baseline_correct": 8,
+      "baseline_hitl": 10,
+      "challenged": 0,
+      "fields": 10,
+      "simulated_correct": 8,
+      "simulated_hitl": 10
+    },
+    "service_date": {
+      "baseline_correct": 8,
+      "baseline_hitl": 10,
+      "challenged": 0,
+      "fields": 10,
+      "simulated_correct": 8,
+      "simulated_hitl": 10
+    },
+    "total_charge": {
+      "baseline_correct": 17,
+      "baseline_hitl": 20,
+      "challenged": 0,
+      "fields": 20,
+      "simulated_correct": 17,
+      "simulated_hitl": 20
+    },
+    "type_of_bill": {
+      "baseline_correct": 8,
+      "baseline_hitl": 10,
+      "challenged": 0,
+      "fields": 10,
+      "simulated_correct": 8,
+      "simulated_hitl": 10
+    }
+  },
+  "by_form_type": {
+    "CMS1500": {
+      "baseline_correct": 96,
+      "baseline_hitl": 91,
+      "challenged": 11,
+      "fields": 110,
+      "simulated_correct": 96,
+      "simulated_hitl": 91
+    },
+    "UB04": {
+      "baseline_correct": 75,
+      "baseline_hitl": 90,
+      "challenged": 0,
+      "fields": 90,
+      "simulated_correct": 75,
+      "simulated_hitl": 90
+    }
+  },
+  "by_source": {
+    "SOURCE_B": {
+      "baseline_correct": 171,
+      "baseline_hitl": 181,
+      "challenged": 11,
+      "fields": 200,
+      "simulated_correct": 171,
+      "simulated_hitl": 181
+    }
+  },
+  "hitl_by_source_quality_band": {
+    "clean": {
+      "baseline_correct": 112,
+      "baseline_hitl": 127,
+      "challenged": 8,
+      "fields": 140,
+      "simulated_correct": 112,
+      "simulated_hitl": 127
+    },
+    "degraded": {
+      "baseline_correct": 59,
+      "baseline_hitl": 54,
+      "challenged": 3,
+      "fields": 60,
+      "simulated_correct": 59,
+      "simulated_hitl": 54
+    }
+  }
+}

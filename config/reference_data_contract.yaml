@@ -5,8 +5,16 @@ sources:
     lookup_keys: [member_id, payer_id]
     verification_fields: [member_id, patient_name, patient_dob, postal_code]
   provider_directory:
-    lookup_keys: [provider_npi, tax_id]
+    lookup_keys: [provider_npi]
     verification_fields: [provider_npi, provider_name, address]
+    prohibited_public_fields: [tax_id]
+  public_code_sets:
+    datasets: [ICD10CM, HCPCS_LEVEL_II, PLACE_OF_SERVICE]
+    verification_fields: [principal_diagnosis, diagnosis_code, hcpcs, cpt_hcpcs, place_of_service]
+    requires: [release_version, source_url, source_artifact_sha256, expires_at]
+  licensed_code_sets:
+    datasets: [CPT, UB04_REVENUE]
+    enabled_only_with_license: true
   previous_validated_claims:
     lookup_keys: [member_id, patient_account_number]
     verification_fields: [patient_name, patient_dob, postal_code, provider_npi]

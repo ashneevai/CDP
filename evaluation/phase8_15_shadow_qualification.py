@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 from packages.shadow_evaluation import (
     AppendOnlyShadowClaimSink,
     ClaimShadowObservation,
+    fingerprinted_source_groups,
     qualify_shadow_claims,
 )
 
@@ -38,7 +40,8 @@ def main() -> int:
         if line.strip()
     ]
     first = json.loads(lines[0]) if lines else {}
-    if first.get("schema_version") == "shadow-claim-capture-v1":
+    captured_ledger = first.get("schema_version") == "shadow-claim-capture-v1"
+    if captured_ledger:
         # Verification uses only the public hash chain; the dummy key is never
         # used because identities were fingerprinted before persistence.
         rows = AppendOnlyShadowClaimSink(
@@ -46,10 +49,23 @@ def main() -> int:
         ).observations()
     else:
         rows = [ClaimShadowObservation.model_validate_json(line) for line in lines]
-    prohibited = (
-        _groups(args.correction_dataset, {"train", "calibration"})
-        if args.correction_dataset else set()
-    )
+    if args.correction_dataset and captured_ledger:
+        identity_key = os.environ.get("SHADOW_IDENTITY_KEY", "").encode()
+        if not identity_key:
+            parser.error(
+                "SHADOW_IDENTITY_KEY must contain the same non-empty secret used "
+                "to capture the shadow ledger when --correction-dataset is supplied"
+            )
+        prohibited = fingerprinted_source_groups(
+            args.correction_dataset,
+            {"train", "calibration"},
+            identity_key=identity_key,
+        )
+    else:
+        prohibited = (
+            _groups(args.correction_dataset, {"train", "calibration"})
+            if args.correction_dataset else set()
+        )
     report = qualify_shadow_claims(rows, prohibited_source_groups=prohibited)
     payload = json.dumps(report.model_dump(mode="json"), indent=2, sort_keys=True) + "\n"
     if args.output:

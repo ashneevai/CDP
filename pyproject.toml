@@ -91,6 +91,7 @@ idp-evaluate = "evaluation.runner:main"
 idp-production-report = "evaluation.generate_production_report:main"
 idp-source-readiness = "evaluation.source_readiness:main"
 idp-qualify-vnext = "scripts.qualify_vnext:main"
+idp-hitl-reduction = "evaluation.hitl_reduction_program:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

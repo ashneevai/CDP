@@ -1,0 +1,21 @@
+{
+  "assignments": [],
+  "authority_policy": {
+    "development_only": [
+      "HUMAN_SINGLE_REVIEW"
+    ],
+    "final": [
+      "SOURCE_SYSTEM_GROUND_TRUTH",
+      "HUMAN_ADJUDICATED"
+    ],
+    "prohibited": [
+      "SYNTHETIC",
+      "MODEL_GENERATED",
+      "UNKNOWN"
+    ]
+  },
+  "reason": "NO_TRUSTED_REAL_LABELS_OR_CONFIRMED_DOCUMENT_BOUNDARIES",
+  "required_workflow": "ANNOTATOR_A_AND_B_THEN_ADJUDICATOR_ON_DISAGREEMENT",
+  "status": "BLOCKED",
+  "trusted_labels": 0
+}

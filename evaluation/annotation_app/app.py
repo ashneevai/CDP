@@ -11,6 +11,8 @@ from typing import Any
 from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 
+from evaluation.annotation_app.azure_shadow_review import router as azure_shadow_review_router
+from evaluation.annotation_app.real_data_review import router as real_data_review_router
 from evaluation.tuning_truth.contracts import (
     FieldCropTruth,
     FieldTruth,
@@ -33,6 +35,8 @@ UB_LINES = RESULTS / "ub_service_line_truth.jsonl"
 QUALITY = RESULTS / "annotation_quality.json"
 
 app = FastAPI(title="CDP Tuning Truth V1", docs_url=None, redoc_url=None)
+app.include_router(azure_shadow_review_router)
+app.include_router(real_data_review_router)
 
 
 def _reviewer(request: Request) -> str:
@@ -97,11 +101,18 @@ def queue(request: Request) -> str:
         else (task["document_id"], task["page_id"]) in line_done
         for task in tasks
     )
-    first = next((i for i, task in enumerate(tasks) if (
-        (task["document_id"], task["page_id"], task.get("field_name")) not in field_done
-        if task["task_type"] == "FIELD_AND_CROP"
-        else (task["document_id"], task["page_id"]) not in line_done
-    )), 0)
+    first = next(
+        (
+            i
+            for i, task in enumerate(tasks)
+            if (
+                (task["document_id"], task["page_id"], task.get("field_name")) not in field_done
+                if task["task_type"] == "FIELD_AND_CROP"
+                else (task["document_id"], task["page_id"]) not in line_done
+            )
+        ),
+        0,
+    )
     return f"""<!doctype html><meta charset=utf-8><title>Tuning Truth V1</title>
 <style>body{{font:15px Arial;margin:30px;max-width:900px}}.meter{{height:20px;background:#ddd}}
 .meter div{{height:100%;background:#1769aa;width:{100 * complete / max(1, len(tasks)):.2f}%}}</style>
@@ -142,7 +153,7 @@ def task_screen(index: int, request: Request) -> str:
         statuses = "".join(f"<option>{status.value}</option>" for status in TruthStatus)
         controls = f"""<label>Status <select name=truth_status>{statuses}</select></label>
 <label>Truth value <input name=truth_value size=60></label>
-<label>Visibility <select name=visibility>{''.join(f'<option>{v.value}</option>' for v in Visibility if v != Visibility.UNANNOTATED)}</select></label>
+<label>Visibility <select name=visibility>{"".join(f"<option>{v.value}</option>" for v in Visibility if v != Visibility.UNANNOTATED)}</select></label>
 <fieldset><legend>Normalized value box (draw on image or type)</legend>
 <input id=x1 name=x1 type=number min=0 max=1 step=.0001 placeholder=x1>
 <input id=y1 name=y1 type=number min=0 max=1 step=.0001 placeholder=y1>
@@ -153,9 +164,9 @@ def task_screen(index: int, request: Request) -> str:
 <style>body{{font:14px Arial;margin:20px}}#wrap{{position:relative;display:inline-block;max-width:95vw}}
 #page{{max-width:95vw;max-height:68vh}}#box{{position:absolute;border:3px solid #e22;pointer-events:none}}
 label{{display:block;margin:9px}}input,select,textarea{{padding:5px}}</style>
-<p><a href='/task/{previous}'>â† Previous</a> | <a href='/'>Queue</a> | <a href='/task/{following}'>Next â†’</a></p>
-<h2>{html.escape(task['form_family'])}: {html.escape(title)}</h2>
-<p>{html.escape(task['document_id'])} | {html.escape(task['source_dataset'])} | {html.escape(task['quality_bucket'])} | reviewer {reviewer}</p>
+<p><a href='/task/{previous}'>&larr; Previous</a> | <a href='/'>Queue</a> | <a href='/task/{following}'>Next &rarr;</a></p>
+<h2>{html.escape(task["form_family"])}: {html.escape(title)}</h2>
+<p>{html.escape(task["document_id"])} | {html.escape(task["source_dataset"])} | {html.escape(task["quality_bucket"])} | reviewer {reviewer}</p>
 <div id=wrap><img id=page src='/image/{index}'><div id=box hidden></div></div>
 <form method=post action='/task/{index}'>{controls}
 <label>Annotation confidence <input name=confidence type=number min=0 max=1 step=.05 value=1></label>
@@ -198,8 +209,11 @@ def submit(
         try:
             rows = json.loads(rows_json)
             record = UB04ServiceLineTruth(
-                document_id=task["document_id"], page_id=task["page_id"], rows=rows,
-                expected_row_count=len(rows), total_charge=total_charge,
+                document_id=task["document_id"],
+                page_id=task["page_id"],
+                rows=rows,
+                expected_row_count=len(rows),
+                total_charge=total_charge,
                 review_status=ReviewStatus.VERIFIED,
             )
         except (ValueError, json.JSONDecodeError) as exc:
@@ -213,19 +227,29 @@ def submit(
             raise HTTPException(400, "PRESENT values require truth text and a value bbox")
         required, criticality, blocks_stp = field_policy(task["field_name"])
         field = FieldTruth(
-            document_id=task["document_id"], page_id=task["page_id"],
-            form_family=task["form_family"], field_name=task["field_name"],
-            truth_value=truth_value.strip(), normalized_truth_value=_normalized(truth_value),
-            required=required, criticality=criticality, blocks_stp=blocks_stp,
-            truth_status=status, review_status=ReviewStatus.VERIFIED,
+            document_id=task["document_id"],
+            page_id=task["page_id"],
+            form_family=task["form_family"],
+            field_name=task["field_name"],
+            truth_value=truth_value.strip(),
+            normalized_truth_value=_normalized(truth_value),
+            required=required,
+            criticality=criticality,
+            blocks_stp=blocks_stp,
+            truth_status=status,
+            review_status=ReviewStatus.VERIFIED,
             preannotation_source=None,
         )
         crop = FieldCropTruth(
-            document_id=task["document_id"], page_id=task["page_id"],
-            form_family=task["form_family"], field_name=task["field_name"],
+            document_id=task["document_id"],
+            page_id=task["page_id"],
+            form_family=task["form_family"],
+            field_name=task["field_name"],
             value_bbox=NormalizedBBox(x1=x1, y1=y1, x2=x2, y2=y2) if has_box else None,
-            expected_text=truth_value.strip(), visibility=Visibility(visibility),
-            multi_line=multi_line, annotation_confidence=confidence,
+            expected_text=truth_value.strip(),
+            visibility=Visibility(visibility),
+            multi_line=multi_line,
+            annotation_confidence=confidence,
             review_status=ReviewStatus.VERIFIED,
         )
         key = ("document_id", "page_id", "field_name")

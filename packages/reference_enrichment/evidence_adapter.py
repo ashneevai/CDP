@@ -22,8 +22,16 @@ _ALIASES = {
     "name": ("patient_name", "insured_name", "subscriber_name", "patient_first"),
     "zip": ("patient_zip", "insured_zip", "subscriber_zip"),
     "npi": ("npi", "billing_provider_npi", "rendering_provider_npi", "provider_npi"),
+    "provider_name": ("provider_name", "billing_provider_name", "rendering_provider_name"),
 }
-_CODE_FIELDS = {"principal_diagnosis", "diagnosis_code", "cpt", "cpt_hcpcs", "hcpcs"}
+_CODE_FIELDS = {
+    "principal_diagnosis",
+    "diagnosis_code",
+    "cpt",
+    "cpt_hcpcs",
+    "hcpcs",
+    "place_of_service",
+}
 
 
 def canonical_claim_attributes(values: dict[str, Any]) -> dict[str, Any]:

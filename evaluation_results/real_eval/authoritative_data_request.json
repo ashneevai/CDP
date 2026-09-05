@@ -1,0 +1,15 @@
+{
+  "datasets": [
+    "MEMBER_ELIGIBILITY_SNAPSHOT",
+    "PROVIDER_MASTER_SNAPSHOT"
+  ],
+  "required_metadata": [
+    "source_system",
+    "schema_version",
+    "export_timestamp",
+    "effective_dates",
+    "file_hash"
+  ],
+  "status": "REQUESTED",
+  "synthetic_allowed": false
+}

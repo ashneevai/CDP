@@ -39,6 +39,15 @@ class OCRRequest:
 
 
 @dataclass(frozen=True)
+class OCRToken:
+    """One recognized token with its own confidence and page-space geometry."""
+
+    text: str
+    confidence: float
+    bounding_box: BoundingBox
+
+
+@dataclass(frozen=True)
 class OCRCandidate:
     value: str | None
     raw_value: str
@@ -58,6 +67,7 @@ class OCRCandidate:
     registration_confidence: float | None = None
     image_quality_score: float | None = None
     provenance: EvidenceProvenance | None = None
+    tokens: tuple[OCRToken, ...] = field(default_factory=tuple)
 
 
 @dataclass(frozen=True)

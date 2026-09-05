@@ -1,0 +1,10 @@
+{
+  "bindings": [],
+  "candidate_matches_are_authoritative": false,
+  "cdp_bound_pages": 0,
+  "reason": "NO_DETERMINISTIC_SOURCE_TO_CDP_PAGE_MAPPING",
+  "source_internal_lineage_coverage": 1.0,
+  "source_page_count": 2173,
+  "source_to_cdp_coverage": 0.0,
+  "status": "BLOCKED"
+}

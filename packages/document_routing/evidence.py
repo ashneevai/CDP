@@ -1,5 +1,5 @@
-from packages.domain.common import DomainModel
 from packages.document_routing.router import MultiSignalRoute, RoutingEvidence
+from packages.domain.common import DomainModel
 
 
 class HierarchicalRoutingEvidence(DomainModel):
@@ -12,8 +12,28 @@ class HierarchicalRoutingEvidence(DomainModel):
 
 
 def from_routing_evidence(evidence: RoutingEvidence) -> HierarchicalRoutingEvidence:
-    return HierarchicalRoutingEvidence(legacy_route=evidence.route,
-        structured=evidence.route in {MultiSignalRoute.CMS1500, MultiSignalRoute.UB04,
-                                      MultiSignalRoute.UNKNOWN_STRUCTURED},
-        claim_related=evidence.route not in {MultiSignalRoute.NON_CLAIM}, confidence=evidence.confidence,
-        supporting_codes=tuple(evidence.reason_codes))
+    conflict_families = (
+        (evidence.route.value,)
+        if evidence.route in {MultiSignalRoute.CMS1500, MultiSignalRoute.UB04}
+        else tuple(evidence.conflicting_anchors)
+    )
+    return HierarchicalRoutingEvidence(
+        legacy_route=evidence.route,
+        structured=evidence.route
+        in {
+            MultiSignalRoute.CMS1500,
+            MultiSignalRoute.UB04,
+            MultiSignalRoute.UNKNOWN_STRUCTURED,
+            MultiSignalRoute.OTHER_CLAIM_FORM,
+        },
+        claim_related=evidence.route not in {MultiSignalRoute.NON_CLAIM},
+        confidence=evidence.confidence,
+        supporting_codes=tuple(evidence.reason_codes),
+        contradicting_codes=tuple(
+            dict.fromkeys(
+                code
+                for family in conflict_families
+                for code in evidence.conflicting_anchors.get(family, ())
+            )
+        ),
+    )

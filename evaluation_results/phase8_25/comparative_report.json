@@ -1,0 +1,101 @@
+{
+  "acceptance_gates": {
+    "accepted_precision_not_regressed": true,
+    "blockers_materially_reduced": false,
+    "conflicts_fail_closed": true,
+    "critical_false_accepts_zero": true,
+    "frozen_lineage_unchanged": true,
+    "latency_operationally_acceptable": true,
+    "no_new_ocr_llm_or_cloud": true,
+    "real_bundle_independent_evidence_found": false,
+    "real_claim_unlocked": false,
+    "shared_provenance_rejected": true,
+    "thresholds_unchanged": true
+  },
+  "breakdowns": {
+    "claim_unlock_contribution": {
+      "claim_unlock": 0,
+      "field_only": 0
+    },
+    "field_name": {
+      "diagnosis": 1,
+      "federal_tax_no": 10,
+      "insured_name": 9,
+      "member_id": 19,
+      "patient_dob": 5,
+      "patient_name": 17,
+      "principal_diagnosis": 3,
+      "provider_name": 20,
+      "provider_npi": 20,
+      "service_date": 10,
+      "total_charge": 19,
+      "type_of_bill": 1
+    },
+    "form_type": {
+      "CMS1500": 69,
+      "UB04": 65
+    },
+    "opportunity_class": {
+      "NO_OPPORTUNITY": 92,
+      "POSSIBLE_SAME_SOURCE": 42
+    },
+    "quality_band": {
+      "clean": 96,
+      "degraded": 38
+    },
+    "semantic_section": {
+      "billing_provider": 10,
+      "claim_total": 19,
+      "diagnosis": 1,
+      "patient": 17,
+      "patient_dob": 5,
+      "principal_diagnosis": 3,
+      "rendering_provider": 40,
+      "service_header": 10,
+      "subscriber": 28,
+      "type_of_bill": 1
+    },
+    "source": {
+      "SOURCE_B": 134
+    }
+  },
+  "metrics": {
+    "accepted_precision_after": 1.0,
+    "accepted_precision_before": 1.0,
+    "blockers_removed": 0,
+    "claim_hitl_after": 1.0,
+    "claim_hitl_before": 1.0,
+    "claims_affected": 20,
+    "claims_unlocked": 0,
+    "cost_after_usd": 0.0,
+    "cost_before_usd": 0.0,
+    "critical_false_accepts_after": 0,
+    "critical_false_accepts_before": 0,
+    "duplicate_rejections": 42,
+    "evaluation_latency_ms": 10.86100000247825,
+    "evidence_opportunities_found": 42,
+    "field_hitl_after": 0.67,
+    "field_hitl_before": 0.67,
+    "independent_conflicts": 0,
+    "mean_search_latency_ms": 0.009739552663618338,
+    "p95_search_latency_ms": 0.021500003640539944,
+    "remaining_blockers_after": 134,
+    "remaining_blockers_before": 134,
+    "semantic_rejections": 0,
+    "valid_independent_pairs": 0
+  },
+  "opportunity_classes": {
+    "CONFLICTING_INDEPENDENT_EVIDENCE": 0,
+    "NO_OPPORTUNITY": 92,
+    "POSSIBLE_DISTINCT_DOCUMENT": 0,
+    "POSSIBLE_DISTINCT_PAGE": 0,
+    "POSSIBLE_DISTINCT_SECTION": 0,
+    "POSSIBLE_SAME_SOURCE": 42,
+    "VALID_INDEPENDENT_EVIDENCE": 0
+  },
+  "phase": "8.25",
+  "phase8_23_adjudicator": "UNCHANGED",
+  "thresholds_changed": false,
+  "verdict": "REJECT",
+  "version": "phase8.25-evidence-coverage-discovery-v1"
+}

@@ -1,0 +1,164 @@
+{
+  "after": {
+    "distance_0": 0,
+    "distance_1": 0,
+    "distance_2": 0,
+    "distance_3": 7,
+    "distance_4": 0,
+    "distance_5_plus": 13,
+    "mean_unlock_distance": 4.8,
+    "median_unlock_distance": 5.0
+  },
+  "before": {
+    "distance_0": 0,
+    "distance_1": 0,
+    "distance_2": 0,
+    "distance_3": 7,
+    "distance_4": 0,
+    "distance_5_plus": 13,
+    "mean_unlock_distance": 4.8,
+    "median_unlock_distance": 5.0
+  },
+  "claims": [
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-001",
+      "claim_unlocked": false,
+      "distance_after": 6,
+      "distance_before": 6
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-002",
+      "claim_unlocked": false,
+      "distance_after": 6,
+      "distance_before": 6
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-003",
+      "claim_unlocked": false,
+      "distance_after": 7,
+      "distance_before": 7
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-004",
+      "claim_unlocked": false,
+      "distance_after": 5,
+      "distance_before": 5
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-005",
+      "claim_unlocked": false,
+      "distance_after": 5,
+      "distance_before": 5
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-006",
+      "claim_unlocked": false,
+      "distance_after": 6,
+      "distance_before": 6
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-007",
+      "claim_unlocked": false,
+      "distance_after": 5,
+      "distance_before": 5
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-008",
+      "claim_unlocked": false,
+      "distance_after": 6,
+      "distance_before": 6
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-009",
+      "claim_unlocked": false,
+      "distance_after": 6,
+      "distance_before": 6
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-010",
+      "claim_unlocked": false,
+      "distance_after": 6,
+      "distance_before": 6
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-001",
+      "claim_unlocked": false,
+      "distance_after": 3,
+      "distance_before": 3
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-002",
+      "claim_unlocked": false,
+      "distance_after": 3,
+      "distance_before": 3
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-003",
+      "claim_unlocked": false,
+      "distance_after": 6,
+      "distance_before": 6
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-004",
+      "claim_unlocked": false,
+      "distance_after": 6,
+      "distance_before": 6
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-005",
+      "claim_unlocked": false,
+      "distance_after": 3,
+      "distance_before": 3
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-006",
+      "claim_unlocked": false,
+      "distance_after": 3,
+      "distance_before": 3
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-007",
+      "claim_unlocked": false,
+      "distance_after": 3,
+      "distance_before": 3
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-008",
+      "claim_unlocked": false,
+      "distance_after": 3,
+      "distance_before": 3
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-009",
+      "claim_unlocked": false,
+      "distance_after": 3,
+      "distance_before": 3
+    },
+    {
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-010",
+      "claim_unlocked": false,
+      "distance_after": 5,
+      "distance_before": 5
+    }
+  ]
+}

@@ -631,3 +631,110 @@ cdp_p95_document_latency = Gauge(
     ["document_family"],
     registry=REGISTRY,
 )
+
+# Phase 8.21 selective PP-OCRv5 challenger telemetry. Dimensions are bounded
+# operational labels; candidate text and claim identifiers are prohibited.
+ppocr_challenge_rate = Gauge(
+    "ppocr_challenge_rate", "Eligible fields challenged by PP-OCRv5", registry=REGISTRY
+)
+ppocr_win_rate = Gauge(
+    "ppocr_win_rate", "PP-OCRv5 adjudicated wins per challenge", registry=REGISTRY
+)
+ppocr_agreement_rate = Gauge(
+    "ppocr_agreement_rate", "Primary/challenger agreement rate", registry=REGISTRY
+)
+ppocr_disagreement_rate = Gauge(
+    "ppocr_disagreement_rate", "Primary/challenger disagreement rate", registry=REGISTRY
+)
+challenger_blockers_removed = Counter(
+    "challenger_blockers_removed",
+    "Canonical blockers removed by challenger evidence",
+    registry=REGISTRY,
+)
+challenger_claims_unlocked = Counter(
+    "challenger_claims_unlocked", "Claims unlocked by challenger evidence", registry=REGISTRY
+)
+accuracy_by_source_quality_band = Gauge(
+    "accuracy_by_source_quality_band",
+    "Accepted accuracy by source quality band",
+    ["source", "quality_band"],
+    registry=REGISTRY,
+)
+hitl_by_source_quality_band = Gauge(
+    "hitl_by_source_quality_band",
+    "HITL rate by source quality band",
+    ["source", "quality_band"],
+    registry=REGISTRY,
+)
+latency_by_engine = Histogram(
+    "latency_by_engine", "OCR execution latency in seconds", ["engine"], registry=REGISTRY
+)
+ocr_calls_per_claim = Histogram(
+    "ocr_calls_per_claim", "OCR calls issued per claim", registry=REGISTRY
+)
+
+# Closed-world Azure OpenAI adjudication. Labels are bounded operational
+# dimensions only; candidate values and claim/page identifiers are prohibited.
+azure_openai_requests_total = Counter(
+    "azure_openai_requests_total",
+    "Azure adjudication requests",
+    ["deployment", "outcome"],
+    registry=REGISTRY,
+)
+azure_openai_requests_tier1 = Counter(
+    "azure_openai_requests_tier1",
+    "Tier-1 text adjudication requests",
+    ["deployment"],
+    registry=REGISTRY,
+)
+azure_openai_requests_tier2 = Counter(
+    "azure_openai_requests_tier2",
+    "Tier-2 field-crop adjudication requests",
+    ["deployment"],
+    registry=REGISTRY,
+)
+azure_openai_input_tokens = Counter(
+    "azure_openai_input_tokens",
+    "Azure adjudication input tokens",
+    ["deployment"],
+    registry=REGISTRY,
+)
+azure_openai_output_tokens = Counter(
+    "azure_openai_output_tokens",
+    "Azure adjudication output tokens",
+    ["deployment"],
+    registry=REGISTRY,
+)
+azure_openai_latency_ms = Histogram(
+    "azure_openai_latency_ms",
+    "Azure adjudication latency milliseconds",
+    ["deployment", "tier"],
+    registry=REGISTRY,
+)
+azure_openai_cost_usd = Counter(
+    "azure_openai_cost_usd", "Configured Azure adjudication cost", ["deployment"], registry=REGISTRY
+)
+llm_cost_per_page = Gauge(
+    "llm_cost_per_page", "Configured mean LLM cost per page", registry=REGISTRY
+)
+llm_routing_rate = Gauge(
+    "llm_routing_rate", "Fraction routed to paid adjudication", ["tier"], registry=REGISTRY
+)
+llm_cache_hit_rate = Gauge(
+    "llm_cache_hit_rate", "LLM adjudication cache hit rate", registry=REGISTRY
+)
+llm_blockers_removed = Counter(
+    "llm_blockers_removed", "Shadow or authoritative blockers removed", ["mode"], registry=REGISTRY
+)
+llm_claims_unlocked = Counter(
+    "llm_claims_unlocked", "Shadow or authoritative claims unlocked", ["mode"], registry=REGISTRY
+)
+llm_hitl_fallback = Counter(
+    "llm_hitl_fallback", "Fail-closed LLM HITL fallbacks", ["reason"], registry=REGISTRY
+)
+llm_budget_rejected = Counter(
+    "llm_budget_rejected", "LLM requests rejected by cost policy", ["reason"], registry=REGISTRY
+)
+llm_provider_errors = Counter(
+    "llm_provider_errors", "Bounded Azure provider failures", ["category"], registry=REGISTRY
+)

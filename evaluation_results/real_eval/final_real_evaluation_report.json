@@ -1,0 +1,70 @@
+{
+  "annotation_cohort_size": 0,
+  "boundary_candidate_source": "FULL_CLASSIFIER_RUNTIME",
+  "boundary_runtime_manifest_valid": true,
+  "candidate_counts": {
+    "UB04": 682,
+    "UNKNOWN": 1491
+  },
+  "candidate_source": "FULL_CLASSIFIER_RUNTIME",
+  "confirmed_class_counts": {},
+  "development_metrics": {
+    "accepted_precision": null,
+    "claim_hitl": null,
+    "claim_stp": null,
+    "cohort": "DEVELOPMENT",
+    "critical_accuracy": null,
+    "critical_false_accepts": null,
+    "evaluated_fields": 0,
+    "field_hitl": null,
+    "raw_accuracy": null,
+    "status": "BLOCKED_NO_TRUSTED_LABELS"
+  },
+  "development_size": 0,
+  "documents_confirmed": 0,
+  "holdout_metrics": {
+    "accepted_precision": null,
+    "claim_hitl": null,
+    "claim_stp": null,
+    "cohort": "HOLDOUT",
+    "critical_accuracy": null,
+    "critical_false_accepts": null,
+    "evaluated_fields": 0,
+    "field_hitl": null,
+    "raw_accuracy": null,
+    "status": "BLOCKED_NO_TRUSTED_LABELS"
+  },
+  "holdout_size": 0,
+  "package_identities_confirmed": 0,
+  "package_leakage": 0,
+  "pages_processed": 2173,
+  "pipeline_gap_count": 0,
+  "readiness_gates": {
+    "GATE_1_DATASET_READY": {
+      "passed": false
+    },
+    "GATE_2_EXTRACTION_READY": {
+      "passed": false
+    },
+    "GATE_3_DECISION_READY": {
+      "passed": false
+    },
+    "GATE_4_HITL_STP_READY": {
+      "passed": false
+    },
+    "GATE_5_OPERATIONS_READY": {
+      "passed": false,
+      "reason": "OPERATIONAL_THRESHOLDS_AND_FULL_RUN_NOT_SUPPLIED"
+    }
+  },
+  "runtime_manifest_valid": true,
+  "safety": {
+    "new_ocr_engine": false,
+    "raw_phi_written": false,
+    "synthetic_truth_used": false,
+    "thresholds_changed": false
+  },
+  "source_to_cdp_binding": 0.0,
+  "status": "NOT_EVALUATION_READY",
+  "trusted_labels_completed": 0
+}

@@ -1,0 +1,385 @@
+{
+  "requests": [
+    {
+      "bundle_id": "SB-CMS-001",
+      "claim_id": "SB-CMS-001",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-CMS-002",
+      "claim_id": "SB-CMS-002",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-CMS-003",
+      "claim_id": "SB-CMS-003",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-CMS-004",
+      "claim_id": "SB-CMS-004",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-CMS-005",
+      "claim_id": "SB-CMS-005",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-CMS-006",
+      "claim_id": "SB-CMS-006",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-CMS-007",
+      "claim_id": "SB-CMS-007",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-CMS-008",
+      "claim_id": "SB-CMS-008",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-CMS-009",
+      "claim_id": "SB-CMS-009",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-CMS-010",
+      "claim_id": "SB-CMS-010",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-001",
+      "claim_id": "SB-UB-001",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-002",
+      "claim_id": "SB-UB-002",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-003",
+      "claim_id": "SB-UB-003",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-004",
+      "claim_id": "SB-UB-004",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-005",
+      "claim_id": "SB-UB-005",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-006",
+      "claim_id": "SB-UB-006",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-007",
+      "claim_id": "SB-UB-007",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-008",
+      "claim_id": "SB-UB-008",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-009",
+      "claim_id": "SB-UB-009",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    },
+    {
+      "bundle_id": "SB-UB-010",
+      "claim_id": "SB-UB-010",
+      "required_assets": [
+        "original raw bundle",
+        "document inventory",
+        "page-to-document map",
+        "attachment inventory with semantic document roles"
+      ],
+      "required_metadata": [
+        "sha256",
+        "mime_type",
+        "page_count",
+        "source_document_id",
+        "source_page_index",
+        "acquisition authorization"
+      ],
+      "status": "AWAITING_AUTHORIZED_SOURCE_CAPTURE"
+    }
+  ],
+  "version": "phase8.27-source-capture-readiness-v1"
+}

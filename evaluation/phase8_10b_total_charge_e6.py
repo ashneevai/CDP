@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from collections import Counter, defaultdict
 from pathlib import Path
+from typing import Any
 
 from evaluation.phase8_7_stp import _service_lines
 from packages.candidate_reconciliation import EvidenceReconciler
@@ -111,7 +112,13 @@ def _decision_projection(decision: FieldDecision) -> dict:
     }
 
 
-def run(*, write_outputs: bool = True, candidate_financial_authority: bool = False) -> dict:
+def run(
+    *,
+    write_outputs: bool = True,
+    candidate_financial_authority: bool = False,
+    input_root: Path = INPUT,
+    service_lines_by_source: dict[str, dict[str, list[dict[str, Any]]]] | None = None,
+) -> dict:
     decision_bundle = DecisionServiceFactory.from_profile()
     treatment_service = decision_bundle.evidence_decision
     if candidate_financial_authority:
@@ -148,12 +155,16 @@ def run(*, write_outputs: bool = True, candidate_financial_authority: bool = Fal
     treatment_e6: dict[tuple[str, str], set[str]] = {}
 
     for source in SOURCES:
-        source_rows = _read_jsonl(INPUT / source / "policy_replay_input.jsonl")
+        source_rows = _read_jsonl(input_root / source / "policy_replay_input.jsonl")
         all_rows.extend(source_rows)
         rows_by_document: dict[str, list[dict]] = defaultdict(list)
         for row in source_rows:
             rows_by_document[row["document_id"]].append(row)
-        services = _service_lines(INPUT / source)
+        services = (
+            service_lines_by_source.get(source, {})
+            if service_lines_by_source is not None
+            else _service_lines(input_root / source)
+        )
         for document_id, document_rows in rows_by_document.items():
             values = {row["field_name"]: row["final_value"] for row in document_rows}
             claim_evidence = evidence_builder.build(

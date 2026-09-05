@@ -1,0 +1,20 @@
+{
+  "actual_hashes": {
+    "claim_unlock_analysis.json": "2220e2c15d135e12decf5c8ae85119be096d0985e41a161a2056d7e6f23df027",
+    "comparative_report.json": "f05cf878911e226b862702a8e94fbab576909a8ac1a7168467afdeb7046d3c94",
+    "cross_field_evidence_metrics.json": "514261eae84cebc85fda0a61d9aa0000d71fdc41ccc6840df94bd207e4c7cb37",
+    "deterministic_evidence_metrics.json": "c15aa206e63572aad5cad994b977cb1f297e5a81678518e399034dc2e6c20950",
+    "independent_ocr_evidence_metrics.json": "8d7deb5085de0ec03d475eac6f3145827d8fa946aa7197f5954ffa17a6949ef1",
+    "provenance_independence_audit.json": "26bf0de5be81b60f5bf0d313f48f4c2a9c67517620401d041de2b573869c9f0e"
+  },
+  "expected_hashes": {
+    "claim_unlock_analysis.json": "2220e2c15d135e12decf5c8ae85119be096d0985e41a161a2056d7e6f23df027",
+    "comparative_report.json": "f05cf878911e226b862702a8e94fbab576909a8ac1a7168467afdeb7046d3c94",
+    "cross_field_evidence_metrics.json": "514261eae84cebc85fda0a61d9aa0000d71fdc41ccc6840df94bd207e4c7cb37",
+    "deterministic_evidence_metrics.json": "c15aa206e63572aad5cad994b977cb1f297e5a81678518e399034dc2e6c20950",
+    "independent_ocr_evidence_metrics.json": "8d7deb5085de0ec03d475eac6f3145827d8fa946aa7197f5954ffa17a6949ef1",
+    "provenance_independence_audit.json": "26bf0de5be81b60f5bf0d313f48f4c2a9c67517620401d041de2b573869c9f0e"
+  },
+  "unchanged": true,
+  "verdict": "NEEDS_MORE_DATA"
+}

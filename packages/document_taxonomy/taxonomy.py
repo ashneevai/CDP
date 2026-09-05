@@ -1,4 +1,5 @@
 """Canonical business-semantic document taxonomy. No routing implementation lives here."""
+
 from __future__ import annotations
 
 from enum import StrEnum
@@ -13,6 +14,7 @@ class DocumentClass(StrEnum):
     CMS1500 = "CMS1500"
     UB04 = "UB04"
     NON_STANDARD_CLAIM = "NON_STANDARD_CLAIM"
+    OTHER_CLAIM_FORM = "OTHER_CLAIM_FORM"
     CUSTOM_PROFESSIONAL = "CUSTOM_PROFESSIONAL"
     CUSTOM_INSTITUTIONAL = "CUSTOM_INSTITUTIONAL"
     OTHER_STRUCTURED_CLAIM = "OTHER_STRUCTURED_CLAIM"
@@ -40,6 +42,7 @@ PARENT: dict[DocumentClass, DocumentClass | None] = {
     DocumentClass.CMS1500: DocumentClass.STANDARD_CLAIM,
     DocumentClass.UB04: DocumentClass.STANDARD_CLAIM,
     DocumentClass.NON_STANDARD_CLAIM: DocumentClass.CLAIM,
+    DocumentClass.OTHER_CLAIM_FORM: DocumentClass.NON_STANDARD_CLAIM,
     DocumentClass.CUSTOM_PROFESSIONAL: DocumentClass.NON_STANDARD_CLAIM,
     DocumentClass.CUSTOM_INSTITUTIONAL: DocumentClass.NON_STANDARD_CLAIM,
     DocumentClass.OTHER_STRUCTURED_CLAIM: DocumentClass.NON_STANDARD_CLAIM,
@@ -87,8 +90,10 @@ class DocumentTaxonomyV1:
 
     @classmethod
     def nodes(cls) -> tuple[TaxonomyNode, ...]:
-        return tuple(TaxonomyNode(code=code, parent=parent, is_leaf=not cls.children_of(code))
-                     for code, parent in PARENT.items())
+        return tuple(
+            TaxonomyNode(code=code, parent=parent, is_leaf=not cls.children_of(code))
+            for code, parent in PARENT.items()
+        )
 
     @classmethod
     def validate_label(cls, label: DocumentClass, parent_labels: tuple[DocumentClass, ...]) -> None:

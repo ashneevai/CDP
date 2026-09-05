@@ -152,8 +152,17 @@ async def test_extraction_worker_persists_fields_and_publishes_completion(fake_o
             "template_version": "02-12",
             "processing_route": "CMS_STANDARD_EXTRACTOR",
             "extraction_geometry_mode": "REGISTERED_FIXED",
-            "standard_form_verification": {"candidate_family": "CMS1500", "status": "VERIFIED",
-                                           "verification_score": 1.0, "eligible_for_fixed_extractor": True},
+            "standard_form_verification": {
+                "candidate_family": "CMS1500",
+                "status": "VERIFIED",
+                "verification_score": 1.0,
+                "eligible_for_fixed_extractor": True,
+                "form_identity": {
+                    "family": "CMS1500",
+                    "status": "VERIFIED",
+                    "authorization_path": "EXPLICIT_IDENTITY",
+                },
+            },
             "form_identity": {"family": "CMS1500", "status": "VERIFIED", "score": 1.0},
         },
     )
@@ -220,8 +229,17 @@ async def _run_worker_with_reference_image(
             "template_version": "02-12",
             "processing_route": "CMS_STANDARD_EXTRACTOR",
             "extraction_geometry_mode": "REGISTERED_FIXED",
-            "standard_form_verification": {"candidate_family": "CMS1500", "status": "VERIFIED",
-                                           "verification_score": 1.0, "eligible_for_fixed_extractor": True},
+            "standard_form_verification": {
+                "candidate_family": "CMS1500",
+                "status": "VERIFIED",
+                "verification_score": 1.0,
+                "eligible_for_fixed_extractor": True,
+                "form_identity": {
+                    "family": "CMS1500",
+                    "status": "VERIFIED",
+                    "authorization_path": "EXPLICIT_IDENTITY",
+                },
+            },
             "form_identity": {"family": "CMS1500", "status": "VERIFIED", "score": 1.0},
         },
     )

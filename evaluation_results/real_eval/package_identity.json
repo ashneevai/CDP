@@ -1,0 +1,10 @@
+{
+  "confirmed": 0,
+  "records": [],
+  "states": [
+    "CONFIRMED",
+    "CANDIDATE",
+    "AMBIGUOUS",
+    "UNAVAILABLE"
+  ]
+}

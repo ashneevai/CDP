@@ -1,0 +1,18 @@
+{
+  "drop_records": [],
+  "reason": "CLAIM_AND_CDP_PAGE_BINDING_UNAVAILABLE",
+  "stages": {
+    "ACCEPTED_OR_HITL": null,
+    "CANDIDATE_GENERATED": null,
+    "CLASSIFIED": 9,
+    "DISCOVERED": 2173,
+    "FIELD_LOCALIZED": null,
+    "INGESTED": null,
+    "PAGE_CREATED": null,
+    "PAGE_OBSERVED": null,
+    "SOURCE_PRESENT": 2173,
+    "VALIDATED": null
+  },
+  "status": "BLOCKED_AT_CDP_BINDING",
+  "unknown_is_not_zero": true
+}

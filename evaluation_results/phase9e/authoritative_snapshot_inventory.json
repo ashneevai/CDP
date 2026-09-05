@@ -1,0 +1,9 @@
+{
+  "authoritative_snapshots_loaded": 0,
+  "records_loaded_by_source": {},
+  "records_rejected": 0,
+  "schema_version_errors": [],
+  "snapshot_root": "C:\\Users\\ashish.singh\\Documents\\python\\IDP\\evaluation\\authoritative_snapshots",
+  "snapshots": [],
+  "synthetic_sources_rejected_as_authority": true
+}

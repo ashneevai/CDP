@@ -3,11 +3,14 @@ import json
 import pytest
 
 from evaluation.phase8_17_weekly_shadow_governance import (
-    _source_groups,
     generate_weekly_governance,
 )
 from packages.production_readiness_gate import ReadinessEvidence
-from packages.shadow_evaluation import AppendOnlyShadowClaimSink, ClaimShadowObservation
+from packages.shadow_evaluation import (
+    AppendOnlyShadowClaimSink,
+    ClaimShadowObservation,
+    fingerprinted_source_groups,
+)
 
 
 def observation(index: int) -> ClaimShadowObservation:
@@ -48,7 +51,14 @@ def test_weekly_artifact_is_hash_addressed_and_non_authoritative(tmp_path):
     assert first.artifact["artifact_sha256"] == second.artifact["artifact_sha256"]
     assert first.artifact["promotion_authority"] is False
     assert first.artifact["shadow_qualification"]["claim_hitl"] == .05
-    assert first.artifact["production_readiness"]["decision"] == "PROMOTE_TO_PRODUCTION"
+    assert first.artifact["shadow_qualification"]["ocr_only_processing_rate"] == 1.0
+    assert first.artifact["shadow_qualification"]["llm_escalation_rate"] == 0.0
+    # Weekly shadow evidence is deliberately non-authoritative. Even perfect
+    # metrics cannot bypass the separately signed production approval chain.
+    assert first.artifact["production_readiness"]["decision"] == "PROMOTE_TO_SHADOW"
+    blockers = first.artifact["production_readiness"]["blocking_reasons"]
+    assert "NAMED_RELEASE_APPROVALS" in blockers
+    assert "APPROVAL_SIGNATURES" in blockers
 
 
 def test_insufficient_week_fails_closed(tmp_path):
@@ -58,6 +68,16 @@ def test_insufficient_week_fails_closed(tmp_path):
     assert result.exit_code == 2
     assert result.artifact["shadow_qualification"]["status"] == "NEEDS_MORE_DATA"
     assert result.artifact["production_readiness"]["decision"] == "NEEDS_MORE_DATA"
+
+
+def test_more_than_one_percent_llm_escalation_fails_shadow_qualification(tmp_path):
+    ledger = tmp_path / "shadow.jsonl"
+    sink = AppendOnlyShadowClaimSink(ledger, identity_key=b"secret")
+    for index in range(1000):
+        sink.append(observation(index).model_copy(update={"llm_escalated": index < 11}))
+    result = generate_weekly_governance(ledger, as_of_week="2026-W36")
+    assert result.artifact["shadow_qualification"]["llm_escalation_rate"] == .011
+    assert "LLM_ESCALATION" in result.artifact["shadow_qualification"]["blocking_reasons"]
 
 
 def test_weekly_governance_rejects_correction_source_overlap(tmp_path):
@@ -79,10 +99,22 @@ def test_correction_source_groups_use_capture_fingerprints(tmp_path):
     (correction_dataset / "train.jsonl").write_text(
         json.dumps({"source_group_id": "source-1"}) + "\n", encoding="utf-8"
     )
-    groups = _source_groups(
+    groups = fingerprinted_source_groups(
         correction_dataset, {"train", "calibration"}, identity_key=b"secret"
     )
     ledger = tmp_path / "shadow.jsonl"
     sink = AppendOnlyShadowClaimSink(ledger, identity_key=b"secret")
     sink.append(observation(1))
     assert groups == {sink.observations()[0].source_group_id}
+
+
+def test_correction_source_groups_fail_closed_without_source_identity(tmp_path):
+    correction_dataset = tmp_path / "corrections"
+    correction_dataset.mkdir()
+    (correction_dataset / "train.jsonl").write_text(
+        json.dumps({"document_id": "source-1"}) + "\n", encoding="utf-8"
+    )
+    with pytest.raises(ValueError, match="missing source_group_id"):
+        fingerprinted_source_groups(
+            correction_dataset, {"train"}, identity_key=b"secret"
+        )

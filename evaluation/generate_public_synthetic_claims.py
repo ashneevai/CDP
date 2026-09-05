@@ -20,11 +20,22 @@ NAMES = ["TEST ALPHA", "SAMPLE BRAVO", "DEMO CHARLIE", "FIXTURE DELTA", "MOCK EC
 
 
 def _font(size: int, italic: bool = False):
-    names = ["C:/Windows/Fonts/ariali.ttf" if italic else "C:/Windows/Fonts/arial.ttf",
-             "C:/Windows/Fonts/calibri.ttf"]
+    names = [
+        "C:/Windows/Fonts/ariali.ttf" if italic else "C:/Windows/Fonts/arial.ttf",
+        "C:/Windows/Fonts/calibri.ttf",
+        "DejaVuSans-Oblique.ttf" if italic else "DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf"
+        if italic
+        else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+        "/usr/share/fonts/truetype/liberation2/LiberationSans-Italic.ttf"
+        if italic
+        else "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf",
+    ]
     for name in names:
-        if Path(name).exists():
+        try:
             return ImageFont.truetype(name, size)
+        except OSError:
+            continue
     return ImageFont.load_default()
 
 

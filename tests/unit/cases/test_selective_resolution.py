@@ -119,7 +119,8 @@ async def test_adaptive_service_executes_only_the_selected_cloud_step():
     )
     context = DecisionContext(
         document_type="CMS1500", field_name="member_id", criticality="critical",
-        previous_attempts={PolicyAction.RAPIDOCR, PolicyAction.TESSERACT,
+        previous_attempts={PolicyAction.RAPIDOCR, PolicyAction.RETRY_PREPROCESSING,
+                           PolicyAction.PADDLEOCR, PolicyAction.TESSERACT,
                            PolicyAction.REFERENCE_LOOKUP},
         cloud_processing_allowed=True,
     )

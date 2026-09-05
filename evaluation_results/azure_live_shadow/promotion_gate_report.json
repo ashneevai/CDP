@@ -1,0 +1,14 @@
+{
+  "gates": {
+    "authoritative_conflicts_protected": true,
+    "candidate_precision_99_5": false,
+    "critical_false_accept_potential_zero": false,
+    "material_hitl_improvement": false,
+    "mean_cost_at_most_0_001": "NOT_CONFIGURED",
+    "novel_candidate_acceptance_zero": true,
+    "routing_at_most_15_percent": false,
+    "source_to_cdp_binding_sufficient": false,
+    "trusted_labels_available": false
+  },
+  "status": "NEEDS_MORE_TRUSTED_LABELS"
+}

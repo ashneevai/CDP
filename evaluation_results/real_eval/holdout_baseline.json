@@ -1,0 +1,12 @@
+{
+  "accepted_precision": null,
+  "claim_hitl": null,
+  "claim_stp": null,
+  "cohort": "HOLDOUT",
+  "critical_accuracy": null,
+  "critical_false_accepts": null,
+  "evaluated_fields": 0,
+  "field_hitl": null,
+  "raw_accuracy": null,
+  "status": "BLOCKED_NO_TRUSTED_LABELS"
+}

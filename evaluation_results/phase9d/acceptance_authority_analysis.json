@@ -1,0 +1,1162 @@
+{
+  "correct_but_hitl_count": 84,
+  "rows": [
+    {
+      "claim_id": "SB-CMS-001",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "insured_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "current_evidence_combination": [],
+      "field_name": "service_date",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-001",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "insured_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "current_evidence_combination": [],
+      "field_name": "service_date",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-002",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_dob",
+      "missing_evidence_class": [
+        "FIELD_SPECIFIC_ACCEPTANCE_AUTHORITY"
+      ],
+      "reason_acceptance_blocked": "C_ACCEPTANCE_AUTHORITY_GAP",
+      "required_evidence_combination": [
+        "FIELD_SPECIFIC_ACCEPTANCE_AUTHORITY"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "current_evidence_combination": [],
+      "field_name": "insured_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-003",
+      "current_evidence_combination": [],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "current_evidence_combination": [],
+      "field_name": "service_date",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-004",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "insured_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "current_evidence_combination": [],
+      "field_name": "service_date",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-005",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "insured_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "current_evidence_combination": [],
+      "field_name": "service_date",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-006",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "current_evidence_combination": [],
+      "field_name": "service_date",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-007",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "insured_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "current_evidence_combination": [],
+      "field_name": "service_date",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-008",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "current_evidence_combination": [
+        "E4",
+        "E6"
+      ],
+      "field_name": "insured_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "current_evidence_combination": [],
+      "field_name": "service_date",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-009",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_dob",
+      "missing_evidence_class": [
+        "FIELD_SPECIFIC_ACCEPTANCE_AUTHORITY"
+      ],
+      "reason_acceptance_blocked": "C_ACCEPTANCE_AUTHORITY_GAP",
+      "required_evidence_combination": [
+        "FIELD_SPECIFIC_ACCEPTANCE_AUTHORITY"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "current_evidence_combination": [],
+      "field_name": "insured_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "current_evidence_combination": [],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-CMS-010",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ],
+      "reason_acceptance_blocked": "E_SOURCE_EVIDENCE_REQUIRED",
+      "required_evidence_combination": [
+        "E2_PROVENANCE_SEPARATED_SOURCE_OBSERVATION"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-001",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-001",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-001",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-002",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-002",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-002",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "current_evidence_combination": [],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_dob",
+      "missing_evidence_class": [
+        "FIELD_SPECIFIC_ACCEPTANCE_AUTHORITY"
+      ],
+      "reason_acceptance_blocked": "C_ACCEPTANCE_AUTHORITY_GAP",
+      "required_evidence_combination": [
+        "FIELD_SPECIFIC_ACCEPTANCE_AUTHORITY"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "current_evidence_combination": [],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-003",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "total_charge",
+      "missing_evidence_class": [
+        "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+      ],
+      "reason_acceptance_blocked": "B_VALIDATION_GAP",
+      "required_evidence_combination": [
+        "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-004",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_dob",
+      "missing_evidence_class": [
+        "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+      ],
+      "reason_acceptance_blocked": "B_VALIDATION_GAP",
+      "required_evidence_combination": [
+        "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-004",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-004",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "principal_diagnosis",
+      "missing_evidence_class": [
+        "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+      ],
+      "reason_acceptance_blocked": "B_VALIDATION_GAP",
+      "required_evidence_combination": [
+        "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-005",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-005",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-005",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-006",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-006",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-006",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-007",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-007",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-007",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-008",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-008",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-008",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-009",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-009",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "member_id",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-009",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-010",
+      "current_evidence_combination": [],
+      "field_name": "patient_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-010",
+      "current_evidence_combination": [
+        "E4"
+      ],
+      "field_name": "patient_dob",
+      "missing_evidence_class": [
+        "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+      ],
+      "reason_acceptance_blocked": "B_VALIDATION_GAP",
+      "required_evidence_combination": [
+        "E6_DETERMINISTIC_BUSINESS_VALIDATION"
+      ]
+    },
+    {
+      "claim_id": "SB-UB-010",
+      "current_evidence_combination": [],
+      "field_name": "provider_name",
+      "missing_evidence_class": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ],
+      "reason_acceptance_blocked": "D_AUTHORITATIVE_DATA_REQUIRED",
+      "required_evidence_combination": [
+        "E7_AUTHORITATIVE_REFERENCE"
+      ]
+    }
+  ]
+}

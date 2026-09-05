@@ -1,0 +1,325 @@
+{
+  "shared_blockers": [
+    "member_id",
+    "patient_name",
+    "provider_name",
+    "total_charge"
+  ],
+  "targets": [
+    {
+      "blockers": [
+        {
+          "criticality": "C2",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "LUCAS ENGSTROM",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "patient_name",
+          "ground_truth": "LUCAS ENGSTROM",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "G28-0002011",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "member_id",
+          "ground_truth": "G28-0002011",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "MERIDIAN MEDICAL GROUP 2011",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "provider_name",
+          "ground_truth": "MERIDIAN MEDICAL GROUP 2011",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "7356.22",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "total_charge",
+          "ground_truth": "7356.22",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        }
+      ],
+      "claim": "SB-UB-001"
+    },
+    {
+      "blockers": [
+        {
+          "criticality": "C2",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "MIREYA USMAN",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "patient_name",
+          "ground_truth": "MIREYA USMAN",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "G28-0002012",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "member_id",
+          "ground_truth": "G28-0002012",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "ORCHARD MEDICAL GROUP 2012",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "provider_name",
+          "ground_truth": "ORCHARD MEDICAL GROUP 2012",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "3609.37",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "total_charge",
+          "ground_truth": "3609.37",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        }
+      ],
+      "claim": "SB-UB-002"
+    },
+    {
+      "blockers": [
+        {
+          "criticality": "C2",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "PRIYA ZAMAN",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "patient_name",
+          "ground_truth": "PRIYA ZAMAN",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "G28-0002015",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "member_id",
+          "ground_truth": "G28-0002015",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "SUMMIT MEDICAL GROUP 2015",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "provider_name",
+          "ground_truth": "SUMMIT MEDICAL GROUP 2015",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "5602.52",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "total_charge",
+          "ground_truth": "5602.52",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        }
+      ],
+      "claim": "SB-UB-005"
+    },
+    {
+      "blockers": [
+        {
+          "criticality": "C2",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "ALINA QUARTZ",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "patient_name",
+          "ground_truth": "ALINA QUARTZ",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "G28-0002016",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "member_id",
+          "ground_truth": "G28-0002016",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "NORTHSTAR MEDICAL GROUP 2016",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "provider_name",
+          "ground_truth": "NORTHSTAR MEDICAL GROUP 2016",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "7615.62",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "total_charge",
+          "ground_truth": "7615.62",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        }
+      ],
+      "claim": "SB-UB-006"
+    },
+    {
+      "blockers": [
+        {
+          "criticality": "C2",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "BRENNAN XU",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "patient_name",
+          "ground_truth": "BRENNAN XU",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "G28-0002017",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "member_id",
+          "ground_truth": "G28-0002017",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "BLUEBIRD MEDICAL GROUP 2017",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "provider_name",
+          "ground_truth": "BLUEBIRD MEDICAL GROUP 2017",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "3740.07",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "total_charge",
+          "ground_truth": "3740.07",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        }
+      ],
+      "claim": "SB-UB-007"
+    },
+    {
+      "blockers": [
+        {
+          "criticality": "C2",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "CELINEFARRELL",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "patient_name",
+          "ground_truth": "CELINE FARRELL",
+          "reason": "MISSING_CROP",
+          "validation_status": "FAILED"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "G28-0002018",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "member_id",
+          "ground_truth": "G28-0002018",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "CEDAR MEDICAL GROUP 2018",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "provider_name",
+          "ground_truth": "CEDAR MEDICAL GROUP 2018",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "5719.05",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "total_charge",
+          "ground_truth": "5719.05",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        }
+      ],
+      "claim": "SB-UB-008"
+    },
+    {
+      "blockers": [
+        {
+          "criticality": "C2",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "DEVON VARGAS",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "patient_name",
+          "ground_truth": "DEVON VARGAS",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "G28-0002019",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "member_id",
+          "ground_truth": "G28-0002019",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "HARBOR MEDICAL GROUP 2019",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "provider_name",
+          "ground_truth": "HARBOR MEDICAL GROUP 2019",
+          "reason": "OCR_CHARACTER_ERROR",
+          "validation_status": "CORRECT_FORMAT"
+        },
+        {
+          "criticality": "C1",
+          "crop_safety": "CROP_SAFE",
+          "current_candidate": "5758.56",
+          "evidence_status": "INSUFFICIENT_FIELD_SPECIFIC_EVIDENCE",
+          "field": "total_charge",
+          "ground_truth": "5758.56",
+          "reason": "MISSING_INDEPENDENT_EVIDENCE",
+          "validation_status": "CORRECT_FORMAT"
+        }
+      ],
+      "claim": "SB-UB-009"
+    }
+  ]
+}

@@ -1,4 +1,10 @@
-"""Unchanged, truth-blind Phase-6 production-representative holdout runner."""
+"""Truth-blind production-equivalent holdout runner.
+
+The runner exercises the current strict document-routing authority and the
+same standard-form processing service used by the worker. Unknown or
+non-authorized layouts can emit candidates, but can never receive an STP claim
+decision from this evaluation path.
+"""
 
 from __future__ import annotations
 
@@ -11,26 +17,40 @@ import statistics
 import time
 from collections import Counter, defaultdict
 from pathlib import Path
+from typing import Any
 
 from PIL import Image
 
 from evaluation.audit_production_holdout_v2 import DEFAULT_DATASET, DEFAULT_OUTPUT, audit
 from packages.claim_decision import ClaimDecisionContext, ClaimDecisionService
-from packages.criticality import CriticalityPolicy, DEFAULT_CRITICALITY_PATH
-from packages.evidence_decision import DecisionContext, EvidenceDecisionService, FieldDisposition
+from packages.criticality import DEFAULT_CRITICALITY_PATH, CriticalityPolicy
+from packages.document_routing.decision_service import DocumentRoutingDecisionService
+from packages.document_taxonomy.taxonomy import DocumentClass
+from packages.evidence_decision import DecisionContext, EvidenceDecisionService
+from packages.extraction_geometry import FormIdentityDecision
 from packages.field_verification import verify_field
 from packages.layout_intelligence import BundleDLayoutEngine
 from packages.ocr.contracts import OCRCandidate
+from packages.page_observation import PageObservationService
+from packages.processing_routes.contracts import ProcessingRoute
+from packages.standard_form_verification.evidence import evidence_from_router_features
 from packages.templates.registry import DEFAULT_TEMPLATE_DIR, TemplateRegistry
 from workers.cascade.tesseract_adapter import TesseractTextExtractor
 from workers.document_preparation.preprocessing import (
-    apply_orientation, denoise, deskew, detect_orientation, detect_skew_angle,
+    apply_orientation,
+    denoise,
+    deskew,
+    detect_orientation,
+    detect_skew_angle,
 )
 from workers.page_detection.router import PageRoutingService
-from workers.page_detection.text_extraction import PaddleOCRTextExtractor, RapidOCRTextExtractor
-from workers.standard_form_extraction.consumer import _align_or_rescale
+from workers.page_detection.text_extraction import (
+    PaddleOCRTextExtractor,
+    RapidOCRFullPageTextExtractor,
+    RapidOCRTextExtractor,
+)
 from workers.standard_form_extraction.extractor import StandardFormExtractionService
-
+from workers.standard_form_extraction.processing import StandardFormProcessingService
 
 ACTUAL_TO_TRUTH = {
     "patient_dob": "dob", "insured_id_number": "member_id",
@@ -63,6 +83,11 @@ def _prepare(path: Path) -> Image.Image:
     return denoise(image)
 
 
+def _eligible_for_claim_decision(*, standard_processing_used: bool, route: str | None) -> bool:
+    """Unknown/non-authorized documents cannot be represented as straight-through claims."""
+    return standard_processing_used and route in {"CMS1500", "UB04"}
+
+
 def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0,
           sample_size: int | None = None, sample_seed: int = 62026) -> list[dict]:
     metadata = [json.loads(line) for line in (dataset / "metadata/document_metadata.jsonl").read_text("utf-8").splitlines()]
@@ -85,35 +110,112 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
     cms, ub = registry.get("cms1500", "02-12"), registry.get("ub04", "2014")
     page_ocr = TesseractTextExtractor(psm=11)
     router = PageRoutingService(cms, ub, page_ocr, registry.load_reference_image(cms),
-                                registry.load_reference_image(ub))
+                                registry.load_reference_image(ub), enable_router_v3=True)
     rapid = StandardFormExtractionService(RapidOCRTextExtractor())
+    standard_processing = StandardFormProcessingService(
+        PageObservationService(
+            RapidOCRFullPageTextExtractor(),
+            preprocessing_version="document-preparation-v1",
+            benchmark_mode=True,
+        ),
+        rapid,
+    )
     paddle = PaddleOCRTextExtractor()
     layout = BundleDLayoutEngine()
+    route_decisions = DocumentRoutingDecisionService()
     decisions = EvidenceDecisionService(route_mode="runtime")
     criticality = CriticalityPolicy.load(DEFAULT_CRITICALITY_PATH)
     claims = ClaimDecisionService.load()
     predictions = []
     for position, item in enumerate(inputs, 1):
-        stage, counters = {}, Counter()
+        stage: dict[str, float] = {}
+        counters: Counter[str] = Counter()
         wall0, cpu0 = time.perf_counter(), time.process_time()
         started = time.perf_counter(); image = _prepare(dataset / item["path"]); stage["preparation"] = time.perf_counter()-started
         started = time.perf_counter(); routed = router.route_single_page(image); stage["classification"] = time.perf_counter()-started
-        fields, field_decisions, route, schema = {}, [], None, None
+        fields: dict[str, dict[str, Any]] = {}
+        field_decisions = []
+        route: str | None = None
+        schema: str | None = None
         alignment_method, alignment_accepted, registration_confidence = None, False, None
         table_payload = None
-        if routed.template is not None:
+        nominated_family = (
+            DocumentClass.CMS1500
+            if routed.template is not None and routed.template.template_id == "cms1500"
+            else DocumentClass.UB04
+            if routed.template is not None and routed.template.template_id == "ub04"
+            else None
+        )
+        canonical_route = routed.canonical_route.value if routed.canonical_route else None
+        standard_evidence = (
+            evidence_from_router_features(
+                nominated_family,
+                None,
+                routed.route_decision,
+                template_version=routed.template.version,
+            )
+            if nominated_family is not None
+            and routed.route_decision is not None
+            and routed.template is not None
+            else None
+        )
+        routing_decision = route_decisions.decide_nomination(
+            document_id=item["document_id"],
+            page_id=item["document_id"],
+            nominated_family=nominated_family,
+            structured=(
+                routed.template is not None
+                or canonical_route in {"CMS1500", "UB04", "OTHER_CLAIM_FORM", "UNKNOWN_STRUCTURED"}
+            ),
+            claim_related=canonical_route != "NON_CLAIM",
+            non_claim=canonical_route == "NON_CLAIM",
+            confidence=(
+                routed.route_decision.confidence
+                if routed.route_decision is not None
+                else 0.0
+            ),
+            supporting_evidence=tuple(routed.reason_codes),
+            standard_evidence=standard_evidence,
+        )
+        standard_routes = {
+            ProcessingRoute.CMS_STANDARD_EXTRACTOR,
+            ProcessingRoute.UB_STANDARD_EXTRACTOR,
+        }
+        standard_processing_used = False
+        if (
+            routed.template is not None
+            and routing_decision.processing_route in standard_routes
+            and routing_decision.standard_verification is not None
+        ):
+            standard_processing_used = True
             template = routed.template
             route = "CMS1500" if template.template_id == "cms1500" else "UB04"
-            resized = image.resize((template.reference_dimensions.width_px,
-                                    template.reference_dimensions.height_px))
             started = time.perf_counter()
-            ready, alignment_method, registration = _align_or_rescale(
-                resized, template, registry.load_reference_image(template))
-            stage["registration"] = time.perf_counter()-started
-            alignment_accepted = alignment_method in {"edge_phase_correlation", "sift_flann_ransac_homography"}
-            registration_confidence = registration.alignment_confidence if registration else None
-            started = time.perf_counter(); extracted = rapid.extract_fields(ready, template, 1); stage["ocr"] = time.perf_counter()-started
-            counters["rapidocr_calls"] += len(extracted)
+            identity = FormIdentityDecision.from_standard_verification(
+                routing_decision.standard_verification
+            )
+            processed = standard_processing.process(
+                image,
+                template,
+                1,
+                identity,
+                page_id=item["document_id"],
+            )
+            stage["standard_processing"] = time.perf_counter() - started
+            extracted = processed.fields
+            geometry = processed.geometry
+            registration = geometry.registration
+            alignment_method = (
+                registration.algorithm if registration is not None else geometry.mode.value.lower()
+            )
+            alignment_accepted = geometry.authorizes_fixed_roi
+            registration_confidence = (
+                registration.alignment_confidence
+                if registration is not None
+                else geometry.structural_confidence
+            )
+            counters["rapidocr_full_page_calls"] += processed.diagnostics.full_page_ocr_calls
+            counters["rapidocr_regional_calls"] += processed.diagnostics.regional_ocr_calls
             source_candidates = []
             for field in extracted:
                 canonical = ACTUAL_TO_TRUTH.get(field.field_name, field.field_name)
@@ -148,9 +250,13 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
         for canonical, value, confidence, bbox, structural in source_candidates:
             verification = verify_field(canonical, value)
             candidate = OCRCandidate(
-                value=value, raw_value=value or "", engine=(paddle.engine_name if routed.template is None else "rapidocr"),
-                model_name=(paddle.model_name if routed.template is None else "RapidOCR-ONNX"),
-                model_version=(paddle.model_version if routed.template is None else "rapidocr-onnxruntime"),
+                value=value,
+                raw_value=value or "",
+                engine="rapidocr" if standard_processing_used else paddle.engine_name,
+                model_name="RapidOCR-ONNX" if standard_processing_used else paddle.model_name,
+                model_version=(
+                    "rapidocr-onnxruntime" if standard_processing_used else paddle.model_version
+                ),
                 preprocessing_variant="production_prepared", raw_confidence=confidence,
                 calibrated_confidence=None, bounding_box=bbox, latency_ms=0,
                 validation_results=(verification.reason_code,),
@@ -169,15 +275,30 @@ def infer(dataset: Path, output: Path, limit: int | None = None, offset: int = 0
             fields[canonical]["decision"] = decision.model_dump(mode="json")
         stage["evidence"] = time.perf_counter()-started
         started = time.perf_counter()
-        claim = claims.decide(ClaimDecisionContext(
-            claim_id=item["document_id"], document_family=schema,
-            field_decisions=field_decisions,
-            registration_integrity_valid=(alignment_accepted if routed.template is not None else True),
-            enforce_configured_required_fields=True,
-        )) if route not in {"NON_CLAIM", "UNKNOWN_UNSTRUCTURED"} else None
+        claim = (
+            claims.decide(
+                ClaimDecisionContext(
+                    claim_id=item["document_id"],
+                    document_family=schema,
+                    field_decisions=field_decisions,
+                    registration_integrity_valid=alignment_accepted,
+                    enforce_configured_required_fields=True,
+                )
+            )
+            if _eligible_for_claim_decision(
+                standard_processing_used=standard_processing_used, route=route
+            )
+            else None
+        )
         stage["claim_decision"] = time.perf_counter()-started
         predictions.append({
             "document_id": item["document_id"], "route": route, "schema": schema,
+            "processing_route": routing_decision.processing_route.value,
+            "document_classification": routing_decision.classification.model_dump(mode="json"),
+            "standard_form_verification": (
+                routing_decision.standard_verification.model_dump(mode="json")
+                if routing_decision.standard_verification is not None else None
+            ),
             "route_reasons": routed.reason_codes, "alignment_method": alignment_method,
             "alignment_accepted": alignment_accepted,
             "registration_confidence": registration_confidence,
@@ -199,8 +320,13 @@ def score(dataset: Path, output: Path, predictions: list[dict], limit: int | Non
              (json.loads(line) for line in (dataset / "ground_truth/ground_truth.jsonl").read_text("utf-8").splitlines())}
     metadata = {item["document_id"]: item for item in
                 (json.loads(line) for line in (dataset / "metadata/document_metadata.jsonl").read_text("utf-8").splitlines())}
-    counts, routes, errors = Counter(), defaultdict(Counter), []
-    by_family, by_quality, disposition_counts, claim_counts = defaultdict(Counter), defaultdict(Counter), Counter(), Counter()
+    counts: Counter[str] = Counter()
+    routes: defaultdict[str, Counter[str]] = defaultdict(Counter)
+    errors: list[dict[str, Any]] = []
+    by_family: defaultdict[str, Counter[str]] = defaultdict(Counter)
+    by_quality: defaultdict[str, Counter[str]] = defaultdict(Counter)
+    disposition_counts: Counter[str] = Counter()
+    claim_counts: Counter[str] = Counter()
     latencies, cpu_times, stage_times = [], [], defaultdict(list)
     for prediction in predictions:
         expected, meta = truth[prediction["document_id"]], metadata[prediction["document_id"]]

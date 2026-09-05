@@ -1,0 +1,291 @@
+{
+  "acceptance_gates": {
+    "accepted_precision_gte_995": true,
+    "cloud_cost_zero": true,
+    "critical_false_accepts_zero": true,
+    "distance_4_materially_reduced": true,
+    "field_hitl_below_515": true,
+    "no_critical_regression": true,
+    "raw_accuracy_gte_94": true
+  },
+  "cloud_ocr_normal_path": false,
+  "experiments": [
+    {
+      "baseline": 7,
+      "changes": "No production change retained",
+      "cohort": "target member_id",
+      "experiment_id": "9C-1",
+      "hypothesis": "Existing deterministic evidence can complete member-ID policy",
+      "reason": "Only one observation exists; independent evidence is unavailable",
+      "result": 0,
+      "status": "REVERTED"
+    },
+    {
+      "baseline": 7,
+      "changes": "Strict exact reconciliation with fail-closed states",
+      "cohort": "target total_charge",
+      "experiment_id": "9C-2",
+      "hypothesis": "Exact service-line arithmetic supplies deterministic E6",
+      "reason": "All seven exact sums passed without tolerance or OCR correction",
+      "result": 7,
+      "status": "RETAINED"
+    },
+    {
+      "baseline": 21,
+      "changes": "Not enabled",
+      "cohort": "remaining target blockers",
+      "experiment_id": "9C-3/9C-4",
+      "hypothesis": "A further deterministic fix can safely close the target claims",
+      "reason": "Remaining blockers require unavailable source evidence or separate policy work",
+      "result": 21,
+      "status": "NOT_ATTEMPTED"
+    }
+  ],
+  "metrics": {
+    "accepted_precision": 1.0,
+    "blockers_removed": 7,
+    "claim_hitl_after": 1.0,
+    "claim_hitl_before": 1.0,
+    "claim_stp_after": 0.0,
+    "claim_stp_before": 0.0,
+    "claims_advanced_but_not_unlocked": 7,
+    "claims_unlocked": 0,
+    "cloud_cost_per_page": 0.0,
+    "critical_accuracy_after": 0.95,
+    "critical_accuracy_before": 0.95,
+    "critical_false_accepts": 0,
+    "distance_after": {
+      "distance_0_claims": 0,
+      "distance_1_claims": 0,
+      "distance_2_claims": 0,
+      "distance_3_claims": 7,
+      "distance_4_claims": 0,
+      "distance_5_plus_claims": 13,
+      "mean_claim_unlock_distance": 4.8,
+      "median_claim_unlock_distance": 5.0
+    },
+    "distance_before": {
+      "distance_0_claims": 0,
+      "distance_1_claims": 0,
+      "distance_2_claims": 0,
+      "distance_3_claims": 0,
+      "distance_4_claims": 7,
+      "distance_5_plus_claims": 13,
+      "mean_claim_unlock_distance": 5.15,
+      "median_claim_unlock_distance": 5.0
+    },
+    "field_hitl_after": 0.48,
+    "field_hitl_before": 0.515,
+    "localization_safe_after": 0.94,
+    "localization_safe_before": 0.94,
+    "mean_latency_after": 0.0,
+    "mean_latency_before": 0.0,
+    "member_id_accuracy_after": 0.95,
+    "member_id_accuracy_before": 0.95,
+    "member_id_hitl_after": 0.95,
+    "member_id_hitl_before": 0.95,
+    "missing_crop_after": 0.07,
+    "missing_crop_before": 0.07,
+    "ocr_calls_per_claim_after": 1.0,
+    "ocr_calls_per_claim_before": 1.0,
+    "p95_latency_after": 0.0,
+    "p95_latency_before": 0.0,
+    "raw_accuracy_after": 0.94,
+    "raw_accuracy_before": 0.94,
+    "regressions": 0,
+    "service_date_accuracy_after": 0.8,
+    "service_date_accuracy_before": 0.8,
+    "source_evidence_limited_claims": 17,
+    "total_charge_accuracy_after": 1.0,
+    "total_charge_accuracy_before": 1.0,
+    "total_charge_hitl_after": 0.6,
+    "total_charge_hitl_before": 0.95,
+    "wrong_crop_after": 0.055,
+    "wrong_crop_before": 0.055
+  },
+  "new_ocr_engines": false,
+  "phase": "9C",
+  "phase9d_trigger": "CASE_B_AUTHORITATIVE_DATA_SOURCE_INTEGRATION",
+  "thresholds_changed": false,
+  "top_10_remaining_blockers_by_claim_unlock_leverage": [
+    {
+      "blockers": 14,
+      "claim_unlock_leverage": 1.783333,
+      "claims_affected": [
+        "SB-CMS-001",
+        "SB-CMS-002",
+        "SB-CMS-005",
+        "SB-CMS-006",
+        "SB-CMS-007",
+        "SB-CMS-008",
+        "SB-CMS-009",
+        "SB-UB-001",
+        "SB-UB-002",
+        "SB-UB-005",
+        "SB-UB-006",
+        "SB-UB-007",
+        "SB-UB-008",
+        "SB-UB-009"
+      ],
+      "field": "provider_name",
+      "implementation_risk_weight": 2.0,
+      "minimum_claim_distance": 3,
+      "reason": "OCR_CHARACTER_ERROR"
+    },
+    {
+      "blockers": 13,
+      "claim_unlock_leverage": 1.616667,
+      "claims_affected": [
+        "SB-CMS-001",
+        "SB-CMS-002",
+        "SB-CMS-004",
+        "SB-CMS-006",
+        "SB-CMS-007",
+        "SB-CMS-008",
+        "SB-CMS-009",
+        "SB-UB-001",
+        "SB-UB-002",
+        "SB-UB-005",
+        "SB-UB-006",
+        "SB-UB-007",
+        "SB-UB-009"
+      ],
+      "field": "patient_name",
+      "implementation_risk_weight": 2.0,
+      "minimum_claim_distance": 3,
+      "reason": "OCR_CHARACTER_ERROR"
+    },
+    {
+      "blockers": 16,
+      "claim_unlock_leverage": 1.303175,
+      "claims_affected": [
+        "SB-CMS-001",
+        "SB-CMS-002",
+        "SB-CMS-003",
+        "SB-CMS-004",
+        "SB-CMS-005",
+        "SB-CMS-006",
+        "SB-CMS-007",
+        "SB-CMS-008",
+        "SB-CMS-009",
+        "SB-UB-001",
+        "SB-UB-002",
+        "SB-UB-005",
+        "SB-UB-006",
+        "SB-UB-007",
+        "SB-UB-008",
+        "SB-UB-009"
+      ],
+      "field": "member_id",
+      "implementation_risk_weight": 3.0,
+      "minimum_claim_distance": 3,
+      "reason": "MISSING_INDEPENDENT_EVIDENCE"
+    },
+    {
+      "blockers": 9,
+      "claim_unlock_leverage": 0.533333,
+      "claims_affected": [
+        "SB-CMS-001",
+        "SB-CMS-002",
+        "SB-CMS-004",
+        "SB-CMS-005",
+        "SB-CMS-006",
+        "SB-CMS-007",
+        "SB-CMS-008",
+        "SB-CMS-009",
+        "SB-CMS-010"
+      ],
+      "field": "total_charge",
+      "implementation_risk_weight": 3.0,
+      "minimum_claim_distance": 5,
+      "reason": "MISSING_INDEPENDENT_EVIDENCE"
+    },
+    {
+      "blockers": 6,
+      "claim_unlock_leverage": 0.516667,
+      "claims_affected": [
+        "SB-CMS-001",
+        "SB-CMS-002",
+        "SB-CMS-005",
+        "SB-CMS-006",
+        "SB-CMS-008",
+        "SB-CMS-009"
+      ],
+      "field": "insured_name",
+      "implementation_risk_weight": 2.0,
+      "minimum_claim_distance": 5,
+      "reason": "OCR_CHARACTER_ERROR"
+    },
+    {
+      "blockers": 8,
+      "claim_unlock_leverage": 0.477778,
+      "claims_affected": [
+        "SB-CMS-001",
+        "SB-CMS-002",
+        "SB-CMS-004",
+        "SB-CMS-005",
+        "SB-CMS-006",
+        "SB-CMS-007",
+        "SB-CMS-008",
+        "SB-CMS-009"
+      ],
+      "field": "service_date",
+      "implementation_risk_weight": 3.0,
+      "minimum_claim_distance": 5,
+      "reason": "MISSING_INDEPENDENT_EVIDENCE"
+    },
+    {
+      "blockers": 4,
+      "claim_unlock_leverage": 0.450794,
+      "claims_affected": [
+        "SB-CMS-003",
+        "SB-CMS-010",
+        "SB-UB-003",
+        "SB-UB-010"
+      ],
+      "field": "provider_name",
+      "implementation_risk_weight": 1.5,
+      "minimum_claim_distance": 5,
+      "reason": "WRONG_CROP"
+    },
+    {
+      "blockers": 3,
+      "claim_unlock_leverage": 0.355556,
+      "claims_affected": [
+        "SB-UB-003",
+        "SB-UB-004",
+        "SB-UB-010"
+      ],
+      "field": "principal_diagnosis",
+      "implementation_risk_weight": 1.5,
+      "minimum_claim_distance": 5,
+      "reason": "WRONG_CROP"
+    },
+    {
+      "blockers": 2,
+      "claim_unlock_leverage": 0.333333,
+      "claims_affected": [
+        "SB-UB-004",
+        "SB-UB-008"
+      ],
+      "field": "patient_name",
+      "implementation_risk_weight": 1.5,
+      "minimum_claim_distance": 3,
+      "reason": "MISSING_CROP"
+    },
+    {
+      "blockers": 2,
+      "claim_unlock_leverage": 0.244444,
+      "claims_affected": [
+        "SB-UB-004",
+        "SB-UB-010"
+      ],
+      "field": "patient_dob",
+      "implementation_risk_weight": 1.5,
+      "minimum_claim_distance": 5,
+      "reason": "WRONG_CROP"
+    }
+  ],
+  "verdict": "PASS",
+  "verdict_reason": "Seven distance-4 claims moved deterministically to distance 3 with no false accepts"
+}

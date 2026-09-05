@@ -1,0 +1,18 @@
+{
+  "GATE_1_DATASET_READY": {
+    "passed": false
+  },
+  "GATE_2_EXTRACTION_READY": {
+    "passed": false
+  },
+  "GATE_3_DECISION_READY": {
+    "passed": false
+  },
+  "GATE_4_HITL_STP_READY": {
+    "passed": false
+  },
+  "GATE_5_OPERATIONS_READY": {
+    "passed": false,
+    "reason": "OPERATIONAL_THRESHOLDS_AND_FULL_RUN_NOT_SUPPLIED"
+  }
+}

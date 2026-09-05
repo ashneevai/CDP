@@ -17,7 +17,14 @@ from packages.reference_enrichment.member_matching import _norm, match_member
 from packages.reference_enrichment.payer_matching import match_payer
 from packages.reference_enrichment.provider_matching import match_provider
 
-_CODE_FIELDS = {"principal_diagnosis", "diagnosis_code", "cpt", "cpt_hcpcs", "hcpcs"}
+_CODE_FIELDS = {
+    "principal_diagnosis",
+    "diagnosis_code",
+    "cpt",
+    "cpt_hcpcs",
+    "hcpcs",
+    "place_of_service",
+}
 _PAYER_FIELDS = {"payer_id", "payer_name"}
 
 

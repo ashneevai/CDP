@@ -1,0 +1,310 @@
+{
+  "after": {
+    "distance_0_claims": 0,
+    "distance_1_claims": 0,
+    "distance_2_claims": 0,
+    "distance_3_claims": 7,
+    "distance_4_claims": 0,
+    "distance_5_plus_claims": 13,
+    "mean_claim_unlock_distance": 4.8,
+    "median_claim_unlock_distance": 5.0
+  },
+  "before": {
+    "distance_0_claims": 0,
+    "distance_1_claims": 0,
+    "distance_2_claims": 0,
+    "distance_3_claims": 0,
+    "distance_4_claims": 7,
+    "distance_5_plus_claims": 13,
+    "mean_claim_unlock_distance": 5.15,
+    "median_claim_unlock_distance": 5.0
+  },
+  "claims": [
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-001",
+      "distance_after": 6,
+      "distance_before": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-002",
+      "distance_after": 6,
+      "distance_before": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_dob",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "diagnosis",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-003",
+      "distance_after": 7,
+      "distance_before": 7,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-004",
+      "distance_after": 5,
+      "distance_before": 5,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-005",
+      "distance_after": 5,
+      "distance_before": 5,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-006",
+      "distance_after": 6,
+      "distance_before": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-007",
+      "distance_after": 5,
+      "distance_before": 5,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-008",
+      "distance_after": 6,
+      "distance_before": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-009",
+      "distance_after": 6,
+      "distance_before": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_dob",
+        "member_id",
+        "insured_name",
+        "provider_name",
+        "service_date",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-CMS-010",
+      "distance_after": 6,
+      "distance_before": 6,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "blockers_removed": 1,
+      "claim_id": "SB-UB-001",
+      "distance_after": 3,
+      "distance_before": 4,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "blockers_removed": 1,
+      "claim_id": "SB-UB-002",
+      "distance_after": 3,
+      "distance_before": 4,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "patient_dob",
+        "provider_name",
+        "type_of_bill",
+        "principal_diagnosis",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-003",
+      "distance_after": 6,
+      "distance_before": 6,
+      "final_disposition": "HITL_AUTOMATION_REMAINING"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "patient_dob",
+        "member_id",
+        "provider_name",
+        "principal_diagnosis",
+        "total_charge"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-004",
+      "distance_after": 6,
+      "distance_before": 6,
+      "final_disposition": "HITL_AUTOMATION_REMAINING"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "blockers_removed": 1,
+      "claim_id": "SB-UB-005",
+      "distance_after": 3,
+      "distance_before": 4,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "blockers_removed": 1,
+      "claim_id": "SB-UB-006",
+      "distance_after": 3,
+      "distance_before": 4,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "blockers_removed": 1,
+      "claim_id": "SB-UB-007",
+      "distance_after": 3,
+      "distance_before": 4,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "blockers_removed": 1,
+      "claim_id": "SB-UB-008",
+      "distance_after": 3,
+      "distance_before": 4,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "member_id",
+        "provider_name"
+      ],
+      "blockers_removed": 1,
+      "claim_id": "SB-UB-009",
+      "distance_after": 3,
+      "distance_before": 4,
+      "final_disposition": "HITL_SOURCE_EVIDENCE_REQUIRED"
+    },
+    {
+      "blockers_remaining": [
+        "patient_name",
+        "patient_dob",
+        "member_id",
+        "provider_name",
+        "principal_diagnosis"
+      ],
+      "blockers_removed": 0,
+      "claim_id": "SB-UB-010",
+      "distance_after": 5,
+      "distance_before": 5,
+      "final_disposition": "HITL_AUTOMATION_REMAINING"
+    }
+  ],
+  "claims_advanced_but_not_unlocked": [
+    "SB-UB-001",
+    "SB-UB-002",
+    "SB-UB-005",
+    "SB-UB-006",
+    "SB-UB-007",
+    "SB-UB-008",
+    "SB-UB-009"
+  ],
+  "claims_unlocked": []
+}
