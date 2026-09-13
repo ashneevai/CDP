@@ -4,10 +4,20 @@ from __future__ import annotations
 
 import math
 
+from pydantic import TypeAdapter
+
 from packages.domain.extraction import ExtractedField, FieldEvidence
-from packages.ocr.contracts import OCRCandidate
+from packages.ocr.contracts import OCRCandidate, OCRToken
 from packages.ocr.independence import independence_group
 from packages.ocr.provenance import EvidenceProvenance
+
+_OCR_TOKEN_ADAPTER = TypeAdapter(OCRToken)
+
+
+def _ocr_token_from_payload(token: object) -> OCRToken:
+    if isinstance(token, OCRToken):
+        return token
+    return _OCR_TOKEN_ADAPTER.validate_python(token)
 
 
 def ocr_candidates_from_field(field: ExtractedField) -> list[OCRCandidate]:
@@ -63,6 +73,7 @@ def ocr_candidates_from_field(field: ExtractedField) -> list[OCRCandidate]:
                 source_candidate_id=str(item.evidence_id),
                 produced_at=item.produced_at,
             ),
+            tokens=tuple(_ocr_token_from_payload(token) for token in item.tokens),
         )
         for item in evidence
     ]
