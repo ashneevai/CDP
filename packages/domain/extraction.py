@@ -29,6 +29,7 @@ class FieldEvidence(DomainModel):
     model_name: str | None = None
     model_version: str | None = None
     provenance: EvidenceProvenance | None = None
+    tokens: tuple[dict[str, object], ...] = ()
     produced_at: datetime = Field(default_factory=utcnow)
 
 

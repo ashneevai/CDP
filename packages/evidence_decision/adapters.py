@@ -4,10 +4,21 @@ from __future__ import annotations
 
 import math
 
+from packages.domain.common import BoundingBox
 from packages.domain.extraction import ExtractedField, FieldEvidence
-from packages.ocr.contracts import OCRCandidate
+from packages.ocr.contracts import OCRCandidate, OCRToken
 from packages.ocr.independence import independence_group
 from packages.ocr.provenance import EvidenceProvenance
+
+
+def _ocr_token_from_payload(token: OCRToken | dict[str, object]) -> OCRToken:
+    if isinstance(token, OCRToken):
+        return token
+    payload = dict(token)
+    box = payload.get("bounding_box")
+    if isinstance(box, dict):
+        payload["bounding_box"] = BoundingBox(**box)
+    return OCRToken(**payload)
 
 
 def ocr_candidates_from_field(field: ExtractedField) -> list[OCRCandidate]:
@@ -63,6 +74,7 @@ def ocr_candidates_from_field(field: ExtractedField) -> list[OCRCandidate]:
                 source_candidate_id=str(item.evidence_id),
                 produced_at=item.produced_at,
             ),
+            tokens=tuple(_ocr_token_from_payload(token) for token in item.tokens),
         )
         for item in evidence
     ]

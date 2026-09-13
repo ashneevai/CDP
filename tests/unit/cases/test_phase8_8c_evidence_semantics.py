@@ -188,6 +188,35 @@ def test_runtime_candidate_preserves_selected_normalized_span_and_raw_audit_text
     assert candidate.raw_value == "Z30.0 .50"
 
 
+def test_runtime_candidate_rebuilds_persisted_token_geometry():
+    field = ExtractedField(
+        field_name="patient_name",
+        raw_value="DOE, JANE",
+        normalized_value="DOE, JANE",
+        confidence=.98,
+        page_number=1,
+        bounding_box=BOX,
+        extraction_method=ExtractionMethod.REGIONAL_RAPIDOCR,
+        candidates=[FieldEvidence(
+            source=ExtractionMethod.REGIONAL_RAPIDOCR,
+            raw_text="DOE, JANE",
+            confidence=.98,
+            bounding_box=BOX,
+            provenance=provenance("rapid"),
+            tokens=({
+                "text": "DOE, JANE",
+                "confidence": .98,
+                "bounding_box": BOX.model_dump(mode="json"),
+            },),
+        )],
+    )
+    persisted = ExtractedField.model_validate_json(field.model_dump_json())
+    candidate = ocr_candidates_from_field(persisted)[0]
+    assert candidate.tokens[0].text == "DOE, JANE"
+    assert candidate.tokens[0].bounding_box.x0 == BOX.x0
+    assert candidate.tokens[0].bounding_box.image_width == BOX.image_width
+
+
 def _fixed_geometry(status=FormIdentityStatus.VERIFIED):
     identity = FormIdentityDecision(family=DocumentClass.CMS1500, status=status, score=.99)
     compatibility = TemplateCompatibilityEvidence(
