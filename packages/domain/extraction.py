@@ -9,6 +9,7 @@ from pydantic import Field
 
 from packages.domain.common import BoundingBox, DomainModel, ObjectRef, new_id, utcnow
 from packages.domain.enums import ExtractionMethod, ValidationStatus
+from packages.ocr.contracts import OCRToken
 from packages.ocr.provenance import EvidenceProvenance
 
 
@@ -29,7 +30,7 @@ class FieldEvidence(DomainModel):
     model_name: str | None = None
     model_version: str | None = None
     provenance: EvidenceProvenance | None = None
-    tokens: tuple[dict[str, object], ...] = ()
+    tokens: tuple[OCRToken, ...] = ()
     produced_at: datetime = Field(default_factory=utcnow)
 
 
