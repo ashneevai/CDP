@@ -4,21 +4,20 @@ from __future__ import annotations
 
 import math
 
-from packages.domain.common import BoundingBox
+from pydantic import TypeAdapter
+
 from packages.domain.extraction import ExtractedField, FieldEvidence
 from packages.ocr.contracts import OCRCandidate, OCRToken
 from packages.ocr.independence import independence_group
 from packages.ocr.provenance import EvidenceProvenance
 
+_OCR_TOKEN_ADAPTER = TypeAdapter(OCRToken)
 
-def _ocr_token_from_payload(token: OCRToken | dict[str, object]) -> OCRToken:
+
+def _ocr_token_from_payload(token: object) -> OCRToken:
     if isinstance(token, OCRToken):
         return token
-    payload = dict(token)
-    box = payload.get("bounding_box")
-    if isinstance(box, dict):
-        payload["bounding_box"] = BoundingBox(**box)
-    return OCRToken(**payload)
+    return _OCR_TOKEN_ADAPTER.validate_python(token)
 
 
 def ocr_candidates_from_field(field: ExtractedField) -> list[OCRCandidate]:
