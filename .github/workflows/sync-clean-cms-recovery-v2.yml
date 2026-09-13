@@ -1,0 +1,145 @@
+name: sync-clean-cms-recovery-v2
+
+on:
+  push:
+    branches:
+      - recovery/field-extraction-clean
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: ${{ !contains(github.event.head_commit.message, '[geometry-sync]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Rebuild reviewed recovery candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          git remote remove recovery-source 2>/dev/null || true
+          git remote add recovery-source https://github.com/aratij1/cdp.git
+          git fetch --no-tags --depth=1 recovery-source recovery/field-extraction-14bb038
+          SOURCE_SHA="$(git rev-parse FETCH_HEAD)"
+          test "$SOURCE_SHA" = "deb495f661a0621cf12a32ece79f0898230415a0"
+          git checkout "$SOURCE_SHA" -- \
+            workers/standard_form_extraction/consumer.py \
+            workers/standard_form_extraction/extractor.py \
+            workers/standard_form_extraction/recovery_eligibility.py \
+            workers/page_detection/text_extraction.py \
+            packages/templates/cms1500_boxes.py \
+            packages/templates/cms1500_local_alignment.py \
+            packages/domain/extraction.py \
+            packages/evidence_decision/adapters.py \
+            packages/ocr/provenance.py \
+            packages/canonical_field_outcomes.py \
+            evaluation/cms_route_diagnostics.py \
+            evaluation/engineering_stage_trace.py \
+            tests/unit/cases/test_cms1500_template_first.py \
+            tests/unit/cases/test_cms1500_bounded_crops.py \
+            tests/unit/cases/test_recovery_eligibility_clean.py \
+            tests/unit/cases/test_cms_route_diagnostics.py \
+            tests/unit/cases/test_engineering_stage_trace.py
+
+          # Reuse the already-reviewed patch body from the first workflow.
+          python - <<'PY'
+          from pathlib import Path
+
+          source = Path('.github/workflows/sync-clean-cms-recovery.yml').read_text(encoding='utf-8')
+          start = source.index("          python - <<'PY'\n") + len("          python - <<'PY'\n")
+          end = source.index("\n          PY\n", start)
+          lines = source[start:end].splitlines()
+          body = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
+          Path('/tmp/apply_clean_recovery.py').write_text(body, encoding='utf-8')
+          PY
+          python /tmp/apply_clean_recovery.py
+
+      - name: Clean generated lint issues
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+
+          test = Path('tests/unit/cases/test_cms1500_local_alignment.py')
+          text = test.read_text(encoding='utf-8')
+          text = text.replace('from itertools import product\n\n', '', 1)
+          test.write_text(text, encoding='utf-8')
+
+          extractor = Path('workers/standard_form_extraction/extractor.py')
+          text = extractor.read_text(encoding='utf-8')
+          old = '                def read_region(region, variant, *, metadata=None):\n'
+          new = ('                def read_region(\n'
+                 '                    region, variant, *, metadata=None, name=name, recognize=recognize,\n'
+                 '                    original=original, single_line=single_line, index=index,\n'
+                 '                ):\n')
+          if old not in text:
+              raise SystemExit('read_region lint anchor missing')
+          extractor.write_text(text.replace(old, new, 1), encoding='utf-8')
+          PY
+
+      - name: Install validation dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Validate clean implementation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            workers/standard_form_extraction/consumer.py \
+            workers/standard_form_extraction/extractor.py \
+            workers/standard_form_extraction/recovery_eligibility.py \
+            packages/templates/cms1500_boxes.py \
+            packages/templates/cms1500_local_alignment.py \
+            packages/domain/extraction.py \
+            packages/evidence_decision/adapters.py \
+            packages/ocr/provenance.py \
+            evaluation/cms_route_diagnostics.py \
+            evaluation/engineering_stage_trace.py
+          python scripts/check_architecture.py
+          ruff check \
+            workers/standard_form_extraction/consumer.py \
+            workers/standard_form_extraction/extractor.py \
+            workers/standard_form_extraction/recovery_eligibility.py \
+            packages/templates/cms1500_boxes.py \
+            packages/templates/cms1500_local_alignment.py \
+            packages/domain/extraction.py \
+            packages/evidence_decision/adapters.py \
+            packages/ocr/provenance.py \
+            evaluation/cms_route_diagnostics.py \
+            evaluation/engineering_stage_trace.py \
+            tests/unit/cases/test_cms1500_local_alignment.py \
+            tests/unit/cases/test_cms_route_diagnostics.py
+          python -m pytest \
+            tests/unit/cases/test_cms1500_local_alignment.py \
+            tests/unit/cases/test_cms1500_template_first.py \
+            tests/unit/cases/test_cms1500_bounded_crops.py \
+            tests/unit/cases/test_recovery_eligibility_clean.py \
+            tests/unit/cases/test_engineering_stage_trace.py \
+            tests/unit/cases/test_cms_route_diagnostics.py \
+            -q -p no:cacheprovider --basetemp="${RUNNER_TEMP}/cms-recovery"
+          git diff --check
+
+      - name: Commit clean code to recovery branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "ashneevai"
+          git config user.email "35860118+ashneevai@users.noreply.github.com"
+          rm -f .github/workflows/sync-clean-cms-recovery.yml
+          rm -f .github/workflows/sync-clean-cms-recovery-v2.yml
+          git add -A
+          git commit -m "[geometry-sync] Clean CMS geometry recovery"
+          git push origin HEAD:recovery/field-extraction-clean
